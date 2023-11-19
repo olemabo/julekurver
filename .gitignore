@@ -1,0 +1,5 @@
+julekurver/frontend/node_modules
+.env
+\__pycache__
+
+**/frontend/main*
