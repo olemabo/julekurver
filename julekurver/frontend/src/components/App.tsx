@@ -3,7 +3,7 @@ import React from "react"; // this must be here
 
 function App() {
   return (
-    <div>Julekurver er gøy</div>
+    <div>Julekurvene</div>
   );
 }
 
