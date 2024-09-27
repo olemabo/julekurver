@@ -1,4 +1,4 @@
-export interface StandardPageModel {
+export interface PageContent {
   title: string;
   content: string;
 }

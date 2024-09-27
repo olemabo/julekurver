@@ -1,4 +1,4 @@
-import { JulekurvPageModel } from '../../../models/julekurvPage/julekurvPageModel';
+import { Julekurv } from '../../../models/julekurvPage/julekurv';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import DefaultPageContainer from '../../layout/defaultPageContainer/defaultPageContainer';
@@ -13,7 +13,7 @@ export type JulekurvKartotekPageProps = {
 
 export function JulekurvKartotekPage({ pageType }: JulekurvKartotekPageProps) {
   const standard_page_api_path = '/api/julekurver-page-api/';
-  const emptyJulekurver: JulekurvPageModel[] = [
+  const emptyJulekurver: Julekurv[] = [
     { name: '', about: '', image_julekurv_url: '', url: '' },
   ];
 

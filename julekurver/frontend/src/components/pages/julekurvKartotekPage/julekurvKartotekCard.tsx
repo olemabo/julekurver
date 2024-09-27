@@ -1,8 +1,8 @@
 import './julekurvKartotekCard.scss';
-import { JulekurvPageModel } from '../../../models/julekurvPage/julekurvPageModel';
+import { Julekurv } from '../../../models/julekurvPage/julekurv';
 
 type JulekurvKartotekCardProps = {
-  julekurv: JulekurvPageModel;
+  julekurv: Julekurv;
 };
 
 export default function JulekurvKartotekCard({ julekurv }: JulekurvKartotekCardProps) {

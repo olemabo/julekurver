@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Breadcrumb from '../../shared/breadcrumb/breadcrumb';
 import DefaultPageContainer from '../../layout/defaultPageContainer/defaultPageContainer';
-import { StandardPageModel } from '../../../models/standardPage/standardPageModel';
+import { PageContent } from '../../../models/standardPage/pageContent';
 
 export type StandardPageProps = {
   pageType?: string;
@@ -10,7 +10,7 @@ export type StandardPageProps = {
 
 export default function StandardPage({ pageType }: StandardPageProps) {
   const standard_page_api_path = '/api/standard-page-api/';
-  const emptyStandardPage: StandardPageModel = { title: '', content: '' };
+  const emptyStandardPage: PageContent = { title: '', content: '' };
 
   const [standardPage, setStandardPage] = useState(emptyStandardPage);
   const [initialLoading, setnitialLoading] = useState(true);
@@ -20,7 +20,7 @@ export default function StandardPage({ pageType }: StandardPageProps) {
     axios.get(api_path).then((x) => {
       if (x.data) {
         const response = JSON.parse(x.data);
-        const standardPage: StandardPageModel = {
+        const standardPage: PageContent = {
           title: response?.title,
           content: response?.content,
         };
