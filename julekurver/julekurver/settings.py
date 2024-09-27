@@ -31,7 +31,6 @@ DEBUG = os.environ['DEBUG']
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,6 +43,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'frontend.apps.FrontendConfig',
+    'api',
+    'django_cleanup.apps.CleanupConfig'
 ]
 
 MIDDLEWARE = [

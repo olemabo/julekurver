@@ -1,0 +1,32 @@
+.jds-search {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Add a smooth color transition on hover */
+    color: var(--jds-link-text-color);
+
+    span:not(.icon-container) {
+        border-bottom: 1px solid var(--jds-link-text-color);
+    }
+
+    .icon-container {
+        margin-right: 5px;
+        height: 20px;
+    }
+
+    span {
+        vertical-align: middle;
+        /* Align the text vertically in the middle */
+    }
+
+
+    &:hover {
+        transition: width 0.3s ease;
+    }
+
+    &:active {
+        border: 1px solid red;
+    }
+}

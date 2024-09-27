@@ -1,0 +1,12 @@
+@import './baseTokens.css';
+
+:root {
+    /* Default styles */
+    --footer-color: var(--primary-color);
+    --background-color: var(--secondary-color);
+    
+    --text-color: var(--tertiary-color);
+    --jds-link-text-color: var(--text-color);
+
+    --paragraph-max-width: 600px;
+}
