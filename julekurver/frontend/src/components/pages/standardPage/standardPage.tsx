@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Breadcrumb from '../../shared/breadcrumb/breadcrumb';
-import DefaultPageContainer from '../../layout/defaultPageContainer/defaultPageContainer';
+import DefaultPageContainer from '../../layout/pageContainer/pageContainer';
 import { PageContent } from '../../../models/standardPage/pageContent';
 
 export type StandardPageProps = {

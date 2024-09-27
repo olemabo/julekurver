@@ -2,19 +2,19 @@
 import React from 'react';
 import HelmetAndMetaData from './helmetAndMetaData';
 
-type DefaultPageContainerProps = {
+type PageContainerProps = {
   heading: string;
   description: string;
   pageClassName?: string;
   children?: React.ReactNode;
 };
 
-export const DefaultPageContainer: React.FunctionComponent<DefaultPageContainerProps> = ({
+export default function PageContainer({
   heading,
   description,
   pageClassName = '',
   children,
-}) => {
+}: PageContainerProps) {
   // const langaugeCodeFromRedux = useSelector((state: any) => state?.language_code);
   const langaugeCodeFromRedux = 'no';
   document.documentElement.lang = langaugeCodeFromRedux;
@@ -30,5 +30,3 @@ export const DefaultPageContainer: React.FunctionComponent<DefaultPageContainerP
     </div>
   );
 };
-
-export default DefaultPageContainer;

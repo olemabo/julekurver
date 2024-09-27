@@ -1,7 +1,7 @@
 import { Julekurv } from '../../../models/julekurvPage/julekurv';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import DefaultPageContainer from '../../layout/defaultPageContainer/defaultPageContainer';
+import DefaultPageContainer from '../../layout/pageContainer/pageContainer';
 import Breadcrumb from '../../shared/breadcrumb/breadcrumb';
 import './julekurvKartotekCard.scss';
 import JulekurvKartotekCard from './julekurvKartotekCard';

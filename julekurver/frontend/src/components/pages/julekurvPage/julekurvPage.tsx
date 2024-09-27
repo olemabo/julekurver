@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import DefaultPageContainer from '../../layout/defaultPageContainer/defaultPageContainer';
+import DefaultPageContainer from '../../layout/pageContainer/pageContainer';
 import { useParams } from 'react-router-dom';
 import Breadcrumb from '../../shared/breadcrumb/breadcrumb';
 import { Julekurv } from '../../../models/julekurvPage/julekurv';
