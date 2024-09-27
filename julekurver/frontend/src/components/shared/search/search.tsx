@@ -1,15 +1,10 @@
-import React from 'react';
-import './Search.scss';
+import './search.scss';
 
 type SearchProps = {
+  title?: string;
 };
 
-const Search: React.FunctionComponent<SearchProps> = ({
-}) => {
-
-    return (
-        <input className='jds-' type='search' />
-    );
-};
-
-export default Search;
+export function Search({ title }: SearchProps) {
+  console.log(title);
+  return <input className="jds-" type="search" />;
+}

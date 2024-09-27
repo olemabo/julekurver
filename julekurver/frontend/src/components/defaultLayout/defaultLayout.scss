@@ -1,12 +1,11 @@
 .page-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px auto 60px auto;
-    max-width: var(--main-page-desktop-max-width);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto 60px auto;
+  max-width: var(--main-page-desktop-max-width);
 
-    
-    .standard-page {
-        max-width: var(--paragraph-max-width);
-    }
+  .standard-page {
+    max-width: var(--paragraph-max-width);
+  }
 }

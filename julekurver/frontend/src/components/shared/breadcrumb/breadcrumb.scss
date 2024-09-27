@@ -1,17 +1,17 @@
 .breadcrumb-container {
-    margin: 12px 0 24px 0;
-    display: flex;
-    gap: 12px;
-    justify-content: flex-start;
-    align-items: center;
+  margin: 12px 0 24px 0;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: center;
 
-    .breadcrumb {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        transition: color 0.3s ease; /* Add a smooth color transition on hover */
-        color: var(--jds-link-text-color);
-        border-bottom: 1px solid var(--jds-link-text-color);
-    }
+  .breadcrumb {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Add a smooth color transition on hover */
+    color: var(--jds-link-text-color);
+    border-bottom: 1px solid var(--jds-link-text-color);
+  }
 }
