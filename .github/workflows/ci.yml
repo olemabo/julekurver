@@ -46,5 +46,5 @@ jobs:
     - name: Build
       run: |
         cd julekurver/frontend
-        npm install
-        npx webpack
+        npm i
+        npm run build
