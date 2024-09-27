@@ -1,6 +1,6 @@
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import Link from '../../shared/link/link';
+import Link from '../../shared/ui/link/link';
 import './footer.scss';
 
 export default function Footer() {

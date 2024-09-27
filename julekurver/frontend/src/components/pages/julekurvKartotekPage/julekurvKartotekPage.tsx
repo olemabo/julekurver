@@ -5,7 +5,7 @@ import DefaultPageContainer from '../../layout/pageContainer/pageContainer';
 import Breadcrumb from '../../shared/breadcrumb/breadcrumb';
 import './julekurvKartotekCard.scss';
 import JulekurvKartotekCard from './julekurvKartotekCard';
-import { Search } from '../../shared/search/search';
+import { Search } from '../../shared/ui/search/search';
 
 export type JulekurvKartotekPageProps = {
   pageType?: string;
