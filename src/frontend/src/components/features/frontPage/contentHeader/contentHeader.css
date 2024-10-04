@@ -1,0 +1,50 @@
+.content-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+
+  &.white {
+    color: white;
+
+    h2::before,
+    h2::after {
+      background-color: white;
+    }
+  }
+
+  &.black {
+    color: black;
+
+    h2::before,
+    h2::after {
+      background-color: black;
+    }
+  }
+
+  h2 {
+    color: inherit;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+  }
+
+  h2::before,
+  h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 90%;
+    height: 1px;
+  }
+
+  h2::before {
+    left: -115%;
+    top: 50%;
+  }
+
+  h2::after {
+    right: -115%;
+    top: 50%;
+  }
+}

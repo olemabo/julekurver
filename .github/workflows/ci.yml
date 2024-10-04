@@ -11,7 +11,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.11]
+        python-version: [3.12]
 
     steps:
     - uses: actions/checkout@v3
@@ -22,10 +22,7 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r julekurver/requirements.txt
-   # - name: Run Tests
-   #   run: |
-   #     python manage.py test
+        pip install -r src/backend/requirements.txt
         
   frontend_job:
     name: Test Frontend
@@ -43,8 +40,22 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build
+    - name: Install Dependencies
       run: |
-        cd julekurver/frontend
-        npm install
-        npx webpack
+        cd src/frontend
+        npm i
+
+    - name: Run Build
+      run: |
+        cd src/frontend
+        npm run build
+
+    - name: Run ESLint
+      run: |
+        cd src/frontend
+        npm run lint
+
+    - name: Run Prettier Check
+      run: |
+        cd src/frontend
+        npm run format:check

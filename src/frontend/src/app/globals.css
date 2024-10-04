@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap");
+
+:root {
+  /* Base Tokens */
+  --primary-color: #bfbf99;
+  --secondary-color: #f0ebe5;
+  --tertiary-color: #372316;
+
+  --white-color: #ffffff;
+  --black-color: #000000;
+
+  --font-family: "IBM Plex Sans";
+
+  --main-page-desktop-max-width: 1440px;
+  --main-page-desktop-max-width: 1200px;
+
+  /* Reference Tokens */
+  --footer-color: rgb(176, 191, 180, 74);
+  --background-color: var(--secondary-color);
+
+  --text-color: var(--tertiary-color);
+  --jds-link-text-color: var(--text-color);
+
+  --paragraph-max-width: 600px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: var(--main-page-desktop-max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0;
+  margin: 0 auto;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#app {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "IBM Plex Sans Thick", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1,
+.heading1 {
+  font-size: 32px;
+  line-height: 38.4px;
+  margin-bottom: 20px;
+  margin-bottom: 32px;
+}
+
+h2,
+.heading2 {
+  font-size: 24px;
+  line-height: 28.8px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+h3,
+.heading3 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+p {
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px; /* 200% */
+}
+
+.container {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto 60px auto;
+  max-width: var(--main-page-desktop-max-width); */
+  margin: 20px auto 60px auto;
+
+  .standard-page {
+    max-width: var(--paragraph-max-width);
+  }
+}
+
+.default-page-container a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Add a smooth color transition on hover */
+  color: var(--jds-link-text-color);
+  border-bottom: 1px solid var(--jds-link-text-color);
+  line-height: 20px;
+}
+
+@media screen and (max-width: 780px) {
+  .page-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
