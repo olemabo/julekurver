@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import './link.scss';
+import "./link.scss";
 
-export type TargetType = '_blank' | '';
+export type TargetType = "_blank" | "";
 
 type LinkProps = {
   linkTitle?: string;
@@ -12,13 +12,7 @@ type LinkProps = {
   icon?: React.ReactNode;
 };
 
-export function Link({ 
-  linkTitle, 
-  href, 
-  target, 
-  className, 
-  icon 
-}: LinkProps) {
+export function Link({ linkTitle, href, target, className, icon }: LinkProps) {
   return (
     <a target={target} href={href} className={`jds-link ${className}`}>
       {icon && <span className="icon-container">{icon}</span>}

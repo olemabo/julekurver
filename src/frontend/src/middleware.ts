@@ -16,7 +16,7 @@ export function middleware(request: NextRequest) {
   }
 
   const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
   if (pathnameHasLocale) return;
@@ -28,7 +28,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    "/((?!_next).*)",
-  ],
+  matcher: ["/((?!_next).*)"],
 };

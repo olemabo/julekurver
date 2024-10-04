@@ -1,40 +1,35 @@
-"use client"; 
+"use client";
 
-import './button.css';
+import "./button.css";
 
 type ButtonProps = {
-    label: string;
-    href?: string;
+  label: string;
+  href?: string;
 };
 
-export default function Button({
-    label,
-    href
-}: ButtonProps) {
-    if (!label) {
-        return null;
-    }
+export default function Button({ label, href }: ButtonProps) {
+  if (!label) {
+    return null;
+  }
 
-    const handleDownload = () => {
-        if (href) {
-            const link = document.createElement('a');
-            link.href = href;
-            link.setAttribute('download', 'file.svg');  // Set the desired file name here
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);  // Clean up after click
-        }
-    };
-
+  const handleDownload = () => {
     if (href) {
-        return (
-            <button type="button" onClick={handleDownload} className="button-link">
-                {label}
-            </button>
-        );
+      const link = document.createElement("a");
+      link.href = href;
+      link.setAttribute("download", "file.svg"); // Set the desired file name here
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link); // Clean up after click
     }
+  };
 
-    return <button type="button">
-        { label }
-    </button>
+  if (href) {
+    return (
+      <button type="button" onClick={handleDownload} className="button-link">
+        {label}
+      </button>
+    );
+  }
+
+  return <button type="button">{label}</button>;
 }

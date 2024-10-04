@@ -1,19 +1,19 @@
 .lag-julekurv-section-container {
+  display: flex;
+  justify-content: center;
+  margin: 48px 0;
+  column-gap: 100px;
+
+  .julekurv-step {
     display: flex;
     justify-content: center;
-    margin: 48px 0;
-    column-gap: 100px;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 48px;
+    max-width: 280px;
 
-    .julekurv-step {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        row-gap: 48px;
-        max-width: 280px;
-
-        p {
-            text-align: center;
-        }
+    p {
+      text-align: center;
     }
+  }
 }

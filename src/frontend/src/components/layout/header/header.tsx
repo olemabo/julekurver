@@ -1,18 +1,23 @@
-'use client';
+"use client";
 
-import './header.scss';
-import SearchIcon from '@mui/icons-material/Search';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import "./header.scss";
+import SearchIcon from "@mui/icons-material/Search";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import Image from "next/image";
 
 export default function Header() {
   return (
     <header>
       <nav>
-        <a href='/'>
-          <img src="/images/logo/header_logo.svg" height={40} />
+        <a href="/">
+          <Image
+            src="/images/logo/header_logo.svg"
+            alt="Webpage logo"
+            height={40}
+          />
         </a>
-        <div style={{display: 'flex', columnGap: '60px' }}>
+        <div style={{ display: "flex", columnGap: "60px" }}>
           <ul>
             <li>
               <a href="/julekurver">Julekurver</a>

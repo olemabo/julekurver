@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import './breadcrumb.css';
+import Link from "next/link";
+import "./breadcrumb.css";
+import Image from "next/image";
 
 type LinkProp = {
   linkText: string;
@@ -12,9 +13,7 @@ type BreadcrumbProps = {
   linkItems: LinkProp[];
 };
 
-export default function Breadcrumb({
-  linkItems
-}: BreadcrumbProps) {
+export default function Breadcrumb({ linkItems }: BreadcrumbProps) {
   return (
     <div className="breadcrumb-container">
       {linkItems?.length > 0 &&
@@ -24,14 +23,18 @@ export default function Breadcrumb({
               <>
                 <Link href={link.href} className="breadcrumb">
                   {link.linkText}
-                </Link>{' '}
-                <img src="/images/icons/breadcrumb_divider.svg" alt="breadcrumb divider" className="breadcrumb-divider" />
+                </Link>{" "}
+                <Image
+                  src="/images/icons/breadcrumb_divider.svg"
+                  alt="breadcrumb divider"
+                  className="breadcrumb-divider"
+                />
               </>
             ) : (
-              <span >{link.linkText}</span>
+              <span>{link.linkText}</span>
             )}
           </div>
         ))}
     </div>
   );
-};
+}
