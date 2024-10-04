@@ -1,0 +1,16 @@
+.full-width-wrapper-container {
+    padding: 10px 100vw 30px;
+    margin: 0 -100vw;
+
+    &.default {
+        background-color: inherit;
+    }
+
+    &.green {
+        background-color: rgb(176, 191, 180, 74);
+    }
+
+    &.red {
+        background-color: #BC9284;
+    }
+}
