@@ -28,6 +28,8 @@ export default function Breadcrumb({ linkItems }: BreadcrumbProps) {
                   src="/images/icons/breadcrumb_divider.svg"
                   alt="breadcrumb divider"
                   className="breadcrumb-divider"
+                  width={12}
+                  height={12}
                 />
               </>
             ) : (

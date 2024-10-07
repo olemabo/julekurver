@@ -16,6 +16,7 @@ export default function JulekurvKartotekCard({
       <div className="section">
         <Image
           width={160}
+          height={100}
           alt={name}
           src={`http://127.0.0.1:8000/media/${imageJulekurvUrl}`}
         />

@@ -1,5 +1,12 @@
-julekurver/frontend/node_modules
+src/frontend/node_modules
+src/frontend/.next
 .env
 \__pycache__
 
 **/frontend/main*
+
+**/src/frontend/.next
+src/backend/db.sqlite3
+src/backend/media/julekurver/*
+
+src/backend/env/*
