@@ -22,6 +22,7 @@ export default function FrontPage() {
               <Image
                 alt="logo av flettet hjertekurv"
                 height={280}
+                width={350}
                 src={"/images/pages/frontpage/frontpage_hjertekurv.svg"}
               />
             </div>

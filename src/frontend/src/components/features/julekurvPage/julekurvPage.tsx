@@ -39,7 +39,7 @@ export default function JulekurvPage({ julekurv }: JulekurvPageProps) {
               </p>
             </div>
             <div>
-              <Image alt="imageUrl" height={300} src={imageUrl} />
+              <Image alt="imageUrl" width={300} height={300} src={imageUrl} />
             </div>
           </div>
           <div
@@ -52,7 +52,7 @@ export default function JulekurvPage({ julekurv }: JulekurvPageProps) {
           >
             <h2>Mal</h2>
             <div>
-              <Image alt="imageUrl" height={300} src={imageMalUrl} />
+              <Image alt="imageUrl" height={300} width={200} src={imageMalUrl} />
             </div>
             <Button label="Last ned mal" href={imageMalUrl} />
           </div>

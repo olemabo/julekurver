@@ -14,7 +14,7 @@ export default function JulekurvStep({
 }: JulekurvStepProps) {
   return (
     <div className="julekurv-step">
-      <Image height={height} src={imageUrl} alt={description} />
+      <Image height={height} width={250} src={imageUrl} alt={description} />
       <p>{description}</p>
     </div>
   );
