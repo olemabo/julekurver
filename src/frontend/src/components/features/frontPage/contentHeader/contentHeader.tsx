@@ -1,16 +1,18 @@
+import { DisplayTheme } from "@/constants/displayTheme";
 import "./contentHeader.css";
-
-type ConentHeaderType = "white" | "black";
+import Heading from "@/components/shared/ui/heading/heading";
 
 type ContentHeaderProps = {
   title: string;
-  format: ConentHeaderType;
+  theme: DisplayTheme;
 };
 
-export default function ContentHeader({ title, format }: ContentHeaderProps) {
+export default function ContentHeader({ title, theme }: ContentHeaderProps) {
   return (
-    <div className={`content-header ${format}`}>
-      <h2>{title}</h2>
+    <div className={`content-header ${theme}`}>
+      <Heading theme={theme} headingLevel="h2">
+        {title}
+      </Heading>
     </div>
   );
 }

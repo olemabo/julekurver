@@ -14,23 +14,14 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv, find_dotenv
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
 # Add .env variables anywhere before SECRET_KEY
 load_dotenv(find_dotenv())
-# SECRET_KEY = os.environ['SECRET_KEY']
 
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ['DEBUG']
-
-DEBUG = True
-SECRET_KEY = "DJDJDJJD"
+DEBUG = os.getenv("DEBUG", False)
+SECRET_KEY = os.getenv("SECRET_KEY", None)
 
 ALLOWED_HOSTS = ['*']
 
@@ -58,7 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "http://localhost:3000").split(",")
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SESSION_COOKIE_SECURE = False

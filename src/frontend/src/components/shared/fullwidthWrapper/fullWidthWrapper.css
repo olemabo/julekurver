@@ -7,10 +7,10 @@
   }
 
   &.green {
-    background-color: rgb(176, 191, 180, 74);
+    background-color: var(--tds-color-secondary-base);
   }
 
   &.red {
-    background-color: #bc9284;
+    background-color: var(--tds-color-primary-base);
   }
 }

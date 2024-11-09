@@ -1,0 +1,143 @@
+.kurv-mal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 48px;
+
+  .heart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 408px;
+    height: 330px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .same-mal.heart-container {
+    width: 436px;
+  }
+
+  .heart-container img {
+    width: 180px;
+    height: auto;
+    transition: transform 1s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .image-left {
+    left: 0;
+    transform: rotate(0deg) translate(0, -50%);
+  }
+
+  .image-right {
+    right: 0;
+    transform: rotate(0deg) translate(0, -50%);
+  }
+
+  .heart-container:hover .image-left {
+    transform: rotate(-45deg) translate(100%, -18%);
+  }
+
+  .heart-container:hover .image-right {
+    transform: rotate(45deg) translate(-100%, -18%);
+  }
+
+  .heart-container:hover .image-right.flipped {
+    transform: rotate(45deg) translate(-100%, -18%) scaleX(-1);
+  }
+
+  /* 
+    .heart-container {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        width: 408px; 
+        height: 330px; 
+        position: relative;
+        overflow: hidden;
+    }
+
+    .same-mal.heart-container {
+        width: 436px;
+    }
+    
+    .heart-container img {
+        width: 180px;  
+        height: auto; 
+        transition: transform 1s ease;  
+        position: absolute;
+        top: 50%; 
+        transform: translateY(-50%); 
+    }
+    .heart-container img {
+        transition: transform 1s ease;  
+    }
+
+    .same-mal.heart-container {
+        width: 180px;
+    }
+
+    .heart-container {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+    }
+
+    .heart-container {
+        overflow: visible;
+    }
+
+    .heart-container .image-right {
+        margin-left: 100px; 
+    }
+
+    .heart-container:hover .image-left {
+        transform: translate(-37px, -50%) rotate(-45deg); 
+    }
+    
+    .heart-container:hover .image-right {
+        transform: translate(37px, -50%) rotate(45deg);
+        margin-left: 0;
+    }
+
+    .heart-container:hover .image-right.flipped {
+        transform: translate(37px, -50%) rotate(45deg) scaleX(-1);
+    } */
+
+  .heart-container2 {
+    width: fit-content;
+    transition: transform 1.3s ease;
+    padding: 36px 0;
+
+    .image-left,
+    .image-right {
+      transition: transform 1.3s ease;
+      transform-origin: 100% 100%;
+    }
+
+    &:hover {
+      transform: rotate(-45deg) translate(-30%, -10%);
+    }
+
+    &:hover .image-left {
+      transform: rotate(90deg);
+      transform: rotate(90deg) scaleX(-1) translate(100%, 0%);
+    }
+
+    .image-left {
+      transform: rotate(0deg);
+    }
+
+    .image-right {
+      transform: rotate(0deg) translate(40%, 0);
+    }
+
+    &:hover .image-right {
+      transform: rotate(0deg) translate(0, 0);
+    }
+  }
+}

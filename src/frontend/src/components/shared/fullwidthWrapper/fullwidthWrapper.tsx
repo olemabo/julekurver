@@ -1,7 +1,14 @@
 import React from "react";
 import "./fullWidthWrapper.css";
 
-type FullWidthWrapperColor = "default" | "green" | "red";
+export const bgColorThemeDefault = "default";
+export const bgColorThemeGreen = "green";
+export const bgColorThemeRed = "red";
+
+export type FullWidthWrapperColor =
+  | typeof bgColorThemeDefault
+  | typeof bgColorThemeGreen
+  | typeof bgColorThemeRed;
 
 type ContentHeaderProps = {
   color?: FullWidthWrapperColor;
@@ -13,7 +20,9 @@ export default function FullWidthWrapper({
   children,
 }: ContentHeaderProps) {
   return (
-    <div className={`full-width-wrapper-container ${color ?? "default"}`}>
+    <div
+      className={`full-width-wrapper-container ${color ?? bgColorThemeDefault}`}
+    >
       {children}
     </div>
   );

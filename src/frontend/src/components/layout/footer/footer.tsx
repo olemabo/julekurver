@@ -2,32 +2,40 @@
 
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import "./footer.scss";
 import Link from "@/components/shared/ui/link/link";
+import Heading from "@/components/shared/ui/heading/heading";
+
+import "./footer.css";
 
 export default function Footer() {
   return (
     <footer>
-      <div className="footer-container horizontal">
-        <div style={{ display: "flex", columnGap: "120px" }}>
+      <div className="footer-container container">
+        <div className="footer-link-section">
           <div className="webpage-links">
-            <h2 className="heading3">Hjertekurver</h2>
+            <Heading headingLevel="h2" withMargins={false}>
+              Hjertekurver
+            </Heading>
             <Link href="/se-kurver" linkTitle="Se kurver" />
             <Link href="/hvordan-lage-kurver" linkTitle="Lag kurver" />
           </div>
           <div className="webpage-links">
-            <h2 className="heading3">Om nettsiden</h2>
+            <Heading headingLevel="h2" withMargins={false}>
+              Om nettsiden
+            </Heading>
             <Link href="/om-siden" linkTitle="Om siden" />
             <Link href="/kontakt-oss" linkTitle="Kontakt oss" />
           </div>
         </div>
         <div className="social-media-links">
-          <h2 className="heading3">Følg oss</h2>
+          <Heading headingLevel="h2" withMargins={false}>
+            Følg oss
+          </Heading>
           <Link
             icon={<InstagramIcon />}
             linkTitle="Instagram"
             target="_blank"
-            href="#"
+            href="https://www.instagram.com/hjertekurver/"
           />
           <Link
             icon={<PinterestIcon />}

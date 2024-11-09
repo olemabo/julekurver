@@ -1,0 +1,40 @@
+.hamburger-container {
+  display: none;
+
+  ul {
+    list-style-type: none;
+    height: 28px;
+    display: block;
+    padding-top: 10px;
+
+    .hamburger {
+      margin-top: 6px;
+      height: 3px;
+      width: 30px;
+      background-color: var(--tds-color-neutrals-gray);
+      transition: 0.5s;
+      position: relative;
+    }
+  }
+
+  .active ul li:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .active ul li:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .active ul li:nth-child(2) {
+    transform: rotate(-45deg);
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .link-container {
+    display: none;
+  }
+  .hamburger-container {
+    display: block;
+  }
+}

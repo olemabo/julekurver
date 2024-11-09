@@ -1,0 +1,9 @@
+.heading {
+  &.light {
+    color: var(--tds-color-neutrals-white);
+  }
+
+  &.dark {
+    color: var(--tds-color-neutrals-gray);
+  }
+}

@@ -1,0 +1,39 @@
+.about-kurver-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 200px;
+
+  .text-container {
+    padding: 60px 0;
+
+    h2 {
+      font-size: 40px;
+      margin-bottom: 36px;
+      line-height: 50px;
+    }
+
+    a {
+      margin-top: 24px;
+    }
+  }
+}
+
+@media (max-width: 1220px) {
+  .about-kurver-container {
+    column-gap: 80px;
+  }
+}
+
+@media (max-width: 869px) {
+  .about-kurver-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: 24px;
+    margin-bottom: 24px;
+
+    .text-container {
+      padding: 24px 0;
+    }
+  }
+}
