@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
 
-  if (/\.(png|jpg|jpeg|gif|svg|ico|css|js|json)$/.test(pathname)) {
+  if (/\.(png|jpg|jpeg|gif|svg|ico|css|js|json|ttf)$/.test(pathname)) {
     return NextResponse.next();
   }
 

@@ -1,0 +1,236 @@
+header {
+  padding: 16px 0;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      display: flex;
+      gap: 36px;
+
+      &.icons {
+        gap: 20px;
+        color: rgb(55 35 22 / 75%) !important;
+      }
+
+      a {
+        color: var(--jds-link-text-color);
+        text-decoration: none;
+        font-size: 20px;
+
+        &:hover {
+          border-bottom: 1px solid var(--jds-link-text-color);
+        }
+      }
+    }
+
+    .logo {
+      font-family: "Alegreya Header";
+      border-bottom: none;
+      text-decoration: none;
+      font-size: 36px;
+      color: inherit;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 8px;
+    }
+
+    .link-items-container {
+      display: flex;
+      align-items: center;
+      column-gap: 60px;
+    }
+
+    @media screen and (max-width: 840px) {
+      .link-container {
+        opacity: 0;
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .link-container.open-mobile-format {
+        background-color: var(--tds-color-teritary-base);
+        transform: translateY(-20px);
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
+        display: flex;
+        position: absolute;
+        left: 50%;
+        top: 65px;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+
+        ul {
+          flex-direction: column;
+        }
+      }
+    }
+
+    svg {
+      height: 32px !important;
+      width: 32px !important;
+    }
+  }
+
+  button {
+    background-color: inherit;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  header {
+    padding: 8px 0;
+
+    .logo img {
+      display: none;
+    }
+  }
+}
+
+header {
+  background-color: var(--background-color);
+  z-index: 100;
+  position: relative;
+
+  button {
+    cursor: pointer;
+  }
+}
+
+.dropdown-search {
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-color: var(--background-color);
+  overflow: auto;
+  z-index: 1;
+  max-height: calc(100vh - 80px);
+  transform: translateY(calc(-100% - 8px));
+  transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+
+  &.open {
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .search-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    button {
+      background-color: var(--background-color);
+      border: 1px solid var(--background-color);
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    .search-input {
+      width: 80%;
+      padding: 8px 8px 8px 5px; /* Add left padding to the input */
+      font-size: 14px;
+      border: none;
+    }
+  }
+
+  .hjertekurver-link-section {
+    background-color: var(--tds-color-teritary-base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0 12px 0;
+  }
+}
+
+.center-position {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
+
+.search-button {
+  width: 44px;
+  height: 44px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.search-button::before {
+  content: "";
+  position: absolute;
+  top: 22.5%;
+  right: 23.5%;
+  width: 0;
+  height: 2.5px;
+  margin-top: -2px;
+  background-color: black;
+  transform: rotate(-45deg);
+  transform-origin: right top;
+}
+
+.search-button::after {
+  content: "";
+  position: absolute;
+  bottom: 22.5%;
+  right: 23.5%;
+  width: 25%;
+  height: 2.5px;
+  margin-top: -2px;
+  background-color: black;
+  transform: rotate(45deg);
+  transform-origin: right bottom;
+}
+
+.search-icon {
+  position: absolute;
+  display: block;
+  top: 22%;
+  left: 24%;
+  width: 42%;
+  height: 42%;
+  border-radius: 50%;
+  border-width: 2.5px;
+  border-style: solid;
+  border-color: black;
+}
+
+.search-button.active::before,
+.search-button.active::after {
+  width: 77.5%;
+}
+
+.search-button.active .search-icon {
+  width: 0;
+  height: 0;
+  border-color: transparent;
+}
+
+.search-button::before,
+.search-button::after,
+.search-button .search-icon {
+  transition: all 0.3s ease-in-out;
+}
+
+.search-button.active,
+.search-button:hover {
+  background-color: #f0ebe5;
+}

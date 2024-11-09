@@ -18,10 +18,16 @@
 
   span {
     vertical-align: middle;
+    line-height: 20px;
     /* Align the text vertically in the middle */
   }
 
   &:hover {
     transition: width 0.3s ease;
+  }
+
+  &:focus {
+    outline: 2px solid var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
   }
 }

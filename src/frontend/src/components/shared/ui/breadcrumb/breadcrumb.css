@@ -1,9 +1,10 @@
 .breadcrumb-container {
-  margin: 0px 0 48px 0;
+  margin: 24px 0 48px 0;
   display: flex;
   gap: 12px;
   justify-content: flex-start;
   align-items: center;
+  font-size: 18px;
 
   .breadcrumb {
     display: inline-flex;

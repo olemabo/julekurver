@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
+import Heading from "@/components/shared/ui/heading/heading";
 
 export interface PageContent {
   title: string;
@@ -20,7 +21,7 @@ export default function StandardPage({ pageContent }: StandardPageProps) {
               { linkText: "Om siden", href: "/om-siden" },
             ]}
           />
-          <h1>{pageContent.title}</h1>
+          <Heading headingLevel="h1">{pageContent.title}</Heading>
           {pageContent?.content && (
             <div dangerouslySetInnerHTML={{ __html: pageContent?.content }} />
           )}

@@ -1,35 +1,49 @@
 "use client";
 
+import { DisplayTheme } from "@/constants/displayTheme";
 import "./button.css";
 
 type ButtonProps = {
   label: string;
   href?: string;
+  target?: string;
+  OnClick?: () => void;
+  theme?: DisplayTheme;
 };
 
-export default function Button({ label, href }: ButtonProps) {
+export default function Button({
+  label,
+  href,
+  OnClick,
+  target,
+  theme = "dark",
+}: ButtonProps) {
   if (!label) {
     return null;
   }
 
-  const handleDownload = () => {
-    if (href) {
-      const link = document.createElement("a");
-      link.href = href;
-      link.setAttribute("download", "file.svg"); // Set the desired file name here
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link); // Clean up after click
+  const handleOnCLick = () => {
+    if (OnClick) {
+      OnClick();
     }
   };
 
   if (href) {
     return (
-      <button type="button" onClick={handleDownload} className="button-link">
+      <a
+        target={target}
+        type="button"
+        href={href}
+        className={`button link ${theme}`}
+      >
         {label}
-      </button>
+      </a>
     );
   }
 
-  return <button type="button">{label}</button>;
+  return (
+    <button className={`button ${theme}`} onClick={handleOnCLick} type="button">
+      {label}
+    </button>
+  );
 }

@@ -1,0 +1,11 @@
+p {
+  max-width: var(--paragraph-max-width);
+
+  &.light {
+    color: var(--tds-color-neutrals-white);
+  }
+
+  &.dark {
+    color: var(--tds-color-neutrals-gray);
+  }
+}

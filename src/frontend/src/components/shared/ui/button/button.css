@@ -1,7 +1,5 @@
-button,
-.button-link {
+.button {
   background-color: transparent;
-  border: 1px solid black;
   padding: 16px 36px;
   text-align: center;
   display: inline-block;
@@ -9,9 +7,31 @@ button,
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 50px;
+  width: fit-content;
+  font-family: "Alegreya Sans Light";
+  transition: background-color 0.5s ease;
+
+  &.link {
+    border: 1px solid var(--tds-color-primary-base);
+    /* border-bottom: 1px solid #bc9284 !important; */
+  }
+
+  &.light {
+    border: 1px solid var(--tds-color-neutrals-white);
+    color: var(--tds-color-neutrals-white);
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      background-color: #f8f4f2;
+      color: var(--tds-color-primary-base);
+    }
+  }
+
+  &.dark {
+    color: var(--tds-color-neutrals-gray);
+  }
 }
 
-button:hover,
 .button-link:hover {
-  background-color: #929292;
+  background-color: #cfc6ba;
 }

@@ -1,22 +1,21 @@
+import { fetchWith404Check } from "@/api/fetchWrapper";
 import StandardPage, {
   PageContent,
 } from "@/components/features/standardPage/standardPage";
+import { createBackendUrl } from "@/utils/backendApiUrl";
 
 export default async function Page({ params }: { params: { page: string } }) {
   const pageName = params.page;
+  const apiBaseUrl = createBackendUrl();
 
-  const data = await fetch(
-    `http://127.0.0.1:8000/api/standard-page-api/?pageUrl=${pageName}`,
+  const pageContent = await fetchWith404Check<PageContent>(
+    `${apiBaseUrl}/api/standard-page-api/?pageUrl=${pageName}`,
     {
       next: {
-        revalidate: 3600,
+        revalidate: 1,
       },
     },
   );
-  const pageContent: PageContent = await data.json();
 
-  const parsedContent =
-    typeof pageContent === "string" ? JSON.parse(pageContent) : pageContent;
-
-  return <StandardPage pageContent={parsedContent} />;
+  return <StandardPage pageContent={pageContent} />;
 }

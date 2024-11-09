@@ -1,0 +1,32 @@
+.contact-section-container {
+  display: flex;
+  padding: 48px;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .contact-form {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+  }
+}
+
+@media (max-width: 450px) {
+  .contact-section-container {
+    flex-direction: column;
+    padding: 36px 0;
+
+    img {
+      display: none;
+    }
+
+    div {
+      width: 100%;
+    }
+  }
+}

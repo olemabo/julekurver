@@ -1,27 +1,81 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap");
 
+@font-face {
+  font-family: "Alegreya";
+  src: url("/fonts/Alegreya/Alegreya-Regular.ttf") format("truetype");
+}
+
+/* NICE FOR OVERSKFIT @font-face {
+  font-family: 'Alegreya';
+  src: url('/fonts/Alegreya/Alegreya-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/AlegreyaSans/AlegreyaSans-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Alegreya Header";
+  src: url("/fonts/Alegreya/Alegreya-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Alegreya Sans Light";
+  src: url("/fonts/AlegreyaSans/AlegreyaSans-Light.ttf") format("truetype");
+}
+
 :root {
   /* Base Tokens */
-  --primary-color: #bfbf99;
+  --tds-color-primary-base: #bc9284;
+  --tds-color-primary-base: #af8475;
+  --tds-color-primary-base: #b58474;
+  --tds-color-secondary-base: #8fa595;
+  --tds-color-teritary-base: #f0ebe5;
+  --tds-color-teritary-base: #e2dfd6;
+
+  --tds-color-neutrals-white: rgb(255, 255, 255);
+  --tds-color-neutrals-gray: #372316;
+
+  --primary-color: #bc9284;
   --secondary-color: #f0ebe5;
   --tertiary-color: #372316;
 
   --white-color: #ffffff;
   --black-color: #000000;
 
-  --font-family: "IBM Plex Sans";
+  --font-family: "Alegreya Sans";
 
   --main-page-desktop-max-width: 1440px;
   --main-page-desktop-max-width: 1200px;
 
   /* Reference Tokens */
-  --footer-color: rgb(176, 191, 180, 74);
+  --footer-color: var(--tds-color-teritary-base);
   --background-color: var(--secondary-color);
+  --background-color: #fbfaf5;
+  --focus-outline-color: var(--tds-color-secondary-base);
+  --focus-outline-offset: 2px;
 
   --text-color: var(--tertiary-color);
   --jds-link-text-color: var(--text-color);
 
   --paragraph-max-width: 600px;
+
+  --tds-search-hit-border-color: #d3d6c3;
+  --tds-search-filter-main-color: #bc9284;
+  --tds-search-hit-bg: #e1e5c83a;
+  --tds-search-hit-border-radius: 24px;
+  --tds-search-hit-bg-color-hover: #c5998a36;
+
+  --tds-pagination-height: 40px;
+  --tds-pagination-width: 40px;
+  --tds-pagination-color: #bc9284;
+  --tds-pagination-text: #bc9284;
+  --tds-pagination-color-selected: #ffffff;
 }
 
 * {
@@ -38,12 +92,12 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  overflow-x: hidden;
 
-  font-family: var(--font-family);
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Alegreya", sans-serif;
 }
 
 main {
@@ -54,8 +108,20 @@ main {
   max-width: var(--main-page-desktop-max-width);
   width: 100%;
   margin: 0 auto;
-  padding: 0 0;
-  margin: 0 auto;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (max-width: 496px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 body {
@@ -75,17 +141,19 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "IBM Plex Sans Thick", sans-serif;
-  font-style: normal;
+  font-family: "Alegreya Header", sans-serif;
   font-weight: 400;
+
+  &.hide-margins {
+    margin: 0;
+  }
 }
 
 h1,
 .heading1 {
   font-size: 32px;
   line-height: 38.4px;
-  margin-bottom: 20px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 h2,
@@ -106,24 +174,20 @@ h3,
 }
 
 p {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Alegreya Sans Light", sans-serif;
   margin-bottom: 16px;
   font-size: 16px;
   font-weight: 300;
   line-height: 32px; /* 200% */
 }
 
-.container {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px auto 60px auto;
-  max-width: var(--main-page-desktop-max-width); */
-  margin: 20px auto 60px auto;
+label {
+  font-family: "Alegreya Sans Light", sans-serif;
+}
 
-  .standard-page {
-    max-width: var(--paragraph-max-width);
-  }
+.standard-page {
+  max-width: var(--paragraph-max-width);
+  margin-bottom: 64px;
 }
 
 .default-page-container a {
