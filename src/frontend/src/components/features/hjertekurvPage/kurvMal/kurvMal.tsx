@@ -5,6 +5,7 @@ import Heading from "@/components/shared/ui/heading/heading";
 import Button from "@/components/shared/ui/button/button";
 
 import "./kurvMal.css";
+import { useState } from "react";
 
 type KurvMalProps = {
   mal1Url?: string;
@@ -17,6 +18,8 @@ export default function KurvMal({
   mal2Url,
   downloadMal,
 }: KurvMalProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
   if (!mal1Url) {
     return null;
   }
@@ -26,10 +29,17 @@ export default function KurvMal({
   const mal2SvgUrl = useDifferentMal ? createApiMediaUrl(mal2Url) : mal1SvgUrl;
   const downloadMalUrl = createApiMediaUrl(downloadMal);
 
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
   return (
     <div className="kurv-mal-container">
       <Heading headingLevel="h2">Mal</Heading>
-      <div className={`heart-container2 ${useDifferentMal ? "" : "same-mal"}`}>
+      <div
+        className={`heart-container2 ${useDifferentMal ? "" : "same-mal"} ${
+          isHovered ? "hovered" : ""
+        }`}
+      >
         <img
           alt="imageUrl"
           className="image-left"
@@ -39,7 +49,7 @@ export default function KurvMal({
         />
         {mal2SvgUrl && (
           <img
-            className={`image-right ${useDifferentMal ? "" : "flipped"}`}
+            className={`image-right ${useDifferentMal ? "two-mals" : "flipped"}`}
             alt="imageUrl"
             height={undefined}
             width={180}
@@ -48,7 +58,14 @@ export default function KurvMal({
         )}
       </div>
       {downloadMalUrl && (
-        <Button target={"_blank"} label="Last ned mal" href={downloadMalUrl} />
+        <Button
+          target={"_blank"}
+          label="Last ned mal"
+          style={{ zIndex: 10 }}
+          href={downloadMalUrl}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
       )}
     </div>
   );

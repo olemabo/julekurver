@@ -10,7 +10,7 @@
     .hamburger {
       margin-top: 6px;
       height: 3px;
-      width: 30px;
+      width: 26px;
       background-color: var(--tds-color-neutrals-gray);
       transition: 0.5s;
       position: relative;

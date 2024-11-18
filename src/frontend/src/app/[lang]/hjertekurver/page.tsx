@@ -28,5 +28,7 @@ export default async function Page({
     return null;
   }
 
+  console.log(parsedContent);
+
   return <HjertekurvCollectionPage hjertekurver={parsedContent} />;
 }

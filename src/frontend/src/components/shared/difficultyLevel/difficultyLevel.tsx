@@ -8,18 +8,32 @@ import {
   FullScissor,
   EmptyHeart,
   EmptyScissor,
+  HalfScissor,
+  HalfHeart,
+  IconSize,
 } from "./icons";
 
-type IconType = "star" | "heart" | "scissor";
+export const ICON_TYPE_SCISSOR = "scissor";
+export const ICON_TYPE_HEART = "heart";
+export const ICON_TYPE_STAR = "star";
+
+type IconType =
+  | typeof ICON_TYPE_SCISSOR
+  | typeof ICON_TYPE_HEART
+  | typeof ICON_TYPE_STAR;
 
 type DifficultyLevelProps = {
   rating?: number;
   type?: IconType;
+  iconSize?: IconSize;
+  hideEmpty?: boolean;
 };
 
 export default function DifficultyLevel({
   rating = 0,
-  type = "star",
+  type = ICON_TYPE_STAR,
+  iconSize = "medium",
+  hideEmpty = false,
 }: DifficultyLevelProps) {
   if (!rating || rating === 0) {
     return null;
@@ -28,25 +42,29 @@ export default function DifficultyLevel({
   const totalIcons = 5;
   const icons = [];
 
-  const fullIcons = Math.ceil(rating / 2);
+  const fullIcons = Math.floor(rating / 2);
   const hasHalfIcon = rating % 2 !== 0;
-  const emptyIcons = totalIcons - fullIcons - (hasHalfIcon ? 1 : 0) + 1;
+  const emptyIcons = totalIcons - fullIcons - (hasHalfIcon ? 1 : 0);
 
   const getFullIcon = () => {
-    if (type === "heart") return <FullHeart />;
-    if (type === "scissor") return <FullScissor />;
-    return <FullStar />;
+    if (type === ICON_TYPE_HEART) return <FullHeart size={iconSize} />;
+    if (type === ICON_TYPE_SCISSOR) return <FullScissor size={iconSize} />;
+    if (type === ICON_TYPE_STAR) return <FullStar size={iconSize} />;
+    return <FullHeart size={iconSize} />;
   };
 
   const getEmptyIcon = () => {
-    if (type === "heart") return <EmptyHeart />;
-    if (type === "scissor") return <EmptyScissor />;
-    return <EmptyStar />;
+    if (type === ICON_TYPE_HEART) return <EmptyHeart size={iconSize} />;
+    if (type === ICON_TYPE_SCISSOR) return <EmptyScissor size={iconSize} />;
+    if (type === ICON_TYPE_STAR) return <EmptyStar size={iconSize} />;
+    return <EmptyStar size={iconSize} />;
   };
 
   const getHalfIcon = () => {
-    if (type === "star") return <HalfStar />;
-    return null;
+    if (type === ICON_TYPE_STAR) return <HalfStar size={iconSize} />;
+    if (type === ICON_TYPE_HEART) return <HalfHeart size={iconSize} />;
+    if (type === ICON_TYPE_SCISSOR) return <HalfScissor size={iconSize} />;
+    return <HalfHeart size={iconSize} />;
   };
 
   for (let i = 0; i < fullIcons; i++) {
@@ -55,19 +73,17 @@ export default function DifficultyLevel({
     );
   }
 
-  if (hasHalfIcon && type === "star") {
+  if (hasHalfIcon) {
     icons.push(<React.Fragment key="half">{getHalfIcon()}</React.Fragment>);
   }
 
-  for (let i = 0; i < emptyIcons; i++) {
-    icons.push(
-      <React.Fragment key={`empty-${i}`}>{getEmptyIcon()}</React.Fragment>,
-    );
+  if (!hideEmpty) {
+    for (let i = 0; i < emptyIcons; i++) {
+      icons.push(
+        <React.Fragment key={`empty-${i}`}>{getEmptyIcon()}</React.Fragment>,
+      );
+    }
   }
 
-  return (
-    <div style={{ display: "flex", columnGap: "4px", margin: "16px 0" }}>
-      {icons}
-    </div>
-  );
+  return <div style={{ display: "flex", columnGap: "5px" }}>{icons}</div>;
 }

@@ -1,0 +1,38 @@
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+
+  .filter-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    input {
+      clip-path: rect(0 0 0 0);
+      position: absolute;
+      height: 1px;
+      width: 1px;
+      margin: 0;
+    }
+
+    span {
+      font-size: 18px;
+      font-weight: 500;
+      color: #bc9284;
+    }
+
+    .filter-button {
+      background-color: transparent;
+      font-weight: 600;
+      border: 1px solid #bc9284;
+      border-radius: 60px;
+      padding: 16px 40px;
+      cursor: pointer;
+
+      &.active {
+        background-color: #bc9284;
+        color: white;
+      }
+    }
+  }
+}

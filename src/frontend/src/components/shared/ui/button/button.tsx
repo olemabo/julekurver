@@ -7,24 +7,30 @@ type ButtonProps = {
   label: string;
   href?: string;
   target?: string;
-  OnClick?: () => void;
+  onClick?: () => void;
   theme?: DisplayTheme;
-};
+} & React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export default function Button({
   label,
   href,
-  OnClick,
+  onClick,
   target,
   theme = "dark",
+  className,
+  style,
+  ...rest
 }: ButtonProps) {
   if (!label) {
     return null;
   }
 
-  const handleOnCLick = () => {
-    if (OnClick) {
-      OnClick();
+  const handleOnClick = (
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+  ) => {
+    if (onClick) {
+      onClick();
     }
   };
 
@@ -32,9 +38,11 @@ export default function Button({
     return (
       <a
         target={target}
-        type="button"
         href={href}
-        className={`button link ${theme}`}
+        style={style}
+        className={`button link ${theme} ${className || ""}`}
+        onClick={handleOnClick}
+        {...rest}
       >
         {label}
       </a>
@@ -42,7 +50,13 @@ export default function Button({
   }
 
   return (
-    <button className={`button ${theme}`} onClick={handleOnCLick} type="button">
+    <button
+      className={`button ${theme} ${className || ""}`}
+      onClick={handleOnClick}
+      type="button"
+      style={style}
+      {...rest}
+    >
       {label}
     </button>
   );

@@ -8,6 +8,19 @@
   row-gap: 48px;
 }
 
+.contact-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+
+  span {
+    border-bottom: none !important;
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 450px) {
   .inspiration-section-container {
     flex-direction: column;

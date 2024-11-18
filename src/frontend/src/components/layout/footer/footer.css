@@ -42,13 +42,14 @@ footer {
   }
 
   @media screen and (max-width: 789px) {
-    .footer-container.horizontal {
+    .footer-container {
       flex-direction: column;
       align-items: flex-start;
 
       .footer-link-section {
         flex-direction: column;
         row-gap: 48px;
+        margin-bottom: 36px;
       }
     }
   }

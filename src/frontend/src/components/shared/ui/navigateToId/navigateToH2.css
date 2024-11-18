@@ -1,0 +1,22 @@
+.navigate-to-h2-container {
+  padding: 24px 0;
+  max-width: 650px;
+
+  ol {
+    list-style: none;
+
+    li {
+      border-top: 1px solid #ddd;
+      padding: 12px 0;
+      margin: 0;
+
+      &:last-child {
+        border-bottom: 1px solid #ddd;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

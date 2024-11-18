@@ -1,5 +1,7 @@
+import { lightTheme } from "@/constants/displayTheme";
 import "./lagHjertekurvSection.css";
 import JulekurvStep from "./lagHjertekurvStep";
+import Button from "@/components/shared/ui/button/button";
 
 export default function LagHjertekurvSection() {
   const julekurvSteps = [
@@ -24,15 +26,24 @@ export default function LagHjertekurvSection() {
   ];
 
   return (
-    <div className="lag-hjertekurv-section-container">
-      {julekurvSteps.map((step, index) => (
-        <JulekurvStep
-          key={index}
-          imageUrl={step.imageSrc}
-          description={step.description}
-          height={step.height}
+    <>
+      <div className="lag-hjertekurv-section-container">
+        {julekurvSteps.map((step, index) => (
+          <JulekurvStep
+            key={index}
+            imageUrl={step.imageSrc}
+            description={step.description}
+            height={step.height}
+          />
+        ))}
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Button
+          theme={lightTheme}
+          label="Hvordan lage kurver"
+          href="/no/hvordan-lage-kurver"
         />
-      ))}
-    </div>
+      </div>
+    </>
   );
 }

@@ -2,30 +2,37 @@
 
 import HowToSection from "@/components/shared/howTo/howTo";
 import Heading from "@/components/shared/ui/heading/heading";
+import Link from "@/components/shared/ui/link/link";
+import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 
 export default function HvordanLageKurver() {
   return (
     <div style={{ marginBottom: "48px" }}>
-      <Heading headingLevel="h2">Hvordan lage kurv</Heading>
-      <div>
-        <HowToSection
-          number={1}
-          description={"Last ned og skriv ut malen ovenfor. "}
-        />
-        <HowToSection
-          number={2}
-          description={
-            "Brett de ønskede delene av designpapiret og legg den nederste rette delen av de store buede malene mot brettene. Klipp så buen langs malen. Ved bretten skal papiret ikke klippes."
-          }
-        />
-        <HowToSection number={3} description="Flett hjertene." />
-        <HowToSection
-          number={4}
-          description={
-            "Klipp hankene etter malen, bøy dem på midten og lim dem fast inne i hjertene."
-          }
-        />
-      </div>
+      <Heading headingLevel="h2">Hvordan lage kurven</Heading>
+      <Paragraph>
+        Det er ikke mye som skal til for å komme igang med å lage en kurv. Her
+        kommer en kort punktliste på hvordan du kan lage kurven din. Dersom du
+        ikke har flettet mye før eller trenger oppfriskning kan du følge en mer
+        detaljert oppskrift på{" "}
+        <Link linkTitle="Lag kurver siden" href="/no/hvordan-lage-kurver" />{" "}
+        vår.
+      </Paragraph>
+      <HowToSection number={1}>
+        Last ned og skriv ut malen ovenfor.
+      </HowToSection>
+
+      <HowToSection number={2}>
+        Brett de ønskede delene av designpapiret og legg den nederste rette
+        delen av de store buede malene mot brettene. Klipp så buen langs malen.
+        Ved bretten skal papiret ikke klippes.
+      </HowToSection>
+
+      <HowToSection number={3}>Flett hjertene.</HowToSection>
+
+      <HowToSection number={4}>
+        Klipp hankene etter malen, bøy dem på midten og lim dem fast inne i
+        hjertene.
+      </HowToSection>
     </div>
   );
 }

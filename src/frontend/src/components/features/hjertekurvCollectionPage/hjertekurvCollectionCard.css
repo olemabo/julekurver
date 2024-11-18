@@ -1,8 +1,16 @@
 .hjertekurv-kartotek-section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 48px;
-  margin: 24px 0;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 36px;
+  margin-bottom: 48px;
+
+  &.small {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    .section {
+      margin: 24px 24px;
+    }
+  }
 
   a {
     text-decoration: none;
@@ -18,7 +26,25 @@
     background-color: var(--tds-search-hit-bg);
     border-radius: var(--tds-search-hit-border-radius);
 
-    img,
+    .section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      margin: 16px 0;
+      gap: 16px;
+
+      h3 {
+        color: var(--tds-search-filter-main-color);
+        font-size: 22px;
+        font-weight: 500;
+        margin: 0;
+      }
+    }
+
+    .kurv-image,
     h3 {
       transition: transform 0.5s ease;
     }
@@ -29,12 +55,12 @@
         transform: scale(0);
       }
 
-      img {
+      .kurv-image {
         transition: transform 0.5s ease;
         transform: scale(1.2) translateY(-8%);
       }
 
-      &.sm img {
+      &.small .kurv-image {
         transform: scale(1.3) translateY(-11%);
       }
 
@@ -44,60 +70,6 @@
     &:focus {
       outline: 2px solid var(--focus-outline-color);
       outline-offset: var(--focus-outline-offset);
-    }
-  }
-
-  h3 {
-    color: var(--tds-search-filter-main-color);
-    font-weight: 500;
-    margin: 0;
-  }
-
-  .section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin: 24px 12px;
-    gap: 12px;
-  }
-}
-
-.filter-container {
-  display: flex;
-  justify-content: space-between;
-
-  .filter-buttons {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    input {
-      clip-path: rect(0 0 0 0);
-      position: absolute;
-      height: 1px;
-      width: 1px;
-      margin: 0;
-    }
-
-    span {
-      font-size: 18px;
-      font-weight: 500;
-      color: #bc9284;
-    }
-
-    .filter-button {
-      background-color: transparent;
-      border: 1px solid #bc9284;
-      border-radius: 60px;
-      padding: 16px 40px;
-      cursor: pointer;
-
-      &.active {
-        background-color: #bc9284;
-        color: white;
-      }
     }
   }
 }
