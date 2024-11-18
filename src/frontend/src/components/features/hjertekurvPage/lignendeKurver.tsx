@@ -3,7 +3,6 @@
 import useLignendeHjertekurver from "./useLignendeKurver";
 import HjertekurvCollectionCard from "../hjertekurvCollectionPage/hjertekurvCollectionCard";
 import Heading from "@/components/shared/ui/heading/heading";
-import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
 
 type LignendeKurverProps = {

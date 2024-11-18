@@ -2,10 +2,7 @@ import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
 import Heading from "@/components/shared/ui/heading/heading";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
-import ListWithIllustraion, {
-  OrderedListWithIllustrationWrapper,
-} from "./listWithIllustration";
-import HowToSection from "@/components/shared/howTo/howTo";
+
 import ClipHjertekurvSection from "./clipHjertekurvSection";
 import FletteHjertekurvSection from "./fletteHjertekurvSection";
 import WhatYouNeedSection from "./whatYouNeedSection";

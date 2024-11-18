@@ -1,8 +1,6 @@
-import Image from "next/image";
-
-import "./listWithIllustration.css";
 import HowToSection, { positionTop } from "@/components/shared/howTo/howTo";
 import LazyImage from "@/components/shared/lazyImage/LazyImage";
+import "./listWithIllustration.css";
 
 export type ListhWithIllustraionProps = {
   number: number;

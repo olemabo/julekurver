@@ -70,7 +70,7 @@ export default function ContactUsSection() {
             <Button
               theme={lightTheme}
               label="Send inn tilbakemelding"
-              OnClick={handleContactUsMessage}
+              onClick={handleContactUsMessage}
             />
           </div>
         )}

@@ -148,7 +148,7 @@ export default function SearchPage({ defautlQuery }: SearchPageProps) {
         ) : (
           <>
             <p style={{ margin: 0 }}>
-              <b>0 treff på '{query}'.</b>
+              <b>0 treff på {query}.</b>
             </p>
             <p>Endre søkeord for å se andre treff.</p>
           </>

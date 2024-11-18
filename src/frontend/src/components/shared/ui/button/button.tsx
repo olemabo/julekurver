@@ -26,9 +26,7 @@ export default function Button({
     return null;
   }
 
-  const handleOnClick = (
-    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
-  ) => {
+  const handleOnClick = () => {
     if (onClick) {
       onClick();
     }
