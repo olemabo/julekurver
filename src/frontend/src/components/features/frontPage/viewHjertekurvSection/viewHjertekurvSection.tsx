@@ -265,6 +265,7 @@ import Button from "@/components/shared/ui/button/button";
 import useHjertekurver from "./useViewHjertekurvSection";
 
 import "./viewHjertekurvSection.css";
+import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
 
 export default function ViewHjertekurvSection() {
   const { data, error, loading } = useHjertekurver("");
@@ -290,7 +291,7 @@ export default function ViewHjertekurvSection() {
   }, [currentIndex, data]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <HjertekurvLoader />;
   }
 
   if (error) {

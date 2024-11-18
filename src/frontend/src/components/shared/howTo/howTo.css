@@ -1,0 +1,44 @@
+.how-to-container {
+  display: flex;
+  column-gap: 24px;
+  margin-bottom: 24px;
+
+  p {
+    margin-top: 0;
+  }
+
+  .number-with-color-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+
+    span {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      color: white;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    img {
+      width: auto;
+    }
+  }
+
+  &.top {
+    .number-with-color-container {
+      align-items: flex-start;
+
+      span {
+        top: 8px;
+        transform: translateY(0);
+      }
+    }
+  }
+}

@@ -29,6 +29,36 @@
   src: url("/fonts/AlegreyaSans/AlegreyaSans-Light.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Alegreya Sans Regular";
+  src: url("/fonts/AlegreyaSans/AlegreyaSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Alegreya Sans Thin";
+  src: url("/fonts/AlegreyaSans/AlegreyaSans-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Alegreya Sans Medium";
+  src: url("/fonts/AlegreyaSans/AlegreyaSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cardo";
+  src: url("/fonts/Cardo/Cardo-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cardo Italic";
+  src: url("/fonts/Cardo/Cardo-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cardo Regular";
+  src: url("/fonts/Cardo/Cardo-Regular.ttf") format("truetype");
+}
+
 :root {
   /* Base Tokens */
   --tds-color-primary-base: #bc9284;
@@ -84,7 +114,7 @@
   margin: 0;
 }
 
-li {
+ul li {
   list-style-type: none;
 }
 
@@ -160,8 +190,8 @@ h2,
 .heading2 {
   font-size: 24px;
   line-height: 28.8px;
-  margin-top: 16px;
-  margin-bottom: 24px;
+  margin-top: 36px;
+  margin-bottom: 16px;
 }
 
 h3,
@@ -173,12 +203,13 @@ h3,
   margin-bottom: 16px;
 }
 
-p {
+p,
+li {
   font-family: "Alegreya Sans Light", sans-serif;
   margin-bottom: 16px;
   font-size: 16px;
   font-weight: 300;
-  line-height: 32px; /* 200% */
+  line-height: 32px;
 }
 
 label {
@@ -186,16 +217,16 @@ label {
 }
 
 .standard-page {
-  max-width: var(--paragraph-max-width);
+  max-width: 750px;
   margin-bottom: 64px;
 }
 
-.default-page-container a {
+.standard-page a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  transition: color 0.3s ease; /* Add a smooth color transition on hover */
+  transition: color 0.3s ease;
   color: var(--jds-link-text-color);
   border-bottom: 1px solid var(--jds-link-text-color);
   line-height: 20px;
@@ -205,5 +236,39 @@ label {
   .page-container {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+.frontpage {
+  h2 {
+    font-size: 36px;
+  }
+}
+
+ul.custom-ul {
+  margin: 24px 0;
+
+  li {
+    max-width: 450px;
+    margin-left: 12px;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 4px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      transform: translateY(0);
+      width: 9px;
+      height: 9px;
+      background: url("/images/icons/li_icon.svg") no-repeat center center;
+      background-size: contain;
+    }
+
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
   }
 }

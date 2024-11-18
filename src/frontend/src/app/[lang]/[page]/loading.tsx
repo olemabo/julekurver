@@ -1,3 +1,9 @@
+import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
+
 export default function Loading() {
-  return <div>LOADING</div>;
+  return (
+    <div style={{ height: "500px" }}>
+      <HjertekurvLoader />
+    </div>
+  );
 }

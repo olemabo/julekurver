@@ -1,5 +1,17 @@
 class HjertekurvPageModel:
-    def __init__(self, name, about, imageHjertekurvUrl, imageHjertekurvMalUrl, imageHjertekurvMal2Url, downloadMal = '', url = '', difficulty = 0, difficultyScissor = 0, categories = []):
+    def __init__(self, 
+                 name, 
+                 about, 
+                 imageHjertekurvUrl, 
+                 imageHjertekurvMalUrl, 
+                 imageHjertekurvMal2Url,
+                 createdAt,
+                 downloadMal = '', 
+                 url = '', 
+                 difficultyFletting = 0, 
+                 difficultyKlipping = 0, 
+                 categories = []
+        ):
         ...
         self.name = name
         self.about = about
@@ -8,9 +20,10 @@ class HjertekurvPageModel:
         self.imageHjertekurvMal2Url = imageHjertekurvMal2Url
         self.downloadMal = downloadMal
         self.url = url
-        self.difficulty = difficulty
-        self.difficultyScissor = difficultyScissor
+        self.difficultyFletting = difficultyFletting
+        self.difficultyKlipping = difficultyKlipping
         self.categories = categories
+        self.createdAt = createdAt
     
     def to_dict(self):
         return {
@@ -21,7 +34,8 @@ class HjertekurvPageModel:
             'imageHjertekurvMal2Url': self.imageHjertekurvMal2Url,
             'downloadMal': self.downloadMal,
             'url': self.url,
-            'difficulty': self.difficulty,
-            'difficultyScissor': self.difficultyScissor,
+            'difficultyFletting': self.difficultyFletting,
+            'difficultyKlipping': self.difficultyKlipping,
+            'createdAt': self.createdAt,
             'categories': self.categories,
         }

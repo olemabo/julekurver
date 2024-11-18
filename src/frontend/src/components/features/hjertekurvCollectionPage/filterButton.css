@@ -1,0 +1,66 @@
+.arrow-button::before,
+.arrow-button::after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  width: 8px;
+  height: 2px;
+  background-color: black;
+  transition: transform 0.2s ease;
+}
+
+.arrow-button::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.arrow-button::after {
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.arrow-button.open::before {
+  transform: translateY(-50%) rotate(-45deg);
+}
+.arrow-button.open::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.filter-buttons-container {
+  position: "relative";
+
+  button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+  }
+
+  .dropdown {
+    margin-top: 6px;
+    position: absolute;
+    right: 48px;
+    z-index: 1;
+    background-color: var(--background-color);
+    padding: 24px;
+    border: 1px solid var(--tds-color-neutrals-gray);
+    border-radius: 20px;
+    font-size: 16px;
+    max-width: 220px;
+
+    .dropdown-option {
+      margin-bottom: 6px;
+      text-align: start;
+      line-height: 20px;
+      display: block;
+      padding: 5px 0;
+      cursor: pointer;
+
+      &.selected {
+        color: var(--tds-color-primary-base);
+        font-weight: 600;
+      }
+    }
+  }
+}

@@ -16,8 +16,8 @@ export default function Footer() {
             <Heading headingLevel="h2" withMargins={false}>
               Hjertekurver
             </Heading>
-            <Link href="/se-kurver" linkTitle="Se kurver" />
-            <Link href="/hvordan-lage-kurver" linkTitle="Lag kurver" />
+            <Link href="/no/hjertekurver" linkTitle="Se kurver" />
+            <Link href="/no/hvordan-lage-kurver" linkTitle="Lag kurver" />
           </div>
           <div className="webpage-links">
             <Heading headingLevel="h2" withMargins={false}>

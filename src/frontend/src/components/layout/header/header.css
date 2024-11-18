@@ -10,6 +10,10 @@ header {
       display: flex;
       gap: 36px;
 
+      li {
+        margin: 0;
+      }
+
       &.icons {
         gap: 20px;
         color: rgb(55 35 22 / 75%) !important;
@@ -67,7 +71,8 @@ header {
         width: 100vw;
         height: 100vh;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        padding-top: 48px;
         opacity: 1;
         pointer-events: auto;
         transform: translateY(0);
@@ -94,8 +99,12 @@ header {
   header {
     padding: 8px 0;
 
-    .logo img {
-      display: none;
+    .logo {
+      font-size: 26px !important;
+
+      img {
+        display: none;
+      }
     }
   }
 }

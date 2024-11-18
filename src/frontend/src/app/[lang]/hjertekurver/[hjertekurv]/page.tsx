@@ -3,18 +3,20 @@ import { Category } from "@/components/features/hjertekurvCollectionPage/useCate
 import HjertekurvPage from "@/components/features/hjertekurvPage/hjertekurvPage";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 
-export interface Hjertekurv {
+export type Hjertekurv = {
   name: string;
   about: string;
   imageHjertekurvUrl: string;
   url: string;
   imageHjertekurvMalUrl?: string;
   imageHjertekurvMal2Url?: string;
-  difficulty?: number;
-  difficultyScissor?: number;
+  difficultyKlipping: number;
+  difficultyFletting: number;
   downloadMal?: string;
   categories?: Category[];
-}
+  createdAt: Date;
+  popularity: number;
+};
 
 export default async function Page({
   params,

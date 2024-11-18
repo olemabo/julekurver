@@ -1,9 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "./inspirationSection.css";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 import Image from "next/image";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import Link from "@/components/shared/ui/link/link";
+
+import "./inspirationSection.css";
 
 interface InstagramImage {
   mediaUrl: string;
@@ -50,7 +54,20 @@ export default function InspirationSection() {
           />
         ))}
       </div>
-      {/* <Button label="Se alle kurver" href='no/hjertekurver' /> */}
+      <div className="contact-section-container">
+        <Link
+          icon={<InstagramIcon />}
+          linkTitle="Instagram"
+          target="_blank"
+          href="https://www.instagram.com/hjertekurver/"
+        />
+        <Link
+          icon={<PinterestIcon />}
+          linkTitle="Pinterest"
+          target="_blank"
+          href="#"
+        />
+      </div>
     </>
   );
 }

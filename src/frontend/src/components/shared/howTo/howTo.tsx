@@ -3,19 +3,28 @@
 import NumberWithColor from "./numberWithColor";
 import Paragraph from "../ui/paragraph/paragraph";
 
+import "./howTo.css";
+
+export const positionTop = "top";
+export const positionCenter = "center";
+
+export type PositionType = typeof positionTop | typeof positionCenter;
+
 type HowToSectionProps = {
   number: number;
-  description: string;
+  children: React.ReactNode;
+  position?: PositionType;
 };
 
 export default function HowToSection({
   number,
-  description,
+  children,
+  position = positionCenter,
 }: HowToSectionProps) {
   return (
-    <div style={{ display: "flex", columnGap: "24px", marginBottom: "24px" }}>
+    <div className={`how-to-container ${position}`}>
       <NumberWithColor number={number} />
-      <Paragraph style={{ marginTop: "12px" }}>{description}</Paragraph>
+      <Paragraph>{children}</Paragraph>
     </div>
   );
 }

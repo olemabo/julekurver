@@ -111,7 +111,6 @@
   .heart-container2 {
     width: fit-content;
     transition: transform 1.3s ease;
-    padding: 36px 0;
 
     .image-left,
     .image-right {
@@ -138,6 +137,26 @@
 
     &:hover .image-right {
       transform: rotate(0deg) translate(0, 0);
+
+      &.two-mals {
+        transform: rotate(0deg) scaleX(-1) scaleY(1) translate(100%, 0%);
+      }
+    }
+
+    &.hovered {
+      transform: rotate(-45deg) translate(-30%, -10%);
+    }
+
+    &.hovered .image-left {
+      transform: rotate(90deg) scaleX(-1) translate(100%, 0%);
+    }
+
+    &.hovered .image-right {
+      transform: rotate(0deg) translate(0, 0);
+
+      &.two-mals {
+        transform: rotate(0deg) scaleX(-1) scaleY(1) translate(100%, 0%);
+      }
     }
   }
 }

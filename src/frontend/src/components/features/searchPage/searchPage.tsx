@@ -13,6 +13,7 @@ import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Pagination, {
   PaginationOption,
 } from "@/components/shared/ui/pagination/pagination";
+import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 
 export enum PageType {
   StandardPage = "standardPage",
@@ -40,7 +41,7 @@ export const defaultPaginationOptions = [
 export default function SearchPage({ defautlQuery }: SearchPageProps) {
   const [searchResults, setSearchResults] = useState<SearchHits[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [query, setQuery] = useState(defautlQuery || ""); // Manage the input state here
+  const [query, setQuery] = useState(defautlQuery || "");
   const apiBaseUrl = createBackendUrl();
   const router = useRouter();
 
@@ -103,53 +104,56 @@ export default function SearchPage({ defautlQuery }: SearchPageProps) {
   );
 
   return (
-    <>
-      <div className="default-page-container">
-        <Breadcrumb
-          linkItems={[
-            { linkText: "Forside", href: "/" },
-            { linkText: "Søkeside", href: "no/search" },
-          ]}
-        />
-        <Heading headingLevel="h1">Søk</Heading>
-        <Paragraph>
-          Her kan du søke gjennom alt innhold på hjertekurver.no. Dersom du
-          ønsker å søke på hjertekurver kan vi anbefale å gjøre dette gjennom
-          vår egen søke-side for <a href="/no/hjertekurver">hjerkurver</a>.
-        </Paragraph>
-        <Search
-          defaultValue={query}
-          placeholder={"Søk"}
-          onClick={handleSearch}
-          isLoading={loading}
-        />
+    <PageWrapper>
+      <Breadcrumb
+        linkItems={[
+          { linkText: "Forside", href: "/" },
+          { linkText: "Søkeside", href: "no/search" },
+        ]}
+      />
+      <Heading headingLevel="h1">Søk</Heading>
+      <Paragraph>
+        Her kan du søke gjennom alt innhold på hjertekurver.no. Dersom du ønsker
+        å søke på hjertekurver kan vi anbefale å gjøre dette gjennom vår egen
+        søke-side for <a href="/no/hjertekurver">hjerkurver</a>.
+      </Paragraph>
+      <Search
+        defaultValue={query}
+        placeholder={"Søk"}
+        onClick={handleSearch}
+        isLoading={loading}
+      />
 
-        <div style={{ maxWidth: "700px" }}>
-          {showSearchResults ? (
-            <div>
-              <label style={{ display: "block", marginBottom: "12px" }}>
-                <b>{searchResults.length}</b>
-                {` treff på '${query}'`}
-              </label>
-              <ul>
-                {paginatedData.map((hit) => (
-                  <SearchResultItem query={query} key={hit.url} hit={hit} />
-                ))}
-              </ul>
-              <Pagination
-                selectOptions={defaultPaginationOptions}
-                onChange={paginationUpdate}
-                onSelectOptionChange={handlePageSizeChange}
-                defaultPage={1}
-                defaultPageSize={pageSize}
-                total={numberOfHits}
-              />
-            </div>
-          ) : (
-            <p>No results found for: {query}</p>
-          )}
-        </div>
+      <div style={{ maxWidth: "700px" }}>
+        {showSearchResults ? (
+          <div>
+            <label style={{ display: "block", marginBottom: "12px" }}>
+              <b>{searchResults.length}</b>
+              {` treff på '${query}'`}
+            </label>
+            <ul>
+              {paginatedData.map((hit) => (
+                <SearchResultItem query={query} key={hit.url} hit={hit} />
+              ))}
+            </ul>
+            <Pagination
+              selectOptions={defaultPaginationOptions}
+              onChange={paginationUpdate}
+              onSelectOptionChange={handlePageSizeChange}
+              defaultPage={1}
+              defaultPageSize={pageSize}
+              total={numberOfHits}
+            />
+          </div>
+        ) : (
+          <>
+            <p style={{ margin: 0 }}>
+              <b>0 treff på {query}.</b>
+            </p>
+            <p>Endre søkeord for å se andre treff.</p>
+          </>
+        )}
       </div>
-    </>
+    </PageWrapper>
   );
 }

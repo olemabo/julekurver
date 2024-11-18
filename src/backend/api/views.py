@@ -60,9 +60,10 @@ class HjertekurvPageAPIView(APIView):
                     imageHjertekurvMal2Url=hjertekurv[0].image_hjertekurv_mal2.name,
                     downloadMal=hjertekurv[0].download_mal.name,
                     url=hjertekurv[0].url_name,
-                    difficulty=hjertekurv[0].difficulty_level,
-                    difficultyScissor=hjertekurv[0].difficulty_level_scissor,
-                )
+                    difficultyFletting=hjertekurv[0].difficulty_fletting,
+                    difficultyKlipping=hjertekurv[0].difficulty_klipping,
+                    createdAt=hjertekurv[0].created_at
+            )
                             
             return JsonResponse(response.to_dict(), safe=False)
 
@@ -93,8 +94,10 @@ class HjertekurverPageAPIView(APIView):
                         imageHjertekurvMalUrl = hjertekurv.image_hjertekurv_mal.name,
                         imageHjertekurvMal2Url = hjertekurv.image_hjertekurv_mal2.name,
                         url = hjertekurv.url_name,
-                        difficulty= hjertekurv.difficulty_level,
-                        categories = categories
+                        difficultyKlipping = hjertekurv.difficulty_klipping,
+                        difficultyFletting = hjertekurv.difficulty_fletting,
+                        categories = categories,
+                        createdAt=hjertekurv.created_at
                     )
 
                     hjertekurv_list.append(hjertekurvPageModel.to_dict())
@@ -142,7 +145,9 @@ class RelatedKurverAPIView(APIView):
                         imageHjertekurvMalUrl = kurv.image_hjertekurv_mal.name,
                         imageHjertekurvMal2Url = kurv.image_hjertekurv_mal2.name,
                         url = kurv.url_name,
-                        difficulty = kurv.difficulty_level
+                        difficultyFletting = kurv.difficulty_fletting,
+                        difficultyKlipping = kurv.difficulty_klipping,
+                        createdAt = kurv.created_at,
                 )
 
                 related_data.append(hjertekurvPageModel.to_dict())   
@@ -166,8 +171,8 @@ class WebpageSearchAPIView(APIView):
             hits = []
 
             hjertekurv_results = Hjertekurv.objects.filter(
-                Q(name__icontains=query) |  # Search in 'name'
-                Q(about__icontains=query)    # Search in 'about'
+                Q(name__icontains=query) |
+                Q(about__icontains=query)
             )
 
             for hjertekurv in hjertekurv_results:
@@ -176,14 +181,13 @@ class WebpageSearchAPIView(APIView):
                     title=hjertekurv.name,
                     description=hjertekurv.about,
                     type='hjertekurvPage',
-                    image_url=hjertekurv.image_hjertekurv.name
+                    image_url=hjertekurv.hjertekurv_image.name
                 )
                 hits.append(hit.to_dict())
 
-            # Searching in StandardPage
             standard_page_results = StandardPage.objects.filter(
-                Q(title__icontains=query) |  # Search in 'title'
-                Q(content__icontains=query)   # Search in 'content'
+                Q(title__icontains=query) | 
+                Q(content__icontains=query)
             )
 
             for standard_page in standard_page_results:
@@ -198,7 +202,6 @@ class WebpageSearchAPIView(APIView):
             return JsonResponse(hits, safe=False)
         
         except Exception as e:
-            # Catch any exceptions and print detailed error information
             import traceback
             print("An error occurred:", e)
             traceback.print_exc()  # Print the traceback to help with debugging

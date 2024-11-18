@@ -1,22 +1,32 @@
 "use client";
 
 import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
-import "./hjertekurvCollectionCard.css";
 import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
 import { useState } from "react";
 import Heading from "@/components/shared/ui/heading/heading";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import HjertekurvCollectionCard from "./hjertekurvCollectionCard";
-import { Category } from "./useCategories";
 import Pagination, {
   PaginationOption,
 } from "@/components/shared/ui/pagination/pagination";
 import Search from "@/components/shared/ui/search/search";
+import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
+
+import "./hjertekurvCollectionCard.css";
+import FilterButton from "./filterButton";
+import { filterAndSortHjertekurver, HjertekurvFilterType } from "./sort";
+import CategoryFilterToggle from "./categories";
+import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
 
 export const defaultPaginationOptions = [
   { label: "12", value: 12 },
   { label: "24", value: 24 },
   { label: "48", value: 48 },
+];
+
+const linkItems = [
+  { linkText: "Forside", href: "/" },
+  { linkText: "Hjertekurver", href: "/hjertekurver" },
 ];
 
 export type HjertekurvCollectionPageProps = {
@@ -30,29 +40,18 @@ export function HjertekurvCollectionPage({
   const [paginationNumber, setPaginationNumber] = useState(1);
   const [pageSize, setPageSize] = useState(defaultPaginationOptions[0].value);
   const [selectedCategories, setSelectedCategories] = useState<number[]>([]);
-
-  const numberOfHits = hjertekurver?.length;
-
-  const filteredHjertekurver = hjertekurver?.filter(
-    (hjertekurv) =>
-      hjertekurv.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-      (selectedCategories.length === 0 ||
-        hjertekurv.categories?.some((cat) =>
-          selectedCategories.includes(cat.id),
-        )),
+  const [selectedFilter, setSelectedFilter] = useState(
+    HjertekurvFilterType.Alphabetic,
   );
 
-  const uniqueCategories = Array.from(
-    hjertekurver
-      .flatMap((hjertekurv) => hjertekurv.categories || [])
-      .reduce((map, category) => {
-        map.set(category.id, category);
-        return map;
-      }, new Map<number, Category>())
-      .values(),
+  const filteredAndSortedHjertekurver = filterAndSortHjertekurver(
+    hjertekurver,
+    searchQuery,
+    selectedCategories,
+    selectedFilter,
   );
 
-  const paginatedData = filteredHjertekurver.slice(
+  const paginatedData = filteredAndSortedHjertekurver.slice(
     (paginationNumber - 1) * pageSize,
     (paginationNumber - 1) * pageSize + pageSize,
   );
@@ -76,67 +75,62 @@ export function HjertekurvCollectionPage({
   };
 
   return (
-    <>
-      <div style={{ marginBottom: "64px" }} className="default-page-container">
-        <Breadcrumb
-          linkItems={[
-            { linkText: "Forside", href: "/" },
-            { linkText: "Hjertekurver", href: "/hjertekurver" },
-          ]}
+    <PageWrapper>
+      <Breadcrumb linkItems={linkItems} />
+      <Heading headingLevel="h1">Søk blant hjertekurver</Heading>
+      <Paragraph maxWidth={450}>
+        Søk blant alle våre hjertekurver ved hjelp av søkefunksjonaliteten vår.
+        Sorter på vanskelighetsgrad og andre ting. Det er det bare å gjøre ja
+        før du spør om ting, ikke sant?
+      </Paragraph>
+      <div className="filter-container">
+        <Search
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder={"Søk etter hjertekurver"}
         />
-        <div>
-          <Heading headingLevel="h1">Søk blant hjertekurver</Heading>
-          <Paragraph>
-            Søk blant alle våre hjertekurver ved hjelp av søkefunksjonaliteten
-            vår. Sorter på vanskelighetsgrad og andre ting. Det er det bare å
-            gjøre ja før du spør om ting, ikke sant?
-          </Paragraph>
-          <div>
-            <div className="filter-container">
-              <Search
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={"Søk etter hjertekurver her ..."}
-              />
-              <div className="filter-buttons">
-                {uniqueCategories.map((value) => (
-                  <label htmlFor={`toggleButton-${value.id}`} key={value.id}>
-                    <input id={`toggleButton-${value.id}`} type="checkbox" />
-                    <span
-                      className={`filter-button ${selectedCategories.includes(value.id) ? "active" : ""}`}
-                      onClick={() => handleCategoryToggle(value.id)}
-                    >
-                      {value.name}
-                    </span>
-                  </label>
-                ))}
-              </div>
-            </div>
-            {filteredHjertekurver && filteredHjertekurver.length > 0 ? (
-              <>
-                <div className="hjertekurv-kartotek-section">
-                  {paginatedData.map((hjertekurv, index) => (
-                    <HjertekurvCollectionCard
-                      key={hjertekurv.name || index}
-                      hjertekurv={hjertekurv}
-                    />
-                  ))}
-                </div>
-                <Pagination
-                  selectOptions={defaultPaginationOptions}
-                  onChange={paginationUpdate}
-                  onSelectOptionChange={handlePageSizeChange}
-                  defaultPage={1}
-                  defaultPageSize={pageSize}
-                  total={numberOfHits}
-                />
-              </>
-            ) : (
-              <div>No content found</div>
-            )}
-          </div>
-        </div>
+        <CategoryFilterToggle
+          hjertekurver={hjertekurver}
+          selectedCategories={selectedCategories}
+          handleCategoryToggle={(categoryId) =>
+            handleCategoryToggle(categoryId)
+          }
+        />
       </div>
-    </>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <p>
+          Antall treff: <b>{filteredAndSortedHjertekurver.length}</b>
+        </p>
+        <FilterButton
+          currentFilter={selectedFilter}
+          onSelectFilter={(filterValue) => setSelectedFilter(filterValue)}
+        />
+      </div>
+      {filteredAndSortedHjertekurver?.length > 0 ? (
+        <>
+          <div className="hjertekurv-kartotek-section">
+            {paginatedData.map((hjertekurv, index) => (
+              <HjertekurvCollectionCard
+                key={hjertekurv.name || index}
+                hjertekurv={hjertekurv}
+              />
+            ))}
+          </div>
+          <Pagination
+            selectOptions={defaultPaginationOptions}
+            onChange={paginationUpdate}
+            onSelectOptionChange={handlePageSizeChange}
+            defaultPage={1}
+            defaultPageSize={pageSize}
+            total={filteredAndSortedHjertekurver.length}
+          />
+        </>
+      ) : (
+        <div>
+          Ingen treff på søk/filter
+          <HjertekurvLoader />
+        </div>
+      )}
+    </PageWrapper>
   );
 }
 

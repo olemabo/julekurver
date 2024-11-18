@@ -1,5 +1,6 @@
 p {
   max-width: var(--paragraph-max-width);
+  font-size: 18px;
 
   &.light {
     color: var(--tds-color-neutrals-white);
