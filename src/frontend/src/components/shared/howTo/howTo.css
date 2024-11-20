@@ -1,7 +1,7 @@
 .how-to-container {
   display: flex;
   column-gap: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 
   p {
     margin-top: 0;
@@ -36,7 +36,7 @@
       align-items: flex-start;
 
       span {
-        top: 8px;
+        top: 3px;
         transform: translateY(0);
       }
     }

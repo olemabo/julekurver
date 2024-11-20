@@ -96,7 +96,7 @@ export function HjertekurvCollectionPage({
           }
         />
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div className="hits-and-filer-container">
         <p>
           Antall treff: <b>{filteredAndSortedHjertekurver.length}</b>
         </p>

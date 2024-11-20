@@ -1,26 +1,21 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, TextareaHTMLAttributes, useState } from "react";
 import "./textarea.css";
 
-type TextAreaProps = {
+type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   value: string;
-  rows?: number;
-  cols?: number;
-  onChange?: (message: string) => void;
-  maxLength?: number;
-  placeholder?: string;
-  maxWidth?: number;
+  customOnChange?: (message: string) => void;
   errorMessage?: string;
+  maxWidth?: number;
 };
 
 const TextArea = ({
   value,
-  placeholder = "Enter text here...",
-  rows = 4,
-  maxWidth = 600,
-  cols = 50,
-  onChange,
-  maxLength,
+  customOnChange,
   errorMessage,
+  maxWidth = 600,
+  rows = 4,
+  cols = 50,
+  ...rest
 }: TextAreaProps) => {
   const [internalValue, setInternalValue] = useState(value || "");
 
@@ -28,23 +23,21 @@ const TextArea = ({
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = event.target.value;
     setInternalValue(newValue);
-    if (onChange) {
-      onChange(newValue);
+    if (customOnChange) {
+      customOnChange(newValue);
     }
   };
 
   return (
-    <div style={{ maxWidth: maxWidth }} className="textarea-container">
+    <div style={{ maxWidth: maxWidth || 600 }} className="textarea-container">
       <textarea
-        className="custom-textarea"
-        value={value !== undefined ? value : internalValue}
-        placeholder={placeholder}
         rows={rows}
         cols={cols}
-        maxLength={maxLength}
+        className={`custom-textarea ${rest.className || ""}`}
+        value={value !== undefined ? value : internalValue}
         onChange={(e) => handleChange(e)}
+        {...rest}
       />
-      {/* Conditional rendering for error message */}
       {errorMessage && <span className="error-message">{errorMessage}</span>}
     </div>
   );

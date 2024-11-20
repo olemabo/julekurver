@@ -29,11 +29,14 @@ export default function FrontPage() {
         <LagJulekurvSection />
       </FullWidthWrapper>
       <FullWidthWrapper>
-        <ContentHeader title="Bli inspirert" theme={darkTheme} />
-        <InspirationSection />
+        <div style={{ height: "48px" }}></div>
       </FullWidthWrapper>
       <FullWidthWrapper color={bgColorThemeRed}>
         <ContactUsSection />
+      </FullWidthWrapper>
+      <FullWidthWrapper>
+        <ContentHeader title="Bli inspirert" theme={darkTheme} />
+        <InspirationSection />
       </FullWidthWrapper>
     </PageWrapper>
   );

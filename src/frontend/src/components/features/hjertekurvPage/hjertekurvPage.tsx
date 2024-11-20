@@ -12,6 +12,9 @@ import KurvMal from "./kurvMal/kurvMal";
 import KurvConverter from "./kurvColorConverter/kurvColorConverter";
 
 import "./hjertekurv.css";
+import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
+import Bold from "@/components/shared/ui/bold/bold";
+import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 
 export type HjertekurvPageProps = {
   hjertekurv: Hjertekurv;
@@ -37,16 +40,16 @@ export default function JulekurvPage({ hjertekurv }: HjertekurvPageProps) {
     return null;
   }
 
+  const breadCrumbLinks = [
+    { linkText: "Forside", href: "/" },
+    { linkText: "Hjertekurver", href: "/hjertekurver" },
+    { linkText: name, href: `/hjertekurver/${url}` },
+  ];
+
   return (
-    <div className="default-page-container julekurv-page">
-      <Breadcrumb
-        linkItems={[
-          { linkText: "Forside", href: "/" },
-          { linkText: "Hjertekurver", href: "/hjertekurver" },
-          { linkText: name, href: `/hjertekurver/${url}` },
-        ]}
-      />
-      <div style={{ display: "flex", columnGap: "48px" }}>
+    <PageWrapper className="hjertekurv-page">
+      <Breadcrumb linkItems={breadCrumbLinks} />
+      <div className="hjertekurv-page-container">
         <div>
           <Heading headingLevel="h1">{name}</Heading>
           <p
@@ -54,47 +57,30 @@ export default function JulekurvPage({ hjertekurv }: HjertekurvPageProps) {
             dangerouslySetInnerHTML={{ __html: about }}
           />
 
-          <b
-            style={{
-              fontFamily: "'Alegreya Sans Medium'",
-              display: "block",
-              margin: "24px 0 12px 0",
-            }}
-          >
-            Vanskelighetsgrad fletting:{" "}
-          </b>
+          <div className="kurv-converter-mobile">
+            <KurvConverter imageUrl={imageUrl} />
+          </div>
+
+          <Bold asBlock>Vanskelighetsgrad fletting:</Bold>
           <DifficultyLevel
             iconSize="medium"
             type={ICON_TYPE_HEART}
             rating={difficultyFletting}
           />
-          <b
-            style={{
-              fontFamily: "'Alegreya Sans Medium'",
-              display: "block",
-              margin: "24px 0 12px 0",
-            }}
-          >
-            Vanskelighetsgrad klipping:{" "}
-          </b>
+          <Bold asBlock>Vanskelighetsgrad klipping:</Bold>
           <DifficultyLevel
             iconSize="medium"
             type={ICON_TYPE_SCISSOR}
             rating={difficultyKlipping}
           />
-          <p style={{ marginTop: "24px" }}>
-            <b
-              style={{
-                fontFamily: "'Alegreya Sans Medium'",
-                margin: "24px 0 12px 0",
-              }}
-            >
-              Opprettet:{" "}
-            </b>{" "}
+          <Paragraph style={{ marginTop: "24px" }}>
+            <Bold>Lagt til:</Bold>
             {new Date(createdAt).toLocaleDateString()}
-          </p>
+          </Paragraph>
         </div>
-        <KurvConverter imageUrl={imageUrl} />
+        <div className="kurv-converter-desktop">
+          <KurvConverter imageUrl={imageUrl} />
+        </div>
       </div>
       <KurvMal
         mal1Url={imageHjertekurvMalUrl}
@@ -103,6 +89,6 @@ export default function JulekurvPage({ hjertekurv }: HjertekurvPageProps) {
       />
       <HvordanLageKurver />
       <LignendeKurver url={url} />
-    </div>
+    </PageWrapper>
   );
 }

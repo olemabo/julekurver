@@ -13,8 +13,8 @@ export default function NumberWithColor({ number }: NumberWithColorProps) {
       <Image
         src="/images/pages/number_background.svg"
         alt="Number color background"
-        width={48}
-        height={48}
+        width={40}
+        height={40}
       />
     </div>
   );

@@ -1,5 +1,7 @@
-const DefaultPage = () => {
-  return <h1>hjertekurver.no is live!</h1>;
-};
-
-export default DefaultPage;
+export default function DefaultPage() {
+  return (
+    <div>
+      <h1>This is the default page</h1>
+    </div>
+  );
+}

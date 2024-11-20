@@ -5,20 +5,20 @@
   margin: 24px 0;
 
   &.light {
-    color: var(--tds-color-neutrals-white);
+    color: var(--tds-color-light-theme);
 
     h2::before,
     h2::after {
-      background-color: var(--tds-color-neutrals-white);
+      background-color: var(--tds-color-light-theme);
     }
   }
 
   &.dark {
-    color: var(--tds-color-neutrals-gray);
+    color: var(--tds-color-dark-theme);
 
     h2::before,
     h2::after {
-      background-color: var(--tds-color-neutrals-gray);
+      background-color: var(--tds-color-dark-theme);
     }
   }
 

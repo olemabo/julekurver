@@ -9,7 +9,7 @@ export default function HvordanLageKurver() {
   return (
     <div style={{ marginBottom: "48px" }}>
       <Heading headingLevel="h2">Hvordan lage kurven</Heading>
-      <Paragraph>
+      <Paragraph style={{ marginBottom: "36px" }}>
         Det er ikke mye som skal til for å komme igang med å lage en kurv. Her
         kommer en kort punktliste på hvordan du kan lage kurven din. Dersom du
         ikke har flettet mye før eller trenger oppfriskning kan du følge en mer

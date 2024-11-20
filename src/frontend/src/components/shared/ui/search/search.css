@@ -39,6 +39,16 @@
       &::placeholder {
         font-style: italic;
       }
+
+      &:focus {
+        outline: 2px solid var(--focus-outline-color);
+        outline-offset: var(--focus-outline-offset);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--focus-outline-color);
+        outline-offset: var(--focus-outline-offset);
+      }
     }
 
     button {

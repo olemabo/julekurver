@@ -54,7 +54,7 @@ export default function InspirationSection() {
           />
         ))}
       </div>
-      <div className="contact-section-container">
+      <div className="social-media-links-container">
         <Link
           icon={<InstagramIcon />}
           linkTitle="Instagram"

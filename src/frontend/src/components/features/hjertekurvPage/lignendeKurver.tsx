@@ -25,7 +25,7 @@ export default function LignendeKurver({ url }: LignendeKurverProps) {
   }
 
   return (
-    <div>
+    <>
       <Heading headingLevel="h2">Lignende kurver</Heading>
       <div
         style={{ marginTop: "36px" }}
@@ -40,6 +40,6 @@ export default function LignendeKurver({ url }: LignendeKurverProps) {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }

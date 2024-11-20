@@ -55,15 +55,15 @@
       font-size: 18px;
 
       &:hover {
-        background-color: #bc928442;
+        background-color: var(--tds-pagination-bg-color-hover);
       }
 
       &.active:hover {
-        background-color: #b97f6b;
+        background-color: var(--tds-pagination-bg-color-selected-hover);
       }
 
       &.active {
-        background-color: var(--tds-pagination-color);
+        background-color: var(--tds-pagination-bg-color-selected);
         color: var(--tds-pagination-color-selected);
       }
 

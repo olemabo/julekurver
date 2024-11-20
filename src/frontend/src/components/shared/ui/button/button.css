@@ -23,18 +23,20 @@
   }
 
   &.light {
-    border: 1px solid var(--tds-color-neutrals-white);
-    color: var(--tds-color-neutrals-white);
+    border: 1px solid var(--tds-color-light-theme);
+    color: var(--tds-color-light-theme);
     transition: background-color 0.5s ease;
 
     &:hover {
-      background-color: #f8f4f2;
+      background-color: var(--tds-color-light-theme);
       color: var(--tds-color-primary-base);
+      font-weight: 600;
     }
   }
 
   &.dark {
-    color: var(--tds-color-neutrals-gray);
+    color: var(--tds-color-dark-theme);
+    border: 1px solid var(--tds-color-dark-theme-border);
   }
 }
 

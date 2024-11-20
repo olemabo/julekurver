@@ -5,10 +5,10 @@ import Paragraph from "../ui/paragraph/paragraph";
 
 import "./howTo.css";
 
-export const positionTop = "top";
-export const positionCenter = "center";
+export const POSITION_TOP = "top";
+export const POSITION_CENTER = "center";
 
-export type PositionType = typeof positionTop | typeof positionCenter;
+export type PositionType = typeof POSITION_TOP | typeof POSITION_CENTER;
 
 type HowToSectionProps = {
   number: number;
@@ -19,7 +19,7 @@ type HowToSectionProps = {
 export default function HowToSection({
   number,
   children,
-  position = positionCenter,
+  position = POSITION_TOP,
 }: HowToSectionProps) {
   return (
     <div className={`how-to-container ${position}`}>

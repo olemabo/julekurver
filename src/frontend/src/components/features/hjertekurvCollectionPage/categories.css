@@ -1,9 +1,12 @@
 .filter-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 
   .filter-buttons {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 12px;
 
@@ -26,8 +29,14 @@
       font-weight: 600;
       border: 1px solid #bc9284;
       border-radius: 60px;
-      padding: 16px 40px;
+      padding: 10px 36px;
       cursor: pointer;
+      display: block;
+
+      @media screen and (max-width: 496px) {
+        padding: 8px 30px;
+        font-size: 16px;
+      }
 
       &.active {
         background-color: #bc9284;
