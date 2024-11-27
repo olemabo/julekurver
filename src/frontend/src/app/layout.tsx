@@ -50,16 +50,18 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   //       </body>
   //     </html>
   // }
-  const isVisible = process.env.NEXT_PUBLIC_IS_VISIBLE === 'true';
+  const isVisible = process.env.NEXT_PUBLIC_IS_VISIBLE === "true";
 
   if (!isVisible) {
-    return <html>
+    return (
+      <html>
         <body>
           <div style={{ height: "500px" }}>
             <HjertekurvLoader />
           </div>
         </body>
       </html>
+    );
   }
   return children;
 };
