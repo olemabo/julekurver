@@ -23,7 +23,7 @@ export default function FullWidthWrapper({
     <div
       className={`full-width-wrapper-container ${color ?? bgColorThemeDefault}`}
     >
-      {children}
+      <div className="container">{children}</div>
     </div>
   );
 }

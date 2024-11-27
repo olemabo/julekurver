@@ -9,14 +9,10 @@ import AboutKurverSection from "./aboutKurverSection/aboutKurverSection";
 import ViewHjertekurvSection from "./viewHjertekurvSection/viewHjertekurvSection";
 import InspirationSection from "./inspirationSection/inspirationSection";
 import ContactUsSection from "./contactUsSection/contactUsSection";
-import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 
 export default function FrontPage() {
   return (
-    <PageWrapper
-      withBottomMargin={false}
-      className="default-page-container frontpage"
-    >
+    <div className="default-page-container frontpage">
       <FullWidthWrapper color={bgColorThemeRed}>
         <AboutKurverSection />
       </FullWidthWrapper>
@@ -38,6 +34,6 @@ export default function FrontPage() {
         <ContentHeader title="Bli inspirert" theme={darkTheme} />
         <InspirationSection />
       </FullWidthWrapper>
-    </PageWrapper>
+    </div>
   );
 }
