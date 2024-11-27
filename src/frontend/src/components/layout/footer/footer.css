@@ -32,14 +32,6 @@ footer {
       font-size: 18px;
       line-height: 22px;
       color: var(--footer-link-color);
-      transition:
-        color 0.5s,
-        border-bottom 0.5s;
-
-      span {
-        border-bottom: 1px solid var(--footer-link-color) !important;
-        transition: border-bottom 0.5s;
-      }
 
       &:hover span {
         border-bottom: 1px solid transparent;

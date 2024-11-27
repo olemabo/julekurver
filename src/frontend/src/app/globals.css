@@ -77,7 +77,7 @@
 
   --primary-color: #bc9284;
   --secondary-color: #f0ebe5;
-  --tertiary-color: #372316;
+  --tertiary-color: #292624;
 
   --white-color: #ffffff;
   --black-color: #000000;
@@ -99,7 +99,8 @@
   --focus-outline-offset: 2px;
 
   --text-color: var(--tertiary-color);
-  --jds-link-text-color: var(--text-color);
+  --jds-link-text-color: var(--tds-color-primary-base);
+  --jds-link-text-color-dark: var(--tds-color-neutrals-gray);
 
   --paragraph-max-width: 600px;
 
@@ -118,9 +119,20 @@
   --tds-pagination-bg-color-selected-hover: #b97f6b;
   --tds-pagination-color-selected: #ffffff;
 
+  --tds-pagination-bg-color-selected: #9b776b;
+  --tds-pagination-bg-color-hover: #bc928442;
+  --tds-pagination-bg-color-selected-hover: var(--tds-color-primary-base);
+  --tds-pagination-color-selected: #ffffff;
+
   --tds-color-light-theme: #cbc1bb;
   --tds-color-dark-theme: #514b4b;
   --tds-color-dark-theme-border: #514b4b;
+
+  --tds-color-filter-button-border: #bc9284;
+  --tds-color-filter-button-border: var(--tds-color-primary-base);
+  --tds-color-filter-button-bg: #9b776b;
+  --tds-color-filter-button-bg: var(--tds-color-primary-base);
+  --tds-color-filter-button-bg: #8b6657;
 }
 
 * {
@@ -134,9 +146,22 @@ ul li {
 }
 
 a {
+  text-decoration: underline;
   text-underline-offset: 4px;
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s,
+    text-decoration-color 0.3s,
+    outline-offset 0.3s;
   color: var(--jds-link-text-color);
+
+  &:hover {
+    text-decoration-color: transparent;
+  }
+}
+
+::selection {
+  background-color: #bc928442;
+  color: var(--tds-color-dark-theme);
 }
 
 body {
@@ -213,15 +238,21 @@ h2,
   line-height: 28.8px;
   margin-top: 36px;
   margin-bottom: 16px;
+
+  @media screen and (max-width: 780px) {
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+  }
 }
 
 h3,
 .heading3 {
   font-size: 20px;
   line-height: 24px;
-  font-weight: 400;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 24px;
+  margin-bottom: 14px;
 }
 
 p,
@@ -240,17 +271,6 @@ label {
 .standard-page {
   max-width: 750px;
   margin-bottom: 64px;
-}
-
-.standard-page a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  color: var(--jds-link-text-color);
-  border-bottom: 1px solid var(--jds-link-text-color);
-  line-height: 20px;
 }
 
 @media screen and (max-width: 780px) {
@@ -288,8 +308,6 @@ ul.custom-ul {
       background-size: contain;
     }
 
-    display: flex;
-    align-items: flex-start;
     gap: 8px;
   }
 }

@@ -20,12 +20,23 @@ header {
       }
 
       a {
-        color: var(--jds-link-text-color);
-        text-decoration: none;
+        color: var(--jds-link-text-color-dark);
         font-size: 20px;
+        transition:
+          color 0.3s,
+          text-decoration-thickness 0.3s,
+          outline-offset 0.3s,
+          text-decoration-color 0.3s;
+        text-decoration-color: transparent;
+        text-decoration-thickness: from-font;
 
         &:hover {
-          border-bottom: 1px solid var(--jds-link-text-color);
+          transition:
+            color 0.3s,
+            text-decoration-thickness 0.3s,
+            outline-offset 0.3s;
+          text-decoration: underline;
+          text-decoration-thickness: from-font;
         }
       }
     }

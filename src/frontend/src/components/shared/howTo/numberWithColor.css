@@ -12,8 +12,16 @@
     left: 0;
     right: 0;
     transform: translateY(-40%);
-    color: white;
+    color: var(--tds-color-light-theme);
     text-align: center;
     font-weight: 600;
+  }
+
+  &.dark span {
+    color: var(--tds-color-neutrals-white);
+  }
+
+  &.light {
+    font-weight: 400;
   }
 }

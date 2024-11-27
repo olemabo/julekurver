@@ -21,9 +21,21 @@
       left: 0;
       right: 0;
       transform: translateY(-50%);
-      color: white;
+      color: var(--tds-color-light-theme);
       text-align: center;
       font-weight: 600;
+      font-family: "Alegreya";
+      line-height: 32px;
+    }
+
+    &.dark span {
+      color: var(--tds-color-neutrals-white);
+    }
+
+    &.light span {
+      font-weight: 400;
+      transform: translateY(-40%);
+      top: 5px !important;
     }
 
     img {

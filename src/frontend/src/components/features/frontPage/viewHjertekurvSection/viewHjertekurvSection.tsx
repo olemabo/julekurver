@@ -258,37 +258,35 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
-import { createApiMediaUrl } from "@/utils/backendApiUrl";
-import Image from "next/image";
 import Button from "@/components/shared/ui/button/button";
 import useHjertekurver from "./useViewHjertekurvSection";
 
 import "./viewHjertekurvSection.css";
 import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
+import Paragraph from "@/components/shared/ui/paragraph/paragraph";
+import HjertekurvCarousel from "./hjertekurvCarousel";
 
 export default function ViewHjertekurvSection() {
   const { data, error, loading } = useHjertekurver("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(0); // Position for scrolling
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const [scrollPosition, setScrollPosition] = useState(0);
 
-  useEffect(() => {
-    const totalItems = data?.length || 0;
-    const interval = setInterval(() => {
-      setScrollPosition((prev) => (prev + 1) % totalItems); // Increment scroll position
-      setCurrentIndex((prev) => (prev + 1) % totalItems); // Update index for manual controls
-    }, 4000000); // Change item every 6 seconds
+  // useEffect(() => {
+  //   const totalItems = data?.length || 0;
+  //   const interval = setInterval(() => {
+  //     setScrollPosition((prev) => (prev + 1) % totalItems);
+  //     setCurrentIndex((prev) => (prev + 1) % totalItems);
+  //   }, 2000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [data]);
+  //   return () => clearInterval(interval);
+  // }, [data]);
 
-  useEffect(() => {
-    // Update the transform property to scroll
-    if (data) {
-      const width = 324; // Width of each item
-      setScrollPosition(currentIndex * width); // Calculate the new scroll position
-    }
-  }, [currentIndex, data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     const width = 324;
+  //     // setScrollPosition(currentIndex * width);
+  //   }
+  // }, [currentIndex, data]);
 
   if (loading) {
     return <HjertekurvLoader />;
@@ -306,9 +304,9 @@ export default function ViewHjertekurvSection() {
     <>
       <div className="view-container">
         {/* <Button label="<" OnClick={() => setCurrentIndex((prev) => (prev - 1 + data.length) % data.length)} /> */}
-        <div className="view-julekurv-section-container">
-          {/* Display all items with a scroll effect */}
-          <div
+        {/* <div className="view-julekurv-section-container"> */}
+        {/* Display all items with a scroll effect */}
+        {/* <div
             className="julekurv-list"
             style={{ transform: `translateX(-${scrollPosition}px)` }}
           >
@@ -335,14 +333,47 @@ export default function ViewHjertekurvSection() {
               );
             })}
           </div>
-        </div>
+        </div> */}
         {/* <Button label=">" OnClick={() => setCurrentIndex((prev) => (prev + 1) % data.length)} /> */}
       </div>
-      <div
-        style={{ display: "flex", justifyContent: "center", marginTop: "48px" }}
-      >
-        <Button label="Se alle kurver" href="no/hjertekurver" />
+      <div className="our-hearts-container">
+        <div>
+          <Paragraph maxWidth={400}>
+            Få inspirasjon fra vår store samling av hjertekurver! Vi har samlet
+            et bredt utvalg av design – alt fra klassiske julefarger til
+            kreative og moderne mønstre.
+          </Paragraph>
+          <Paragraph maxWidth={400}>Hver kurv kommer med:</Paragraph>
+          <ul className="custom-ul">
+            <li>Et bilde av det ferdige resultatet</li>
+            <li>Informasjon om designet</li>
+            <li>Maler og veiledning for å lage din egen</li>
+          </ul>
+          <Button
+            style={{ marginTop: "24px" }}
+            label="Se alle kurver"
+            href="no/hjertekurver"
+          />
+        </div>
+        <HjertekurvCarousel useFirst displayTime={5000} kurver={data} />
       </div>
+      {/* <div style={{ display: 'flex', gap: '60px', margin: '48px 0', justifyContent: 'space-around' }}>
+        <div>
+          <Paragraph maxWidth={450}>
+          Få inspirasjon fra vår store samling av hjertekurver! Vi har samlet et bredt utvalg av design – alt fra klassiske julefarger til kreative og moderne mønstre.
+          </Paragraph>
+          <Paragraph maxWidth={500}>
+          Hver kurv kommer med:
+            <ul className="custom-ul">
+              <li>Et bilde av det ferdige resultatet</li>
+              <li>Informasjon om designet</li>
+              <li>Maler og veiledning for å lage din egen</li>
+            </ul>
+          </Paragraph>
+          <Button style={{ marginTop: '24px' }} label="Se alle kurver" href="no/hjertekurver" />
+        </div>
+        <HjertekurvCarousel useFirst={false} displayTime={5000} kurver={data} />
+      </div> */}
     </>
   );
 }

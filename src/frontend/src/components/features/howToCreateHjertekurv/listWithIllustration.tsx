@@ -23,7 +23,7 @@ export default function ListWithIllustraion({
 
   return (
     <li className="list-illustration-container">
-      <HowToSection number={number} position={POSITION_TOP}>
+      <HowToSection isDarkRed number={number} position={POSITION_TOP}>
         {children}
       </HowToSection>
       {useLazyImage ? (

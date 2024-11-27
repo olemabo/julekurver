@@ -2,15 +2,12 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  /* Add a smooth color transition on hover */
   color: var(--jds-link-text-color);
-
-  span:not(.icon-container) {
-    border-bottom: 1px solid var(--jds-link-text-color);
-  }
-
+  transition:
+    0.3s,
+    text-decoration-color 0.3s,
+    outline-offset 0.3s,
+    color 2s;
   .icon-container {
     margin-right: 5px;
     height: 20px;
@@ -19,14 +16,14 @@
   span {
     vertical-align: middle;
     line-height: 20px;
-    /* Align the text vertically in the middle */
   }
 
   &:hover {
-    transition: width 0.3s ease;
+    text-decoration-color: transparent;
   }
 
-  &:focus {
+  &:focus,
+  &:focus-visible {
     outline: 2px solid var(--focus-outline-color);
     outline-offset: var(--focus-outline-offset);
   }

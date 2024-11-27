@@ -128,9 +128,8 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Finn fram de to utklippede delen til kurven. For videre instruksjoner
-          har vi gitt de ulike strimlene på hjertekurven kategoriene A, B og C
-          på hvit kurv, og 1, 2 og 3 på rød kurv.
+          Lim på litt lim nederst på hanken (på den åpne siden) og legg hanken
+          inni hjertekurven.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -140,9 +139,9 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 300 }}
         >
-          Finn fram de to utklippede delen til kurven. For videre instruksjoner
-          har vi gitt de ulike strimlene på hjertekurven kategoriene A, B og C
-          på hvit kurv, og 1, 2 og 3 på rød kurv.
+          Sørg for at limet har tørket og forsøk å åpne kurven litt fra innsiden
+          for å se at hankene ikke sitter sammen. Gratulerer, du har lagd en
+          hjertekurv!
         </ListWithIllustraion>
       </OrderedListWithIllustrationWrapper>
     </>

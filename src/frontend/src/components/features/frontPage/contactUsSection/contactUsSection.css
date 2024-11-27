@@ -3,9 +3,11 @@
   padding: 48px;
   justify-content: space-around;
   align-items: center;
+  gap: 48px;
 
   h2 {
     font-size: 40px;
+    line-height: 48px;
   }
 
   .contact-form {
@@ -17,7 +19,7 @@
 
   @media (max-width: 879px) {
     flex-direction: column;
-    padding: 36px 0;
+    padding: 24px 0;
 
     img {
       display: none;
@@ -25,6 +27,10 @@
 
     div {
       width: 100%;
+    }
+
+    h2 {
+      margin-top: 12px;
     }
   }
 }

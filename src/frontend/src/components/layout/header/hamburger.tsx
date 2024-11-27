@@ -17,17 +17,17 @@ export default function Hamburger({ onClick }: HamburgerProps) {
   };
 
   return (
-    <button
+    <li
       className={`hamburger-container ${isHamburgerOpen ? "active" : ""}`}
       onClick={toggleHamburger}
       aria-label="Toggle menu"
       aria-expanded={isHamburgerOpen ? "true" : "false"}
     >
       <ul>
-        <li className="hamburger"></li>
-        <li className="hamburger"></li>
-        <li className="hamburger"></li>
+        <li className="hamburger" />
+        <li className="hamburger" />
+        <li className="hamburger" />
       </ul>
-    </button>
+    </li>
   );
 }

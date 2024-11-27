@@ -17,19 +17,21 @@ export default function HvordanLageKurver() {
         <Link linkTitle="Lag kurver siden" href="/no/hvordan-lage-kurver" />{" "}
         vår.
       </Paragraph>
-      <HowToSection number={1}>
+      <HowToSection number={1} isDarkRed>
         Last ned og skriv ut malen ovenfor.
       </HowToSection>
 
-      <HowToSection number={2}>
+      <HowToSection number={2} isDarkRed>
         Brett de ønskede delene av designpapiret og legg den nederste rette
         delen av de store buede malene mot brettene. Klipp så buen langs malen.
         Ved bretten skal papiret ikke klippes.
       </HowToSection>
 
-      <HowToSection number={3}>Flett hjertene.</HowToSection>
+      <HowToSection number={3} isDarkRed>
+        Flett hjertene.
+      </HowToSection>
 
-      <HowToSection number={4}>
+      <HowToSection number={4} isDarkRed>
         Klipp hankene etter malen, bøy dem på midten og lim dem fast inne i
         hjertene.
       </HowToSection>

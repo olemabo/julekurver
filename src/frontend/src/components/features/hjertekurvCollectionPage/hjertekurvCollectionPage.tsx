@@ -11,12 +11,11 @@ import Pagination, {
 } from "@/components/shared/ui/pagination/pagination";
 import Search from "@/components/shared/ui/search/search";
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
-
-import "./hjertekurvCollectionCard.css";
 import FilterButton from "./filterButton";
 import { filterAndSortHjertekurver, HjertekurvFilterType } from "./sort";
 import CategoryFilterToggle from "./categories";
-import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
+
+import "./hjertekurvCollectionCard.css";
 
 export const defaultPaginationOptions = [
   { label: "12", value: 12 },
@@ -127,7 +126,7 @@ export function HjertekurvCollectionPage({
       ) : (
         <div>
           Ingen treff på søk/filter
-          <HjertekurvLoader />
+          {/* <HjertekurvLoader /> */}
         </div>
       )}
     </PageWrapper>

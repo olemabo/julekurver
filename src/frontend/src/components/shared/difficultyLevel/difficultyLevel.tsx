@@ -27,6 +27,7 @@ type DifficultyLevelProps = {
   type?: IconType;
   iconSize?: IconSize;
   hideEmpty?: boolean;
+  color?: string;
 };
 
 export default function DifficultyLevel({
@@ -34,6 +35,7 @@ export default function DifficultyLevel({
   type = ICON_TYPE_STAR,
   iconSize = "medium",
   hideEmpty = false,
+  color,
 }: DifficultyLevelProps) {
   if (!rating || rating === 0) {
     return null;
@@ -47,24 +49,33 @@ export default function DifficultyLevel({
   const emptyIcons = totalIcons - fullIcons - (hasHalfIcon ? 1 : 0);
 
   const getFullIcon = () => {
-    if (type === ICON_TYPE_HEART) return <FullHeart size={iconSize} />;
-    if (type === ICON_TYPE_SCISSOR) return <FullScissor size={iconSize} />;
-    if (type === ICON_TYPE_STAR) return <FullStar size={iconSize} />;
-    return <FullHeart size={iconSize} />;
+    if (type === ICON_TYPE_HEART)
+      return <FullHeart color={color} size={iconSize} />;
+    if (type === ICON_TYPE_SCISSOR)
+      return <FullScissor color={color} size={iconSize} />;
+    if (type === ICON_TYPE_STAR)
+      return <FullStar color={color} size={iconSize} />;
+    return <FullHeart color={color} size={iconSize} />;
   };
 
   const getEmptyIcon = () => {
-    if (type === ICON_TYPE_HEART) return <EmptyHeart size={iconSize} />;
-    if (type === ICON_TYPE_SCISSOR) return <EmptyScissor size={iconSize} />;
-    if (type === ICON_TYPE_STAR) return <EmptyStar size={iconSize} />;
-    return <EmptyStar size={iconSize} />;
+    if (type === ICON_TYPE_HEART)
+      return <EmptyHeart color={color} size={iconSize} />;
+    if (type === ICON_TYPE_SCISSOR)
+      return <EmptyScissor color={color} size={iconSize} />;
+    if (type === ICON_TYPE_STAR)
+      return <EmptyStar color={color} size={iconSize} />;
+    return <EmptyStar color={color} size={iconSize} />;
   };
 
   const getHalfIcon = () => {
-    if (type === ICON_TYPE_STAR) return <HalfStar size={iconSize} />;
-    if (type === ICON_TYPE_HEART) return <HalfHeart size={iconSize} />;
-    if (type === ICON_TYPE_SCISSOR) return <HalfScissor size={iconSize} />;
-    return <HalfHeart size={iconSize} />;
+    if (type === ICON_TYPE_STAR)
+      return <HalfStar color={color} size={iconSize} />;
+    if (type === ICON_TYPE_HEART)
+      return <HalfHeart color={color} size={iconSize} />;
+    if (type === ICON_TYPE_SCISSOR)
+      return <HalfScissor color={color} size={iconSize} />;
+    return <HalfHeart color={color} size={iconSize} />;
   };
 
   for (let i = 0; i < fullIcons; i++) {

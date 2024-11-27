@@ -18,7 +18,7 @@ export default function PageWrapper({
         marginBottom: withBottomMargin ? "64px" : undefined,
         ...style,
       }}
-      className={`${className} ${isStandardPage ? "standard-page" : ""}`}
+      className={`${className ?? ""} ${isStandardPage ? "standard-page" : ""}`}
       {...rest}
     >
       {children}

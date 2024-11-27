@@ -112,7 +112,7 @@ export default function SearchPage({ defautlQuery }: SearchPageProps) {
         ]}
       />
       <Heading headingLevel="h1">Søk</Heading>
-      <Paragraph>
+      <Paragraph maxWidth={500}>
         Her kan du søke gjennom alt innhold på hjertekurver.no. Dersom du ønsker
         å søke på hjertekurver kan vi anbefale å gjøre dette gjennom vår egen
         søke-side for <a href="/no/hjertekurver">hjerkurver</a>.

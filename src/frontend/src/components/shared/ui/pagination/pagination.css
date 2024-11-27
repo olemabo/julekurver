@@ -25,13 +25,16 @@
       background-image: url("/images/icons/pagination/arrow_down.svg");
       background-repeat: no-repeat;
       background-position: right 8px center;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 
       font-weight: 500;
       color: var(--tds-pagination-text);
-    }
 
-    .custom-select:hover {
-      background-image: url("/images/icons/pagination/arrow_down.svg"); /* Change icon on hover */
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -53,6 +56,9 @@
       border: 1px solid var(--tds-pagination-text);
       color: var(--tds-pagination-text);
       font-size: 18px;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 
       &:hover {
         background-color: var(--tds-pagination-bg-color-hover);

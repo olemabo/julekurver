@@ -28,7 +28,7 @@ export default function StandardPage({ pageContent }: StandardPageProps) {
   const isContactPage = pageContent.pageType === CONTACT_PAGE;
 
   return (
-    <PageWrapper>
+    <PageWrapper isStandardPage>
       <Breadcrumb linkItems={standardPageBreadcrumbs} />
       <Heading headingLevel="h1">{pageContent.title}</Heading>
       {pageContent?.content && (

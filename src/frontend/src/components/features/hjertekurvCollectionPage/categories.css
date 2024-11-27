@@ -21,13 +21,13 @@
     span {
       font-size: 18px;
       font-weight: 500;
-      color: #bc9284;
+      color: var(--tds-color-filter-button-border);
     }
 
     .filter-button {
       background-color: transparent;
       font-weight: 600;
-      border: 1px solid #bc9284;
+      border: 1px solid var(--tds-color-filter-button-border);
       border-radius: 60px;
       padding: 10px 36px;
       cursor: pointer;
@@ -39,8 +39,8 @@
       }
 
       &.active {
-        background-color: #bc9284;
-        color: white;
+        background-color: var(--tds-color-filter-button-bg);
+        color: var(--tds-color-neutrals-white);
       }
     }
   }

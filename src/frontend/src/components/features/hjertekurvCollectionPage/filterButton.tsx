@@ -14,6 +14,7 @@ export default function FilterButton({
 }: FilterButtonProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const dropdownOptions = [
     // { label: "Popularitet", value: HjertekurvFilterType.Popularity },
@@ -37,8 +38,9 @@ export default function FilterButton({
     },
   ];
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleDropdown = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    setIsDropdownOpen((prevState) => !prevState);
   };
 
   const handleOptionClick = (value: HjertekurvFilterType) => {
@@ -47,9 +49,12 @@ export default function FilterButton({
   };
 
   const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as Node;
     if (
       dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
+      !dropdownRef.current.contains(target) &&
+      buttonRef.current &&
+      !buttonRef.current.contains(target)
     ) {
       setIsDropdownOpen(false);
     }
@@ -65,6 +70,7 @@ export default function FilterButton({
   return (
     <div className="filter-buttons-container">
       <button
+        ref={buttonRef}
         onClick={toggleDropdown}
         className={`arrow-button ${isDropdownOpen ? "open" : ""}`}
       >

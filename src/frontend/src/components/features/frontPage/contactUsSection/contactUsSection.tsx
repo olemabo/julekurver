@@ -75,9 +75,9 @@ export default function ContactUsSection() {
       </div>
       <Image
         alt="logo av flettet hjertekurv"
-        height={280}
+        height={350}
         width={350}
-        src={"/images/pages/frontpage/frontpage_hjertekurv.svg"}
+        src={"/images/pages/frontpage/frontpage_hjertekurv_letter-cropped.svg"}
       />
     </div>
   );

@@ -31,7 +31,7 @@ export default function LignendeKurver({ url }: LignendeKurverProps) {
         style={{ marginTop: "36px" }}
         className="hjertekurv-kartotek-section small"
       >
-        {data.map((hjertekurv) => (
+        {data.slice(0, 6).map((hjertekurv) => (
           <HjertekurvCollectionCard
             key={`hjertekurv-collection-${hjertekurv?.name}`}
             size="sm"

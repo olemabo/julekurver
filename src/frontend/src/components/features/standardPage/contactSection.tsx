@@ -26,9 +26,7 @@ export default function ContactSection() {
       setHasSentContactUsMessage(true);
       setContactUsMessage("");
       setErrorMessage("");
-    } catch {
-      alert("There was an error sending your message. Please try again later.");
-    }
+    } catch {}
   };
 
   return (
@@ -36,8 +34,9 @@ export default function ContactSection() {
       <Heading headingLevel="h2">Send direkte tilbakemelding</Heading>
       <Paragraph>
         Ønsker du å sende inn en rask, anonym tilbakemelding kan du gjøre det
-        under her. Legg inn en tilbakemelding i boksen under, så vil vi gå
-        gjennom den så raskt som mulig.
+        under her. Legg inn en tilbakemelding i boksen under og klikk på
+        &apos;Send inn tilbakemelding&apos;, så vil vi gå gjennom den så raskt
+        som mulig.
       </Paragraph>
       {hasSentContactUsMessage ? (
         <Paragraph maxWidth={500}>Takk for din tilbakemelding!</Paragraph>

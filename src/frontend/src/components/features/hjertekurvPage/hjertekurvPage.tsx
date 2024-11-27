@@ -46,6 +46,8 @@ export default function JulekurvPage({ hjertekurv }: HjertekurvPageProps) {
     { linkText: name, href: `/hjertekurver/${url}` },
   ];
 
+  const defaultFillColor1 = "#9B776B";
+
   return (
     <PageWrapper className="hjertekurv-page">
       <Breadcrumb linkItems={breadCrumbLinks} />
@@ -58,7 +60,10 @@ export default function JulekurvPage({ hjertekurv }: HjertekurvPageProps) {
           />
 
           <div className="kurv-converter-mobile">
-            <KurvConverter imageUrl={imageUrl} />
+            <KurvConverter
+              defaultFillColor1={defaultFillColor1}
+              imageUrl={imageUrl}
+            />
           </div>
 
           <Bold asBlock>Vanskelighetsgrad fletting:</Bold>
@@ -79,7 +84,10 @@ export default function JulekurvPage({ hjertekurv }: HjertekurvPageProps) {
           </Paragraph>
         </div>
         <div className="kurv-converter-desktop">
-          <KurvConverter imageUrl={imageUrl} />
+          <KurvConverter
+            defaultFillColor1={defaultFillColor1}
+            imageUrl={imageUrl}
+          />
         </div>
       </div>
       <KurvMal
