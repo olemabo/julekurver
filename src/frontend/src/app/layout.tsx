@@ -1,5 +1,8 @@
 "use client";
 
+import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
+import "./globals.css";
+
 // import { Countdown } from "@/components/features/countdown";
 // import { useEffect, useState } from "react";
 
@@ -47,6 +50,17 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   //       </body>
   //     </html>
   // }
+  const isVisible = process.env.NEXT_PUBLIC_IS_VISIBLE === 'true';
+
+  if (!isVisible) {
+    return <html>
+        <body>
+          <div style={{ height: "500px" }}>
+            <HjertekurvLoader />
+          </div>
+        </body>
+      </html>
+  }
   return children;
 };
 
