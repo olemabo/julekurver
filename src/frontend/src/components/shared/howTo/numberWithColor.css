@@ -8,12 +8,20 @@
   span {
     z-index: 1;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     right: 0;
-    transform: translateY(-50%);
-    color: white;
+    transform: translateY(-40%);
+    color: var(--tds-color-light-theme);
     text-align: center;
     font-weight: 600;
+  }
+
+  &.dark span {
+    color: var(--tds-color-neutrals-white);
+  }
+
+  &.light {
+    font-weight: 400;
   }
 }

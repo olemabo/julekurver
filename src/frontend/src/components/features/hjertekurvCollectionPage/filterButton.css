@@ -5,7 +5,7 @@
   right: 5px;
   width: 8px;
   height: 2px;
-  background-color: black;
+  background-color: var(--tds-color-neutrals-gray);
   transition: transform 0.2s ease;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .filter-buttons-container {
-  position: "relative";
+  position: relative;
 
   button {
     background-color: inherit;
@@ -35,22 +35,34 @@
     cursor: pointer;
     position: relative;
     padding-right: 20px;
+    font-family: "Alegreya Sans Light", sans-serif;
+    font-size: 16px;
+    text-decoration-color: transparent;
+    transition:
+      color 0.3s,
+      text-decoration-color 0.3s,
+      outline-offset 0.3s;
+    text-underline-offset: 4px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .dropdown {
     margin-top: 6px;
     position: absolute;
-    right: 48px;
+    right: 0;
     z-index: 1;
     background-color: var(--background-color);
-    padding: 24px;
+    padding: 24px 32px;
     border: 1px solid var(--tds-color-neutrals-gray);
     border-radius: 20px;
-    font-size: 16px;
-    max-width: 220px;
+    font-size: 18px;
+    min-width: 220px;
 
     .dropdown-option {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       text-align: start;
       line-height: 20px;
       display: block;

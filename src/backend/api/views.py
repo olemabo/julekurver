@@ -15,7 +15,6 @@ import requests
 from datetime import date
 import os
 
-# Create your views here.
 class StandardPageAPIView(APIView):
 
     def get(self, request):
@@ -30,6 +29,7 @@ class StandardPageAPIView(APIView):
             response = StandardPageModel(
                 title=standard_page[0].title, 
                 content=standard_page[0].content,
+                pageType=standard_page[0].page_type
             )
 
             return JsonResponse(response.to_dict(), safe=False)

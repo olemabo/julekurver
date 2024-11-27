@@ -1,9 +1,9 @@
 .heading {
   &.light {
-    color: var(--tds-color-neutrals-white);
+    color: var(--tds-color-light-theme);
   }
 
   &.dark {
-    color: var(--tds-color-neutrals-gray);
+    color: var(--tds-color-dark-theme);
   }
 }

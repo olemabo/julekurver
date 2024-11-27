@@ -7,7 +7,7 @@ import Heading from "@/components/shared/ui/heading/heading";
 import Button from "@/components/shared/ui/button/button";
 
 export default function AboutKurverSection() {
-  const paragraphMaxWidth = 533;
+  const paragraphMaxWidth = 480;
   const paragraphStyle = {
     fontFamily: "Alegreya Sans Light",
     fontSize: "18px",

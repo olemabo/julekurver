@@ -124,9 +124,7 @@ export default function Header() {
                   <div className="search-icon active"></div>
                 </button>
               </li>
-              <li className="hamburger-container">
-                <Hamburger onClick={toggleMobileDropdown} />
-              </li>
+              <Hamburger onClick={toggleMobileDropdown} />
             </ul>
           </div>
         </nav>

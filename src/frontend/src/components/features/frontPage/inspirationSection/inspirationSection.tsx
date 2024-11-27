@@ -8,16 +8,19 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import Link from "@/components/shared/ui/link/link";
 
 import "./inspirationSection.css";
+import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
 
 interface InstagramImage {
   mediaUrl: string;
 }
 export default function InspirationSection() {
   const [images, setImages] = useState<InstagramImage[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const apiBaseUrl = createBackendUrl();
   const url = `${apiBaseUrl}/api/instagram-images-api/`;
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(url, {
       method: "GET",
       headers: {
@@ -38,8 +41,19 @@ export default function InspirationSection() {
       })
       .catch((error) => {
         console.error("An error occurred:", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
+
+  if (isLoading) {
+    return (
+      <div style={{ height: "500px" }}>
+        <HjertekurvLoader />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -54,7 +68,7 @@ export default function InspirationSection() {
           />
         ))}
       </div>
-      <div className="contact-section-container">
+      <div className="social-media-links-container">
         <Link
           icon={<InstagramIcon />}
           linkTitle="Instagram"

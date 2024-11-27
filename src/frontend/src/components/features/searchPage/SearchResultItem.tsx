@@ -44,7 +44,7 @@ export function SearchResultItem({ hit, query }: SearchResultItemProps) {
 
   return (
     <li className={`search-result-item ${type}`}>
-      <a className="link" href={url}>
+      <a className="link" href={`/no/hjertekurver/${url}`}>
         <Heading withMargins={false} headingLevel="h2">
           {title}
         </Heading>

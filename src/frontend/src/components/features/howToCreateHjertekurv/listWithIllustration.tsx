@@ -1,4 +1,4 @@
-import HowToSection, { positionTop } from "@/components/shared/howTo/howTo";
+import HowToSection, { POSITION_TOP } from "@/components/shared/howTo/howTo";
 import LazyImage from "@/components/shared/lazyImage/LazyImage";
 import "./listWithIllustration.css";
 
@@ -23,7 +23,7 @@ export default function ListWithIllustraion({
 
   return (
     <li className="list-illustration-container">
-      <HowToSection number={number} position={positionTop}>
+      <HowToSection isDarkRed number={number} position={POSITION_TOP}>
         {children}
       </HowToSection>
       {useLazyImage ? (

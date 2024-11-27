@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import "./contactUsSection.css";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 import Image from "next/image";
 import Button from "@/components/shared/ui/button/button";
@@ -10,6 +9,7 @@ import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import TextArea from "@/components/shared/ui/textarea/textarea";
 import { lightTheme } from "@/constants/displayTheme";
 import axios from "axios";
+import "./contactUsSection.css";
 
 export default function ContactUsSection() {
   const apiBaseUrl = createBackendUrl();
@@ -29,20 +29,18 @@ export default function ContactUsSection() {
       setHasSentContactUsMessage(true);
       setContactUsMessage("");
       setErrorMessage("");
-    } catch (error) {
-      console.error("Failed to send feedback:", error);
+    } catch {
       alert("There was an error sending your message. Please try again later.");
     }
   };
 
   const paragraphMaxWidth = 500;
-  console.log(hasSentContactUsMessage);
 
   return (
     <div className="contact-section-container">
       <div>
         <Heading theme={lightTheme} headingLevel="h2">
-          Kontaks oss
+          Kontakt oss
         </Heading>
         <Paragraph theme={lightTheme} maxWidth={paragraphMaxWidth}>
           Vår lidenskap for fletting av hjerter har ført til opprettelsen av
@@ -61,7 +59,7 @@ export default function ContactUsSection() {
         ) : (
           <div className="contact-form">
             <TextArea
-              onChange={(message: string) => setContactUsMessage(message)}
+              customOnChange={(message: string) => setContactUsMessage(message)}
               value={contactUsMessage}
               placeholder="Legg inn tilbakemelding..."
               maxWidth={400}
@@ -77,9 +75,9 @@ export default function ContactUsSection() {
       </div>
       <Image
         alt="logo av flettet hjertekurv"
-        height={280}
+        height={350}
         width={350}
-        src={"/images/pages/frontpage/frontpage_hjertekurv.svg"}
+        src={"/images/pages/frontpage/frontpage_hjertekurv_letter-cropped.svg"}
       />
     </div>
   );

@@ -1,4 +1,29 @@
-.julekurv-page {
+.hjertekurv-page {
   max-width: 850px;
   margin-bottom: 64px;
+
+  .hjertekurv-page-container {
+    display: flex;
+    column-gap: 48px;
+  }
+
+  .kurv-converter-desktop {
+    flex: 0 0 auto;
+    margin-left: 24px;
+  }
+
+  .kurv-converter-mobile {
+    display: none;
+  }
+
+  @media (max-width: 840px) {
+    .kurv-converter-desktop {
+      display: none;
+    }
+
+    .kurv-converter-mobile {
+      display: block;
+      margin: 12px 0 36px 0;
+    }
+  }
 }

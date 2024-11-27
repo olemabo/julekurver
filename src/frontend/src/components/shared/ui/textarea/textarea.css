@@ -9,9 +9,20 @@
     background-color: #f8f4f2;
     border: none;
     width: 100%;
+    min-height: 100px;
 
     font-family: "Alegreya Sans Light";
     font-size: 16px;
+
+    &:focus {
+      outline: 2px solid var(--focus-outline-color);
+      outline-offset: var(--focus-outline-offset);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--focus-outline-color);
+      outline-offset: var(--focus-outline-offset);
+    }
   }
 
   .error-message {

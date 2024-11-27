@@ -25,13 +25,13 @@ export default function LignendeKurver({ url }: LignendeKurverProps) {
   }
 
   return (
-    <div>
+    <>
       <Heading headingLevel="h2">Lignende kurver</Heading>
       <div
         style={{ marginTop: "36px" }}
         className="hjertekurv-kartotek-section small"
       >
-        {data.map((hjertekurv) => (
+        {data.slice(0, 6).map((hjertekurv) => (
           <HjertekurvCollectionCard
             key={`hjertekurv-collection-${hjertekurv?.name}`}
             size="sm"
@@ -40,6 +40,6 @@ export default function LignendeKurver({ url }: LignendeKurverProps) {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }

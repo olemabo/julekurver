@@ -8,7 +8,7 @@
   row-gap: 48px;
 }
 
-.contact-section-container {
+.social-media-links-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +24,14 @@
 @media (max-width: 450px) {
   .inspiration-section-container {
     flex-direction: column;
+    align-items: auto;
     row-gap: 48px;
     width: 100%;
+
+    img {
+      width: fit-content;
+      height: fit-content;
+      max-width: 100%;
+    }
   }
 }

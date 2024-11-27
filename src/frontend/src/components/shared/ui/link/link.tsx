@@ -1,6 +1,7 @@
 "use client";
 
-import "./link.scss";
+import { default as NextLink } from "next/link";
+import "./link.css";
 
 export type TargetType = "_blank" | "";
 
@@ -14,10 +15,10 @@ type LinkProps = {
 
 export function Link({ linkTitle, href, target, className, icon }: LinkProps) {
   return (
-    <a target={target} href={href} className={`jds-link ${className}`}>
+    <NextLink target={target} href={href} className={`jds-link ${className}`}>
       {icon && <span className="icon-container">{icon}</span>}
-      {linkTitle && <span>{linkTitle}</span>}
-    </a>
+      {linkTitle && linkTitle}
+    </NextLink>
   );
 }
 
