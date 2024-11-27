@@ -4,3 +4,9 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .change-svg-color-container {
+    width: fit-content !important;
+  }
+}
