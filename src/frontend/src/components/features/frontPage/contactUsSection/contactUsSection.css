@@ -3,7 +3,7 @@
   padding: 48px;
   justify-content: space-around;
   align-items: center;
-  gap: 48px;
+  column-gap: 48px;
 
   h2 {
     font-size: 40px;

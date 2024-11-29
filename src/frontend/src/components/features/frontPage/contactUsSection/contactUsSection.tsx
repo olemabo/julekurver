@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { createBackendUrl } from "@/utils/backendApiUrl";
-import Image from "next/image";
+// import Image from "next/image";
 import Button from "@/components/shared/ui/button/button";
 import Heading from "@/components/shared/ui/heading/heading";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
@@ -10,6 +10,7 @@ import TextArea from "@/components/shared/ui/textarea/textarea";
 import { lightTheme } from "@/constants/displayTheme";
 import axios from "axios";
 import "./contactUsSection.css";
+import LazyImage from "@/components/shared/lazyImage/LazyImage";
 
 export default function ContactUsSection() {
   const apiBaseUrl = createBackendUrl();
@@ -73,12 +74,18 @@ export default function ContactUsSection() {
           </div>
         )}
       </div>
-      <Image
+      <LazyImage
+        src={"/images/pages/frontpage/frontpage_hjertekurv_letter-cropped.svg"}
+        alt={"logo av flettet hjertekurv"}
+        imageSize={{ height: 350, width: 350 }}
+        className="illustration-image"
+      />
+      {/* <Image
         alt="logo av flettet hjertekurv"
         height={350}
         width={350}
         src={"/images/pages/frontpage/frontpage_hjertekurv_letter-cropped.svg"}
-      />
+      /> */}
     </div>
   );
 }

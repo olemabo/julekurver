@@ -133,6 +133,8 @@
   --tds-color-filter-button-bg: #9b776b;
   --tds-color-filter-button-bg: var(--tds-color-primary-base);
   --tds-color-filter-button-bg: #8b6657;
+
+  --tds-bg-color-mobile-menu: #f5f5ea;
 }
 
 * {

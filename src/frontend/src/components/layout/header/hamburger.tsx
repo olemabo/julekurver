@@ -1,14 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./hamburger.css";
 
 type HamburgerProps = {
   onClick: (isOpen: boolean) => void;
+  isOpen?: boolean;
 };
 
-export default function Hamburger({ onClick }: HamburgerProps) {
+export default function Hamburger({ onClick, isOpen }: HamburgerProps) {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen !== undefined) {
+      setIsHamburgerOpen(isOpen);
+    }
+  }, [isOpen]);
 
   const toggleHamburger = () => {
     const newState = !isHamburgerOpen;

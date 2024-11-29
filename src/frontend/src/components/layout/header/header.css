@@ -63,33 +63,47 @@ header {
     @media screen and (max-width: 840px) {
       .link-container {
         opacity: 0;
+        transform: translateY(-20px);
+        background-color: transparent;
+        pointer-events: none;
         transition:
-          opacity 0.3s ease,
-          transform 0.3s ease;
+          opacity 3s ease-in-out,
+          background-color 2s ease,
+          transform 3s ease-in-out;
       }
 
       .link-container.open-mobile-format {
-        background-color: var(--tds-color-teritary-base);
-        transform: translateY(-20px);
+        border-top: 1px solid var(--tds-color-neutrals-gray);
+        border-bottom: 1px solid var(--tds-color-neutrals-gray);
+        background-color: var(--background-color);
+        transform: translateY(0);
+        pointer-events: auto;
         transition:
-          opacity 0.3s ease,
-          transform 0.3s ease;
+          opacity 3s ease-in-out,
+          transform 3s ease-in-out;
+
         display: flex;
         position: absolute;
         left: 50%;
-        top: 65px;
+        top: 74px;
         left: 0;
         width: 100vw;
         height: 100vh;
         justify-content: center;
         align-items: flex-start;
-        padding-top: 48px;
+        padding-top: 80px;
         opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
+
+        @media screen and (max-width: 479px) {
+          top: 62px;
+        }
 
         ul {
           flex-direction: column;
+
+          a {
+            font-size: 24px;
+          }
         }
       }
     }
@@ -152,14 +166,21 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 0 32px 0;
+    border-bottom: 1px solid var(--tds-color-neutrals-gray);
 
     button {
+      height: 46px;
+      min-height: auto;
+      margin: 0;
+      margin-left: 12px;
+    }
+    /* button {
       background-color: var(--background-color);
       border: 1px solid var(--background-color);
       padding: 6px 12px;
       cursor: pointer;
-    }
+    } */
 
     .search-input {
       width: 80%;
@@ -237,7 +258,7 @@ header {
 .search-button.active::after {
   width: 65%;
   bottom: 26%;
-  right: 27%;
+  right: 30%;
 }
 
 .search-button.active .search-icon {
