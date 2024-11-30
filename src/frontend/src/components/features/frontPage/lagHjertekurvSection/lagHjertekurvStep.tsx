@@ -9,9 +9,7 @@ type HjertekurvStepProps = {
   imageUrl: string;
   description: string;
   number: number;
-  number: number;
   height?: number;
-  svgSize?: number;
   svgSize?: number;
 };
 

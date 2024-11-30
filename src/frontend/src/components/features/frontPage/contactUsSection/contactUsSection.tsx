@@ -31,7 +31,6 @@ export default function ContactUsSection() {
       setContactUsMessage("");
       setErrorMessage("");
     } catch {
-    } catch {
       alert("There was an error sending your message. Please try again later.");
     }
   };
@@ -42,8 +41,7 @@ export default function ContactUsSection() {
     <div className="contact-section-container">
       <div>
         <Heading theme={lightTheme} headingLevel="h2">
-          Kontakt oss
-          Kontakt oss
+          Kontakt oss Kontakt oss
         </Heading>
         <Paragraph theme={lightTheme} maxWidth={paragraphMaxWidth}>
           Vår lidenskap for fletting av hjerter har ført til opprettelsen av
@@ -62,7 +60,6 @@ export default function ContactUsSection() {
         ) : (
           <div className="contact-form">
             <TextArea
-              customOnChange={(message: string) => setContactUsMessage(message)}
               customOnChange={(message: string) => setContactUsMessage(message)}
               value={contactUsMessage}
               placeholder="Legg inn tilbakemelding..."

@@ -74,8 +74,6 @@ export default function Header() {
     setIsSearchOpen(false);
   };
 
-  console.log(isSearchOpen, "isSearchOpen");
-
   return (
     <div>
       <header>
