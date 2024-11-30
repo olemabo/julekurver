@@ -78,9 +78,8 @@ export function HjertekurvCollectionPage({
       <Breadcrumb linkItems={linkItems} />
       <Heading headingLevel="h1">Søk blant hjertekurver</Heading>
       <Paragraph maxWidth={450}>
-        Søk blant alle våre hjertekurver ved hjelp av søkefunksjonaliteten vår.
-        Sorter på vanskelighetsgrad og andre ting. Det er det bare å gjøre ja
-        før du spør om ting, ikke sant?
+        Se vår komplette samling av hjertekurver med maler og bilder. Bruk søk
+        og filtrering for å finne den perfekte kurven for ditt neste prosjekt.
       </Paragraph>
       <div className="filter-container">
         <Search
