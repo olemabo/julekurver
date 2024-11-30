@@ -15,8 +15,7 @@
   gap: 24px;
   padding: 24px 0;
 
-  span {
-    border-bottom: none !important;
+  a {
     font-size: 20px;
   }
 }

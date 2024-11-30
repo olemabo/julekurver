@@ -20,7 +20,7 @@
     border: 1px solid var(--tds-color-neutrals-gray);
 
     &:hover {
-      background-color: #f8f4f2;
+      background-color: var(--tds-search-hit-bg);
     }
   }
 

@@ -4,10 +4,10 @@ import Image from "next/image";
 import { default as NextLink } from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-import Paragraph from "@/components/shared/ui/paragraph/paragraph";
+// import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import { useRouter } from "next/navigation";
 import Search from "@/components/shared/ui/search/search";
-import Link from "@/components/shared/ui/link/link";
+// import Link from "@/components/shared/ui/link/link";
 import Hamburger from "./hamburger";
 
 import "./header.css";
@@ -23,7 +23,9 @@ export default function Header() {
 
   const toggleSearchDropdown = (event: React.MouseEvent) => {
     event.stopPropagation();
+
     setIsSearchOpen(!isSearchOpen);
+    setIsMobileMenuOpen(false);
   };
 
   useEffect(() => {
@@ -67,6 +69,11 @@ export default function Header() {
     setIsMobileMenuOpen((prevState) => !prevState);
   };
 
+  const closeMenus = () => {
+    setIsMobileMenuOpen(false);
+    setIsSearchOpen(false);
+  };
+
   return (
     <div>
       <header>
@@ -74,7 +81,7 @@ export default function Header() {
           style={{ position: "relative", zIndex: 90, display: "flex" }}
           className="container"
         >
-          <NextLink className="logo" href="/">
+          <NextLink className="logo" href="/" onClick={closeMenus}>
             <Image
               src="/images/logo/logo_black-cropped.svg"
               alt="Webpage logo"
@@ -89,29 +96,25 @@ export default function Header() {
             >
               <ul>
                 <li>
-                  <NextLink
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    href="/hjertekurver"
-                  >
+                  <NextLink onClick={closeMenus} href="/no/hjertekurver">
                     Hjertekurver
                   </NextLink>
                 </li>
                 <li>
-                  <NextLink
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    href="/om-siden"
-                  >
-                    Om siden
+                  <NextLink onClick={closeMenus} href="/no/hvordan-lage-kurver">
+                    Lag kurver
                   </NextLink>
                 </li>
                 <li>
-                  <NextLink
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    href="/kontakt-oss"
-                  >
-                    Kontakt oss
+                  <NextLink onClick={closeMenus} href="/no/om-siden">
+                    Om siden
                   </NextLink>
                 </li>
+                {/* <li>
+                  <NextLink onClick={closeMenus} href="/no/kontakt-oss">
+                    Kontakt oss
+                  </NextLink>
+                </li> */}
               </ul>
             </div>
             <ul className="icons">
@@ -124,7 +127,10 @@ export default function Header() {
                   <div className="search-icon active"></div>
                 </button>
               </li>
-              <Hamburger onClick={toggleMobileDropdown} />
+              <Hamburger
+                isOpen={isMobileMenuOpen}
+                onClick={toggleMobileDropdown}
+              />
             </ul>
           </div>
         </nav>
@@ -135,9 +141,13 @@ export default function Header() {
         ref={dropdownRef}
       >
         <div className="search-content">
-          <Search ref={inputRef} placeholder="Søk" onClick={handleSearch} />
+          <Search
+            ref={inputRef}
+            placeholder="Legg inn søkeord..."
+            onClick={handleSearch}
+          />
         </div>
-        <div className="hjertekurver-link-section">
+        {/* <div className="hjertekurver-link-section">
           <Paragraph>
             Ønsker du å søke blant julekurver, se søkesiden:{" "}
             <Link
@@ -146,7 +156,7 @@ export default function Header() {
               href="/no/julekurver"
             />
           </Paragraph>
-        </div>
+        </div> */}
       </div>
     </div>
   );

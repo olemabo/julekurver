@@ -13,15 +13,17 @@ export default function PageWrapper({
   ...rest
 }: PageWrapperProps) {
   return (
-    <div
-      style={{
-        marginBottom: withBottomMargin ? "64px" : undefined,
-        ...style,
-      }}
-      className={`${className ?? ""} ${isStandardPage ? "standard-page" : ""}`}
-      {...rest}
-    >
-      {children}
+    <div className="container">
+      <div
+        style={{
+          marginBottom: withBottomMargin ? "64px" : undefined,
+          ...style,
+        }}
+        className={`${className ?? ""} ${isStandardPage ? "standard-page" : ""}`}
+        {...rest}
+      >
+        {children}
+      </div>
     </div>
   );
 }

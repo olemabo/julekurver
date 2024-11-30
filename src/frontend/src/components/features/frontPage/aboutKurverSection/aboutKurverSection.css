@@ -39,6 +39,10 @@
     row-gap: 24px;
     margin-bottom: 24px;
 
+    img {
+      width: 100%;
+    }
+
     .text-container {
       padding: 24px 0;
     }

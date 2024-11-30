@@ -1,6 +1,13 @@
 import { HjertekurvCollectionPage } from "@/components/features/hjertekurvCollectionPage/hjertekurvCollectionPage";
 import { Hjertekurv } from "./[hjertekurv]/page";
 import { createBackendUrl } from "@/utils/backendApiUrl";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Utforsk hjertekurvsamlingen | Maler, bilder og inspirasjon",
+  description:
+    "Se vår komplette samling av hjertekurver med maler og bilder. Bruk søk og filtrering for å finne den perfekte kurven for ditt neste prosjekt.",
+};
 
 export default async function Page({
   params,

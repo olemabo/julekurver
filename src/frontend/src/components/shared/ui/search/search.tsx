@@ -1,5 +1,6 @@
 import React, { forwardRef, useState } from "react";
 import "./search.css";
+import Button from "../button/button";
 
 type SearchProps = {
   placeholder?: string;
@@ -74,9 +75,14 @@ const Search = forwardRef<HTMLInputElement, SearchProps>(
             type="search"
           />
           {onClick && (
-            <button onClick={handleSearchClick} disabled={isLoading}>
-              {isLoading ? <div className="spinner"></div> : "Søk"}
-            </button>
+            // <button onClick={handleSearchClick} disabled={isLoading}>
+            //   {isLoading ? <div className="spinner"></div> : "Søk"}
+            // </button>
+            <Button
+              label={"Søk"}
+              onClick={handleSearchClick}
+              disabled={isLoading}
+            ></Button>
           )}
         </div>
       </div>
