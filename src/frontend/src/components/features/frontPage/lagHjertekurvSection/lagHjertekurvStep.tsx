@@ -9,7 +9,9 @@ type HjertekurvStepProps = {
   imageUrl: string;
   description: string;
   number: number;
+  number: number;
   height?: number;
+  svgSize?: number;
   svgSize?: number;
 };
 
@@ -17,7 +19,9 @@ export default function HjertekurvStep({
   imageUrl,
   description,
   // number,
+  // number,
   height = 280,
+  // svgSize = 50,
   // svgSize = 50,
 }: HjertekurvStepProps) {
   const imageSize = { height: height, width: 250 };

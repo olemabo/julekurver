@@ -21,7 +21,15 @@ header {
 
       a {
         color: var(--jds-link-text-color-dark);
+        color: var(--jds-link-text-color-dark);
         font-size: 20px;
+        transition:
+          color 0.3s,
+          text-decoration-thickness 0.3s,
+          outline-offset 0.3s,
+          text-decoration-color 0.3s;
+        text-decoration-color: transparent;
+        text-decoration-thickness: from-font;
         transition:
           color 0.3s,
           text-decoration-thickness 0.3s,
@@ -31,6 +39,12 @@ header {
         text-decoration-thickness: from-font;
 
         &:hover {
+          transition:
+            color 0.3s,
+            text-decoration-thickness 0.3s,
+            outline-offset 0.3s;
+          text-decoration: underline;
+          text-decoration-thickness: from-font;
           transition:
             color 0.3s,
             text-decoration-thickness 0.3s,
@@ -220,6 +234,8 @@ header {
   position: absolute;
   top: 29%;
   right: 29%;
+  top: 29%;
+  right: 29%;
   width: 0;
   height: 2.5px;
   margin-top: -2px;
@@ -231,6 +247,9 @@ header {
 .search-button::after {
   content: "";
   position: absolute;
+  bottom: 22%;
+  right: 22%;
+  width: 29%;
   bottom: 22%;
   right: 22%;
   width: 29%;
