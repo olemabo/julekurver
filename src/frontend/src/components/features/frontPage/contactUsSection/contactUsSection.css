@@ -18,26 +18,25 @@
     flex-direction: column;
     row-gap: 36px;
   }
-  
+
   @media (max-width: 879px) {
     flex-direction: column;
     padding: 24px 0;
-  
+
     img {
       display: none;
     }
-  
+
     div {
       width: 100%;
     }
-  
+
     h2 {
       margin-top: 12px;
     }
-  
+
     h2 {
       margin-top: 12px;
     }
   }
 }
-
