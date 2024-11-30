@@ -13,13 +13,14 @@ export default function AboutKurverSection() {
     fontSize: "18px",
     maxWidth: paragraphMaxWidth,
   };
+
   return (
     <div className="about-kurver-container">
       <Image
         alt="logo av flettet hjertekurv"
-        height={280}
-        width={350}
-        src={"/images/pages/frontpage/frontpage_hjertekurv.svg"}
+        height={350}
+        width={335}
+        src={"/images/pages/frontpage/frontpage_hjertekurv-cropped.svg"}
       />
       <div className="text-container">
         <Heading theme={lightTheme} headingLevel="h2">

@@ -103,15 +103,20 @@ export default function Header() {
                   </NextLink>
                 </li>
                 <li>
+                  <NextLink onClick={closeMenus} href="/no/hvordan-lage-kurver">
+                    Lag kurver
+                  </NextLink>
+                </li>
+                <li>
                   <NextLink onClick={closeMenus} href="/no/om-siden">
                     Om siden
                   </NextLink>
                 </li>
-                <li>
+                {/* <li>
                   <NextLink onClick={closeMenus} href="/no/kontakt-oss">
                     Kontakt oss
                   </NextLink>
-                </li>
+                </li> */}
               </ul>
             </div>
             <ul className="icons">
