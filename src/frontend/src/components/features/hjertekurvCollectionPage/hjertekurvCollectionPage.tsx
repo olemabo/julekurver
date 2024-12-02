@@ -118,7 +118,7 @@ export function HjertekurvCollectionPage({
         >
           vanskelighetsgrad
         </Popover>
-        .for å finne en kurv som passer dine ferdigheter.
+        for å finne en kurv som passer dine ferdigheter.
       </Paragraph>
       <div className="filter-container">
         <Search
