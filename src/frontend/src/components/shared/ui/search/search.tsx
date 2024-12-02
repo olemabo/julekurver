@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from "react";
-import "./search.css";
+import "./search.scss";
 import Button from "../button/button";
 
 type SearchProps = {
@@ -79,7 +79,7 @@ const Search = forwardRef<HTMLInputElement, SearchProps>(
             //   {isLoading ? <div className="spinner"></div> : "Søk"}
             // </button>
             <Button
-              label={"Søk"}
+              label="Søk"
               onClick={handleSearchClick}
               disabled={isLoading}
             ></Button>

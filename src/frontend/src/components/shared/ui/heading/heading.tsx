@@ -1,6 +1,6 @@
 import { darkTheme, DisplayTheme } from "@/constants/displayTheme";
 import React from "react";
-import "./heading.css";
+import "./heading.scss";
 
 type HeadingLevel = "h1" | "h2" | "h3";
 

@@ -1,6 +1,6 @@
 import { DisplayTheme } from "@/constants/displayTheme";
-import "./contentHeader.css";
 import Heading from "@/components/shared/ui/heading/heading";
+import "./contentHeader.scss";
 
 type ContentHeaderProps = {
   title: string;

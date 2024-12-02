@@ -1,14 +1,13 @@
 import { createApiMediaUrl } from "@/utils/backendApiUrl";
 import { PageType, SearchHits } from "./searchPage";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
-
-import "./searchResultItem.css";
 import Heading from "@/components/shared/ui/heading/heading";
+import "./searchResultItem.scss";
 
-interface SearchResultItemProps {
+type SearchResultItemProps = {
   hit: SearchHits;
   query: string;
-}
+};
 
 const highlightQuery = (text: string, query: string) => {
   if (!query) return text;
@@ -42,9 +41,12 @@ export function SearchResultItem({ hit, query }: SearchResultItemProps) {
 
   const displayDescription = truncatedDescription(sanitizedDescription, 225);
 
+  const isHjertekurvPage = type === PageType.Hjertekurv;
+  const urlPath = isHjertekurvPage ? "/no/hjertekurver/" : "/no/";
+
   return (
     <li className={`search-result-item ${type}`}>
-      <a className="link" href={`/no/hjertekurver/${url}`}>
+      <a className="link" href={`${urlPath}${url}`}>
         <Heading withMargins={false} headingLevel="h2">
           {title}
         </Heading>
@@ -56,7 +58,7 @@ export function SearchResultItem({ hit, query }: SearchResultItemProps) {
           >
             {highlightQuery(displayDescription, query)}
           </Paragraph>
-          {type === PageType.Hjertekurv && imageUrl && (
+          {isHjertekurvPage && imageUrl && (
             <img
               src={createApiMediaUrl(imageUrl)}
               alt={title}

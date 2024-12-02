@@ -13,25 +13,25 @@
     "verify": "npm i && next lint && tsc --noEmit && prettier src/ --write"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
     "@svgr/webpack": "^8.1.0",
-    "axios": "^1.7.7",
-    "next": "14.2.17",
-    "next-i18next": "^15.3.1",
+    "axios": "^1.7.8",
+    "next": "14.2.18",
+    "next-i18next": "^15.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sass": "^1.80.6"
+    "sass": "^1.81.0"
   },
   "devDependencies": {
-    "@mui/icons-material": "^6.1.6",
-    "@mui/material": "^6.1.6",
-    "@types/node": "^22.9.0",
+    "@mui/icons-material": "^6.1.9",
+    "@mui/material": "^6.1.9",
+    "@types/node": "^22.10.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "eslint": "^8.57.1",
-    "eslint-config-next": "14.2.17",
-    "prettier": "^3.3.3",
-    "typescript": "^5.6.3"
+    "eslint-config-next": "14.2.18",
+    "prettier": "^3.4.1",
+    "typescript": "^5.7.2"
   }
 }

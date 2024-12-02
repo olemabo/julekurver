@@ -9,19 +9,15 @@ export default function WhatYouNeedSection({ headingId }: HeadingIdProps) {
         Dette trenger du
       </Heading>
       <Paragraph>
-        For å sette i gang med å lage julekurver, trenger du ikke mye utstyr
-        uteover det som du allerede har i huset. Du trenger følgende:
+        For å komme i gang med å lage hjertekurver trenger du bare noen få enkle
+        materialer, som du sannsynligvis allerede har hjemme. Dette er hva du
+        trenger:
       </Paragraph>
       <ul className="custom-ul">
-        <li>Glanspapir</li>
-        <li>
-          Saks (det holder med en vanlig saks, men hvis du vil kan du også bruke
-          en bølgesaks eller en takkesaks på ”vingene” av hjertet for å få en
-          fin effekt)
-        </li>
-        <li>Limstift</li>
-        <li>Papp for å lage en mal å klippe etter</li>
-        <li>Linjal eller målebånd</li>
+        <li>Glanspapir (evt annent ønsket papir)</li>
+        <li>Saks</li>
+        <li>Limstift (til å lime på hanken)</li>
+        <li>Matpapir/papp/blåpapir</li>
       </ul>
     </>
   );

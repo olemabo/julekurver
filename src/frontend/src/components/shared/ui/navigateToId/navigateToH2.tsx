@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import "./navigateToH2.css";
+import "./navigateToH2.scss";
 
 export default function NavigateToH2() {
   const [headings, setHeadings] = useState<HTMLHeadingElement[]>([]);

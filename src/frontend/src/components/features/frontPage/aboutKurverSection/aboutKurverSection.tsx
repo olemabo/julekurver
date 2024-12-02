@@ -2,7 +2,7 @@ import Image from "next/image";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import { lightTheme } from "@/constants/displayTheme";
 
-import "./aboutKurverSection.css";
+import "./aboutKurverSection.scss";
 import Heading from "@/components/shared/ui/heading/heading";
 import Button from "@/components/shared/ui/button/button";
 

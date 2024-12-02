@@ -4,8 +4,6 @@ import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
 import Heading from "@/components/shared/ui/heading/heading";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 import { useEffect, useState } from "react";
-
-import "./SearchPage.css";
 import Search from "@/components/shared/ui/search/search";
 import { useRouter } from "next/navigation";
 import { SearchResultItem } from "./SearchResultItem";
@@ -14,6 +12,7 @@ import Pagination, {
   PaginationOption,
 } from "@/components/shared/ui/pagination/pagination";
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
+import "./SearchPage.scss";
 
 export enum PageType {
   StandardPage = "standardPage",

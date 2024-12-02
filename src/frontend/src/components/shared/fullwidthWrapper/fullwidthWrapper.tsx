@@ -1,5 +1,5 @@
 import React from "react";
-import "./fullWidthWrapper.css";
+import "./fullWidthWrapper.scss";
 
 export const bgColorThemeDefault = "default";
 export const bgColorThemeGreen = "green";

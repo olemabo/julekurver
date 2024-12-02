@@ -1,4 +1,4 @@
-import "./hjertekurvLoader.css";
+import "./hjertekurvLoader.scss";
 
 export default function HjertekurvLoader() {
   return (

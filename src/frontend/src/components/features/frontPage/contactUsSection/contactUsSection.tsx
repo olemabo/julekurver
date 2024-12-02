@@ -9,7 +9,7 @@ import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import TextArea from "@/components/shared/ui/textarea/textarea";
 import { lightTheme } from "@/constants/displayTheme";
 import axios from "axios";
-import "./contactUsSection.css";
+import "./contactUsSection.scss";
 import LazyImage from "@/components/shared/lazyImage/LazyImage";
 
 export default function ContactUsSection() {
@@ -41,7 +41,7 @@ export default function ContactUsSection() {
     <div className="contact-section-container">
       <div>
         <Heading theme={lightTheme} headingLevel="h2">
-          Kontakt oss Kontakt oss
+          Kontakt oss
         </Heading>
         <Paragraph theme={lightTheme} maxWidth={paragraphMaxWidth}>
           Vår lidenskap for fletting av hjerter har ført til opprettelsen av

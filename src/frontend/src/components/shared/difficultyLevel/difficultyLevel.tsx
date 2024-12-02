@@ -1,5 +1,5 @@
 import React from "react";
-import "./difficultyLevel.css";
+import "./difficultyLevel.scss";
 import {
   FullStar,
   HalfStar,

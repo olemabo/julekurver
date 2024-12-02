@@ -1,6 +1,6 @@
 import HowToSection, { POSITION_TOP } from "@/components/shared/howTo/howTo";
 import LazyImage from "@/components/shared/lazyImage/LazyImage";
-import "./listWithIllustration.css";
+import "./listWithIllustration.scss";
 
 export type ListhWithIllustraionProps = {
   number: number;
@@ -9,6 +9,7 @@ export type ListhWithIllustraionProps = {
   children: React.ReactNode;
   useLazyImage?: boolean;
   imageSize?: { height: number; width: number };
+  asParagraph?: boolean;
 };
 
 export default function ListWithIllustraion({
@@ -18,12 +19,18 @@ export default function ListWithIllustraion({
   children,
   useLazyImage = false,
   imageSize = { height: 125, width: 260 },
+  asParagraph = true,
 }: ListhWithIllustraionProps) {
   const { width: imageWidth, height: imageHeight } = imageSize;
 
   return (
     <li className="list-illustration-container">
-      <HowToSection isDarkRed number={number} position={POSITION_TOP}>
+      <HowToSection
+        asParagraph={asParagraph}
+        isDarkRed
+        number={number}
+        position={POSITION_TOP}
+      >
         {children}
       </HowToSection>
       {useLazyImage ? (

@@ -4,7 +4,7 @@ import { createApiMediaUrl } from "@/utils/backendApiUrl";
 import Heading from "@/components/shared/ui/heading/heading";
 import Button from "@/components/shared/ui/button/button";
 import { useState } from "react";
-import "./kurvMal.css";
+import "./kurvMal.scss";
 
 type KurvMalProps = {
   mal1Url?: string;

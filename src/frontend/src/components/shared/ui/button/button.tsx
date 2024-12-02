@@ -1,7 +1,7 @@
 "use client";
 
 import { DisplayTheme } from "@/constants/displayTheme";
-import "./button.css";
+import "./button.scss";
 
 type ButtonProps = {
   label: string;

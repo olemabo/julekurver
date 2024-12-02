@@ -3,7 +3,7 @@
 import NumberWithColor from "./numberWithColor";
 import Paragraph from "../ui/paragraph/paragraph";
 
-import "./howTo.css";
+import "./howTo.scss";
 import { darkTheme, DisplayTheme } from "@/constants/displayTheme";
 
 export const POSITION_TOP = "top";
@@ -18,6 +18,7 @@ type HowToSectionProps = {
   theme?: DisplayTheme;
   svgSize?: number;
   isDarkRed?: boolean;
+  asParagraph?: boolean;
 };
 
 export default function HowToSection({
@@ -27,6 +28,7 @@ export default function HowToSection({
   theme = darkTheme,
   svgSize = 40,
   isDarkRed = false,
+  asParagraph = true,
 }: HowToSectionProps) {
   return (
     <div className={`how-to-container ${position}`}>
@@ -36,7 +38,11 @@ export default function HowToSection({
         theme={theme}
         number={number}
       />
-      <Paragraph theme={theme}>{children}</Paragraph>
+      {asParagraph ? (
+        <Paragraph theme={theme}>{children}</Paragraph>
+      ) : (
+        <div>{children}</div>
+      )}
     </div>
   );
 }
