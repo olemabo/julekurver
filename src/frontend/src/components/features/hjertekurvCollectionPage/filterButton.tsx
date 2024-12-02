@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-
-import "./filterButton.css";
 import { HjertekurvFilterType } from "./sort";
+import "./filterButton.scss";
 
 type FilterButtonProps = {
   currentFilter: HjertekurvFilterType;
@@ -29,7 +28,7 @@ export default function FilterButton({
       value: HjertekurvFilterType.HighestDifficultyFletting,
     },
     {
-      label: "Klipping - vanskelig",
+      label: "Klipping - enkel",
       value: HjertekurvFilterType.LowestDifficultyKlipping,
     },
     {

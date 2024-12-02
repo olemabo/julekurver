@@ -11,7 +11,7 @@ import HvordanLageKurver from "./hvordanLageKurver";
 import KurvMal from "./kurvMal/kurvMal";
 import KurvConverter from "./kurvColorConverter/kurvColorConverter";
 
-import "./hjertekurv.css";
+import "./hjertekurv.scss";
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import Bold from "@/components/shared/ui/bold/bold";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import "./kurvColorConverter.css";
+import "./kurvColorConverter.scss";
 
 type KurvConverterProps = {
   imageUrl?: string;

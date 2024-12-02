@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import "./hamburger.css";
+import "./hamburger.scss";
 
 type HamburgerProps = {
   onClick: (isOpen: boolean) => void;

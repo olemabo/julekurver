@@ -261,7 +261,7 @@
 import Button from "@/components/shared/ui/button/button";
 import useHjertekurver from "./useViewHjertekurvSection";
 
-import "./viewHjertekurvSection.css";
+import "./viewHjertekurvSection.scss";
 import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import HjertekurvCarousel from "./hjertekurvCarousel";

@@ -9,28 +9,31 @@ import WhatYouNeedSection from "./whatYouNeedSection";
 import NavigateToH2 from "@/components/shared/ui/navigateToId/navigateToH2";
 import { HjertekurvMalSection } from "./hjertekurvMalSection";
 
+const breadCrumbs = [
+  { linkText: "Forside", href: "/" },
+  { linkText: "Hvordan lage kurver", href: "/hvordan-lage-kurv" },
+];
+
+export const whatYouNeedHeadingId = "what-you-need-heading-id";
+export const hjertekurvMalHeadingId = "hjertekurv-mal-heading-id";
+export const clipHjertekurvHeadingId = "clip-hjertekurv-heading-id";
+export const fletteHjertekurvHeadingId = "flette-hjertekurv-heading-id";
+
 export type HeadingIdProps = {
   headingId: string;
 };
 
 export default function HowToCreateHjertekurv() {
-  const whatYouNeedHeadingId = "what-you-need-heading-id";
-  const hjertekurvMalHeadingId = "hjertekurv-mal-heading-id";
-  const clipHjertekurvHeadingId = "clip-hjertekurv-heading-id";
-  const fletteHjertekurvHeadingId = "flette-hjertekurv-heading-id";
-
   return (
     <PageWrapper isStandardPage>
-      <Breadcrumb
-        linkItems={[
-          { linkText: "Forside", href: "/" },
-          { linkText: "Hvordan lage kurver", href: "/hvordan-lage-kurv" },
-        ]}
-      />
+      <Breadcrumb linkItems={breadCrumbs} />
       <Heading headingLevel="h1">Hvordan lage kurver</Heading>
       <Paragraph>
-        For å komme igang med å lage hjertekurver, trenger du ikke mye utstyr
-        utover det som du allerede har i huset.
+        Å lage hjertekurver krever noen få enkle materialer og følger en
+        relativt fast prosess. Du trenger papir i ønskede farger, en mal for å
+        sikre riktig form, og saks til klipping. Deretter flettes delene sammen
+        for å skape den ferdige kurven. Følg stegene nedenfor for en oversikt
+        over hvordan du lager en hjertekurv.
       </Paragraph>
       <NavigateToH2 />
       <WhatYouNeedSection headingId={whatYouNeedHeadingId} />

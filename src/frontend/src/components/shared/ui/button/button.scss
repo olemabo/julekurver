@@ -3,18 +3,17 @@
   padding: 14px 32px;
   text-align: center;
   display: inline-block;
-  height: 58px;
   font-size: 18px;
-  margin: 4px 2px;
   cursor: pointer;
   height: fit-content;
-  min-height: 58px;
   border-radius: 50px;
   width: fit-content;
   font-family: "Alegreya Sans Light";
+  line-height: 16px;
   transition: background-color 0.5s ease;
 
   &.link {
+    line-height: 24px;
     text-decoration: none;
     border: 1px solid var(--tds-color-primary-base);
     border: 1px solid var(--tds-color-neutrals-gray);

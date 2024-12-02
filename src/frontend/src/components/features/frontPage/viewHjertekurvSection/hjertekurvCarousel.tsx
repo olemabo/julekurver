@@ -262,7 +262,7 @@ import { useState, useEffect } from "react";
 import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
 import { createApiMediaUrl } from "@/utils/backendApiUrl";
 import DisplayHjertekurvSvgWithColors from "@/components/shared/images/displayHjertekurvSvgWithColors";
-import "./hjertekurvCarousel.css";
+import "./hjertekurvCarousel.scss";
 
 type HjertekurvProps = {
   kurver: Hjertekurv[];
