@@ -27,6 +27,7 @@
     text-align: center;
     position: relative;
     display: inline-block;
+    line-height: 48px;
   }
 
   h2::before,
@@ -58,6 +59,12 @@
       top: 50%;
       width: 90%;
       height: 1px;
+    }
+
+    margin: 12px 0;
+
+    h2 {
+      margin-top: 24px;
     }
   }
 }

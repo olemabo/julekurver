@@ -7,7 +7,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import Link from "@/components/shared/ui/link/link";
 
-import "./inspirationSection.css";
+import "./inspirationSection.scss";
 import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
 
 interface InstagramImage {

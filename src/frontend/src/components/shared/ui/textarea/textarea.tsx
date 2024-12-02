@@ -1,5 +1,5 @@
 import { ChangeEvent, TextareaHTMLAttributes, useState } from "react";
-import "./textarea.css";
+import "./textarea.scss";
 
 type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   value: string;

@@ -5,7 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "@/components/shared/ui/link/link";
 import Heading from "@/components/shared/ui/heading/heading";
 
-import "./footer.css";
+import "./footer.scss";
 
 export default function Footer() {
   return (

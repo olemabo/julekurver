@@ -4,6 +4,7 @@ import ListWithIllustraion, {
 import Heading from "@/components/shared/ui/heading/heading";
 import { HeadingIdProps } from "./howToCreateHjertekurv";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
+import Popover from "@/components/shared/ui/popover/popover";
 
 export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
   return (
@@ -12,10 +13,9 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
         Klipp ut kurver
       </Heading>
       <Paragraph>
-        Følg oss også gjerne på Instagram @julekurver for de siste
-        oppdateringene, inspirasjon, og for å være en del av vårt voksende
-        fellesskap. Del gjerne dine egne bilder med oss ved å bruke hashtaggen
-        #BraidedHearts.
+        Nå skal du klippe ut delene til hjertekurven din basert på malen du har
+        valgt. Du trenger to kurvedeler og en hank som skal limes fast til den
+        ferdige kurven. Følg disse trinnene:
       </Paragraph>
       <OrderedListWithIllustrationWrapper>
         <ListWithIllustraion
@@ -25,9 +25,9 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Først må du velge deg ut to farger du vil bruke på kurvene. Klipp
-          deretter ut to rektangler av de ønskede fargene. Klipp ut den fargen
-          du ønsker hank av litt bredere enn den andre.
+          Start med å velge to farger du vil bruke til kurven. Klipp ut to
+          rektangler i de valgte fargene. Hvis du også vil lage en hank, klipp
+          den i en av fargene - litt bredere enn de andre rektanglene.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -37,8 +37,9 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Lag så en brett over midten av kortsiden av papirene (den stiplede
-          linjen). Sørg for at fargen på arket er vendt utover.
+          Lag en brett over midten av kortsiden på begge rektanglene, som
+          indikert med en stiplet linje på malen. Sørg for at den fargede siden
+          vender utover når du bretter.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -47,16 +48,22 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
           illustrationSrc="/images/pages/createHjertekurvPage/clipKurv/to_papir_med_opptegnet_mal.svg"
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
+          asParagraph={false}
         >
-          Tegn på ønsket mal på kurven. Dette kan gjøres på flere ulike måter:
-          {/* <ul className="custom-ul">
-                        <li>Blåpapir</li>
-                        <li>Matpapir</li>
-                        <li>Papir og blyant</li>
-                    </ul> */}
-          Husk å tegne på hanken til kurven. Den kan være like høy som kurven
-          er. Husk også at bunnen av malen skal være langs den lukkede siden av
-          papiret.
+          <Paragraph>
+            Tegn av mønsteret fra valgt mal på kurven din. Dette kan gjøres på
+            flere ulike måter:
+          </Paragraph>
+          <ul className="custom-ul">
+            <li>Blåpapir</li>
+            <li>Matpapir</li>
+            <li>Papir og blyant</li>
+          </ul>
+          <Paragraph>
+            Husk å tegne på hanken til kurven. Den kan være like høy som kurven
+            er. Husk også at bunnen av malen skal være langs den lukkede siden
+            av papiret.
+          </Paragraph>
         </ListWithIllustraion>
         <ListWithIllustraion
           number={4}
@@ -65,10 +72,27 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Klipp så ut kurvene etter de påtegnede linjene. Hvis du vil spare tid
-          og sørge for at begge kurvene blir like, kan du legge den ene kurven
-          inni den andre. Da trenger du også potensielt bare å tegne på malen på
-          det ene arket (dersom kurven har symetrisk motiv).
+          Klipp ut begge delene etter de påtegnede linjene. For å spare tid og
+          sikre at begge kurvedelene blir helt like, kan du legge papirene oppå
+          hverandre og klippe begge samtidig. Dette kan bare gjøres dersom
+          kurven har
+          <Popover
+            title="Symetrik motiv"
+            content={
+              <>
+                Symmetrisk motiv betyr at du klipper ut to identiske maler som
+                skal flettes sammen, slik som i{" "}
+                <a href="/no/hjertekurver/standard-kurv-3x3">9-felts-kurv</a>{" "}
+                brukt i dette eksempelet. Et eksempel på en kurv uten symmetrisk
+                motiv er <a href="/no/hjertekurver/isbjoern">isbjørn-kurven</a>,
+                hvor du må klippe ut to forskjellige maler for å få riktig
+                design.
+              </>
+            }
+          >
+            symetrisk motiv
+          </Popover>
+          .
         </ListWithIllustraion>
         <ListWithIllustraion
           number={5}
@@ -77,9 +101,9 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Nå bør du sitte igjen med to kurver i forskjellige farger hvor bunnen
-          er lukket, samt en hank i ønsket farge. Da er du klar for selve
-          flettingen!
+          Når du er ferdig, skal du ha to kurvedeler i forskjellige farger,
+          begge med en lukket bunn, samt en hank i ønsket farge. Nå er du klar
+          for flettingen!
         </ListWithIllustraion>
       </OrderedListWithIllustrationWrapper>
     </>

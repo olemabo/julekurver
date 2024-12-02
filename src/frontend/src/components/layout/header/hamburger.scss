@@ -2,22 +2,6 @@
   display: none;
   cursor: pointer;
 
-  ul {
-    list-style-type: none;
-    height: 28px;
-    display: block;
-    padding-top: 10px;
-
-    .hamburger {
-      margin-top: 6px;
-      height: 3px;
-      width: 26px;
-      background-color: var(--tds-color-neutrals-gray);
-      transition: 0.5s;
-      position: relative;
-    }
-  }
-
   &.active ul li:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
@@ -28,6 +12,22 @@
 
   &.active ul li:nth-child(2) {
     transform: rotate(-45deg);
+  }
+}
+
+.hamburger-container ul {
+  list-style-type: none;
+  height: 28px;
+  display: block;
+  padding-top: 10px;
+
+  .hamburger {
+    margin-top: 6px;
+    height: 3px;
+    width: 26px;
+    background-color: var(--tds-color-neutrals-gray);
+    transition: 0.5s;
+    position: relative;
   }
 }
 

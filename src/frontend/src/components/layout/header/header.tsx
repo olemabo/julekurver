@@ -10,7 +10,7 @@ import Search from "@/components/shared/ui/search/search";
 // import Link from "@/components/shared/ui/link/link";
 import Hamburger from "./hamburger";
 
-import "./header.css";
+import "./header.scss";
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -76,11 +76,8 @@ export default function Header() {
 
   return (
     <div>
-      <header>
-        <nav
-          style={{ position: "relative", zIndex: 90, display: "flex" }}
-          className="container"
-        >
+      <header className="header-container">
+        <nav className="container nav-container">
           <NextLink className="logo" href="/" onClick={closeMenus}>
             <Image
               src="/images/logo/logo_black-cropped.svg"
@@ -110,18 +107,13 @@ export default function Header() {
                     Om siden
                   </NextLink>
                 </li>
-                {/* <li>
-                  <NextLink onClick={closeMenus} href="/no/kontakt-oss">
-                    Kontakt oss
-                  </NextLink>
-                </li> */}
               </ul>
             </div>
             <ul className="icons">
               <li>
                 <button
                   onClick={toggleSearchDropdown}
-                  className={`search-button center-position ${isSearchOpen ? "active" : ""}`}
+                  className={`search-button ${isSearchOpen ? "active" : ""}`}
                   ref={buttonRef}
                 >
                   <div className="search-icon active"></div>
@@ -147,16 +139,6 @@ export default function Header() {
             onClick={handleSearch}
           />
         </div>
-        {/* <div className="hjertekurver-link-section">
-          <Paragraph>
-            Ønsker du å søke blant julekurver, se søkesiden:{" "}
-            <Link
-              linkTitle="julekurver"
-              className="link"
-              href="/no/julekurver"
-            />
-          </Paragraph>
-        </div> */}
       </div>
     </div>
   );

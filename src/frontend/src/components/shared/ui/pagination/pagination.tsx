@@ -1,12 +1,11 @@
-import "./pagination.css";
-
-import React, { useState } from "react";
 import Image from "next/image";
+import React, { useState } from "react";
+import "./pagination.scss";
 
-export interface PaginationOption {
+export type PaginationOption = {
   label: string;
   value: number;
-}
+};
 
 export const defaultPaginationOptions = [
   { label: "10", value: 10 },

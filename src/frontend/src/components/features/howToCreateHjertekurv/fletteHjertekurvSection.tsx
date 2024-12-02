@@ -4,6 +4,8 @@ import ListWithIllustraion, {
 } from "./listWithIllustration";
 import Heading from "@/components/shared/ui/heading/heading";
 import { HeadingIdProps } from "./howToCreateHjertekurv";
+import Popover from "@/components/shared/ui/popover/popover";
+import Image from "next/image";
 
 export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
   return (
@@ -12,8 +14,10 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
         Flett kurvern
       </Heading>
       <Paragraph>
-        Denne seksjonen vil forklare hvordan du kan flette kurver når du har
-        klippet ut og har de klare.
+        Denne seksjonen viser hvordan du kan flette kurven etter at du har
+        klippet ut delene og gjort dem klare. Det finnes flere måter å sette
+        sammen en hjertekurv på, men her presenteres en enkel og effektiv
+        fremgangsmåte du kan følge
       </Paragraph>
       <OrderedListWithIllustrationWrapper>
         <ListWithIllustraion
@@ -23,9 +27,23 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Finn fram de to utklippede delen til kurven. For videre instruksjoner
-          har vi gitt de ulike strimlene på hjertekurven kategoriene A, B og C
-          på hvit kurv, og 1, 2 og 3 på rød kurv.
+          Finn fram de to utklippede delene av kurven. For å gjøre
+          instruksjonene tydelige, har vi gitt strimlene
+          <Popover
+            title="Strimmel"
+            content={
+              <>
+                En strimmel er en av de utklippede delene av en hjertekurv som
+                brukes til å flette kurven sammen. I eksempelet her har vært del
+                (rød og hvit) 3 strimler hver (Markert med A, B og C for hvit
+                kurv og 1, 2 og 3 for rød kurv.)
+              </>
+            }
+          >
+            strimlene
+          </Popover>
+          på den hvite kurven bokstavene A, B og C, og på den røde kurven
+          tallene 1, 2 og 3.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -35,8 +53,9 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Start med å plassere den rød kurven oppå den hvite, slik at den hvite
-          halvsirklen er nærmest deg.
+          Legg den røde kurven oppå den hvite, slik at halvsirkelen på den hvite
+          kurven er nærmest deg. Dette gir en god utgangsposisjon for
+          flettingen.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -46,8 +65,8 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Den første strimmelen vi skal se på er C-strimmleen. Dra opp den hvite
-          C-strimmelen og legg den oppå den røde kurven i en start posisjon.
+          Begynn med den hvite C-strimmelen. Åpne opp rød strimmel 1 og dra den
+          hvite C-strimmelen gjennom den.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -57,8 +76,8 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Start med å plassere den rød kurven oppå den hvite, slik at den hvite
-          halvsirklen er nærmest deg.
+          Fortsett ved å åpne den hvite C-strimmelen og dra den røde strimmelen
+          2 gjennom.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -68,9 +87,8 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Finn fram de to utklippede delen til kurven. For videre instruksjoner
-          har vi gitt de ulike strimlene på hjertekurven kategoriene A, B og C
-          på hvit kurv, og 1, 2 og 3 på rød kurv.
+          Den siste delen for den hvite C-strimmelen er å trekke den gjennom den
+          røde strimmelen 1.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -80,9 +98,10 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Finn fram de to utklippede delen til kurven. For videre instruksjoner
-          har vi gitt de ulike strimlene på hjertekurven kategoriene A, B og C
-          på hvit kurv, og 1, 2 og 3 på rød kurv.
+          Nå går du videre til den hvite B-strimmelen. Legg den oppå de røde
+          strimlene i en utgangsposisjon, slik du gjorde med den hvite
+          C-strimmelen tidligere. Gjenta prosessen fra punkt 3-5, men i motsatt
+          rekkefølge.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -92,9 +111,8 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Finn fram de to utklippede delen til kurven. For videre instruksjoner
-          har vi gitt de ulike strimlene på hjertekurven kategoriene A, B og C
-          på hvit kurv, og 1, 2 og 3 på rød kurv.
+          Begynn med den hvite B-strimmelen. Åpne den hvite C-strimmelen og dra
+          den røde strimmelen 3 gjennom.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -104,9 +122,10 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Finn fram de to utklippede delen til kurven. For videre instruksjoner
-          har vi gitt de ulike strimlene på hjertekurven kategoriene A, B og C
-          på hvit kurv, og 1, 2 og 3 på rød kurv.
+          Fortsett ved å dra den hvite B-strimmelen gjennom den røde strimmelen
+          2, og til slutt dra den røde strimmelen 1 gjennom den hvite
+          B-strimmelen. Når du er ferdig med den hvite B-strimmelen, bør du ha
+          to farger i henhold til mønsteret vist på bildet.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -116,9 +135,38 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Finn fram de to utklippede delen til kurven. For videre instruksjoner
-          har vi gitt de ulike strimlene på hjertekurven kategoriene A, B og C
-          på hvit kurv, og 1, 2 og 3 på rød kurv.
+          Fullfør flettingen med den hvite C-strimmelen. Før du begynner, kan
+          det være lurt å stramme kurven litt ved å dra den hvite B- og
+          C-strimmelen så langt mot den røde halvsirkelen som mulig. Dette gir
+          mer plass når du skal flette inn den hvite C-strimmelen. Hvis det er
+          vanskelig å flette C-strimmelen på grunn av trang plass, kan det tyde
+          på at kurven er klippet litt feil eller at
+          <Popover
+            title="Flettetillegg"
+            content={
+              <>
+                Flettetillegget er den lille ekstra lengden du klipper opp
+                strimelene i, for å ta høyde for at flettingen vil ta litt
+                ekstra av strimelene. Alle maler som er laget er laget basert på
+                et kvadrat. Det vil si at du får nøyaktig lik bredde og høyde på
+                fletteområdet. Hvis man klipper det slik vil man fort støte på
+                et problem mot slutten av flettingen, da selve flettingene også
+                vil kreve litt ekstra papir når strimlene går opp og ned. Dette
+                flettetillegg må du legge til selv når du klipper. For en kurv
+                med få strimlere kan du legge til lite, 1-4 mm, men for en kurv
+                med mange strimler må du legge til mer.
+                <Image
+                  src={"/images/pages/frontpage/flettetillegg.svg"}
+                  alt={`Illustrasjon av flettetillegg`}
+                  width={300}
+                  height={60}
+                />
+              </>
+            }
+          >
+            flettetillegget
+          </Popover>{" "}
+          er for lite.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -128,8 +176,8 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Lim på litt lim nederst på hanken (på den åpne siden) og legg hanken
-          inni hjertekurven.
+          Lim en liten mengde lim nederst på hanken (på den åpne siden) og legg
+          hanken inni hjertekurven.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -139,9 +187,10 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 300 }}
         >
-          Sørg for at limet har tørket og forsøk å åpne kurven litt fra innsiden
-          for å se at hankene ikke sitter sammen. Gratulerer, du har lagd en
-          hjertekurv!
+          La limet tørke helt og åpne kurven forsiktig fra innsiden for å
+          kontrollere at hankene ikke sitter sammen. Vær også forsiktig med at
+          det ikke kommer lim utenfor hanken slik at du limer kurven sammen og
+          ikke får åpnet den. Gratulerer, du har laget en hjertekurv!
         </ListWithIllustraion>
       </OrderedListWithIllustrationWrapper>
     </>

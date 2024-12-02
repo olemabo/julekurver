@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import "./paragraph.css";
+import "./paragraph.scss";
 import { darkTheme, DisplayTheme } from "@/constants/displayTheme";
 
 interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {

@@ -1,7 +1,7 @@
 import Button from "@/components/shared/ui/button/button";
-import "./lagHjertekurvSection.css";
 import JulekurvStep from "./lagHjertekurvStep";
 import { lightTheme } from "@/constants/displayTheme";
+import "./lagHjertekurvSection.scss";
 
 export default function LagHjertekurvSection() {
   const julekurvSteps = [

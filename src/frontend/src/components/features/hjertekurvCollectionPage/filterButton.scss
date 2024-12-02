@@ -30,13 +30,14 @@
   position: relative;
 
   button {
+    color: inherit;
     background-color: inherit;
     border: none;
     cursor: pointer;
     position: relative;
     padding-right: 20px;
     font-family: "Alegreya Sans Light", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     text-decoration-color: transparent;
     transition:
       color 0.3s,

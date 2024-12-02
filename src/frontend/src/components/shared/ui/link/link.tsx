@@ -1,7 +1,7 @@
 "use client";
 
 import { default as NextLink } from "next/link";
-import "./link.css";
+import "./link.scss";
 
 export type TargetType = "_blank" | "";
 

@@ -7,7 +7,7 @@ import DifficultyLevel, {
   ICON_TYPE_SCISSOR,
 } from "@/components/shared/difficultyLevel/difficultyLevel";
 import DisplayHjertekurvSvgWithColors from "@/components/shared/images/displayHjertekurvSvgWithColors";
-import "./hjertekurvCollectionCard.css";
+import "./hjertekurvCollectionCard.scss";
 
 export type HjertekurvCardSize = "sm" | "default";
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import "./displayHjertekurvSvgWithColors.css";
+import "./displayHjertekurvSvgWithColors.scss";
 
 type DisplayHjertekurvSvgWithColorsProps = {
   imageUrl?: string;
