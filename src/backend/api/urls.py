@@ -10,4 +10,5 @@ urlpatterns = [
     path('webpage-search-api/', views.WebpageSearchAPIView.as_view(), name='webpage-search-api'),
     path('instagram-images-api/', views.InstagramImagesAPIView.as_view(), name='instagram-images-api'),
     path('feedback/', views.FeedbackAPIView.as_view(), name='feedback-api'),
+    path('hjertekurv-visit-stats/<int:hjertekurv_id>/', views.HjertekurvVisitStatsAPIView.as_view(), name='hjertekurv-visit-stats'),
 ]
