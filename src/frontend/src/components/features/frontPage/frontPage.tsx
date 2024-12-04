@@ -21,7 +21,7 @@ export default function FrontPage() {
         <ViewHjertekurvSection />
       </FullWidthWrapper>
       <FullWidthWrapper color={bgColorThemeGreen}>
-        <ContentHeader title="Lag en julekurv" theme={lightTheme} />
+        <ContentHeader title="Lag en hjertekurv" theme={lightTheme} />
         <LagJulekurvSection />
       </FullWidthWrapper>
       <FullWidthWrapper>

@@ -5,6 +5,7 @@ import { lightTheme } from "@/constants/displayTheme";
 import "./aboutKurverSection.scss";
 import Heading from "@/components/shared/ui/heading/heading";
 import Button from "@/components/shared/ui/button/button";
+import Link from "next/link";
 
 export default function AboutKurverSection() {
   const paragraphMaxWidth = 480;
@@ -24,45 +25,40 @@ export default function AboutKurverSection() {
       />
       <div className="text-container">
         <Heading theme={lightTheme} headingLevel="h2">
-          Lidenskap til kurver
+          Lidenskap for hjertekurver
         </Heading>
         <Paragraph
           maxWidth={paragraphMaxWidth}
           style={paragraphStyle}
           theme={lightTheme}
         >
-          Vår lidenskap for fletting av hjerter har ført til opprettelsen av
-          dette nettstedet, et sted hvor kjærlighet møter kreativitet. Vi tror
-          på kraften av håndlagde hjerte-flettede kreasjoner for å uttrykke
-          følelser og skape unike øyeblikk.
+          Denne nettsiden er opprettet for å samle og dele kunnskap om
+          hjertekurver, en tradisjon som kombinerer håndverk og kreativitet.
+          Håndlagde hjertekurver kan være både dekorative og funksjonelle, og de
+          representerer en personlig måte å skape og dele noe spesielt på.
         </Paragraph>
         <Paragraph
           maxWidth={paragraphMaxWidth}
           style={paragraphStyle}
           theme={lightTheme}
         >
-          På hjertekurver.no finner du inspirasjon, veiledninger og en gallery
-          med ulike hjerte-flettede mesterverk. Vi er dedikert til å dele gleden
-          ved å skape disse vakre kunstverkene og ønsker å bygge et fellesskap
-          av hjerte-fletteentusiaster.
+          På hjertekurver.no finner du inspirasjon, detaljerte veiledninger og
+          et omfattende galleri av ulike kurver. Målet vårt er å gjøre det
+          enkelt for alle, uansett erfaring, å lære og utforske denne formen for
+          papirhåndverk.
         </Paragraph>
         <Paragraph
           maxWidth={paragraphMaxWidth}
           style={paragraphStyle}
           theme={lightTheme}
         >
-          Takk for at du er en del av vår reise. Utforsk, lær, og del dine egne
-          hjerte-flettede opplevelser med oss. Sammen skaper vi et fellesskap
-          som feirer kjærlighet og kreativitet gjennom kunsten av
-          hjerte-fletting.
-        </Paragraph>
-        <Paragraph
-          maxWidth={paragraphMaxWidth}
-          style={paragraphStyle}
-          theme={lightTheme}
-        >
-          Har du spørsmål, forslag eller bare ønsker å si hei? Besøk vår Kontakt
-          Oss side for å komme i kontakt.
+          Hvis du har spørsmål, forslag eller ønsker å komme i kontakt, finner
+          du oss på vår{" "}
+          <Link style={{ color: "inherit" }} href="/no/kontakt-oss">
+            kontakt oss
+          </Link>
+          -side. Vi setter pris på alle som tar del i arbeidet med å videreføre
+          og utvikle tradisjonen med hjertekurver.
         </Paragraph>
         <Button theme={lightTheme} label="Les mer om oss" href="/no/om-siden" />
       </div>

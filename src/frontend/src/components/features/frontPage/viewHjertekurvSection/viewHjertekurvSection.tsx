@@ -340,14 +340,14 @@ export default function ViewHjertekurvSection() {
         <div>
           <Paragraph maxWidth={400}>
             Få inspirasjon fra vår store samling av hjertekurver! Vi har samlet
-            et bredt utvalg av design – alt fra klassiske julefarger til
+            et bredt utvalg av design - alt fra klassiske julekurver til
             kreative og moderne mønstre.
           </Paragraph>
           <Paragraph maxWidth={400}>Hver kurv kommer med:</Paragraph>
           <ul className="custom-ul">
             <li>Et bilde av det ferdige resultatet</li>
-            <li>Informasjon om designet</li>
             <li>Maler og veiledning for å lage din egen</li>
+            <li>Informasjon om designet</li>
           </ul>
           <Button
             style={{ marginTop: "24px" }}

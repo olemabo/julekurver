@@ -11,6 +11,7 @@ import { lightTheme } from "@/constants/displayTheme";
 import axios from "axios";
 import "./contactUsSection.scss";
 import LazyImage from "@/components/shared/lazyImage/LazyImage";
+import Link from "next/link";
 
 export default function ContactUsSection() {
   const apiBaseUrl = createBackendUrl();
@@ -44,14 +45,19 @@ export default function ContactUsSection() {
           Kontakt oss
         </Heading>
         <Paragraph theme={lightTheme} maxWidth={paragraphMaxWidth}>
-          Vår lidenskap for fletting av hjerter har ført til opprettelsen av
-          dette nettstedet, et sted hvor kjærlighet møter kreativitet. Vi tror
-          på kraften av håndlagde hjerte-flettede kreasjoner for å uttrykke
-          følelser og skape unike øyeblikk.
+          Din interesse betyr mye for oss, og vi setter stor pris på
+          tilbakemeldinger. Har du spørsmål, forslag, eller ønsker å dele dine
+          egne hjertekurv-kreasjoner? Vi vil gjerne høre fra deg! Besøk vår{" "}
+          <Link style={{ color: "inherit" }} href="/no/kontakt-oss">
+            kontakt oss{" "}
+          </Link>
+          -side for å komme i kontakt.
         </Paragraph>
         <Paragraph theme={lightTheme} maxWidth={paragraphMaxWidth}>
-          Om det er noe som helst du ønsker å ta kontakt om, ikke nøl. Om det er
-          nye kurver, feil på nettsiden eller andre spørsmål.
+          Hvis du ønsker å sende inn en rask, anonym tilbakemelding, kan du
+          gjøre det i boksen under. Skriv inn det du vil dele, og klikk på
+          &apos;Send inn tilbakemelding&apos; - vi gjennomgår alle bidrag så
+          snart som mulig.
         </Paragraph>
         {hasSentContactUsMessage ? (
           <Paragraph theme={lightTheme} maxWidth={paragraphMaxWidth}>

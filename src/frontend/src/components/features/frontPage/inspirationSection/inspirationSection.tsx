@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 import Image from "next/image";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import PinterestIcon from "@mui/icons-material/Pinterest";
+// import PinterestIcon from "@mui/icons-material/Pinterest";
 import Link from "@/components/shared/ui/link/link";
 
 import "./inspirationSection.scss";
@@ -75,12 +75,12 @@ export default function InspirationSection() {
           target="_blank"
           href="https://www.instagram.com/hjertekurver/"
         />
-        <Link
+        {/* <Link
           icon={<PinterestIcon />}
           linkTitle="Pinterest"
           target="_blank"
           href="#"
-        />
+        /> */}
       </div>
     </>
   );
