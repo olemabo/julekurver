@@ -1,6 +1,7 @@
 from django.urls import reverse
 from django.db import models
 from django.utils import timezone
+from django.utils.timezone import now
 
 COLOR_CHOICES = (
     ('about','ABOUT'),
@@ -78,12 +79,17 @@ class Hjertekurv(models.Model):
     categories = models.ManyToManyField(KurvCategory, verbose_name="Kategorier", blank=True, related_name='hjertekurver', help_text='Kategorier til hjertekurven')
 
     created_at = models.DateTimeField(verbose_name="Opprettet dato", default=timezone.now, help_text='Dato når hjertekurven ble opprettet')
+    visit_count = models.PositiveIntegerField(verbose_name="Populæritet", help_text='Antall ganger klikke seg på siden', default=0)
 
     class Meta:
         ordering = ['name']
         verbose_name = "Hjertekurv"
         verbose_name_plural = "Hjertekurver"
     
+    def increment_visit_count(self):
+        self.visit_count += 1
+        self.save()
+
     def get_absolute_url(self):
         """Returns the url to access a particular instance of MyModelName."""
         return reverse('model-detail-view', args=[str(self.url_name)])
@@ -92,3 +98,11 @@ class Hjertekurv(models.Model):
         """String for representing the MyModelName object (in Admin site etc.)."""
         return f'{self.name} - {self.id}'
     
+
+
+class VisitLog(models.Model):
+    hjertekurv = models.ForeignKey('Hjertekurv', on_delete=models.CASCADE, related_name='visit_logs')
+    timestamp = models.DateTimeField(default=now)
+
+    def __str__(self):
+        return f"{self.hjertekurv.name} visited at {self.timestamp}"
