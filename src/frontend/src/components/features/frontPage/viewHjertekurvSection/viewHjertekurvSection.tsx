@@ -346,8 +346,8 @@ export default function ViewHjertekurvSection() {
           <Paragraph maxWidth={400}>Hver kurv kommer med:</Paragraph>
           <ul className="custom-ul">
             <li>Et bilde av det ferdige resultatet</li>
-            <li>Informasjon om designet</li>
             <li>Maler og veiledning for å lage din egen</li>
+            <li>Informasjon om designet</li>
           </ul>
           <Button
             style={{ marginTop: "24px" }}

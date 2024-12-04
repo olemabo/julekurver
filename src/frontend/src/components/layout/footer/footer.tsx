@@ -1,6 +1,6 @@
 "use client";
 
-import PinterestIcon from "@mui/icons-material/Pinterest";
+// import PinterestIcon from "@mui/icons-material/Pinterest";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "@/components/shared/ui/link/link";
 import Heading from "@/components/shared/ui/heading/heading";
@@ -37,12 +37,12 @@ export default function Footer() {
             target="_blank"
             href="https://www.instagram.com/hjertekurver/"
           />
-          <Link
+          {/* <Link
             icon={<PinterestIcon />}
             linkTitle="Pinterest"
             target="_blank"
             href="#"
-          />
+          /> */}
         </div>
       </div>
     </footer>
