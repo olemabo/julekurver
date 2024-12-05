@@ -10,7 +10,7 @@ function getLocale() {
 export default function localeMiddleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (/\.(png|jpg|jpeg|gif|svg|ico|css|js|json|ttf)$/.test(pathname)) {
+  if (/\.(png|jpg|jpeg|gif|svg|html|ico|css|js|json|ttf)$/.test(pathname)) {
     return NextResponse.next();
   }
 
