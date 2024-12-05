@@ -18,7 +18,7 @@ export default function AboutKurverSection() {
   return (
     <div className="about-kurver-container">
       <Image
-        alt="logo av flettet hjertekurv"
+        alt="Logo av flettet hjertekurv"
         height={350}
         width={335}
         src={"/images/pages/frontpage/frontpage_hjertekurv-cropped.svg"}

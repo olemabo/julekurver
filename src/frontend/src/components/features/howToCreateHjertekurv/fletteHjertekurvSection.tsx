@@ -28,7 +28,7 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           imageSize={{ width: 351, height: 200 }}
         >
           Finn fram de to utklippede delene av kurven. For å gjøre
-          instruksjonene tydelige, har vi gitt strimlene
+          instruksjonene tydelige, har vi gitt
           <Popover
             title="Strimmel"
             content={
@@ -65,7 +65,7 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Begynn med den hvite C-strimmelen. Åpne opp rød strimmel 1 og dra den
+          Begynn med den hvite C-strimmelen. Åpne opp rød strimmel 3 og dra den
           hvite C-strimmelen gjennom den.
         </ListWithIllustraion>
 
@@ -100,8 +100,8 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
         >
           Nå går du videre til den hvite B-strimmelen. Legg den oppå de røde
           strimlene i en utgangsposisjon, slik du gjorde med den hvite
-          C-strimmelen tidligere. Gjenta prosessen fra punkt 3-5, men i motsatt
-          rekkefølge.
+          C-strimmelen tidligere. I de neste stegene skal vi gjenta prosessen
+          fra punkt 3-5, men i motsatt rekkefølge.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -135,10 +135,10 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Fullfør flettingen med den hvite C-strimmelen. Før du begynner, kan
+          Fullfør flettingen med den hvite A-strimmelen. Før du begynner, kan
           det være lurt å stramme kurven litt ved å dra den hvite B- og
           C-strimmelen så langt mot den røde halvsirkelen som mulig. Dette gir
-          mer plass når du skal flette inn den hvite C-strimmelen. Hvis det er
+          mer plass når du skal flette inn den hvite A-strimmelen. Hvis det er
           vanskelig å flette C-strimmelen på grunn av trang plass, kan det tyde
           på at kurven er klippet litt feil eller at
           <Popover

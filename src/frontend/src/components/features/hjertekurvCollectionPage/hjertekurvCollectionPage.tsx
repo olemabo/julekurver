@@ -14,13 +14,12 @@ import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import FilterButton from "./filterButton";
 import { filterAndSortHjertekurver, HjertekurvFilterType } from "./sort";
 import CategoryFilterToggle from "./categories";
-
-import "./hjertekurvCollectionCard.scss";
 import Popover from "@/components/shared/ui/popover/popover";
 import {
   FullHeart,
   FullScissor,
 } from "@/components/shared/difficultyLevel/icons";
+import "./hjertekurvCollectionCard.scss";
 
 export const defaultPaginationOptions = [
   { label: "12", value: 12 },
@@ -46,7 +45,7 @@ export function HjertekurvCollectionPage({
   const [selectedCategories, setSelectedCategories] = useState<number[]>([]);
   const showResultsRef = useRef<HTMLDivElement | null>(null);
   const [selectedFilter, setSelectedFilter] = useState(
-    HjertekurvFilterType.Alphabetic,
+    HjertekurvFilterType.RecentlyCreated,
   );
 
   const filteredAndSortedHjertekurver = filterAndSortHjertekurver(
