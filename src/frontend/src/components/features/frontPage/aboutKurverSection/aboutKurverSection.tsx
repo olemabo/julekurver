@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function AboutKurverSection() {
   const paragraphMaxWidth = 480;
   const paragraphStyle = {
-    fontFamily: "Alegreya Sans Light",
+    fontFamily: "var(--font-alegreya-sans-light)",
     fontSize: "18px",
     maxWidth: paragraphMaxWidth,
   };
@@ -21,6 +21,7 @@ export default function AboutKurverSection() {
         alt="Logo av flettet hjertekurv"
         height={350}
         width={335}
+        priority
         src={"/images/pages/frontpage/frontpage_hjertekurv-cropped.svg"}
       />
       <div className="text-container">

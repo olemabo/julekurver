@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import "./popover.scss";
 import Heading from "../heading/heading";
+import "./popover.scss";
 
 type PopoverProps = {
-  content: React.ReactNode; // Accept React nodes as content
+  content: React.ReactNode;
   children: React.ReactNode;
   title?: string;
 };
@@ -45,23 +45,20 @@ const Popover = ({ title, content, children }: PopoverProps) => {
 
   useEffect(() => {
     if (isVisible && buttonRef.current && popoverRef.current) {
-      // Calculate position based on the button position
       const buttonRect = buttonRef.current.getBoundingClientRect();
       const viewportWidth = window.innerWidth;
-      const popoverWidth = 350; // Adjust as needed
+      const popoverWidth = 350;
 
       let leftPosition =
         buttonRect.left + buttonRect.width / 2 - popoverWidth / 2;
-      const topPosition = buttonRect.bottom + window.scrollY + 10; // Adjust spacing
+      const topPosition = buttonRect.bottom + window.scrollY + 10;
 
-      // Ensure the popover stays within viewport bounds
       if (leftPosition < 0) {
         leftPosition = 0;
       } else if (leftPosition + popoverWidth > viewportWidth) {
         leftPosition = viewportWidth - popoverWidth;
       }
 
-      // Apply styles directly to the popover
       popoverRef.current.style.position = "absolute";
       popoverRef.current.style.top = `${topPosition}px`;
       popoverRef.current.style.left = `${leftPosition}px`;

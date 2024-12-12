@@ -15,7 +15,11 @@ type LinkProps = {
 
 export function Link({ linkTitle, href, target, className, icon }: LinkProps) {
   return (
-    <NextLink target={target} href={href} className={`jds-link ${className}`}>
+    <NextLink
+      target={target}
+      href={href}
+      className={`jds-link ${className || ""}`}
+    >
       {icon && <span className="icon-container">{icon}</span>}
       {linkTitle && linkTitle}
     </NextLink>

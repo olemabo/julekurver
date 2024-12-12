@@ -1,4 +1,37 @@
 {
-    "title": "Welcome to my website",
-    "description": "This is a sample description in English."
+    "footer": {
+        "hjertekurverSection": {
+            "title": "Pleated Heart",
+            "seeKurverLinkText": "See Pleated Hearts",
+            "createKurverLinkText": "Create baskets"
+        },
+        "aboutSiteSection": {
+            "title": "About the site",
+            "aboutSiteLinkText": "About the site",
+            "contactUsLinkText": "Contact us"
+        },
+        "followUsHeading": "Follow us"
+    },
+    "header": {
+        "hjertekurverLinkText": "See Hearts",
+        "createKurverLinkText": "Create Hearts",
+        "abouteSiteLinkText": "About the site",
+        "logoText": "Pleated Hearts"
+    },
+    "pages": {
+        "hjertekurvPage": {
+            "difficultyFletting": "Weaving difficulty",
+            "difficultyKlipping": "Cutting difficulty",
+            "added": "Added",
+            "changeColorLeft": "Change color of the left heart",
+            "changeColorRight": "Change color of the right heart",
+            "downloadMalButton": "Download template",
+            "malTitle": "Template"
+        },
+        "frontpage": {
+            "getInspiredTitle": "Get inspired",
+            "createHjertekurvTitle": "Create a pleated heart",
+            "seeOurKurver": "See our Hearts"
+        }
+    }
 }

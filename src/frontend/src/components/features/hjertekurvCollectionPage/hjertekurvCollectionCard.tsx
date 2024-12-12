@@ -47,7 +47,7 @@ export default function HjertekurvCollectionCard({
   return (
     <Link href={`/hjertekurver/${url}`} key={name} className={size}>
       <div className="section">
-        <Heading style={{ color: fillColor1 }} headingLevel="h3">
+        <Heading style={{ color: fillColor1 }} headingLevel="h2">
           {name}
         </Heading>
         <div className="hover-wrapper">

@@ -10,7 +10,7 @@ type IconProps = {
 
 const sizeMap = {
   small: 15,
-  medium: 26,
+  medium: 22,
   big: 30,
 };
 

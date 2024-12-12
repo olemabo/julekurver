@@ -18,6 +18,10 @@
   a {
     font-size: 20px;
   }
+
+  svg {
+    fill: var(--jds-link-text-color);
+  }
 }
 
 @media (max-width: 450px) {

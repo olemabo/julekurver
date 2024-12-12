@@ -66,6 +66,7 @@ export default function ContactUsSection() {
         ) : (
           <div className="contact-form">
             <TextArea
+              label="Legg igjen en tilbakemelding"
               customOnChange={(message: string) => setContactUsMessage(message)}
               value={contactUsMessage}
               placeholder="Legg inn tilbakemelding..."

@@ -22,6 +22,11 @@
       font-size: 18px;
       font-weight: 500;
       color: var(--tds-color-filter-button-border);
+
+      &:focus-visible {
+        outline: 2px solid var(--focus-outline-color);
+        outline-offset: var(--focus-outline-offset);
+      }
     }
 
     .filter-button {

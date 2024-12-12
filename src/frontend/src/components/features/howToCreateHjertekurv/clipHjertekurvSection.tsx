@@ -5,6 +5,7 @@ import Heading from "@/components/shared/ui/heading/heading";
 import { HeadingIdProps } from "./howToCreateHjertekurv";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Popover from "@/components/shared/ui/popover/popover";
+import Link from "next/link";
 
 export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
   return (
@@ -82,9 +83,12 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
               <>
                 Symmetrisk motiv betyr at du klipper ut to identiske maler som
                 skal flettes sammen, slik som i{" "}
-                <a href="/no/hjertekurver/standard-kurv-3x3">9-felts-kurv</a>{" "}
+                <Link href="/no/hjertekurver/standard-kurv-3x3">
+                  9-felts-kurv
+                </Link>{" "}
                 brukt i dette eksempelet. Et eksempel på en kurv uten symmetrisk
-                motiv er <a href="/no/hjertekurver/isbjoern">isbjørn-kurven</a>,
+                motiv er{" "}
+                <Link href="/no/hjertekurver/isbjoern">isbjørn-kurven</Link>,
                 hvor du må klippe ut to forskjellige maler for å få riktig
                 design.
               </>

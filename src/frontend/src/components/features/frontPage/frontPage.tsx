@@ -1,3 +1,5 @@
+"use client";
+
 import FullWidthWrapper, {
   bgColorThemeGreen,
   bgColorThemeRed,
@@ -9,19 +11,23 @@ import AboutKurverSection from "./aboutKurverSection/aboutKurverSection";
 import ViewHjertekurvSection from "./viewHjertekurvSection/viewHjertekurvSection";
 import InspirationSection from "./inspirationSection/inspirationSection";
 import ContactUsSection from "./contactUsSection/contactUsSection";
+import { useFrontPageTitles } from "./utils";
 
 export default function FrontPage() {
+  const { getInspiredTitle, createHjertekurvTitle, seeOurKurver } =
+    useFrontPageTitles();
+
   return (
     <div className="default-page-container frontpage">
       <FullWidthWrapper color={bgColorThemeRed}>
         <AboutKurverSection />
       </FullWidthWrapper>
       <FullWidthWrapper>
-        <ContentHeader title="Se våre kurver" theme={darkTheme} />
+        <ContentHeader title={seeOurKurver} theme={darkTheme} />
         <ViewHjertekurvSection />
       </FullWidthWrapper>
       <FullWidthWrapper color={bgColorThemeGreen}>
-        <ContentHeader title="Lag en hjertekurv" theme={lightTheme} />
+        <ContentHeader title={createHjertekurvTitle} theme={lightTheme} />
         <LagJulekurvSection />
       </FullWidthWrapper>
       <FullWidthWrapper>
@@ -32,7 +38,7 @@ export default function FrontPage() {
         <ContactUsSection />
       </FullWidthWrapper>
       <FullWidthWrapper>
-        <ContentHeader title="Bli inspirert" theme={darkTheme} />
+        <ContentHeader title={getInspiredTitle} theme={darkTheme} />
         <InspirationSection />
       </FullWidthWrapper>
     </div>

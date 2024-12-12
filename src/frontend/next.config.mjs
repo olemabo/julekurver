@@ -29,7 +29,7 @@ const nextConfig = {
           headers: [
             {
               key: "Cache-Control",
-              value: "public, max-age=100, immutable", // Caches for 100 seconds, immutable
+              value: "public, max-age=31536000, immutable",
             },
           ],
         },
@@ -71,9 +71,9 @@ const nextConfig = {
     },
     // Enable React strict mode for highlighting potential problems
     reactStrictMode: true,
-  
-    // Enable SWC minification for faster builds and smaller bundle size
-    swcMinify: true,
+    sassOptions: {
+      silenceDeprecations: ["legacy-js-api"],
+    }
   };
   
   export default nextConfig;

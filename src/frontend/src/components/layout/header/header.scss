@@ -4,6 +4,11 @@
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
+  &:focus-visible {
+    outline: 2px solid var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -12,7 +17,7 @@
     top: 29%;
     right: 29%;
     width: 0;
-    height: 2.5px;
+    height: 2px;
     margin-top: -2px;
     background-color: black;
     transform: rotate(-45deg);
@@ -28,7 +33,7 @@
     bottom: 22%;
     right: 22%;
     width: 29%;
-    height: 2.5px;
+    height: 2px;
     margin-top: -2px;
     background-color: black;
     transform: rotate(45deg);
@@ -85,7 +90,7 @@
     align-items: center;
 
     .logo {
-      font-family: "Alegreya Header";
+      font-family: var(--font-alegreya-header);
       border-bottom: none;
       text-decoration: none;
       font-size: 36px;
@@ -95,6 +100,11 @@
       justify-content: center;
       align-items: center;
       column-gap: 8px;
+
+      &:focus-visible {
+        outline: 2px solid var(--focus-outline-color);
+        outline-offset: var(--focus-outline-offset);
+      }
     }
 
     .link-items-container {
@@ -120,6 +130,11 @@
         &:hover {
           text-decoration: underline;
           text-decoration-thickness: from-font;
+        }
+
+        &:focus-visible {
+          outline: 2px solid var(--focus-outline-color);
+          outline-offset: var(--focus-outline-offset);
         }
       }
 

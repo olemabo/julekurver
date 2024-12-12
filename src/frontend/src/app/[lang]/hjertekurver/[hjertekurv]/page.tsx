@@ -1,18 +1,21 @@
+"use server";
+
 import { fetchWith404Check } from "@/api/fetchWrapper";
 import { Category } from "@/components/features/hjertekurvCollectionPage/useCategories";
 import HjertekurvPage from "@/components/features/hjertekurvPage/hjertekurvPage";
 import { createApiMediaUrl, createBackendUrl } from "@/utils/backendApiUrl";
+import { HjertekurvParams } from "../page";
 
 export async function generateMetadata({
   params,
 }: {
-  params: { hjertekurv: string };
+  params: HjertekurvParams;
 }) {
-  const hjertekurvName = params.hjertekurv;
+  const { hjertekurv } = await params;
   const apiBaseUrl = createBackendUrl();
 
   const pageContent = await fetchWith404Check<Hjertekurv>(
-    `${apiBaseUrl}/api/hjertekurv-page-api/?hjertekurvName=${hjertekurvName}`,
+    `${apiBaseUrl}/api/hjertekurv-page-api/?hjertekurvName=${hjertekurv}`,
     {
       next: {
         revalidate: 1,
@@ -21,7 +24,7 @@ export async function generateMetadata({
   );
 
   return {
-    title: pageContent?.name,
+    title: pageContent?.name + " hjertekurv/julekurv",
     description: pageContent?.about,
     openGraph: {
       title: pageContent?.name,
@@ -52,16 +55,13 @@ export type Hjertekurv = {
   popularity: number;
 };
 
-export default async function Page({
-  params,
-}: {
-  params: { hjertekurv: string };
-}) {
-  const hjertekurvName = params.hjertekurv;
+export default async function Page({ params }: { params: HjertekurvParams }) {
+  const { hjertekurv } = await params;
+
   const apiBaseUrl = createBackendUrl();
 
   const pageContent = await fetchWith404Check<Hjertekurv>(
-    `${apiBaseUrl}/api/hjertekurv-page-api/?hjertekurvName=${hjertekurvName}`,
+    `${apiBaseUrl}/api/hjertekurv-page-api/?hjertekurvName=${hjertekurv}`,
     {
       next: {
         revalidate: 1,

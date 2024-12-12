@@ -22,7 +22,6 @@ const useLignendeHjertekurver = (hjertekurvName: string) => {
           },
         );
 
-        console.log(response.status, "response");
         const pageContent: Hjertekurv[] = await response.json();
 
         if (response.status == 500 || response.status == 400) {

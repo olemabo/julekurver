@@ -3,6 +3,7 @@ import "./textarea.scss";
 
 type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   value: string;
+  label: string;
   customOnChange?: (message: string) => void;
   errorMessage?: string;
   maxWidth?: number;
@@ -10,6 +11,7 @@ type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
 
 const TextArea = ({
   value,
+  label,
   customOnChange,
   errorMessage,
   maxWidth = 600,
@@ -30,7 +32,11 @@ const TextArea = ({
 
   return (
     <div style={{ maxWidth: maxWidth || 600 }} className="textarea-container">
+      <label style={{ visibility: "hidden" }} htmlFor="custom-textarea">
+        {label}
+      </label>
       <textarea
+        id="custom-textarea"
         rows={rows}
         cols={cols}
         className={`custom-textarea ${rest.className || ""}`}

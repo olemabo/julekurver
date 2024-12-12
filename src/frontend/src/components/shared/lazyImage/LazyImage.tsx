@@ -43,6 +43,10 @@ export default function LazyImage({
     };
   }, []);
 
+  if (!src) {
+    return null;
+  }
+
   return (
     <div
       ref={imgRef}
@@ -52,7 +56,7 @@ export default function LazyImage({
         height={imageHeight}
         width={imageWidth}
         className={className || ""}
-        src={isVisible ? src : ""}
+        src={isVisible ? src : undefined}
         alt={alt}
       />
     </div>

@@ -1,6 +1,4 @@
 .full-width-wrapper-container {
-  /* padding: 10px 100vw 30px;
-  margin: 0 -100vw; */
   padding: 10px 0 30px 0;
   width: 100%;
 
@@ -10,9 +8,19 @@
 
   &.green {
     background-color: var(--tds-color-secondary-base);
+
+    ::selection {
+      background-color: var(--tds-color-light-theme);
+      color: var(--tds-color-secondary-base);
+    }
   }
 
   &.red {
     background-color: var(--tds-color-primary-base);
+
+    ::selection {
+      background-color: var(--tds-color-light-theme);
+      color: var(--tds-color-primary-base);
+    }
   }
 }
