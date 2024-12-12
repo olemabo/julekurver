@@ -43,7 +43,7 @@ export default function InspirationSection() {
       .finally(() => {
         setIsLoading(false);
       });
-  }, []);
+  }, [url]);
 
   if (isLoading) {
     return (

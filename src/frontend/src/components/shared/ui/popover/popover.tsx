@@ -19,52 +19,52 @@ const Popover = ({ title, content, children }: PopoverProps) => {
     setIsVisible(!isVisible);
   };
 
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     if (
-  //       buttonRef.current &&
-  //       buttonRef.current.contains(event.target as Node)
-  //     ) {
-  //       return;
-  //     }
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        buttonRef.current &&
+        buttonRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
 
-  //     if (
-  //       popoverRef.current &&
-  //       !popoverRef.current.contains(event.target as Node)
-  //     ) {
-  //       setIsVisible(false);
-  //     }
-  //   };
+      if (
+        popoverRef.current &&
+        !popoverRef.current.contains(event.target as Node)
+      ) {
+        setIsVisible(false);
+      }
+    };
 
-  //   document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, []);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
-  // useEffect(() => {
-  //   if (isVisible && buttonRef.current && popoverRef.current) {
-  //     const buttonRect = buttonRef.current.getBoundingClientRect();
-  //     const viewportWidth = window.innerWidth;
-  //     const popoverWidth = 350;
+  useEffect(() => {
+    if (isVisible && buttonRef.current && popoverRef.current) {
+      const buttonRect = buttonRef.current.getBoundingClientRect();
+      const viewportWidth = window.innerWidth;
+      const popoverWidth = 350;
 
-  //     let leftPosition =
-  //       buttonRect.left + buttonRect.width / 2 - popoverWidth / 2;
-  //     const topPosition = buttonRect.bottom + window.scrollY + 10;
+      let leftPosition =
+        buttonRect.left + buttonRect.width / 2 - popoverWidth / 2;
+      const topPosition = buttonRect.bottom + window.scrollY + 10;
 
-  //     if (leftPosition < 0) {
-  //       leftPosition = 0;
-  //     } else if (leftPosition + popoverWidth > viewportWidth) {
-  //       leftPosition = viewportWidth - popoverWidth;
-  //     }
+      if (leftPosition < 0) {
+        leftPosition = 0;
+      } else if (leftPosition + popoverWidth > viewportWidth) {
+        leftPosition = viewportWidth - popoverWidth;
+      }
 
-  //     popoverRef.current.style.position = "absolute";
-  //     popoverRef.current.style.top = `${topPosition}px`;
-  //     popoverRef.current.style.left = `${leftPosition}px`;
-  //     popoverRef.current.style.width = `${popoverWidth}px`;
-  //   }
-  // }, [isVisible]);
+      popoverRef.current.style.position = "absolute";
+      popoverRef.current.style.top = `${topPosition}px`;
+      popoverRef.current.style.left = `${leftPosition}px`;
+      popoverRef.current.style.width = `${popoverWidth}px`;
+    }
+  }, [isVisible]);
 
   return (
     <span className="popover-container">

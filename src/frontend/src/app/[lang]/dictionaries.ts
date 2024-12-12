@@ -1,5 +1,3 @@
-import { LanguageContext, LanguageContextType } from "@/providers";
-
 export const EN_LOCALE = "en";
 export const NO_LOCALE = "no";
 
@@ -27,7 +25,7 @@ export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
   return dictionaries[locale]();
 };
 
-function isJSONObject(value: any): value is Record<string, JSONValue> {
+function isJSONObject(value: JSONValue): value is Record<string, JSONValue> {
   return value !== null && typeof value === "object" && !Array.isArray(value);
 }
 

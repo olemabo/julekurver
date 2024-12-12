@@ -11,11 +11,11 @@ import AboutKurverSection from "./aboutKurverSection/aboutKurverSection";
 import ViewHjertekurvSection from "./viewHjertekurvSection/viewHjertekurvSection";
 import InspirationSection from "./inspirationSection/inspirationSection";
 import ContactUsSection from "./contactUsSection/contactUsSection";
-import { getFrontPageTitles } from "./utils";
+import { useFrontPageTitles } from "./utils";
 
 export default function FrontPage() {
   const { getInspiredTitle, createHjertekurvTitle, seeOurKurver } =
-    getFrontPageTitles();
+    useFrontPageTitles();
 
   return (
     <div className="default-page-container frontpage">

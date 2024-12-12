@@ -8,7 +8,7 @@ import DifficultyLevel, {
   ICON_TYPE_SCISSOR,
 } from "@/components/shared/difficultyLevel/difficultyLevel";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
-import { formatDate, getHjertekurverPageTexts } from "./utils";
+import { formatDate, useHjertekurverPageTexts } from "./utils";
 
 export type AboutHjertekurvSectionProps = {
   hjertekurv: Hjertekurv;
@@ -27,7 +27,7 @@ export default function AboutHjertekurvSection({
   } = hjertekurv;
 
   const { difficultyFlettingText, difficultyKlippingText, addedText } =
-    getHjertekurverPageTexts();
+    useHjertekurverPageTexts();
 
   const imageUrl = createApiMediaUrl(imageHjertekurvUrl);
 

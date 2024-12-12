@@ -2,7 +2,7 @@ import { getValuesByKeys } from "@/app/[lang]/dictionaries";
 import { LanguageContext } from "@/providers";
 import { use } from "react";
 
-export function getFrontPageTitles() {
+export function useFrontPageTitles() {
   const { dictionary } = use(LanguageContext);
 
   const createHjertekurvTitle = getValuesByKeys(dictionary, [
