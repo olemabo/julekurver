@@ -23,14 +23,26 @@ function CategoryFilterToggle({
       .values(),
   );
 
+  const handleCategoryToggleKeyDown = (categoryId: number, key: string) => {
+    if (key === "Enter" || key === " ") {
+      handleCategoryToggle(categoryId);
+    }
+  };
+
   return (
     <div className="filter-buttons">
       {uniqueCategories.map((category) => (
         <label htmlFor={`toggleButton-${category.id}`} key={category.id}>
-          <input id={`toggleButton-${category.id}`} type="checkbox" />
+          <input
+            tabIndex={-1}
+            id={`toggleButton-${category.id}`}
+            type="checkbox"
+          />
           <span
             className={`filter-button ${selectedCategories.includes(category.id) ? "active" : ""}`}
             onClick={() => handleCategoryToggle(category.id)}
+            onKeyDown={(e) => handleCategoryToggleKeyDown(category.id, e.key)}
+            tabIndex={0}
           >
             {category.name}
           </span>

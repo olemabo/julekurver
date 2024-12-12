@@ -5,6 +5,7 @@ import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
 import { createApiMediaUrl } from "@/utils/backendApiUrl";
 import DisplayHjertekurvSvgWithColors from "@/components/shared/images/displayHjertekurvSvgWithColors";
 import "./hjertekurvCarousel.scss";
+import Link from "next/link";
 
 type HjertekurvProps = {
   kurver: Hjertekurv[];
@@ -60,7 +61,7 @@ export default function HjertekurvCarousel({
   const renderCarouselContent = () => {
     if (useFirst) {
       return (
-        <a
+        <Link
           href={`no/hjertekurver/${kurver[currentImageIndex].url}`}
           className={`image-container ${fadeState}`}
           aria-label={`Lenke til hjertekurven ${kurver[currentImageIndex].name}`}
@@ -77,7 +78,7 @@ export default function HjertekurvCarousel({
             fillColor2={fillColor2}
             imageSize={{ height: "100%", width: "350px" }}
           />
-        </a>
+        </Link>
       );
     } else {
       return (

@@ -3,6 +3,7 @@ import { PageType, SearchHits } from "./searchPage";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Heading from "@/components/shared/ui/heading/heading";
 import "./searchResultItem.scss";
+import Link from "next/link";
 
 type SearchResultItemProps = {
   hit: SearchHits;
@@ -46,7 +47,7 @@ export function SearchResultItem({ hit, query }: SearchResultItemProps) {
 
   return (
     <li className={`search-result-item ${type}`}>
-      <a className="link" href={`${urlPath}${url}`}>
+      <Link className="link" href={`${urlPath}${url}`}>
         <Heading withMargins={false} headingLevel="h2">
           {title}
         </Heading>
@@ -66,7 +67,7 @@ export function SearchResultItem({ hit, query }: SearchResultItemProps) {
             />
           )}
         </div>
-      </a>
+      </Link>
     </li>
   );
 }
