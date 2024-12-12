@@ -86,7 +86,7 @@ export default function SearchPage({ defautlQuery }: SearchPageProps) {
       setQuery(initialQuery);
       fetchSearchResults(initialQuery);
     }
-  }, [fetchSearchResults]);
+  }, []);
 
   const handleSearch = (currentQuery: string) => {
     if (currentQuery && currentQuery !== query) {
