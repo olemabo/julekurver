@@ -6,6 +6,7 @@ import Footer from "@/components/layout/footer/footer";
 import { getDictionary } from "./dictionaries";
 import LanguageProvider, { LangParams } from "@/providers";
 import { alegreya, alegreyaHeader, alegreyaSansLight } from "./fonts";
+import "../globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

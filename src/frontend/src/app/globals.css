@@ -261,6 +261,28 @@ li {
 
 label {
   font-family: var(--font-alegreya-sans-light), sans-serif;
+}
+
+.standard-page {
+  max-width: 750px;
+  margin-bottom: 64px;
+}
+
+@media screen and (max-width: 780px) {
+  .page-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+ul.custom-ul li {
+  max-width: 450px;
+  margin-left: 12px;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  gap: 8px;
+
   &::before {
     content: "";
     position: absolute;
