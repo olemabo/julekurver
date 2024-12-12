@@ -4,6 +4,11 @@
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
+  &:focus-visible {
+    outline: 2px solid var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -95,6 +100,11 @@
       justify-content: center;
       align-items: center;
       column-gap: 8px;
+
+      &:focus-visible {
+        outline: 2px solid var(--focus-outline-color);
+        outline-offset: var(--focus-outline-offset);
+      }
     }
 
     .link-items-container {
@@ -120,6 +130,11 @@
         &:hover {
           text-decoration: underline;
           text-decoration-thickness: from-font;
+        }
+
+        &:focus-visible {
+          outline: 2px solid var(--focus-outline-color);
+          outline-offset: var(--focus-outline-offset);
         }
       }
 

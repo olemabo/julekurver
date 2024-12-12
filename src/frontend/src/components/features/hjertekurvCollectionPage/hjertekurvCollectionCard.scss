@@ -58,7 +58,8 @@
     &:hover {
       background-color: var(--tds-search-hit-bg-color-hover);
 
-      h2, h3 {
+      h2,
+      h3 {
         transition: transform 0.3s ease;
         transform: scale(0);
       }

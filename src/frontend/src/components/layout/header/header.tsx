@@ -103,13 +103,15 @@ export default function Header() {
         className={`dropdown-search ${isSearchOpen ? "open" : ""}`}
         ref={dropdownRef}
       >
-        <div className="search-content">
-          <Search
-            ref={inputRef}
-            placeholder="Legg inn søkeord..."
-            onClick={handleSearch}
-          />
-        </div>
+        {isSearchOpen && (
+          <div className="search-content">
+            <Search
+              ref={inputRef}
+              placeholder="Legg inn søkeord..."
+              onClick={handleSearch}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
