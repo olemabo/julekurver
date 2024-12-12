@@ -13,6 +13,7 @@ import Pagination, {
 } from "@/components/shared/ui/pagination/pagination";
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import "./SearchPage.scss";
+import Link from "next/link";
 
 export enum PageType {
   StandardPage = "standardPage",
@@ -85,7 +86,7 @@ export default function SearchPage({ defautlQuery }: SearchPageProps) {
       setQuery(initialQuery);
       fetchSearchResults(initialQuery);
     }
-  }, []);
+  }, [fetchSearchResults]);
 
   const handleSearch = (currentQuery: string) => {
     if (currentQuery && currentQuery !== query) {
@@ -114,7 +115,7 @@ export default function SearchPage({ defautlQuery }: SearchPageProps) {
       <Paragraph maxWidth={500}>
         Her kan du søke gjennom alt innhold på hjertekurver.no. Dersom du ønsker
         å søke på hjertekurver kan vi anbefale å gjøre dette gjennom vår egen
-        søke-side for <a href="/no/hjertekurver">hjerkurver</a>.
+        søke-side for <Link href="/no/hjertekurver">hjerkurver</Link>.
       </Paragraph>
       <Search
         defaultValue={query}

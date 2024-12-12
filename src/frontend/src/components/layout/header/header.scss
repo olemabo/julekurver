@@ -12,7 +12,7 @@
     top: 29%;
     right: 29%;
     width: 0;
-    height: 2.5px;
+    height: 2px;
     margin-top: -2px;
     background-color: black;
     transform: rotate(-45deg);
@@ -28,7 +28,7 @@
     bottom: 22%;
     right: 22%;
     width: 29%;
-    height: 2.5px;
+    height: 2px;
     margin-top: -2px;
     background-color: black;
     transform: rotate(45deg);
@@ -85,7 +85,7 @@
     align-items: center;
 
     .logo {
-      font-family: "Alegreya Header";
+      font-family: var(--font-alegreya-header);
       border-bottom: none;
       text-decoration: none;
       font-size: 36px;

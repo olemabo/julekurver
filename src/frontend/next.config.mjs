@@ -71,9 +71,9 @@ const nextConfig = {
     },
     // Enable React strict mode for highlighting potential problems
     reactStrictMode: true,
-  
-    // Enable SWC minification for faster builds and smaller bundle size
-    swcMinify: true,
+    sassOptions: {
+      silenceDeprecations: ["legacy-js-api"],
+    }
   };
   
   export default nextConfig;

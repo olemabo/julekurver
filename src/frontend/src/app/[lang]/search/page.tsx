@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import SearchPage from "@/components/features/searchPage/searchPage";
 
-export default async function Page() {
+export default function Page() {
   const searchParams = useSearchParams();
 
   const query = searchParams.get("query") || "";

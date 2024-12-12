@@ -50,6 +50,7 @@ export default function ContactSection() {
           }}
         >
           <TextArea
+            label="Legg igjen en tilbakemelding"
             style={{
               border: "1px solid black",
               backgroundColor: "transparent",

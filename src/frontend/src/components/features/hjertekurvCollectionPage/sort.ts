@@ -26,8 +26,6 @@ export const filterAndSortHjertekurver = (
         )),
   );
 
-  console.log();
-
   return filteredHjertekurver.sort((a, b) => {
     switch (selectedFilter) {
       case HjertekurvFilterType.Popularity:

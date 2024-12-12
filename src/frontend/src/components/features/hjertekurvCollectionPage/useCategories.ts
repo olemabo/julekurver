@@ -23,7 +23,6 @@ const useCategories = () => {
           },
         });
 
-        console.log(response.status, "response");
         const categories: Category[] = await response.json();
 
         if (response.status == 500 || response.status == 400) {

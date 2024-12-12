@@ -11,7 +11,7 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
   return (
     <>
       <Heading id={headingId} headingLevel="h2">
-        Flett kurvern
+        Flett kurver
       </Heading>
       <Paragraph>
         Denne seksjonen viser hvordan du kan flette kurven etter at du har

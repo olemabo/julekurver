@@ -4,6 +4,7 @@ import {
   fletteHjertekurvHeadingId,
   HeadingIdProps,
 } from "./howToCreateHjertekurv";
+import Link from "next/link";
 
 export function HjertekurvMalSection({ headingId }: HeadingIdProps) {
   return (
@@ -14,12 +15,13 @@ export function HjertekurvMalSection({ headingId }: HeadingIdProps) {
       <Paragraph>
         Du må nå bestemme deg for hvilken kurv du ønsker å flette. Du kan finne
         din ønskede mal blant alle malene på nettsiden vår her:{" "}
-        <a href="/no/hjertekurver">maler</a>. Dersom du ikke kan flettekunsten
-        fra før eller trenger en oppfriskning kan vi anbefale å starte på en
-        relativ enkel{" "}
-        <a href="/no/hjertekurver/standard-kurv-3x3">9-felts-kurv</a>, som også
-        er brukt i{" "}
-        <a href={`#${fletteHjertekurvHeadingId}`}>flette-eksempelet</a> under.
+        <Link href="/no/hjertekurver">maler</Link>. Dersom du ikke kan
+        flettekunsten fra før eller trenger en oppfriskning kan vi anbefale å
+        starte på en relativ enkel{" "}
+        <Link href="/no/hjertekurver/standard-kurv-3x3">9-felts-kurv</Link>, som
+        også er brukt i{" "}
+        <Link href={`#${fletteHjertekurvHeadingId}`}>flette-eksempelet</Link>{" "}
+        under.
       </Paragraph>
     </>
   );
