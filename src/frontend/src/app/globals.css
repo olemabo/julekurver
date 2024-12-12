@@ -1,55 +1,3 @@
-/* @font-face {
-  font-family: "Alegreya";
-  src: url("/fonts/Alegreya/Alegreya-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Alegreya Sans";
-  src: url("/fonts/AlegreyaSans/AlegreyaSans-Medium.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Alegreya Header";
-  src: url("/fonts/Alegreya/Alegreya-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Alegreya Sans Light";
-  src: url("/fonts/AlegreyaSans/AlegreyaSans-Light.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Alegreya Sans Regular";
-  src: url("/fonts/AlegreyaSans/AlegreyaSans-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Alegreya Sans Thin";
-  src: url("/fonts/AlegreyaSans/AlegreyaSans-Thin.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Alegreya Sans Medium";
-  src: url("/fonts/AlegreyaSans/AlegreyaSans-Medium.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Cardo";
-  src: url("/fonts/Cardo/Cardo-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Cardo Italic";
-  src: url("/fonts/Cardo/Cardo-Italic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Cardo Regular";
-  src: url("/fonts/Cardo/Cardo-Regular.ttf") format("truetype");
-} */
-
 :root {
   /* Base Tokens */
   --tds-color-primary-base: #bc9284;
@@ -77,8 +25,6 @@
 
   --white-color: #ffffff;
   --black-color: #000000;
-
-  --font-family: "Alegreya Sans";
 
   --main-page-desktop-max-width: 1440px;
   --main-page-desktop-max-width: 1200px;
@@ -315,28 +261,6 @@ li {
 
 label {
   font-family: var(--font-alegreya-sans-light), sans-serif;
-}
-
-.standard-page {
-  max-width: 750px;
-  margin-bottom: 64px;
-}
-
-@media screen and (max-width: 780px) {
-  .page-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-ul.custom-ul li {
-  max-width: 450px;
-  margin-left: 12px;
-  position: relative;
-  padding-left: 25px;
-  margin-bottom: 12px;
-  gap: 8px;
-
   &::before {
     content: "";
     position: absolute;
