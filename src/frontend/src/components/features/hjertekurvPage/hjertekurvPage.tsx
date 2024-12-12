@@ -10,11 +10,10 @@ import LignendeKurver from "./lignendeKurver";
 import HvordanLageKurver from "./hvordanLageKurver";
 import KurvMal from "./kurvMal/kurvMal";
 import KurvConverter from "./kurvColorConverter/kurvColorConverter";
-
-import "./hjertekurv.scss";
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import Bold from "@/components/shared/ui/bold/bold";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
+import "./hjertekurv.scss";
 
 export type HjertekurvPageProps = {
   hjertekurv: Hjertekurv;

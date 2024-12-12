@@ -5,11 +5,11 @@ import ContactSection from "./contactSection";
 
 const CONTACT_PAGE = "contact";
 
-export interface PageContent {
+export type PageContent = {
   title: string;
   content: string;
   pageType: string;
-}
+};
 
 export type StandardPageProps = {
   pageContent: PageContent;
@@ -22,7 +22,7 @@ export default function StandardPage({ pageContent }: StandardPageProps) {
 
   const standardPageBreadcrumbs = [
     { linkText: "Forside", href: "/" },
-    { linkText: "Om siden", href: "/om-siden" },
+    { linkText: pageContent.title, href: pageContent.title },
   ];
 
   const isContactPage = pageContent.pageType === CONTACT_PAGE;

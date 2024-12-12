@@ -9,11 +9,13 @@ from models.search.searchHit import SearchHitModel
 from models.hjertekurver.HjertekurvPageModel import HjertekurvPageModel
 from models.standardpage.StandardPageModel import StandardPageModel
 
-from api.models import Feedback, StandardPage, Hjertekurv, KurvCategory
+from api.models import Feedback, StandardPage, Hjertekurv, VisitLog
 from django.db.models import Q
 import requests
 from datetime import date
 import os
+from django.db.models.functions import TruncDay
+from django.db.models import Count
 
 class StandardPageAPIView(APIView):
 
@@ -49,8 +51,13 @@ class HjertekurvPageAPIView(APIView):
             if not hjertekurv.exists():
                 return Response({'error': 'Hjertekurv page not found'}, status=status.HTTP_404_NOT_FOUND)
 
-            if hjertekurv[0].hide_kurv:
+            hjertekurv_instance = hjertekurv[0]
+
+            if hjertekurv_instance.hide_kurv:
                 return Response({'error': 'Hjertekurv page not found'}, status=status.HTTP_404_NOT_FOUND)
+
+            hjertekurv_instance.increment_visit_count()
+            VisitLog.objects.create(hjertekurv=hjertekurv_instance)
 
             response = HjertekurvPageModel(
                     name=hjertekurv[0].name, 
@@ -291,6 +298,28 @@ class FeedbackAPIView(APIView):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
+
+class HjertekurvVisitStatsAPIView(APIView):
+
+    def get(self, request, hjertekurv_id):
+        try:
+            hjertekurv = get_object_or_404(Hjertekurv, id=hjertekurv_id)
+
+            visit_stats = (
+                VisitLog.objects
+                .filter(hjertekurv=hjertekurv)
+                .annotate(day=TruncDay('timestamp'))
+                .values('day')
+                .annotate(visits=Count('id'))
+                .order_by('day')
+            )
+
+            return JsonResponse(list(visit_stats), safe=False)
+
+        except Exception as e:
+            print(f"Error occurred: {e}")
+            return Response({'Bad Request': 'Something went wrong'}, status=status.HTTP_400_BAD_REQUEST)
+        
 # class CategoriesAPIView(APIView):
 
 #     def get(self, request):
