@@ -29,7 +29,7 @@ export default async function RootLayout({
 
   return (
     <html
-      lang="en"
+      lang={lang}
       className={`${alegreya.variable} ${alegreyaSansLight.variable} ${alegreyaHeader.variable}`}
     >
       <body>
