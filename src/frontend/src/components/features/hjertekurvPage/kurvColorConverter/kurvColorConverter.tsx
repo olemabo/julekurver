@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 
 import "./kurvColorConverter.scss";
+import { LanguageContext } from "@/providers";
+import { getValuesByKeys } from "@/app/[lang]/dictionaries";
 
 type KurvConverterProps = {
   imageUrl?: string;
@@ -11,10 +13,11 @@ type KurvConverterProps = {
 
 export default function KurvConverter({
   imageUrl,
-  defaultFillColor1 = "#BC9284",
+  defaultFillColor1 = "#9B776B",
 }: KurvConverterProps) {
   const [svgContent, setSvgContent] = useState<string | null>(null);
   const svgContainerRef = useRef<HTMLDivElement | null>(null);
+  const { dictionary } = use(LanguageContext);
 
   const [fillColor1, setFillColor1] = useState<string>(defaultFillColor1);
   const [fillColor2, setFillColor2] = useState<string>("#FFFFFF");
@@ -60,7 +63,6 @@ export default function KurvConverter({
       const elements = svgContainerRef.current.querySelectorAll("path, rect");
       elements.forEach((element) => {
         const currentFill = element.getAttribute("fill");
-        console.log(currentFill, "currentfill");
         if (currentFill === defaultFillColor1) {
           element.setAttribute("fill", fillColor1);
         } else if (currentFill === "white" || currentFill === "#FFFFFF") {
@@ -78,6 +80,18 @@ export default function KurvConverter({
     return null;
   }
 
+  const changeColorLeft = getValuesByKeys(dictionary, [
+    "pages",
+    "hjertekurvPage",
+    "changeColorLeft",
+  ]);
+
+  const changeColorRight = getValuesByKeys(dictionary, [
+    "pages",
+    "hjertekurvPage",
+    "changeColorRight",
+  ]);
+
   return (
     <div className="kurv-color-converter-container">
       <div
@@ -87,9 +101,7 @@ export default function KurvConverter({
       />
       <div className="color-picker-container">
         <div className="color-container">
-          <label htmlFor="color-picker-left">
-            Endre farge på venstre hjertekurv
-          </label>
+          <label htmlFor="color-picker-left">{changeColorLeft}</label>
           <input
             className="left-kurv"
             type="color"
@@ -106,9 +118,7 @@ export default function KurvConverter({
             value={fillColor2}
             onChange={(e) => setFillColor2(e.target.value)}
           />
-          <label htmlFor="color-picker-right">
-            Endre farge på høyre hjertekurv
-          </label>
+          <label htmlFor="color-picker-right">{changeColorRight}</label>
         </div>
       </div>
     </div>

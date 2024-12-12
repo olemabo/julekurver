@@ -1,16 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap");
-
-@font-face {
+/* @font-face {
   font-family: "Alegreya";
   src: url("/fonts/Alegreya/Alegreya-Regular.ttf") format("truetype");
 }
-
-/* NICE FOR OVERSKFIT @font-face {
-  font-family: 'Alegreya';
-  src: url('/fonts/Alegreya/Alegreya-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-} */
 
 @font-face {
   font-family: "Alegreya Sans";
@@ -57,7 +48,7 @@
 @font-face {
   font-family: "Cardo Regular";
   src: url("/fonts/Cardo/Cardo-Regular.ttf") format("truetype");
-}
+} */
 
 :root {
   /* Base Tokens */
@@ -146,6 +137,8 @@
   --tds-pagination-color-selected: #ffffff;
 
   --tds-color-light-theme: #cbc1bb;
+  --tds-color-light-theme: #d1d1d1;
+  --tds-color-light-theme: #cbc1bb;
   --tds-color-dark-theme: #514b4b;
   --tds-color-dark-theme-border: #514b4b;
 
@@ -166,6 +159,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 ul li {
@@ -219,7 +213,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
-  font-family: "Alegreya", sans-serif;
+  font-family: var(--font-alegreya), sans-serif;
 }
 
 main {
@@ -263,7 +257,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Alegreya Header", sans-serif;
+  font-family: var(--font-alegreya-header), sans-serif;
   font-weight: 400;
 
   &.hide-margins {
@@ -273,7 +267,7 @@ h3 {
 
 h1,
 .heading1 {
-  font-size: 32px;
+  font-size: 34px;
   line-height: 38.4px;
   margin-bottom: 24px;
 }
@@ -312,7 +306,7 @@ h3,
 
 p,
 li {
-  font-family: "Alegreya Sans Light", sans-serif;
+  font-family: var(--font-alegreya-sans-light), sans-serif;
   margin-bottom: 16px;
   font-size: 16px;
   font-weight: 300;
@@ -320,7 +314,7 @@ li {
 }
 
 label {
-  font-family: "Alegreya Sans Light", sans-serif;
+  font-family: var(--font-alegreya-sans-light), sans-serif;
 }
 
 .standard-page {

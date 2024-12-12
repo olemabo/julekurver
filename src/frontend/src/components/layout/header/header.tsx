@@ -1,16 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import { default as NextLink } from "next/link";
 import { useEffect, useRef, useState } from "react";
-
-// import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import { useRouter } from "next/navigation";
 import Search from "@/components/shared/ui/search/search";
-// import Link from "@/components/shared/ui/link/link";
 import Hamburger from "./hamburger";
-
 import "./header.scss";
+import LinkListSection from "./linkListSection";
+import Logo from "./Logo";
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -33,7 +29,6 @@ export default function Header() {
       inputRef.current.focus();
     }
 
-    // Event listener to close the dropdown when clicking outside
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
 
@@ -48,10 +43,8 @@ export default function Header() {
       }
     };
 
-    // Attach the event listener to the document
     document.addEventListener("mousedown", handleClickOutside);
 
-    // Clean up the event listener on component unmount
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -78,36 +71,12 @@ export default function Header() {
     <div>
       <header className="header-container">
         <nav className="container nav-container">
-          <NextLink className="logo" href="/" onClick={closeMenus}>
-            <Image
-              src="/images/logo/logo_black-cropped.svg"
-              alt="Webpage logo"
-              width={32}
-              height={32}
-            />
-            Hjertekurver
-          </NextLink>
+          <Logo onClick={closeMenus} />
           <div className="link-items-container">
             <div
               className={`link-container ${isMobileMenuOpen ? "open-mobile-format" : ""}`}
             >
-              <ul>
-                <li>
-                  <NextLink onClick={closeMenus} href="/no/hjertekurver">
-                    Hjertekurver
-                  </NextLink>
-                </li>
-                <li>
-                  <NextLink onClick={closeMenus} href="/no/hvordan-lage-kurver">
-                    Lag kurver
-                  </NextLink>
-                </li>
-                <li>
-                  <NextLink onClick={closeMenus} href="/no/om-siden">
-                    Om siden
-                  </NextLink>
-                </li>
-              </ul>
+              <LinkListSection onClick={closeMenus} />
             </div>
             <ul className="icons">
               <li>
@@ -115,6 +84,8 @@ export default function Header() {
                   onClick={toggleSearchDropdown}
                   className={`search-button ${isSearchOpen ? "active" : ""}`}
                   ref={buttonRef}
+                  aria-label="Klikk for å gjøre søk på nettsiden"
+                  title="Søkeknapp"
                 >
                   <div className="search-icon active"></div>
                 </button>

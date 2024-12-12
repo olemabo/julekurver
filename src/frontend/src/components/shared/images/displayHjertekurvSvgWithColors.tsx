@@ -88,6 +88,9 @@ export default function DisplayHjertekurvSvgWithColors({
         height: imageSize.height,
       }}
     >
+      <span aria-hidden={true} style={{ display: "none" }}>
+        Bilde av hjertekurv
+      </span>
       <div
         ref={svgContainerRef}
         dangerouslySetInnerHTML={{ __html: svgContent || "" }}

@@ -317,6 +317,7 @@ export default function HjertekurvCarousel({
         <a
           href={`no/hjertekurver/${kurver[currentImageIndex].url}`}
           className={`image-container ${fadeState}`}
+          aria-label={`Lenke til hjertekurven ${kurver[currentImageIndex].name}`}
           style={{
             // width: "350px",
             // height: "350px",

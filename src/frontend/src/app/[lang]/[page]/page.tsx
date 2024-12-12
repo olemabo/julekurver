@@ -4,12 +4,10 @@ import StandardPage, {
 } from "@/components/features/standardPage/standardPage";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { page: string };
-}) {
-  const pageName = params.page;
+type PageParams = Promise<{ page: string }>;
+
+export async function generateMetadata({ params }: { params: PageParams }) {
+  const pageName = (await params).page;
   const apiBaseUrl = createBackendUrl();
 
   const pageContent = await fetchWith404Check<PageContent>(
@@ -35,12 +33,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: { params: { page: string } }) {
-  const pageName = params.page;
+export default async function Page({ params }: { params: PageParams }) {
+  const { page } = await params;
+
   const apiBaseUrl = createBackendUrl();
 
   const pageContent = await fetchWith404Check<PageContent>(
-    `${apiBaseUrl}/api/standard-page-api/?pageUrl=${pageName}`,
+    `${apiBaseUrl}/api/standard-page-api/?pageUrl=${page}`,
     {
       next: {
         revalidate: 1,

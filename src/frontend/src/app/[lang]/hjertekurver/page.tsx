@@ -1,27 +1,30 @@
+"use server";
+
 import { HjertekurvCollectionPage } from "@/components/features/hjertekurvCollectionPage/hjertekurvCollectionPage";
 import { Hjertekurv } from "./[hjertekurv]/page";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Utforsk hjertekurvsamlingen | Maler, bilder og inspirasjon",
-  description:
-    "Se vår komplette samling av hjertekurver med maler og bilder. Bruk søk og filtrering for å finne den perfekte kurven for ditt neste prosjekt.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Utforsk hjertekurvsamlingen | Maler, bilder og inspirasjon",
+    description:
+      "Se vår komplette samling av hjertekurver/julekurver med maler og bilder. Bruk søk og filtrering for å finne den perfekte kurven for ditt neste prosjekt.",
+  };
+}
 
-export default async function Page({
-  params,
-}: {
-  params: { julekurv: string };
-}) {
-  const julekurvName = params.julekurv;
+export type HjertekurvParams = Promise<{ hjertekurv: string }>;
+
+export default async function Page({ params }: { params: HjertekurvParams }) {
+  const { hjertekurv } = await params;
+
   const apiBaseUrl = createBackendUrl();
 
   const data = await fetch(
-    `${apiBaseUrl}/api/hjertekurver-page-api/?hjertekurvName=${julekurvName}`,
+    `${apiBaseUrl}/api/hjertekurver-page-api/?hjertekurvName=${hjertekurv}`,
     {
       next: {
-        revalidate: 1,
+        revalidate: 3600,
       },
     },
   );

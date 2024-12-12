@@ -16,6 +16,10 @@ export default function LazyImage({
   className,
   imageSize = { height: 125, width: 260 },
 }: LazyImageProps) {
+  if (!src) {
+    return null;
+  }
+
   const [isVisible, setIsVisible] = useState(false);
   const imgRef = useRef<HTMLImageElement | null>(null);
   const { width: imageWidth, height: imageHeight } = imageSize;
@@ -52,7 +56,7 @@ export default function LazyImage({
         height={imageHeight}
         width={imageWidth}
         className={className || ""}
-        src={isVisible ? src : ""}
+        src={isVisible ? src : undefined}
         alt={alt}
       />
     </div>

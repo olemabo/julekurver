@@ -1,12 +1,37 @@
 {
-    "title": "Velkommen til nettstedet mitt",
-    "description": "Dette er en eksempelbeskrivelse på norsk.",
     "footer": {
-        "hjertekurver_heading": "Hjertekurver",
-        "about_site_heading": "Om siden",
-        "follow_us_heading": "Følg oss"
+        "hjertekurverSection": {
+            "title": "Hjertekurver",
+            "seeKurverLinkText": "Se kurver",
+            "createKurverLinkText": "Lag kurver"
+        },
+        "aboutSiteSection": {
+            "title": "Om siden",
+            "aboutSiteLinkText": "Om siden",
+            "contactUsLinkText": "Kontakt oss"
+        },
+        "followUsHeading": "Følg oss"
     },
     "header": {
-        "logo_text": "Hjertekurver"
+        "hjertekurverLinkText": "Hjertekurver",
+        "createKurverLinkText": "Lag kurver",
+        "abouteSiteLinkText": "Om siden",
+        "logoText": "Hjertekurver"
+    },
+    "pages": {
+        "hjertekurvPage": {
+            "difficultyFletting": "Vanskelighetsgrad fletting",
+            "difficultyKlipping": "Vanskelighetsgrad klipping",
+            "added": "Lagt til",
+            "changeColorLeft": "Endre farge på venstre hjertekurv",
+            "changeColorRight": "Endre farge på høyre hjertekurv",
+            "downloadMalButton": "Last ned mal",
+            "malTitle": "Mal"
+        },
+        "frontpage": {
+            "getInspiredTitle": "Bli inspirert",
+            "createHjertekurvTitle": "Lag en hjertekurv",
+            "seeOurKurver": "Se våre kurver"
+        }
     }
 }
