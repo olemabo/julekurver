@@ -12,7 +12,7 @@ export default function Bold({
   return (
     <b
       style={{
-        fontFamily: "'Alegreya Sans Medium'",
+        fontFamily: "var(--font-alegreya-sans-medium)",
         display: `${asBlock ? "block" : ""}`,
         margin: "24px 6px 12px 0",
         ...style,

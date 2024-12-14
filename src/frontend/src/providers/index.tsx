@@ -1,31 +1,3 @@
-// "use client"
-
-// import { getDictionary, Locale } from "@/app/[lang]/dictionaries";
-// import React, {createContext, useEffect, useState} from "react";
-
-// type LanguageContextType = {
-//     dictionary: Record<string, string>;
-// };
-
-// export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
-// export default function LanguageProvider({children, lang}: { lang: Locale, children: React.ReactNode}){
-//     const [dictionary, setDictionary] = useState<Record<string, string>>({});
-
-//     useEffect(() => {
-//         // Load the dictionary dynamically based on the selected language
-//         getDictionary(lang)
-//         .then((dict) => setDictionary(dict))
-//         .catch((err) => console.error("Failed to load dictionary:", err));
-//     }, [lang]);
-
-//     return (
-//     <LanguageContext value={undefined}>
-//         {children}
-//     </LanguageContext>
-// )
-// }
-
 "use client";
 
 import React, { createContext, useContext } from "react";

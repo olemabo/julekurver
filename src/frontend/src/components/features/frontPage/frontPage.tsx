@@ -32,7 +32,6 @@ export default function FrontPage() {
       </FullWidthWrapper>
       <FullWidthWrapper>
         <div style={{ height: "48px" }}></div>
-        <div style={{ height: "48px" }}></div>
       </FullWidthWrapper>
       <FullWidthWrapper color={bgColorThemeRed}>
         <ContactUsSection />

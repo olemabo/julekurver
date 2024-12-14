@@ -4,19 +4,19 @@ import ListWithIllustraion, {
 import Heading from "@/components/shared/ui/heading/heading";
 import { HeadingIdProps } from "./howToCreateHjertekurv";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
-import Popover from "@/components/shared/ui/popover/popover";
 import Link from "next/link";
+import SymmetriskMotivPopover from "@/components/shared/content/popover/SymmetriskMotivPopover";
 
 export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
   return (
     <>
       <Heading id={headingId} headingLevel="h2">
-        Klipp ut kurver
+        Klipp ut kurven
       </Heading>
       <Paragraph>
-        Nå skal du klippe ut delene til hjertekurven din basert på malen du har
-        valgt. Du trenger to kurvedeler og en hank som skal limes fast til den
-        ferdige kurven. Følg disse trinnene:
+        Det er på tide å klippe ut delene til hjertekurven din basert på malen
+        du har valgt. Du trenger to kurvedeler og en hank som senere skal festes
+        til den ferdige kurven. Følg disse stegene for et best mulig resultat:
       </Paragraph>
       <OrderedListWithIllustrationWrapper>
         <ListWithIllustraion
@@ -26,9 +26,10 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Start med å velge to farger du vil bruke til kurven. Klipp ut to
-          rektangler i de valgte fargene. Hvis du også vil lage en hank, klipp
-          den i en av fargene - litt bredere enn de andre rektanglene.
+          Velg to forskjellige farger på papiret til kurven din. Klipp ut to
+          rektangler på cirka 10 x 26 cm i hver av fargene. Hvis du ønsker å
+          lage en hank, kan du tilpasse størrelsen ved å gjøre det ene
+          rektanglet litt bredere, for eksempel 12 x 26 cm.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -39,8 +40,8 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
           imageSize={{ width: 351, height: 200 }}
         >
           Lag en brett over midten av kortsiden på begge rektanglene, som
-          indikert med en stiplet linje på malen. Sørg for at den fargede siden
-          vender utover når du bretter.
+          indikert med en stiplet linje på malen i punkt 1. Sørg for at den
+          fargede siden vender utover når du bretter.
         </ListWithIllustraion>
 
         <ListWithIllustraion
@@ -52,12 +53,15 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
           asParagraph={false}
         >
           <Paragraph>
+            <span id="after-mal-on-paper"></span>
             Tegn av mønsteret fra valgt mal på kurven din. Dette kan gjøres på
             flere ulike måter:
           </Paragraph>
           <ul className="custom-ul">
             <li>Blåpapir</li>
-            <li>Matpapir</li>
+            <li>
+              <Link href="/no/hvordan-lage-kurver/mal-til-papir">Matpapir</Link>
+            </li>
             <li>Papir og blyant</li>
           </ul>
           <Paragraph>
@@ -74,29 +78,9 @@ export default function ClipHjertekurvSection({ headingId }: HeadingIdProps) {
           imageSize={{ width: 351, height: 200 }}
         >
           Klipp ut begge delene etter de påtegnede linjene. For å spare tid og
-          sikre at begge kurvedelene blir helt like, kan du legge papirene oppå
+          sikre at begge kurvedelene blir helt like, kan du legge papirene inni
           hverandre og klippe begge samtidig. Dette kan bare gjøres dersom
-          kurven har
-          <Popover
-            title="Symetrik motiv"
-            content={
-              <>
-                Symmetrisk motiv betyr at du klipper ut to identiske maler som
-                skal flettes sammen, slik som i{" "}
-                <Link href="/no/hjertekurver/standard-kurv-3x3">
-                  9-felts-kurv
-                </Link>{" "}
-                brukt i dette eksempelet. Et eksempel på en kurv uten symmetrisk
-                motiv er{" "}
-                <Link href="/no/hjertekurver/isbjoern">isbjørn-kurven</Link>,
-                hvor du må klippe ut to forskjellige maler for å få riktig
-                design.
-              </>
-            }
-          >
-            symetrisk motiv
-          </Popover>
-          .
+          kurven har <SymmetriskMotivPopover />.
         </ListWithIllustraion>
         <ListWithIllustraion
           number={5}

@@ -46,7 +46,7 @@ export default function AboutKurverSection() {
           På hjertekurver.no finner du inspirasjon, detaljerte veiledninger og
           et omfattende galleri av ulike kurver. Målet vårt er å gjøre det
           enkelt for alle, uansett erfaring, å lære og utforske denne formen for
-          papirhåndverk.
+          papirhåndverk, samt tilby den største samlingen av hjertekurver.
         </Paragraph>
         <Paragraph
           maxWidth={paragraphMaxWidth}

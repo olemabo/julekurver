@@ -5,7 +5,12 @@ import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
 import { getDictionary } from "./dictionaries";
 import LanguageProvider, { LangParams } from "@/providers";
-import { alegreya, alegreyaHeader, alegreyaSansLight } from "./fonts";
+import {
+  alegreya,
+  alegreyaHeader,
+  alegreyaSansLight,
+  alegreyaSansMedium,
+} from "./fonts";
 import "../globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -31,7 +36,7 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
-      className={`${alegreya.variable} ${alegreyaSansLight.variable} ${alegreyaHeader.variable}`}
+      className={`${alegreya.variable} ${alegreyaSansLight.variable} ${alegreyaHeader.variable} ${alegreyaSansMedium.variable}`}
     >
       <body>
         <LanguageProvider lang={lang} dictionary={dictionary}>
