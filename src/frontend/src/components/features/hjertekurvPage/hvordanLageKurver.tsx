@@ -18,22 +18,23 @@ export default function HvordanLageKurver() {
         vår.
       </Paragraph>
       <HowToSection number={1} isDarkRed>
-        Last ned og skriv ut malen ovenfor.
+        Last ned og skriv ut malen ovenfor. En vanlig malstørrelse er ca. 8 x 12
+        cm, men du kan justere størrelsen etter behov.
       </HowToSection>
 
       <HowToSection number={2} isDarkRed>
-        Brett de ønskede delene av designpapiret og legg den nederste rette
-        delen av de store buede malene mot brettene. Klipp så buen langs malen.
-        Ved bretten skal papiret ikke klippes.
+        Velg to forskjellige farger på ønsket papir (glanspapir er anbefalt).
+        Tegn over malen på papiret og brett papiret i to. Bunnen av malen skal
+        være langs den lukkede siden av papiret. Klipp ut kurven.
       </HowToSection>
 
       <HowToSection number={3} isDarkRed>
-        Flett hjertene.
+        Flett hjertene ved å dra strimlene annenhver gang utenpå og inni
+        hverandre.
       </HowToSection>
 
       <HowToSection number={4} isDarkRed>
-        Klipp hankene etter malen, bøy dem på midten og lim dem fast inne i
-        hjertene.
+        Klipp ut en hank lim dem fast inne i hjertene.
       </HowToSection>
     </div>
   );

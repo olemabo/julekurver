@@ -11,7 +11,7 @@ import { HjertekurvMalSection } from "./hjertekurvMalSection";
 
 const breadCrumbs = [
   { linkText: "Forside", href: "/" },
-  { linkText: "Hvordan lage kurver", href: "/hvordan-lage-kurv" },
+  { linkText: "Hvordan lage kurver", href: "/hvordan-lage-kurver" },
 ];
 
 export const whatYouNeedHeadingId = "what-you-need-heading-id";

@@ -58,8 +58,8 @@ export default function AboutHjertekurvSection({
           type={ICON_TYPE_SCISSOR}
           rating={difficultyKlipping}
         />
-        <Paragraph style={{ marginTop: "24px", fontSize: "20px" }}>
-          <Bold>{addedText}:</Bold>
+        <Paragraph style={{ marginTop: "24px", fontSize: "18px" }}>
+          <Bold style={{ fontSize: "16px" }}>{addedText}:</Bold>
           {formattedDate}
         </Paragraph>
       </div>

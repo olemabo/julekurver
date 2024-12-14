@@ -26,6 +26,24 @@ export function useHjertekurverPageTexts() {
   return { difficultyFlettingText, difficultyKlippingText, addedText };
 }
 
+export function useKurvMalTexts() {
+  const { dictionary } = use(LanguageContext);
+
+  const downloadMalButtonText = getValuesByKeys(dictionary, [
+    "pages",
+    "hjertekurvPage",
+    "downloadMalButton",
+  ]);
+
+  const malTitle = getValuesByKeys(dictionary, [
+    "pages",
+    "hjertekurvPage",
+    "malTitle",
+  ]);
+
+  return { downloadMalButtonText, malTitle };
+}
+
 export function formatDate(createdAt: Date) {
   const parsedToDate = new Date(createdAt);
 

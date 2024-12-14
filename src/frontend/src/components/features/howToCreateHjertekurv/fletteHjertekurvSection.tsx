@@ -5,7 +5,7 @@ import ListWithIllustraion, {
 import Heading from "@/components/shared/ui/heading/heading";
 import { HeadingIdProps } from "./howToCreateHjertekurv";
 import Popover from "@/components/shared/ui/popover/popover";
-import Image from "next/image";
+import FlettetilleggPopover from "@/components/shared/content/popover/FlettetilleggPopover";
 
 export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
   return (
@@ -15,7 +15,7 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
       </Heading>
       <Paragraph>
         Denne seksjonen viser hvordan du kan flette kurven etter at du har
-        klippet ut delene og gjort dem klare. Det finnes flere måter å sette
+        klippet ut delene og gjort dem klare. Det finnes ulike måter å sette
         sammen en hjertekurv på, men her presenteres en enkel og effektiv
         fremgangsmåte du kan følge
       </Paragraph>
@@ -34,9 +34,9 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
             content={
               <>
                 En strimmel er en av de utklippede delene av en hjertekurv som
-                brukes til å flette kurven sammen. I eksempelet her har vært del
-                (rød og hvit) 3 strimler hver (Markert med A, B og C for hvit
-                kurv og 1, 2 og 3 for rød kurv.)
+                brukes til å flette kurven sammen. I eksempelet her har hver del
+                (rød og hvit) 3 strimler hver (markert med A, B og C for hvit
+                kurv og 1, 2 og 3 for rød kurv.).
               </>
             }
           >
@@ -49,7 +49,7 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
         <ListWithIllustraion
           number={2}
           useLazyImage
-          illustrationSrc="/images/pages/createHjertekurvPage/createKurv/2.svg"
+          illustrationSrc="/images/pages/createHjertekurvPage/createKurv/1_b.svg"
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
@@ -61,6 +61,21 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
         <ListWithIllustraion
           number={3}
           useLazyImage
+          illustrationSrc="/images/pages/createHjertekurvPage/createKurv/2.svg"
+          altText="To brettede papir med brettekant"
+          imageSize={{ width: 351, height: 200 }}
+        >
+          Legg den hvite C-strimmelen oppå den rød kurven. Kontroller at den
+          hvite C-strimmelen dekker hele den røde 1-strimmelen. Hvis
+          C-strimmelen ikke strekker seg over hele den røde strimmelen, kan det
+          føre til at kurven blir for trang, og at du ikke får nok plass til å
+          fullføre flettingen. For å unngå dette, kan du legge til et ekstra
+          flettetillegg ved å kutte strimlene litt lengre.
+        </ListWithIllustraion>
+
+        <ListWithIllustraion
+          number={4}
+          useLazyImage
           illustrationSrc="/images/pages/createHjertekurvPage/createKurv/3.svg"
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
@@ -70,18 +85,20 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
         </ListWithIllustraion>
 
         <ListWithIllustraion
-          number={4}
+          number={5}
           useLazyImage
           illustrationSrc="/images/pages/createHjertekurvPage/createKurv/4.svg"
           altText="To brettede papir med brettekant"
           imageSize={{ width: 351, height: 200 }}
         >
-          Fortsett ved å åpne den hvite C-strimmelen og dra den røde strimmelen
-          2 gjennom.
+          Fortsett ved å åpne den hvite C-strimmelen og dra den røde
+          2-strimmelen gjennom.
+          {/* Her er det viktig at du drar den røde 2-strimmelen gjennom C og
+          ikke bare legger den hvite C-strimmelene oppå 2-strimmelen.  */}
         </ListWithIllustraion>
 
         <ListWithIllustraion
-          number={5}
+          number={6}
           useLazyImage
           illustrationSrc="/images/pages/createHjertekurvPage/createKurv/5.svg"
           altText="To brettede papir med brettekant"
@@ -92,7 +109,7 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
         </ListWithIllustraion>
 
         <ListWithIllustraion
-          number={6}
+          number={7}
           useLazyImage
           illustrationSrc="/images/pages/createHjertekurvPage/createKurv/6.svg"
           altText="To brettede papir med brettekant"
@@ -105,7 +122,7 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
         </ListWithIllustraion>
 
         <ListWithIllustraion
-          number={7}
+          number={8}
           useLazyImage
           illustrationSrc="/images/pages/createHjertekurvPage/createKurv/7.svg"
           altText="To brettede papir med brettekant"
@@ -116,7 +133,7 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
         </ListWithIllustraion>
 
         <ListWithIllustraion
-          number={8}
+          number={9}
           useLazyImage
           illustrationSrc="/images/pages/createHjertekurvPage/createKurv/8.svg"
           altText="To brettede papir med brettekant"
@@ -129,7 +146,7 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
         </ListWithIllustraion>
 
         <ListWithIllustraion
-          number={9}
+          number={10}
           useLazyImage
           illustrationSrc="/images/pages/createHjertekurvPage/createKurv/9.svg"
           altText="To brettede papir med brettekant"
@@ -141,36 +158,11 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
           mer plass når du skal flette inn den hvite A-strimmelen. Hvis det er
           vanskelig å flette C-strimmelen på grunn av trang plass, kan det tyde
           på at kurven er klippet litt feil eller at
-          <Popover
-            title="Flettetillegg"
-            content={
-              <>
-                Flettetillegget er den lille ekstra lengden du klipper opp
-                strimelene i, for å ta høyde for at flettingen vil ta litt
-                ekstra av strimelene. Alle maler som er laget er laget basert på
-                et kvadrat. Det vil si at du får nøyaktig lik bredde og høyde på
-                fletteområdet. Hvis man klipper det slik vil man fort støte på
-                et problem mot slutten av flettingen, da selve flettingene også
-                vil kreve litt ekstra papir når strimlene går opp og ned. Dette
-                flettetillegg må du legge til selv når du klipper. For en kurv
-                med få strimlere kan du legge til lite, 1-4 mm, men for en kurv
-                med mange strimler må du legge til mer.
-                <Image
-                  src={"/images/pages/frontpage/flettetillegg.svg"}
-                  alt={`Illustrasjon av flettetillegg`}
-                  width={300}
-                  height={60}
-                />
-              </>
-            }
-          >
-            flettetillegget
-          </Popover>{" "}
-          er for lite.
+          <FlettetilleggPopover /> er for lite.
         </ListWithIllustraion>
 
         <ListWithIllustraion
-          number={10}
+          number={11}
           useLazyImage
           illustrationSrc="/images/pages/createHjertekurvPage/createKurv/10.svg"
           altText="To brettede papir med brettekant"
@@ -181,7 +173,7 @@ export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
         </ListWithIllustraion>
 
         <ListWithIllustraion
-          number={11}
+          number={12}
           useLazyImage
           illustrationSrc="/images/pages/createHjertekurvPage/createKurv/11.svg"
           altText="To brettede papir med brettekant"

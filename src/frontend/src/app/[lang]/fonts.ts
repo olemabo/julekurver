@@ -35,3 +35,15 @@ export const alegreyaHeader = localFont({
   variable: "--font-alegreya-header",
   display: "swap",
 });
+
+export const alegreyaSansMedium = localFont({
+  src: [
+    {
+      path: "../../../public/fonts/AlegreyaSans/AlegreyaSans-Medium.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-alegreya-sans-medium",
+  display: "swap",
+});
