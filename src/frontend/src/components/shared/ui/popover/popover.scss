@@ -34,18 +34,19 @@
   font-family: inherit;
   color: var(--tds-color-primary-base);
   margin-left: 4px;
-  margin-right: -3px;
+  margin-right: -1px;
   text-decoration: underline;
   text-decoration-style: dashed;
+  text-decoration-color: #7d4d3dc7;
   text-underline-offset: 4px;
 }
 
 .popover-icon {
   position: relative;
   top: -6px;
-  left: -2px;
-  width: 16px;
-  height: 16px;
+  left: -3px;
+  width: 15px;
+  height: 15px;
 }
 
 @media screen and (max-width: 650px) {
