@@ -109,8 +109,14 @@ export function useDifficultyPopoverTexts() {
               "hjertekurverKartotekPage",
               "difficultyPopover",
               "weavingDetails",
-            ])}{" "}
-            <FullHeart size={"small"} />
+            ])}
+            <FullHeart size={"small"} />.{" "}
+            {getValuesByKeys(dictionary, [
+              "pages",
+              "hjertekurverKartotekPage",
+              "difficultyPopover",
+              "weavingDetails2",
+            ])}
           </>
         ),
       },
@@ -128,8 +134,14 @@ export function useDifficultyPopoverTexts() {
               "hjertekurverKartotekPage",
               "difficultyPopover",
               "cuttingDetails",
-            ])}{" "}
-            <FullScissor size={"small"} />
+            ])}
+            <FullScissor size={"small"} />.{" "}
+            {getValuesByKeys(dictionary, [
+              "pages",
+              "hjertekurverKartotekPage",
+              "difficultyPopover",
+              "cuttingDetails2",
+            ])}
           </>
         ),
       },
