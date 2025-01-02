@@ -19,7 +19,7 @@ const useCategories = () => {
       try {
         const response = await fetch(`${apiBaseUrl}/api/categories`, {
           next: {
-            revalidate: 1,
+            revalidate: 3600,
           },
         });
 

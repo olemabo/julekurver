@@ -16,7 +16,7 @@ export default function SocialMediaSection() {
     "followUsHeading",
   ]);
 
-  const pinterestUrl = "Hss";
+  const pinterestUrl = "";
   const instagramUrl = "https://www.instagram.com/hjertekurver/";
 
   return (

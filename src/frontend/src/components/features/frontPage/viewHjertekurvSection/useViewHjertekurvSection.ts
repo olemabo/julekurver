@@ -17,7 +17,7 @@ const useHjertekurver = (hjertekurvName: string) => {
           `${apiBaseUrl}/api/hjertekurver-page-api/?hjertekurvName=${hjertekurvName}`,
           {
             next: {
-              revalidate: 1,
+              revalidate: 3600,
             },
           },
         );

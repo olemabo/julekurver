@@ -18,13 +18,13 @@ export async function generateMetadata({
     `${apiBaseUrl}/api/hjertekurv-page-api/?hjertekurvName=${hjertekurv}`,
     {
       next: {
-        revalidate: 1,
+        revalidate: 3600,
       },
     },
   );
 
   return {
-    title: pageContent?.name + " hjertekurv/julekurv",
+    title: pageContent?.name + " hjertekurv/julekurv med mal",
     description: pageContent?.about,
     openGraph: {
       title: pageContent?.name,
@@ -64,7 +64,7 @@ export default async function Page({ params }: { params: HjertekurvParams }) {
     `${apiBaseUrl}/api/hjertekurv-page-api/?hjertekurvName=${hjertekurv}`,
     {
       next: {
-        revalidate: 1,
+        revalidate: 3600,
       },
     },
   );

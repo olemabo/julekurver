@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: HjertekurvParams }) {
   const parsedContent =
     typeof pageContent === "string" ? JSON.parse(pageContent) : pageContent;
 
-  if (!parsedContent || parsedContent.length < 1) {
+  if (parsedContent?.length < 1) {
     return null;
   }
 
