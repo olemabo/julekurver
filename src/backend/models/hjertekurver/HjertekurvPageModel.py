@@ -6,6 +6,7 @@ class HjertekurvPageModel:
                  imageHjertekurvMalUrl, 
                  imageHjertekurvMal2Url,
                  createdAt,
+                 popularity,
                  downloadMal = '', 
                  url = '', 
                  difficultyFletting = 0, 
@@ -24,6 +25,7 @@ class HjertekurvPageModel:
         self.difficultyKlipping = difficultyKlipping
         self.categories = categories
         self.createdAt = createdAt
+        self.popularity = popularity
     
     def to_dict(self):
         return {
@@ -38,4 +40,5 @@ class HjertekurvPageModel:
             'difficultyKlipping': self.difficultyKlipping,
             'createdAt': self.createdAt,
             'categories': self.categories,
+            'popularity': self.popularity
         }

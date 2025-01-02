@@ -69,7 +69,8 @@ class HjertekurvPageAPIView(APIView):
                     url=hjertekurv[0].url_name,
                     difficultyFletting=hjertekurv[0].difficulty_fletting,
                     difficultyKlipping=hjertekurv[0].difficulty_klipping,
-                    createdAt=hjertekurv[0].created_at
+                    createdAt=hjertekurv[0].created_at,
+                    popularity=hjertekurv[0].visit_count
             )
                             
             return JsonResponse(response.to_dict(), safe=False)
@@ -104,7 +105,8 @@ class HjertekurverPageAPIView(APIView):
                         difficultyKlipping = hjertekurv.difficulty_klipping,
                         difficultyFletting = hjertekurv.difficulty_fletting,
                         categories = categories,
-                        createdAt=hjertekurv.created_at
+                        createdAt=hjertekurv.created_at,
+                        popularity=hjertekurv.visit_count
                     )
 
                     hjertekurv_list.append(hjertekurvPageModel.to_dict())
@@ -155,6 +157,7 @@ class RelatedKurverAPIView(APIView):
                         difficultyFletting = kurv.difficulty_fletting,
                         difficultyKlipping = kurv.difficulty_klipping,
                         createdAt = kurv.created_at,
+                        popularity=kurv.visit_count
                 )
 
                 related_data.append(hjertekurvPageModel.to_dict())   

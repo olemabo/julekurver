@@ -86,7 +86,7 @@
                     "description": "Filtrer etter kurver med høyest vanskelighetsgrad for klipping."
                 },
                 "popularity": {
-                    "label": "Popularitet",
+                    "label": "Mest besøkte kurver",
                     "description": "Hvor populær kurven er (antall ganger siden til kurven er besøkt)"
                 }
             }
