@@ -46,10 +46,12 @@
             "difficultyPopover": {
                 "title": "Difficulty Level",
                 "description": "The difficulty level of a heart basket is determined by two factors:",
-                "weaving": "Weaving: Evaluates how challenging the weaving process itself is, indicated by a heart icon.",
-                "weavingDetails": "This can include the number of strips, the thickness of the strips, and variation in the weaving pattern, all of which can make the process more complex.",
-                "cutting": "Cutting: Indicates how challenging it is to cut out the basket before weaving starts, and is marked with a scissor icon.",
-                "cuttingDetails": "Some baskets have detailed patterns that require precision and accuracy during cutting.",
+                "weaving": "Weaving:",
+                "weavingDetails": "Evaluates how challenging the weaving process itself is, indicated by a heart icon:",
+                "weavingDetails2": "This can include the number of strips, the thickness of the strips, and variation in the weaving pattern, all of which can make the process more complex.",
+                "cutting": "Cutting:",
+                "cuttingDetails": "Indicates how challenging it is to cut out the basket before weaving starts, and is marked with a scissor icon.",
+                "cuttingDetails2": "Some baskets have detailed patterns that require precision and accuracy during cutting.",
                 "difficulty": "difficulty level"
             },
             "search": {

@@ -46,10 +46,12 @@
             "difficultyPopover": {
                 "title": "Vanskelighetsgrad",
                 "description": "Vanskelighetsgraden på en hjertekurv bestemmes av to faktorer:",
-                "weaving": "Fletting: Vurderer hvor utfordrende selve flettingen er, angitt med et hjerte-ikon.",
-                "weavingDetails": "Dette kan inkludere antall strimler, strimlenes tykkelse og variasjon i flettemønsteret, som alle kan gjøre prosessen mer kompleks.",
-                "cutting": "Klipping: Angir hvor utfordrende det er å klippe ut kurven før flettingen starter, og er markert med et saks-ikon.",
-                "cuttingDetails": "Noen kurver har detaljerte motiver som krever presisjon og nøyaktighet under klipping.",
+                "weaving": "Fletting:",
+                "weavingDetails": "Vurderer hvor utfordrende selve flettingen er, angitt med et hjerte-ikon:",
+                "weavingDetails2": "Dette kan inkludere antall strimler, strimlenes tykkelse og variasjon i flettemønsteret, som alle kan gjøre prosessen mer kompleks.",
+                "cutting": "Klipping:",
+                "cuttingDetails": "Angir hvor utfordrende det er å klippe ut kurven før flettingen starter, og er markert med et saks-ikon.",
+                "cuttingDetails2": "Noen kurver har detaljerte motiver som krever presisjon og nøyaktighet under klipping.",
                 "difficulty": "vanskelighetsgrad"
             },
             "search": {
