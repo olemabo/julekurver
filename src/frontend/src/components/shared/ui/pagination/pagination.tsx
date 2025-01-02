@@ -23,15 +23,15 @@ interface PaginationProps {
 }
 
 export default function Pagination({
-  defaultPage,
+  defaultPage = 1,
   selectOptions,
-  defaultPageSize,
+  defaultPageSize = 10,
   total,
   onChange,
   onSelectOptionChange,
 }: PaginationProps) {
-  const [page, setPage] = useState(defaultPage ?? 1);
-  const [pageSize, setPageSize] = useState(defaultPageSize ?? 10);
+  const [page, setPage] = useState(defaultPage);
+  const [pageSize, setPageSize] = useState(defaultPageSize);
 
   const currentSelectOptions = selectOptions ?? defaultPaginationOptions;
 

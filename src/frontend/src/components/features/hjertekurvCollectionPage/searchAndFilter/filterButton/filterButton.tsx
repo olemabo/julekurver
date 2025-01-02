@@ -1,5 +1,8 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
-import { HjertekurvFilterType } from "./sort";
+import { HjertekurvFilterType } from "../sort";
+import { useFilterTexts } from "../../useTexts";
 import "./filterButton.scss";
 
 type FilterButtonProps = {
@@ -11,29 +14,56 @@ export default function FilterButton({
   onSelectFilter,
   currentFilter,
 }: FilterButtonProps) {
+  const {
+    filterButtonLabel,
+    alphabetic,
+    recentlyCreated,
+    lowestDifficultyFletting,
+    highestDifficultyFletting,
+    lowestDifficultyKlipping,
+    highestDifficultyKlipping,
+    popularity,
+  } = useFilterTexts();
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const dropdownOptions = [
-    // { label: "Popularitet", value: HjertekurvFilterType.Popularity },
-    { label: "Alfabetisk", value: HjertekurvFilterType.Alphabetic },
-    { label: "Nyeste lagt til", value: HjertekurvFilterType.RecentlyCreated },
     {
-      label: "Fletting - enkel",
+      label: recentlyCreated.label,
+      description: recentlyCreated.description,
+      value: HjertekurvFilterType.RecentlyCreated,
+    },
+    {
+      label: alphabetic.label,
+      description: alphabetic.description,
+      value: HjertekurvFilterType.Alphabetic,
+    },
+    {
+      label: lowestDifficultyFletting.label,
+      description: lowestDifficultyFletting.description,
       value: HjertekurvFilterType.LowestDifficultyFletting,
     },
     {
-      label: "Fletting - vanskelig",
+      label: highestDifficultyFletting.label,
+      description: highestDifficultyFletting.description,
       value: HjertekurvFilterType.HighestDifficultyFletting,
     },
     {
-      label: "Klipping - enkel",
+      label: lowestDifficultyKlipping.label,
+      description: lowestDifficultyKlipping.description,
       value: HjertekurvFilterType.LowestDifficultyKlipping,
     },
     {
-      label: "Klipping - vanskelig",
+      label: highestDifficultyKlipping.label,
+      description: highestDifficultyKlipping.description,
       value: HjertekurvFilterType.HighestDifficultyKlipping,
+    },
+    {
+      label: popularity.label,
+      description: popularity.description,
+      value: HjertekurvFilterType.Popularity,
     },
   ];
 
@@ -73,7 +103,7 @@ export default function FilterButton({
         onClick={toggleDropdown}
         className={`arrow-button ${isDropdownOpen ? "open" : ""}`}
       >
-        Filtrer på
+        {filterButtonLabel}
       </button>
 
       {isDropdownOpen && (
@@ -81,6 +111,8 @@ export default function FilterButton({
           {dropdownOptions.map((option) => (
             <button
               className={`dropdown-option ${option.value === currentFilter ? "selected" : ""}`}
+              aria-label={option.description}
+              title={option.description}
               key={option.value}
               onClick={() => handleOptionClick(option.value)}
             >

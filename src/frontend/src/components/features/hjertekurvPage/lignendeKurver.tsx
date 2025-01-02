@@ -1,7 +1,7 @@
 "use client";
 
 import useLignendeHjertekurver from "./useLignendeKurver";
-import HjertekurvCollectionCard from "../hjertekurvCollectionPage/hjertekurvCollectionCard";
+import HjertekurvCollectionCard from "../hjertekurvCollectionPage/searchAndFilter/collectionCard/hjertekurvCollectionCard";
 import Heading from "@/components/shared/ui/heading/heading";
 import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
 
