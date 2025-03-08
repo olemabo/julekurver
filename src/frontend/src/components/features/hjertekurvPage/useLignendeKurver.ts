@@ -2,7 +2,7 @@ import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 import { useState, useEffect } from "react";
 
-const useLignendeHjertekurver = (hjertekurvName: string) => {
+const useLignendeHjertekurver = (hjertekurvName: string, lang: string) => {
   const [data, setData] = useState<Hjertekurv[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -14,7 +14,7 @@ const useLignendeHjertekurver = (hjertekurvName: string) => {
       setLoading(true);
       try {
         const response = await fetch(
-          `${apiBaseUrl}/api/related-hjertekurver-api/?hjertekurvName=${hjertekurvName}`,
+          `${apiBaseUrl}/api/related-hjertekurver-api/?hjertekurvName=${hjertekurvName}&lang=${lang}`,
           {
             next: {
               revalidate: 3600,

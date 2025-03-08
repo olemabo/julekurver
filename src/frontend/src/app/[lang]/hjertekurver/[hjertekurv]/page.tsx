@@ -56,12 +56,12 @@ export type Hjertekurv = {
 };
 
 export default async function Page({ params }: { params: HjertekurvParams }) {
-  const { hjertekurv } = await params;
+  const { hjertekurv, lang } = await params;
 
   const apiBaseUrl = createBackendUrl();
 
   const pageContent = await fetchWith404Check<Hjertekurv>(
-    `${apiBaseUrl}/api/hjertekurv-page-api/?hjertekurvName=${hjertekurv}`,
+    `${apiBaseUrl}/api/hjertekurv-page-api/?hjertekurvName=${hjertekurv}&lang=${lang}`,
     {
       next: {
         revalidate: 3600,
@@ -69,5 +69,5 @@ export default async function Page({ params }: { params: HjertekurvParams }) {
     },
   );
 
-  return <HjertekurvPage hjertekurv={pageContent} />;
+  return <HjertekurvPage lang={lang} hjertekurv={pageContent} />;
 }

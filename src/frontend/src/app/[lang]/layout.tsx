@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
-import { getDictionary } from "./dictionaries";
+import { getDictionary, getValuesByKeys } from "./dictionaries";
 import LanguageProvider, { LangParams } from "@/providers";
 import {
   alegreya,
@@ -13,12 +13,32 @@ import {
 } from "./fonts";
 import "../globals.css";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: LangParams;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+
+  const title = getValuesByKeys(dictionary, ["layout", "seo", "title"]);
+  const description = getValuesByKeys(dictionary, [
+    "layout",
+    "seo",
+    "description",
+  ]);
+
   return {
-    title:
-      "hjertekurver.no - Nettside med samling av hjertekurver/julekurver, maler, inspirasjon og veiledning.",
-    description:
-      "Utforsk en stor samling av hjertekurver/julekurver med maler, bilder og detaljerte veiledninger. Lær hvordan du lager tradisjonelle julekurver og la deg inspirere til kreativ fletting.",
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      url: `https://hjertekurver.no/`,
+    },
+    twitter: {
+      title: title,
+      description: description,
+    },
   };
 }
 
@@ -38,6 +58,9 @@ export default async function RootLayout({
       lang={lang}
       className={`${alegreya.variable} ${alegreyaSansLight.variable} ${alegreyaHeader.variable} ${alegreyaSansMedium.variable}`}
     >
+      <head>
+        <script src="https://unpkg.com/react-scan/dist/auto.global.js" async />
+      </head>
       <body>
         <LanguageProvider lang={lang} dictionary={dictionary}>
           <Header />

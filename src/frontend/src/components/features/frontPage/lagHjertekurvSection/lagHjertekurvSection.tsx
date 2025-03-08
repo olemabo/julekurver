@@ -1,28 +1,32 @@
+"use client";
+
 import Button from "@/components/shared/ui/button/button";
 import JulekurvStep from "./lagHjertekurvStep";
 import { lightTheme } from "@/constants/displayTheme";
 import "./lagHjertekurvSection.scss";
+import ContentHeader from "../contentHeader/contentHeader";
+import { useLagHjertekurvSection } from "../useTexts";
+import { Locale } from "@/providers";
 
-export default function LagHjertekurvSection() {
+export default function LagHjertekurvSection({ lang }: Locale) {
+  const { title, step1, step2, step3, buttonLabel } = useLagHjertekurvSection();
+
   const julekurvSteps = [
     {
       imageSrc: "/images/pages/frontpage/dus_hvit/lage_julekurv_materialer.svg",
-      description:
-        "Finn papir i favorittfargene dine. Velg klassiske julefarger som rødt og hvitt, eller prøv noe nytt med mønstre og glitter.",
+      description: step1,
       height: 225,
       number: 1,
     },
     {
       imageSrc: "/images/pages/frontpage/dus_hvit/lage_julekurv_mal.svg",
-      description:
-        "Last ned en mal, eller tegn din egen. Klipp forsiktig for å få jevne kanter og et symmetrisk design.",
+      description: step2,
       height: 210,
       number: 2,
     },
     {
       imageSrc: "/images/pages/frontpage/dus_hvit/lage_julekurv_kurv.svg",
-      description:
-        "Start flettingen ved å føre stripene inn i hverandre. Jobb sakte for å få et jevnt og stramt mønster.",
+      description: step3,
       height: 210,
       number: 3,
     },
@@ -30,6 +34,7 @@ export default function LagHjertekurvSection() {
 
   return (
     <>
+      <ContentHeader title={title} theme={lightTheme} />
       <div className="lag-hjertekurv-section-container">
         {julekurvSteps.map((step, index) => (
           <JulekurvStep
@@ -45,8 +50,8 @@ export default function LagHjertekurvSection() {
       <div className="button-container">
         <Button
           theme={lightTheme}
-          label="Lær å lage kurv"
-          href="/no/hvordan-lage-kurver"
+          label={buttonLabel}
+          href={`/${lang}/hvordan-lage-kurver`}
         />
       </div>
     </>

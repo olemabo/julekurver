@@ -2,14 +2,19 @@
 
 import Button from "@/components/shared/ui/button/button";
 import useHjertekurver from "./useViewHjertekurvSection";
-
-import "./viewHjertekurvSection.scss";
 import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import HjertekurvCarousel from "./hjertekurvCarousel";
+import ContentHeader from "../contentHeader/contentHeader";
+import { darkTheme } from "@/constants/displayTheme";
+import { useViewHjertekurvSection } from "../useTexts";
+import { Locale } from "@/providers";
+import "./viewHjertekurvSection.scss";
 
-export default function ViewHjertekurvSection() {
+export default function ViewHjertekurvSection({ lang }: Locale) {
   const { data, error, loading } = useHjertekurver("");
+  const { title, paragraph1, paragraph2, listItems, buttonLabel } =
+    useViewHjertekurvSection();
 
   if (loading) {
     return <HjertekurvLoader />;
@@ -24,26 +29,25 @@ export default function ViewHjertekurvSection() {
   }
 
   return (
-    <div className="our-hearts-container">
-      <div>
-        <Paragraph maxWidth={400}>
-          Få inspirasjon fra vår store samling av hjertekurver! Vi har samlet et
-          bredt utvalg av design - alt fra klassiske hjertekurver til kreative
-          og moderne mønstre.
-        </Paragraph>
-        <Paragraph maxWidth={400}>Hver kurv kommer med:</Paragraph>
-        <ul className="custom-ul">
-          <li>Et bilde av det ferdige resultatet</li>
-          <li>Maler og veiledning for å lage din egen</li>
-          <li>Informasjon om designet</li>
-        </ul>
-        <Button
-          style={{ marginTop: "24px" }}
-          label="Se alle kurver"
-          href="no/hjertekurver"
-        />
+    <>
+      <ContentHeader title={title} theme={darkTheme} />
+      <div className="our-hearts-container">
+        <div>
+          <Paragraph maxWidth={400}>{paragraph1}</Paragraph>
+          <Paragraph maxWidth={400}>{paragraph2}</Paragraph>
+          <ul className="custom-ul">
+            {listItems?.map((step, index) => (
+              <li key={`our-hearts-container-${index}`}>{step}</li>
+            ))}
+          </ul>
+          <Button
+            style={{ marginTop: "24px" }}
+            label={buttonLabel}
+            href={`${lang}/hjertekurver`}
+          />
+        </div>
+        <HjertekurvCarousel useFirst displayTime={5000} kurver={data} />
       </div>
-      <HjertekurvCarousel useFirst displayTime={5000} kurver={data} />
-    </div>
+    </>
   );
 }

@@ -1,7 +1,11 @@
 "use server";
 
 import FrontPage from "@/components/features/frontPage/frontPage";
+import { LangParams } from "@/providers";
 
-export default async function Home() {
-  return <FrontPage />;
+export type FrontpageParams = LangParams;
+
+export default async function Home({ params }: { params: FrontpageParams }) {
+  const { lang } = await params;
+  return <FrontPage lang={lang} />;
 }

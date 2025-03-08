@@ -4,6 +4,7 @@ import { HjertekurvCollectionPage } from "@/components/features/hjertekurvCollec
 import { Hjertekurv } from "./[hjertekurv]/page";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 import { Metadata } from "next";
+import { LangParams } from "@/providers";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -13,15 +14,15 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export type HjertekurvParams = Promise<{ hjertekurv: string }>;
+export type HjertekurvParams = Promise<{ hjertekurv: string }> & LangParams;
 
 export default async function Page({ params }: { params: HjertekurvParams }) {
-  const { hjertekurv } = await params;
+  const { hjertekurv, lang } = await params;
 
   const apiBaseUrl = createBackendUrl();
 
   const data = await fetch(
-    `${apiBaseUrl}/api/hjertekurver-page-api/?hjertekurvName=${hjertekurv}`,
+    `${apiBaseUrl}/api/hjertekurver-page-api/?hjertekurvName=${hjertekurv}&lang=${lang}`,
     {
       next: {
         revalidate: 3600,
@@ -38,5 +39,5 @@ export default async function Page({ params }: { params: HjertekurvParams }) {
     return null;
   }
 
-  return <HjertekurvCollectionPage hjertekurver={parsedContent} />;
+  return <HjertekurvCollectionPage hjertekurver={parsedContent} lang={lang} />;
 }

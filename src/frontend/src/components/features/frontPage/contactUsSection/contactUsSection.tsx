@@ -12,17 +12,31 @@ import axios from "axios";
 import "./contactUsSection.scss";
 import LazyImage from "@/components/shared/lazyImage/LazyImage";
 import Link from "next/link";
+import { useContactUsSection } from "../useTexts";
+import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
+import { Locale } from "@/providers";
 
-export default function ContactUsSection() {
-  const apiBaseUrl = createBackendUrl();
-  const feedbackUrl = `${apiBaseUrl}/api/feedback/`;
+export default function ContactUsSection({ lang }: Locale) {
+  const {
+    title,
+    introParagraph,
+    introLinkText,
+    thankYouMessage,
+    feedbackPrompt,
+    textareaLabel,
+    textareaPlaceholder,
+    buttonLabel,
+    imageAltText,
+  } = useContactUsSection();
+  const feedbackUrl = createBackendUrl("/api/feedback/");
+
   const [hasSentContactUsMessage, setHasSentContactUsMessage] = useState(false);
   const [contactUsMessage, setContactUsMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleContactUsMessage = async () => {
     if (!contactUsMessage) {
-      setErrorMessage("Du må legge inn innhold for å sende tilbakemelding");
+      setErrorMessage(errorMessage);
       return;
     }
 
@@ -42,40 +56,39 @@ export default function ContactUsSection() {
     <div className="contact-section-container">
       <div>
         <Heading theme={lightTheme} headingLevel="h2">
-          Kontakt oss
+          {title}
         </Heading>
         <Paragraph theme={lightTheme} maxWidth={paragraphMaxWidth}>
-          Din interesse betyr mye for oss, og vi setter stor pris på
-          tilbakemeldinger. Har du spørsmål, forslag, eller ønsker å dele dine
-          egne hjertekurv-kreasjoner? Vi vil gjerne høre fra deg! Besøk vår{" "}
-          <Link style={{ color: "inherit" }} href="/no/kontakt-oss">
-            kontakt oss{" "}
-          </Link>
-          -side for å komme i kontakt.
+          <ReplacePlaceholder
+            text={introParagraph}
+            placeholder="{link}"
+            component={
+              <Link style={{ color: "inherit" }} href={`/${lang}/kontakt-oss`}>
+                {introLinkText}
+              </Link>
+            }
+          />
         </Paragraph>
         <Paragraph theme={lightTheme} maxWidth={paragraphMaxWidth}>
-          Hvis du ønsker å sende inn en rask, anonym tilbakemelding, kan du
-          gjøre det i boksen under. Skriv inn det du vil dele, og klikk på
-          &apos;Send inn tilbakemelding&apos; - vi gjennomgår alle bidrag så
-          snart som mulig.
+          {feedbackPrompt}
         </Paragraph>
         {hasSentContactUsMessage ? (
           <Paragraph theme={lightTheme} maxWidth={paragraphMaxWidth}>
-            Takk for din tilbakemelding!
+            {thankYouMessage}
           </Paragraph>
         ) : (
           <div className="contact-form">
             <TextArea
-              label="Legg igjen en tilbakemelding"
+              label={textareaLabel}
               customOnChange={(message: string) => setContactUsMessage(message)}
               value={contactUsMessage}
-              placeholder="Legg inn tilbakemelding..."
+              placeholder={textareaPlaceholder}
               maxWidth={400}
               errorMessage={errorMessage}
             />
             <Button
               theme={lightTheme}
-              label="Send inn tilbakemelding"
+              label={buttonLabel}
               onClick={handleContactUsMessage}
             />
           </div>
@@ -83,17 +96,10 @@ export default function ContactUsSection() {
       </div>
       <LazyImage
         src={"/images/pages/frontpage/frontpage_hjertekurv_letter-cropped.svg"}
-        alt={"logo av flettet hjertekurv"}
+        alt={imageAltText}
         imageSize={{ height: 350, width: 350 }}
         className="illustration-image"
       />
-      {/* <Image
-        alt="logo av flettet hjertekurv"
-        height={350}
-        height={350}
-        width={350}
-        src={"/images/pages/frontpage/frontpage_hjertekurv_letter-cropped.svg"}
-      /> */}
     </div>
   );
 }
