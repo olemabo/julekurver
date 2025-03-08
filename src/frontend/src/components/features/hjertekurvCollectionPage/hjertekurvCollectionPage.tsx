@@ -8,13 +8,15 @@ import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import SearchAndFilterSection from "./searchAndFilter/searchAndFilterSection";
 import { useHjertekurvTexts } from "./useTexts";
 import DifficultyPopover from "./difficulltyPopover";
+import { Locale } from "@/providers";
 
 export type HjertekurvCollectionPageProps = {
   hjertekurver: Hjertekurv[];
-};
+} & Locale;
 
 export function HjertekurvCollectionPage({
   hjertekurver,
+  lang,
 }: HjertekurvCollectionPageProps) {
   const {
     breadcrumbHome,
@@ -25,8 +27,8 @@ export function HjertekurvCollectionPage({
   } = useHjertekurvTexts();
 
   const linkItems = [
-    { linkText: breadcrumbHome, href: "/" },
-    { linkText: breadcrumbHeartBaskets, href: "/hjertekurver" },
+    { linkText: breadcrumbHome, href: `/${lang}` },
+    { linkText: breadcrumbHeartBaskets, href: `${lang}/hjertekurver` },
   ];
 
   return (
@@ -38,7 +40,7 @@ export function HjertekurvCollectionPage({
         <DifficultyPopover />
         {paragraphOutro}
       </Paragraph>
-      <SearchAndFilterSection hjertekurver={hjertekurver} />
+      <SearchAndFilterSection lang={lang} hjertekurver={hjertekurver} />
     </PageWrapper>
   );
 }

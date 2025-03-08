@@ -47,6 +47,10 @@
         background-color: var(--tds-color-filter-button-bg);
         color: var(--tds-color-neutrals-white);
       }
+
+      &:hover {
+        background-color: var(--tds-color-filter-button-hover-bg);
+      }
     }
   }
 }

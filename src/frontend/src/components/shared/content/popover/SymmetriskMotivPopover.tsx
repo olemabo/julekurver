@@ -1,23 +1,33 @@
+"use client";
+
 import React from "react";
 import Popover from "../../ui/popover/popover";
 import Link from "next/link";
+import { useSymmetriskMotivTexts } from "./useTexts";
 
 const SymmetriskMotivPopover = () => {
+  const {
+    title,
+    intro,
+    link1Text,
+    link1Href,
+    mid,
+    link2Text,
+    link2Href,
+    outro,
+  } = useSymmetriskMotivTexts();
+
   return (
     <Popover
-      title="Symmetrik motiv"
+      title={title}
       content={
         <>
-          Symmetrisk motiv betyr at du klipper ut to identiske maler som skal
-          flettes sammen, slik som i{" "}
-          <Link href="/no/hjertekurver/standard-kurv-3x3">9-felts-kurv</Link>{" "}
-          brukt i dette eksempelet. Et eksempel på en kurv uten symmetrisk motiv
-          er <Link href="/no/hjertekurver/isbjoern">isbjørn-kurven</Link>, hvor
-          du må klippe ut to forskjellige maler for å få riktig design.
+          {intro} <Link href={link1Href}>{link1Text}</Link> {mid}{" "}
+          <Link href={link2Href}>{link2Text}</Link> {outro}
         </>
       }
     >
-      symmetrisk motiv
+      {title?.toLowerCase()}
     </Popover>
   );
 };

@@ -88,11 +88,9 @@
   --tds-color-dark-theme: #514b4b;
   --tds-color-dark-theme-border: #514b4b;
 
-  --tds-color-filter-button-border: #bc9284;
   --tds-color-filter-button-border: var(--tds-color-primary-base);
-  --tds-color-filter-button-bg: #9b776b;
-  --tds-color-filter-button-bg: var(--tds-color-primary-base);
   --tds-color-filter-button-bg: #8b6657;
+  --tds-color-filter-button-hover-bg: #c5998a36;
 
   --tds-bg-color-mobile-menu: #f5f5ea;
 }
@@ -297,4 +295,8 @@ ul.custom-ul li {
 
 .frontpage h2 {
   font-size: 36px;
+}
+
+.visually-hidden {
+  display: none;
 }

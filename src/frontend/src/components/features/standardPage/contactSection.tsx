@@ -7,17 +7,28 @@ import TextArea from "@/components/shared/ui/textarea/textarea";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 import axios from "axios";
 import { useState } from "react";
+import { useContactSectionTexts } from "./useTexts";
 
 export default function ContactSection() {
+  const {
+    heading,
+    paragraph,
+    thankYouMessage,
+    textareaLabel,
+    textareaPlaceholder,
+    errorMessage,
+    buttonLabel,
+  } = useContactSectionTexts();
+
   const apiBaseUrl = createBackendUrl();
   const feedbackUrl = `${apiBaseUrl}/api/feedback/`;
   const [hasSentContactUsMessage, setHasSentContactUsMessage] = useState(false);
   const [contactUsMessage, setContactUsMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessageState, setErrorMessage] = useState("");
 
   const handleContactUsMessage = async () => {
     if (!contactUsMessage) {
-      setErrorMessage("Du må legge inn innhold for å sende tilbakemelding");
+      setErrorMessage(errorMessage);
       return;
     }
 
@@ -31,15 +42,10 @@ export default function ContactSection() {
 
   return (
     <>
-      <Heading headingLevel="h2">Send direkte tilbakemelding</Heading>
-      <Paragraph>
-        Ønsker du å sende inn en rask, anonym tilbakemelding kan du gjøre det
-        under her. Legg inn en tilbakemelding i boksen under og klikk på
-        &apos;Send inn tilbakemelding&apos;, så vil vi gå gjennom den så raskt
-        som mulig.
-      </Paragraph>
+      <Heading headingLevel="h2">{heading}</Heading>
+      <Paragraph>{paragraph}</Paragraph>
       {hasSentContactUsMessage ? (
-        <Paragraph maxWidth={500}>Takk for din tilbakemelding!</Paragraph>
+        <Paragraph maxWidth={500}>{thankYouMessage}</Paragraph>
       ) : (
         <div
           style={{
@@ -50,21 +56,18 @@ export default function ContactSection() {
           }}
         >
           <TextArea
-            label="Legg igjen en tilbakemelding"
+            label={textareaLabel}
             style={{
               border: "1px solid black",
               backgroundColor: "transparent",
             }}
             value={contactUsMessage}
             customOnChange={(message: string) => setContactUsMessage(message)}
-            placeholder="Legg inn tilbakemelding..."
+            placeholder={textareaPlaceholder}
             maxWidth={400}
-            errorMessage={errorMessage}
+            errorMessage={errorMessageState}
           />
-          <Button
-            label="Send inn tilbakemelding"
-            onClick={handleContactUsMessage}
-          />
+          <Button label={buttonLabel} onClick={handleContactUsMessage} />
         </div>
       )}
     </>

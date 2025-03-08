@@ -1,23 +1,21 @@
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Heading from "@/components/shared/ui/heading/heading";
 import { HeadingIdProps } from "./howToCreateHjertekurv";
+import { useWhatYouNeedSection } from "./useTexts";
 
 export default function WhatYouNeedSection({ headingId }: HeadingIdProps) {
+  const { title, ingress, whatYouNeedList } = useWhatYouNeedSection();
+
   return (
     <>
       <Heading id={headingId} headingLevel="h2">
-        Dette trenger du
+        {title}
       </Heading>
-      <Paragraph>
-        For å komme i gang med å lage hjertekurver trenger du bare noen få enkle
-        materialer, som du sannsynligvis allerede har hjemme. Dette er hva du
-        trenger:
-      </Paragraph>
+      <Paragraph>{ingress}</Paragraph>
       <ul className="custom-ul">
-        <li>Glanspapir (evt annent ønsket papir)</li>
-        <li>Saks</li>
-        <li>Limstift (til å lime på hanken)</li>
-        <li>Matpapir/papp/blåpapir</li>
+        {whatYouNeedList?.map((element, index) => (
+          <li key={`what-you-need-list-${index}`}>{element}</li>
+        ))}
       </ul>
     </>
   );

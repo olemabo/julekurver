@@ -1,26 +1,26 @@
-export const EN_LOCALE = "en";
-export const NO_LOCALE = "no";
-
-export type Locale = typeof EN_LOCALE | typeof NO_LOCALE;
+import LANGUAGES, { LanguageCode } from "@/constants/languages";
 
 const dictionaries = {
-  [EN_LOCALE]: () =>
+  [LANGUAGES.ENGLISH]: () =>
     import("../../../public/locales/en/common.json").then(
       (module) => module.default,
     ),
-  [NO_LOCALE]: () =>
+  [LANGUAGES.NORWEGIAN]: () =>
     import("../../../public/locales/no/common.json").then(
       (module) => module.default,
     ),
 };
 
-export type Dictionary = {
-  [key: string]: string | Dictionary;
-};
+export type Dictionary = Record<string, any>;
 
-export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
+export const getDictionary = async (
+  locale: LanguageCode,
+): Promise<Dictionary> => {
   if (!dictionaries[locale]) {
-    throw new Error(`Locale ${locale} is not supported`);
+    console.warn(
+      `Locale ${locale} is not supported. Falling back to default locale.`,
+    );
+    locale = LANGUAGES.NORWEGIAN;
   }
   return dictionaries[locale]();
 };
@@ -39,11 +39,11 @@ function isString(value: JSONValue): value is string {
   return typeof value === "string";
 }
 
-export function getValuesByKeys(
+export function getValuesByKeys<T = string>(
   obj: Dictionary | undefined,
   keys: string[],
-  defaultValue: string = "",
-): string {
+  defaultValue: T = "" as T,
+): T {
   if (!obj) {
     return defaultValue;
   }
@@ -58,8 +58,12 @@ export function getValuesByKeys(
     }
   }
 
+  if (Array.isArray(result)) {
+    return result as T;
+  }
+
   if (isString(result)) {
-    return result;
+    return result as T;
   }
 
   return defaultValue;

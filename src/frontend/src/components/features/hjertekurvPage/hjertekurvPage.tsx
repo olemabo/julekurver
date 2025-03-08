@@ -8,12 +8,17 @@ import KurvMal from "./kurvMal/kurvMal";
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import AboutHjertekurvSection from "./aboutHjertekurvSection";
 import "./hjertekurv.scss";
+import { Locale } from "@/providers";
+import { useBreadcrumbTexts } from "./useTexts";
 
 export type HjertekurvPageProps = {
   hjertekurv: Hjertekurv;
-};
+} & Locale;
 
-export default function HjertekurvPage({ hjertekurv }: HjertekurvPageProps) {
+export default function HjertekurvPage({
+  hjertekurv,
+  lang,
+}: HjertekurvPageProps) {
   const {
     name,
     url,
@@ -22,14 +27,16 @@ export default function HjertekurvPage({ hjertekurv }: HjertekurvPageProps) {
     downloadMal,
   } = hjertekurv;
 
+  const { breadcrumbHome, breadcrumbHeartBaskets } = useBreadcrumbTexts();
+
   if (!hjertekurv) {
     return null;
   }
 
   const breadCrumbLinks = [
-    { linkText: "Forside", href: "/" },
-    { linkText: "Hjertekurver", href: "/hjertekurver" },
-    { linkText: name, href: `/hjertekurver/${url}` },
+    { linkText: breadcrumbHome, href: `/${lang}` },
+    { linkText: breadcrumbHeartBaskets, href: `/${lang}/hjertekurver` },
+    { linkText: name, href: `/${lang}/hjertekurver/${url}` },
   ];
 
   return (
@@ -40,9 +47,10 @@ export default function HjertekurvPage({ hjertekurv }: HjertekurvPageProps) {
         mal1Url={imageHjertekurvMalUrl}
         mal2Url={imageHjertekurvMal2Url}
         downloadMal={downloadMal}
+        lang={lang}
       />
-      <HvordanLageKurver />
-      <LignendeKurver url={url} />
+      <HvordanLageKurver lang={lang} />
+      <LignendeKurver lang={lang} url={url} />
     </PageWrapper>
   );
 }

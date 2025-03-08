@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import { lightTheme } from "@/constants/displayTheme";
 import Heading from "@/components/shared/ui/heading/heading";
 import Button from "@/components/shared/ui/button/button";
 import "./aboutKurverSection.scss";
+import { useAboutKurverSection } from "../useTexts";
+import { Locale } from "@/providers";
 
-export default function AboutKurverSection() {
+export default function AboutKurverSection({ lang }: Locale) {
   const paragraphMaxWidth = 480;
   const paragraphStyle = {
     fontFamily: "var(--font-alegreya-sans-light)",
@@ -13,10 +17,18 @@ export default function AboutKurverSection() {
     maxWidth: paragraphMaxWidth,
   };
 
+  const {
+    title,
+    paragraph1,
+    paragraph2,
+    learnMoreAboutUsButtonLabel,
+    imageAltText,
+  } = useAboutKurverSection();
+
   return (
     <div className="about-kurver-container">
       <Image
-        alt="Logo av flettet hjertekurv"
+        alt={imageAltText}
         height={350}
         width={335}
         priority
@@ -24,29 +36,27 @@ export default function AboutKurverSection() {
       />
       <div className="text-container">
         <Heading theme={lightTheme} headingLevel="h2">
-          Lidenskap for hjertekurver
+          {title}
         </Heading>
         <Paragraph
           maxWidth={paragraphMaxWidth}
           style={paragraphStyle}
           theme={lightTheme}
         >
-          Denne nettsiden er opprettet for å samle og dele kunnskap om
-          hjertekurver, en tradisjon som kombinerer håndverk og kreativitet.
-          Håndlagde hjertekurver kan være både dekorative og funksjonelle, og de
-          representerer en personlig måte å skape og dele noe spesielt på.
+          {paragraph1}
         </Paragraph>
         <Paragraph
           maxWidth={paragraphMaxWidth}
           style={paragraphStyle}
           theme={lightTheme}
         >
-          På hjertekurver.no finner du inspirasjon, detaljerte veiledninger og
-          et omfattende galleri av ulike kurver. Målet vårt er å gjøre det
-          enkelt for alle, uansett erfaring, å lære og utforske denne formen for
-          papirhåndverk, samt tilby den største samlingen av hjertekurver.
+          {paragraph2}
         </Paragraph>
-        <Button theme={lightTheme} label="Les mer om oss" href="/no/om-siden" />
+        <Button
+          theme={lightTheme}
+          label={learnMoreAboutUsButtonLabel}
+          href={`/${lang}/om-siden`}
+        />
       </div>
     </div>
   );

@@ -1,9 +1,13 @@
+"use client";
+
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
 import Heading from "@/components/shared/ui/heading/heading";
 import ContactSection from "./contactSection";
-
-const CONTACT_PAGE = "contact";
+import { use } from "react";
+import { LanguageContext, Locale } from "@/providers";
+import { getValuesByKeys } from "@/app/[lang]/dictionaries";
+import STANDARD_PAGE_TYPES from "@/constants/standardPageTypes";
 
 export type PageContent = {
   title: string;
@@ -13,19 +17,23 @@ export type PageContent = {
 
 export type StandardPageProps = {
   pageContent: PageContent;
-};
+} & Locale;
 
-export default function StandardPage({ pageContent }: StandardPageProps) {
+export default function StandardPage({ pageContent, lang }: StandardPageProps) {
+  const { dictionary } = use(LanguageContext);
+  const frontpage = getValuesByKeys(dictionary, ["breadcrumb", "frontpage"]);
+
   if (!pageContent || !pageContent?.content) {
     return null;
   }
 
   const standardPageBreadcrumbs = [
-    { linkText: "Forside", href: "/" },
+    { linkText: frontpage, href: `/${lang}` },
     { linkText: pageContent.title, href: pageContent.title },
   ];
 
-  const isContactPage = pageContent.pageType === CONTACT_PAGE;
+  const isContactPage =
+    pageContent.pageType === STANDARD_PAGE_TYPES.CONTACT_PAGE;
 
   return (
     <PageWrapper isStandardPage>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { hamburgerButtonId } from "../types";
 import "./hamburger.scss";
 
 type HamburgerProps = {
@@ -27,6 +28,7 @@ export default function Hamburger({ onClick, isOpen }: HamburgerProps) {
     <li
       className={`hamburger-container ${isHamburgerOpen ? "active" : ""}`}
       onClick={toggleHamburger}
+      id={hamburgerButtonId}
       aria-label="Toggle menu"
       aria-expanded={isHamburgerOpen ? "true" : "false"}
     >

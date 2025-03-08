@@ -1,12 +1,42 @@
+"use server";
+
 import HowToMalToPaper from "@/components/features/howToCreateHjertekurv/HowToMalToPaper";
-import { Metadata } from "next";
+import { LangParams } from "@/providers";
+import { getDictionary, getValuesByKeys } from "../../dictionaries";
 
-export const metadata: Metadata = {
-  title: "Lær å lage hjertekurver | Hvordan få malen over til papiret",
-  description:
-    "Lær hvordan du kan få malen til hjertekurven/julekurven din over på papiret slik at du kan klippe den ut.",
-};
+export async function generateMetadata({ params }: { params: LangParams }) {
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
 
-export default async function Page() {
-  return <HowToMalToPaper />;
+  const title = getValuesByKeys(dictionary, [
+    "pages",
+    "howToMalToPaper",
+    "seo",
+    "title",
+  ]);
+  const description = getValuesByKeys(dictionary, [
+    "pages",
+    "howToMalToPaper",
+    "seo",
+    "description",
+  ]);
+
+  return {
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      url: `https://hjertekurver.no/${lang}/hvordan-lage-kurver/mal-til-papir`,
+    },
+    twitter: {
+      title: title,
+      description: description,
+    },
+  };
+}
+
+export default async function Page({ params }: { params: LangParams }) {
+  const { lang } = await params;
+
+  return <HowToMalToPaper lang={lang} />;
 }

@@ -1,9 +1,11 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-import { Dictionary, Locale } from "@/app/[lang]/dictionaries";
+import { Dictionary } from "@/app/[lang]/dictionaries";
+import { LanguageCode } from "@/constants/languages";
 
-export type LangParams = Promise<{ lang: Locale }>;
+export type Locale = { lang: LanguageCode };
+export type LangParams = Promise<Locale>;
 
 export type LanguageContextType = {
   dictionary: Dictionary | undefined;
@@ -20,7 +22,7 @@ export default function LanguageProvider({
   lang,
   dictionary,
 }: {
-  lang: Locale;
+  lang: LanguageCode;
   dictionary: Dictionary;
   children: React.ReactNode;
 }) {

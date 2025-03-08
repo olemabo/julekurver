@@ -21,17 +21,25 @@ class StandardPageAPIView(APIView):
 
     def get(self, request):
         try:
-            pageUrl = str(request.GET.get('pageUrl')).lower()
+            page_url = request.GET.get('pageUrl', '').strip().lower()
+            lang = request.GET.get('lang', 'no').strip().lower()
 
-            standard_page = StandardPage.objects.filter(side_url=pageUrl)
+            standard_page = StandardPage.objects.filter(side_url=page_url).first()
 
-            if not standard_page.exists():
+            if not standard_page:
                 return Response({'error': 'Standard page not found'}, status=status.HTTP_404_NOT_FOUND)
 
+            if lang == 'en':
+                content = standard_page.content_en
+                title = standard_page.title_en
+            else:
+                content = standard_page.content
+                title = standard_page.title
+
             response = StandardPageModel(
-                title=standard_page[0].title, 
-                content=standard_page[0].content,
-                pageType=standard_page[0].page_type
+                title=title,
+                content=content,
+                pageType=standard_page.page_type
             )
 
             return JsonResponse(response.to_dict(), safe=False)
@@ -45,23 +53,32 @@ class HjertekurvPageAPIView(APIView):
 
     def get(self, request):
         try:
-            hjertekurv_url = str(request.GET.get('hjertekurvName')).lower()
+            hjertekurv_url = request.GET.get('hjertekurvName', '').strip().lower()
+            lang = request.GET.get('lang', 'no').strip().lower() 
+
             hjertekurv = Hjertekurv.objects.filter(url_name=hjertekurv_url)
 
             if not hjertekurv.exists():
                 return Response({'error': 'Hjertekurv page not found'}, status=status.HTTP_404_NOT_FOUND)
 
-            hjertekurv_instance = hjertekurv[0]
+            hjertekurv_instance = hjertekurv.first()
 
             if hjertekurv_instance.hide_kurv:
                 return Response({'error': 'Hjertekurv page not found'}, status=status.HTTP_404_NOT_FOUND)
+
+            if lang == 'en':
+                name = hjertekurv_instance.name_en
+                about = hjertekurv_instance.about_en
+            else:
+                name = hjertekurv_instance.name
+                about = hjertekurv_instance.about
 
             hjertekurv_instance.increment_visit_count()
             VisitLog.objects.create(hjertekurv=hjertekurv_instance)
 
             response = HjertekurvPageModel(
-                    name=hjertekurv[0].name, 
-                    about=hjertekurv[0].about,
+                    name=name, 
+                    about=about,
                     imageHjertekurvUrl=hjertekurv[0].hjertekurv_image.name,
                     imageHjertekurvMalUrl=hjertekurv[0].image_hjertekurv_mal.name,
                     imageHjertekurvMal2Url=hjertekurv[0].image_hjertekurv_mal2.name,
@@ -84,6 +101,8 @@ class HjertekurverPageAPIView(APIView):
 
     def get(self, request):
         try:
+            lang = request.GET.get('lang', 'no').strip().lower()
+
             hjertekurv_hits = Hjertekurv.objects.filter(hide_kurv=False)
 
             if (hjertekurv_hits is not None):
@@ -91,13 +110,23 @@ class HjertekurverPageAPIView(APIView):
                 for hjertekurv in hjertekurv_hits:
                     
                     categories = [
-                        {'id': category.id, 'name': category.name}
+                        {
+                            'id': category.id,
+                            'name': category.name_en if lang == 'en' else category.name
+                        }
                         for category in hjertekurv.categories.all()
                     ]
+
+                    if lang == 'en':
+                        name = hjertekurv.name_en
+                        about = hjertekurv.about_en
+                    else:
+                        name = hjertekurv.name
+                        about = hjertekurv.about
                     
                     hjertekurvPageModel = HjertekurvPageModel(
-                        name = hjertekurv.name, 
-                        about = hjertekurv.about,
+                        name = name, 
+                        about = about,
                         imageHjertekurvUrl = hjertekurv.hjertekurv_image.name,
                         imageHjertekurvMalUrl = hjertekurv.image_hjertekurv_mal.name,
                         imageHjertekurvMal2Url = hjertekurv.image_hjertekurv_mal2.name,
@@ -128,6 +157,8 @@ class RelatedKurverAPIView(APIView):
     def get(self, request):
         try:
             hjertekurv_url = str(request.GET.get('hjertekurvName')).lower()
+            lang = request.GET.get('lang', 'no').strip().lower()
+
             hjertekurv = get_object_or_404(Hjertekurv, url_name=hjertekurv_url)
     
             # Fetch manually related kurver (no need for ordering in this case)
@@ -147,9 +178,17 @@ class RelatedKurverAPIView(APIView):
             
             related_data = []
             for kurv in related_kurver:
+
+                if lang == 'en':
+                    name = kurv.name_en
+                    about = kurv.about_en
+                else:
+                    name = kurv.name
+                    about = kurv.about
+
                 hjertekurvPageModel = HjertekurvPageModel(
-                        name = kurv.name, 
-                        about = kurv.about,
+                        name = name, 
+                        about = about,
                         imageHjertekurvUrl = kurv.hjertekurv_image.name,
                         imageHjertekurvMalUrl = kurv.image_hjertekurv_mal.name,
                         imageHjertekurvMal2Url = kurv.image_hjertekurv_mal2.name,
@@ -238,6 +277,7 @@ class InstagramImagesAPIView(APIView):
                 )
 
             url_media_list = f"https://graph.instagram.com/v21.0/{account_id}/media?access_token={access_token}"
+            print(url_media_list)
             response = requests.get(url_media_list)
 
             # Check if the request was successful
