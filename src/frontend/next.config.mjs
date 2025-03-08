@@ -11,13 +11,8 @@ const nextConfig = {
         },
         {
           protocol: 'https',
-          hostname: 'scontent.cdninstagram.com',
+          hostname: '*.cdninstagram.com', // Match all Instagram CDN hostnames
           pathname: '/**', // Allow all paths under Instagram's CDN
-        },
-        {
-          protocol: 'https',
-          hostname: 'scontent-iad3-1.cdninstagram.com', // Add Instagram-specific CDN
-          pathname: '/**', // Allow all paths under this hostname
         },
       ],
     },

@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: PageParams }) {
     `${apiBaseUrl}/api/standard-page-api/?pageUrl=${pageName}`,
     {
       next: {
-        revalidate: 1,
+        revalidate: 3600,
       },
     },
   );
@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: PageParams }) {
     `${apiBaseUrl}/api/standard-page-api/?pageUrl=${page}`,
     {
       next: {
-        revalidate: 1,
+        revalidate: 3600,
       },
     },
   );

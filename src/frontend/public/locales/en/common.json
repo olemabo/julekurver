@@ -18,6 +18,10 @@
         "abouteSiteLinkText": "About the site",
         "logoText": "Pleated Hearts"
     },
+    "breadcrumb": {
+        "frontpage": "Frontpage",
+        "hjertekurver": "Hearts"
+    },
     "pages": {
         "hjertekurvPage": {
             "difficultyFletting": "Weaving difficulty",
@@ -32,6 +36,60 @@
             "getInspiredTitle": "Get inspired",
             "createHjertekurvTitle": "Create a pleated heart",
             "seeOurKurver": "See our Hearts"
+        },
+        "hjertekurverKartotekPage": {
+            "heading": "Search among hearts",
+            "paragraph": {
+                "intro": "Browse our complete collection of heart with patterns and images. Use search and filtering to find the perfect basket for your next project. You can filter by",
+                "outro": "to find a basket that suits your skills."
+            },
+            "difficultyPopover": {
+                "title": "Difficulty Level",
+                "description": "The difficulty level of a heart basket is determined by two factors:",
+                "weaving": "Weaving:",
+                "weavingDetails": "Evaluates how challenging the weaving process itself is, indicated by a heart icon:",
+                "weavingDetails2": "This can include the number of strips, the thickness of the strips, and variation in the weaving pattern, all of which can make the process more complex.",
+                "cutting": "Cutting:",
+                "cuttingDetails": "Indicates how challenging it is to cut out the basket before weaving starts, and is marked with a scissor icon.",
+                "cuttingDetails2": "Some baskets have detailed patterns that require precision and accuracy during cutting.",
+                "difficulty": "difficulty level"
+            },
+            "search": {
+                "placeholder": "Search for hearts",
+                "resultsCount": "Number of results: ",
+                "noResults": "No results found for search/filter"
+            },
+            "filters": {
+                "filterButtonLabel": "Filter by",
+                "alphabetic": {
+                    "label": "Alphabetical",
+                    "description": "Sort heart baskets in alphabetical order."
+                },
+                "recentlyCreated": {
+                    "label": "Recently Added",
+                    "description": "Show the newest heart baskets that were added."
+                },
+                "lowestDifficultyFletting": {
+                    "label": "Weaving - Easy",
+                    "description": "Filter by baskets with the lowest difficulty level for weaving."
+                },
+                "highestDifficultyFletting": {
+                    "label": "Weaving - Difficult",
+                    "description": "Filter by baskets with the highest difficulty level for weaving."
+                },
+                "lowestDifficultyKlipping": {
+                    "label": "Cutting - Easy",
+                    "description": "Filter by baskets with the lowest difficulty level for cutting."
+                },
+                "highestDifficultyKlipping": {
+                    "label": "Cutting - Difficult",
+                    "description": "Filter by baskets with the highest difficulty level for cutting."
+                },
+                "popularity": {
+                    "label": "Popularity",
+                    "description": "How popular the basket is (number of times the basket's page has been visited)"
+                }
+            }
         }
     }
 }

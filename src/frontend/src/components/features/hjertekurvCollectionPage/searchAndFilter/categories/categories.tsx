@@ -1,5 +1,5 @@
 import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
-import { Category } from "./useCategories";
+import { Category } from "../../useCategories";
 
 import "./categories.scss";
 

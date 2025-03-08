@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import { lightTheme } from "@/constants/displayTheme";
-
-import "./aboutKurverSection.scss";
 import Heading from "@/components/shared/ui/heading/heading";
 import Button from "@/components/shared/ui/button/button";
-import Link from "next/link";
+import "./aboutKurverSection.scss";
 
 export default function AboutKurverSection() {
   const paragraphMaxWidth = 480;
@@ -47,19 +45,6 @@ export default function AboutKurverSection() {
           et omfattende galleri av ulike kurver. Målet vårt er å gjøre det
           enkelt for alle, uansett erfaring, å lære og utforske denne formen for
           papirhåndverk, samt tilby den største samlingen av hjertekurver.
-        </Paragraph>
-        <Paragraph
-          maxWidth={paragraphMaxWidth}
-          style={paragraphStyle}
-          theme={lightTheme}
-        >
-          Hvis du har spørsmål, forslag eller ønsker å komme i kontakt, finner
-          du oss på vår{" "}
-          <Link style={{ color: "inherit" }} href="/no/kontakt-oss">
-            kontakt oss
-          </Link>
-          -side. Vi setter pris på alle som tar del i arbeidet med å videreføre
-          og utvikle tradisjonen med hjertekurver.
         </Paragraph>
         <Button theme={lightTheme} label="Les mer om oss" href="/no/om-siden" />
       </div>

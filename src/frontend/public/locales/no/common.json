@@ -18,6 +18,10 @@
         "abouteSiteLinkText": "Om siden",
         "logoText": "Hjertekurver"
     },
+    "breadcrumb": {
+        "frontpage": "Forside",
+        "hjertekurver": "Hjertekurver"
+    },
     "pages": {
         "hjertekurvPage": {
             "difficultyFletting": "Vanskelighetsgrad fletting",
@@ -32,6 +36,60 @@
             "getInspiredTitle": "Bli inspirert",
             "createHjertekurvTitle": "Lag en hjertekurv",
             "seeOurKurver": "Se våre kurver"
+        },
+        "hjertekurverKartotekPage": {
+            "heading": "Søk blant hjertekurver",
+            "paragraph": {
+                "intro": "Se vår komplette samling av hjertekurver med maler og bilder. Bruk søk og filtrering for å finne den perfekte kurven for ditt neste prosjekt. Du kan filtrere etter",
+                "outro": "for å finne en kurv som passer dine ferdigheter."
+            },
+            "difficultyPopover": {
+                "title": "Vanskelighetsgrad",
+                "description": "Vanskelighetsgraden på en hjertekurv bestemmes av to faktorer:",
+                "weaving": "Fletting:",
+                "weavingDetails": "Vurderer hvor utfordrende selve flettingen er, angitt med et hjerte-ikon:",
+                "weavingDetails2": "Dette kan inkludere antall strimler, strimlenes tykkelse og variasjon i flettemønsteret, som alle kan gjøre prosessen mer kompleks.",
+                "cutting": "Klipping:",
+                "cuttingDetails": "Angir hvor utfordrende det er å klippe ut kurven før flettingen starter, og er markert med et saks-ikon.",
+                "cuttingDetails2": "Noen kurver har detaljerte motiver som krever presisjon og nøyaktighet under klipping.",
+                "difficulty": "vanskelighetsgrad"
+            },
+            "search": {
+                "placeholder": "Søk etter hjertekurver",
+                "resultsCount": "Antall treff: ",
+                "noResults": "Ingen treff på søk/filter"
+            },
+            "filters": {
+                "filterButtonLabel": "Filtrer på",
+                "alphabetic": {
+                    "label": "Alfabetisk",
+                    "description": "Sorter hjertekurver i alfabetisk rekkefølge."
+                },
+                "recentlyCreated": {
+                    "label": "Nyeste lagt til",
+                    "description": "Vis de nyeste hjertekurvene som ble lagt til."
+                },
+                "lowestDifficultyFletting": {
+                    "label": "Fletting - enkel",
+                    "description": "Filtrer etter kurver med lavest vanskelighetsgrad for fletting."
+                },
+                "highestDifficultyFletting": {
+                    "label": "Fletting - vanskelig",
+                    "description": "Filtrer etter kurver med høyest vanskelighetsgrad for fletting."
+                },
+                "lowestDifficultyKlipping": {
+                    "label": "Klipping - enkel",
+                    "description": "Filtrer etter kurver med lavest vanskelighetsgrad for klipping."
+                },
+                "highestDifficultyKlipping": {
+                    "label": "Klipping - vanskelig",
+                    "description": "Filtrer etter kurver med høyest vanskelighetsgrad for klipping."
+                },
+                "popularity": {
+                    "label": "Mest besøkte kurver",
+                    "description": "Hvor populær kurven er (antall ganger siden til kurven er besøkt)"
+                }
+            }
         }
     }
 }

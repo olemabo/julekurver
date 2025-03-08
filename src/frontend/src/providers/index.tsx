@@ -25,9 +25,7 @@ export default function LanguageProvider({
   children: React.ReactNode;
 }) {
   return (
-    <LanguageContext.Provider value={{ lang, dictionary }}>
-      {children}
-    </LanguageContext.Provider>
+    <LanguageContext value={{ lang, dictionary }}>{children}</LanguageContext>
   );
 }
 
