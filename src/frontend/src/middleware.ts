@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import LANGUAGES from "./constants/languages";
 
-const locales = ["no", "en"];
-const defaultLocale = "no";
+const locales = [LANGUAGES.NORWEGIAN, LANGUAGES.ENGLISH];
+const defaultLocale = LANGUAGES.NORWEGIAN;
 
 function getLocale() {
   return defaultLocale;

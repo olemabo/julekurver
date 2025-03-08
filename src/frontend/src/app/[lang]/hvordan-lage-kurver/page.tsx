@@ -1,12 +1,42 @@
+"use server";
+
 import HowToCreateHjertekurv from "@/components/features/howToCreateHjertekurv/howToCreateHjertekurv";
-import { Metadata } from "next";
+import { LangParams } from "@/providers";
+import { getDictionary, getValuesByKeys } from "../dictionaries";
 
-export const metadata: Metadata = {
-  title: "Lær å lage hjertekurver | Steg-for-steg veiledning og maler",
-  description:
-    "Flett dine egne hjertekurver med vår enkle steg-for-steg veiledning. Last ned gratis maler, se bilder og finn tips for å lage vakre julekurver",
-};
+export async function generateMetadata({ params }: { params: LangParams }) {
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
 
-export default async function Page() {
-  return <HowToCreateHjertekurv />;
+  const title = getValuesByKeys(dictionary, [
+    "pages",
+    "howToCreateHjertekurvPage",
+    "seo",
+    "title",
+  ]);
+  const description = getValuesByKeys(dictionary, [
+    "pages",
+    "howToCreateHjertekurvPage",
+    "seo",
+    "description",
+  ]);
+
+  return {
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      url: `https://hjertekurver.no/${lang}/hvordan-lage-kurver`,
+    },
+    twitter: {
+      title: title,
+      description: description,
+    },
+  };
+}
+
+export default async function Page({ params }: { params: LangParams }) {
+  const { lang } = await params;
+
+  return <HowToCreateHjertekurv lang={lang} />;
 }

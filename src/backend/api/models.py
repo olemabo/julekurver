@@ -13,9 +13,13 @@ class StandardPage(models.Model):
 
     id = models.IntegerField(primary_key=True, help_text='Side ID')
     side_url = models.CharField(max_length=100, help_text='Teksten som vises i url-ene')
-    title = models.CharField(max_length=120, help_text='Sidetittel som vises øverst på siden')
-    content = models.TextField()
     page_type = models.CharField(max_length=7, choices=COLOR_CHOICES, default='about')
+    
+    title = models.CharField(max_length=120, help_text='Sidetittel som vises øverst på siden')
+    title_en = models.CharField(max_length=120, help_text='Sidetittel på engelsk', null=True, default='')
+
+    content = models.TextField(help_text='Innhold på norsk')
+    content_en = models.TextField(help_text='Innhold på engelsk', null=True, default='')
 
     class Meta:
         ordering = ['title']
@@ -33,6 +37,7 @@ class StandardPage(models.Model):
 
 class KurvCategory(models.Model):
     name = models.CharField(max_length=100, help_text='Navnet på kategorien')
+    name_en = models.CharField(max_length=100, help_text='Navnet på kategorien (engelsk)', null=True, default='')
 
     class Meta:
         verbose_name = "Kurv-kategori"
@@ -61,8 +66,12 @@ class Hjertekurv(models.Model):
     id = models.IntegerField(primary_key=True, help_text='Hjertekurv ID')
     
     url_name = models.CharField(verbose_name="Navnet på url-en", max_length=100, help_text='Teksten som vises i url-ene')
+
     name = models.CharField(verbose_name="Navnet på kurven (tittel)", max_length=120, help_text='Navnet på hjertekurven')
+    name_en = models.CharField(verbose_name="Navnet på kurven (engelsk)", max_length=120, help_text='Navnet på hjertekurven (engelsk)', null=True, default='')
+    
     about = models.TextField(verbose_name="Info om kurven")
+    about_en = models.TextField(verbose_name='Info om kurven (engelsk)', null=True, default='')
 
     hjertekurv_image = models.FileField(verbose_name="Bilde av kurv (svg)", upload_to='hjertekurv/flettet', help_text='Bilde (svg) av ferdig flettet kurv', null=True, blank=True)
     

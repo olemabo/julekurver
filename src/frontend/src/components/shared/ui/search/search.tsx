@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import "./search.scss";
 import Button from "../button/button";
 
@@ -24,6 +24,10 @@ const Search = forwardRef<HTMLInputElement, SearchProps>(
     ref,
   ) => {
     const [inputValue, setInputValue] = useState(defaultValue || "");
+
+    useEffect(() => {
+      setInputValue(defaultValue || "");
+    }, [defaultValue]);
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (onChange) {

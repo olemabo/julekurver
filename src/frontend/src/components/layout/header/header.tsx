@@ -1,94 +1,128 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import Search from "@/components/shared/ui/search/search";
-import Hamburger from "./hamburger";
-import "./header.scss";
+import Hamburger from "./hamburger/hamburger";
 import LinkListSection from "./linkListSection";
 import Logo from "./Logo";
+import LocaleSwitcher from "./dropdown/localSwitcher";
+import MenuType, {
+  hamburgerButtonId,
+  languageButtonId,
+  languageDropdownMenuId,
+  LanguageSearchType,
+  openMobileDropdownMenuId,
+  searchButtonId,
+  searchDropdownMenuId,
+} from "./types";
+import SearchBox from "./dropdown/searchBox";
+import DropdownWrapper from "./dropdown/dropdownWrapper";
+import "./header.scss";
 
 export default function Header() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<LanguageSearchType>(
+    MenuType.ClosedMenu,
+  );
 
-  const inputRef = useRef<HTMLInputElement>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const router = useRouter();
-
-  const toggleSearchDropdown = (event: React.MouseEvent) => {
-    event.stopPropagation();
-
-    setIsSearchOpen(!isSearchOpen);
-    setIsMobileMenuOpen(false);
-  };
+  const searchFieldRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (isSearchOpen && inputRef.current) {
-      inputRef.current.focus();
-    }
+    const handleOutsideClick = (event: MouseEvent) => {
+      const target = event.target as Element;
 
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Node;
+      const clickedOnLanguageButton = target.closest(`#${languageButtonId}`);
+      const clickedOnSearchButton = target.closest(`#${searchButtonId}`);
+      const clickedOnHamburgerButton = target.closest(`#${hamburgerButtonId}`);
+
+      const isWithinMenu = (id: string) => {
+        const menu = document.getElementById(id);
+        return menu && !menu.contains(target);
+      };
 
       if (
-        isSearchOpen &&
-        dropdownRef.current &&
-        buttonRef.current &&
-        !dropdownRef.current.contains(target) &&
-        !buttonRef.current.contains(target)
+        clickedOnLanguageButton ||
+        clickedOnSearchButton ||
+        clickedOnHamburgerButton
       ) {
-        setIsSearchOpen(false);
+        return;
+      }
+
+      if (
+        isWithinMenu(languageDropdownMenuId) &&
+        isWithinMenu(searchDropdownMenuId) &&
+        isWithinMenu(openMobileDropdownMenuId)
+      ) {
+        closeAllMenus();
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", handleOutsideClick);
     };
-  }, [isSearchOpen]);
-
-  const handleSearch = () => {
-    if (inputRef.current && inputRef.current.value) {
-      const query = inputRef.current.value.trim();
-      router.push(`/no/search?query=${encodeURIComponent(query)}`);
-      setIsSearchOpen(false);
-    }
-  };
+  }, []);
 
   const toggleMobileDropdown = () => {
     setIsMobileMenuOpen((prevState) => !prevState);
+    setActiveMenu(MenuType.ClosedMenu);
   };
 
-  const closeMenus = () => {
+  const closeAllMenus = () => {
+    setActiveMenu(MenuType.ClosedMenu);
     setIsMobileMenuOpen(false);
-    setIsSearchOpen(false);
   };
+
+  const toggleSearchLanguageMenu = (value: LanguageSearchType) => {
+    if (
+      activeMenu === value &&
+      (value === MenuType.Search || value === MenuType.Language)
+    ) {
+      setActiveMenu(MenuType.ClosedMenu);
+    } else {
+      setActiveMenu(value);
+      if (value === MenuType.Search) {
+        searchFieldRef.current?.focus();
+      }
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const isActiveSearch = activeMenu === MenuType.Search;
+  const isActiveLanguage = activeMenu === MenuType.Language;
 
   return (
     <div>
       <header className="header-container">
         <nav className="container nav-container">
-          <Logo onClick={closeMenus} />
+          <Logo onClick={closeAllMenus} />
           <div className="link-items-container">
             <div
+              id={openMobileDropdownMenuId}
               className={`link-container ${isMobileMenuOpen ? "open-mobile-format" : ""}`}
             >
-              <LinkListSection onClick={closeMenus} />
+              <LinkListSection onClick={closeAllMenus} />
             </div>
             <ul className="icons">
               <li>
                 <button
-                  onClick={toggleSearchDropdown}
-                  className={`search-button ${isSearchOpen ? "active" : ""}`}
-                  ref={buttonRef}
+                  onClick={() => toggleSearchLanguageMenu(MenuType.Search)}
+                  className={`search-button ${activeMenu === MenuType.Search ? "active" : ""}`}
+                  id={searchButtonId}
                   aria-label="Klikk for å gjøre søk på nettsiden"
                   title="Søkeknapp"
                 >
                   <div className="search-icon active"></div>
                 </button>
+                {/* <button
+                  onClick={() => toggleSearchLanguageMenu(MenuType.Language)}
+                  className={`language-button ${activeMenu === MenuType.Language ? "active" : ""}`}
+                  id={languageButtonId}
+                  aria-label="Klikk for å gjøre søk på nettsiden"
+                  title="Søkeknapp"
+                >
+                  <div className="language-icon"></div>
+                </button> */}
               </li>
               <Hamburger
                 isOpen={isMobileMenuOpen}
@@ -99,20 +133,15 @@ export default function Header() {
         </nav>
       </header>
 
-      <div
-        className={`dropdown-search ${isSearchOpen ? "open" : ""}`}
-        ref={dropdownRef}
-      >
-        {isSearchOpen && (
-          <div className="search-content">
-            <Search
-              ref={inputRef}
-              placeholder="Legg inn søkeord..."
-              onClick={handleSearch}
-            />
-          </div>
-        )}
-      </div>
+      <DropdownWrapper isActive={isActiveSearch} id={searchDropdownMenuId}>
+        <SearchBox
+          searchFieldRef={searchFieldRef}
+          handleSearch={closeAllMenus}
+        />
+      </DropdownWrapper>
+      <DropdownWrapper isActive={isActiveLanguage} id={languageDropdownMenuId}>
+        <LocaleSwitcher />
+      </DropdownWrapper>
     </div>
   );
 }

@@ -12,6 +12,7 @@ import FilterButton from "./filterButton/filterButton";
 import { filterAndSortHjertekurver, HjertekurvFilterType } from "./sort";
 import CategoryFilterToggle from "./categories/categories";
 import { useSearchAndFilterTexts } from "../useTexts";
+import { Locale } from "@/providers";
 
 export const defaultPaginationOptions = [
   { label: "12", value: 12 },
@@ -21,10 +22,11 @@ export const defaultPaginationOptions = [
 
 export type SearchAndFilterSectionProps = {
   hjertekurver: Hjertekurv[];
-};
+} & Locale;
 
 export function SearchAndFilterSection({
   hjertekurver,
+  lang,
 }: SearchAndFilterSectionProps) {
   const { searchPlaceholder, resultsCount, noResults } =
     useSearchAndFilterTexts();
@@ -107,6 +109,7 @@ export function SearchAndFilterSection({
           <div className="hjertekurv-kartotek-section">
             {paginatedData.map((hjertekurv, index) => (
               <HjertekurvCollectionCard
+                lang={lang}
                 key={hjertekurv.name || index}
                 hjertekurv={hjertekurv}
               />
