@@ -1,35 +1,29 @@
 "use client";
 
 import Search from "@/components/shared/ui/search/search";
-import { useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 export type SearchBoxProps = {
   handleSearch: () => void;
+  searchFieldRef: RefObject<HTMLInputElement | null>;
 };
 
-export default function SearchBox({ handleSearch }: SearchBoxProps) {
-  const inputRef = useRef<HTMLInputElement>(null);
+export default function SearchBox({ handleSearch, searchFieldRef }: SearchBoxProps) {
   const router = useRouter();
 
   const handleSearchClick = () => {
-    if (inputRef.current && inputRef.current.value) {
-      const query = inputRef.current.value.trim();
+    if (searchFieldRef.current && searchFieldRef.current.value) {
+      const query = searchFieldRef.current.value.trim();
       router.push(`/no/search?query=${encodeURIComponent(query)}`);
       handleSearch();
     }
   };
 
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, []);
-
   return (
     <div className="dropdown-content">
       <Search
-        ref={inputRef}
+        ref={searchFieldRef}
         placeholder="Legg inn søkeord..."
         onClick={handleSearchClick}
       />

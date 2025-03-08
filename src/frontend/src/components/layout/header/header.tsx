@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Hamburger from "./hamburger/hamburger";
 import LinkListSection from "./linkListSection";
 import Logo from "./Logo";
@@ -24,6 +24,8 @@ export default function Header() {
     MenuType.ClosedMenu,
   );
 
+  const searchFieldRef = useRef<HTMLInputElement>(null);
+  
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       const target = event.target as Element;
@@ -79,6 +81,9 @@ export default function Header() {
       setActiveMenu(MenuType.ClosedMenu);
     } else {
       setActiveMenu(value);
+      if (value === MenuType.Search) {
+        searchFieldRef.current?.focus();
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -129,7 +134,7 @@ export default function Header() {
       </header>
 
       <DropdownWrapper isActive={isActiveSearch} id={searchDropdownMenuId}>
-        <SearchBox handleSearch={closeAllMenus} />
+        <SearchBox searchFieldRef={searchFieldRef} handleSearch={closeAllMenus} />
       </DropdownWrapper>
       <DropdownWrapper isActive={isActiveLanguage} id={languageDropdownMenuId}>
         <LocaleSwitcher />
