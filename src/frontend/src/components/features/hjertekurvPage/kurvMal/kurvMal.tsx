@@ -3,7 +3,7 @@
 import { createApiMediaUrl } from "@/utils/backendApiUrl";
 import Heading from "@/components/shared/ui/heading/heading";
 import Button from "@/components/shared/ui/button/button";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Link from "next/link";
 import SymmetriskMotivPopover from "@/components/shared/content/popover/SymmetriskMotivPopover";

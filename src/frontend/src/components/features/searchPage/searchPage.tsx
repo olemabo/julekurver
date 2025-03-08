@@ -22,17 +22,13 @@ export interface SearchHits {
   imageUrl?: string;
 }
 
-export type SearchPageProps = {
-  defautlQuery?: string;
-};
-
 export const defaultPaginationOptions = [
   { label: "10", value: 10 },
   { label: "25", value: 25 },
   { label: "100", value: 100 },
 ];
 
-export default function SearchPage({ defautlQuery }: SearchPageProps) {
+export default function SearchPage() {
   const {
     heading,
     paragraph,

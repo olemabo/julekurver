@@ -11,7 +11,7 @@ const dictionaries = {
     ),
 };
 
-export type Dictionary = Record<string, any>;
+export type Dictionary = Record<string, JSONValue>;
 
 export const getDictionary = async (
   locale: LanguageCode,

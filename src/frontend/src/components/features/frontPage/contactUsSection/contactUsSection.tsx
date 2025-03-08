@@ -25,7 +25,6 @@ export default function ContactUsSection({ lang }: Locale) {
     feedbackPrompt,
     textareaLabel,
     textareaPlaceholder,
-    errorMessage: errorText,
     buttonLabel,
     imageAltText,
   } = useContactUsSection();

@@ -1,6 +1,6 @@
 import { getValuesByKeys } from "@/app/[lang]/dictionaries";
 import { LanguageContext } from "@/providers";
-import { use, useContext } from "react";
+import { use } from "react";
 
 export function useFlettetilleggTexts() {
   const { dictionary } = use(LanguageContext);

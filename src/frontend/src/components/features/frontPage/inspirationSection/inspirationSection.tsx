@@ -75,8 +75,7 @@ export default async function InspirationSection() {
     <>
       <InspirationTitle />
       <Suspense fallback={<InstagramImagesLoader />}>
-        {/* <InstagramImages /> */}
-        <InstagramImagesLoader />
+        <InstagramImages />
       </Suspense>
     </>
   );

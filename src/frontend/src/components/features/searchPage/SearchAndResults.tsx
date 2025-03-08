@@ -1,20 +1,15 @@
 "use client";
 
-import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
-import Heading from "@/components/shared/ui/heading/heading";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 import { useEffect, useState } from "react";
 import Search from "@/components/shared/ui/search/search";
 import { useRouter } from "next/navigation";
 import { SearchResultItem } from "./SearchResultItem";
-import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Pagination, {
   PaginationOption,
 } from "@/components/shared/ui/pagination/pagination";
-import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
-import Link from "next/link";
-import "./SearchPage.scss";
 import { useSearchPageResultTexts } from "./useTexts";
+import "./SearchPage.scss";
 
 export enum PageType {
   StandardPage = "standardPage",
@@ -29,17 +24,13 @@ export interface SearchHits {
   imageUrl?: string;
 }
 
-export type SearchPageProps = {
-  defautlQuery?: string;
-};
-
 export const defaultPaginationOptions = [
   { label: "10", value: 10 },
   { label: "25", value: 25 },
   { label: "100", value: 100 },
 ];
 
-export default function SearchAndResult({ defautlQuery }: SearchPageProps) {
+export default function SearchAndResult() {
   const {
     searchPlaceholder,
     searchResultsText,
@@ -49,7 +40,7 @@ export default function SearchAndResult({ defautlQuery }: SearchPageProps) {
 
   const [searchResults, setSearchResults] = useState<SearchHits[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [query, setQuery] = useState(defautlQuery || "");
+  const [query, setQuery] = useState("");
   const apiBaseUrl = createBackendUrl();
   const router = useRouter();
 
@@ -123,7 +114,6 @@ export default function SearchAndResult({ defautlQuery }: SearchPageProps) {
         {showSearchResults ? (
           <div>
             <label style={{ display: "block", marginBottom: "12px" }}>
-              <b>{searchResults.length}</b>
               {` ${searchResultsText.replace("{hits}", numberOfHits?.toString()).replace("{query}", query)}`}
             </label>
             <ul>
