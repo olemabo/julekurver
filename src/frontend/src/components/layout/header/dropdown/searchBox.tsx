@@ -9,7 +9,10 @@ export type SearchBoxProps = {
   searchFieldRef: RefObject<HTMLInputElement | null>;
 };
 
-export default function SearchBox({ handleSearch, searchFieldRef }: SearchBoxProps) {
+export default function SearchBox({
+  handleSearch,
+  searchFieldRef,
+}: SearchBoxProps) {
   const router = useRouter();
 
   const handleSearchClick = () => {

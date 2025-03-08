@@ -12,7 +12,6 @@ import ContactUsSection from "./contactUsSection/contactUsSection";
 import { Locale } from "@/providers";
 
 export default async function FrontPage({ lang }: Locale) {
-
   return (
     <div className="default-page-container frontpage">
       <FullWidthWrapper color={bgColorThemeRed}>

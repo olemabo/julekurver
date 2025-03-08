@@ -25,7 +25,7 @@ export default function Header() {
   );
 
   const searchFieldRef = useRef<HTMLInputElement>(null);
-  
+
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       const target = event.target as Element;
@@ -134,7 +134,10 @@ export default function Header() {
       </header>
 
       <DropdownWrapper isActive={isActiveSearch} id={searchDropdownMenuId}>
-        <SearchBox searchFieldRef={searchFieldRef} handleSearch={closeAllMenus} />
+        <SearchBox
+          searchFieldRef={searchFieldRef}
+          handleSearch={closeAllMenus}
+        />
       </DropdownWrapper>
       <DropdownWrapper isActive={isActiveLanguage} id={languageDropdownMenuId}>
         <LocaleSwitcher />
