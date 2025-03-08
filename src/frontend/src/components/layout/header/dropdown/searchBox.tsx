@@ -1,7 +1,7 @@
 "use client";
 
 import Search from "@/components/shared/ui/search/search";
-import { RefObject, useEffect, useRef } from "react";
+import { RefObject } from "react";
 import { useRouter } from "next/navigation";
 
 export type SearchBoxProps = {
