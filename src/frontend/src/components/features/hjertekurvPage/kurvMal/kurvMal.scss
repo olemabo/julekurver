@@ -13,6 +13,7 @@
     .image-right {
       transition: transform 1.3s ease;
       transform-origin: 100% 100%;
+      height: auto;
 
       @media screen and (max-width: 550px) {
         width: 140px;

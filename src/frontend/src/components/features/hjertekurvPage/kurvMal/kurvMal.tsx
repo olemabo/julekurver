@@ -10,6 +10,7 @@ import SymmetriskMotivPopover from "@/components/shared/content/popover/Symmetri
 import "./kurvMal.scss";
 import { useKurvMalTexts } from "../useTexts";
 import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
+import Image from "next/image";
 
 type KurvMalProps = {
   mal1Url?: string;
@@ -71,18 +72,18 @@ export default function KurvMal({
           isHovered ? "hovered" : ""
         }`}
       >
-        <img
+        <Image
           alt="imageUrl"
           className="image-left"
-          height={undefined}
+          height={0}
           width={180}
           src={mal1SvgUrl}
         />
         {mal2SvgUrl && (
-          <img
+          <Image
             className={`image-right ${useDifferentMal ? "two-mals" : "flipped"}`}
             alt="imageUrl"
-            height={undefined}
+            height={0}
             width={180}
             src={mal2SvgUrl}
           />

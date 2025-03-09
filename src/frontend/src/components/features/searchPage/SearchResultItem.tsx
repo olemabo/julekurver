@@ -2,8 +2,9 @@ import { createApiMediaUrl } from "@/utils/backendApiUrl";
 import { PageType, SearchHits } from "./searchPage";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Heading from "@/components/shared/ui/heading/heading";
-import "./searchResultItem.scss";
 import Link from "next/link";
+import Image from "next/image";
+import "./searchResultItem.scss";
 
 type SearchResultItemProps = {
   hit: SearchHits;
@@ -60,9 +61,11 @@ export function SearchResultItem({ hit, query }: SearchResultItemProps) {
             {highlightQuery(displayDescription, query)}
           </Paragraph>
           {isHjertekurvPage && imageUrl && (
-            <img
+            <Image
               src={createApiMediaUrl(imageUrl)}
               alt={title}
+              width={120}
+              height={107}
               className="image"
             />
           )}

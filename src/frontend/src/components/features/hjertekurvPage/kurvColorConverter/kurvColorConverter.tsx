@@ -5,6 +5,7 @@ import { use, useEffect, useRef, useState } from "react";
 import "./kurvColorConverter.scss";
 import { LanguageContext } from "@/providers";
 import { getValuesByKeys } from "@/app/[lang]/dictionaries";
+import useSvgContent from "./useSvgContent";
 
 type KurvConverterProps = {
   imageUrl?: string;
@@ -15,50 +16,15 @@ export default function KurvConverter({
   imageUrl,
   defaultFillColor1 = "#9B776B",
 }: KurvConverterProps) {
-  const [svgContent, setSvgContent] = useState<string | null>(null);
   const svgContainerRef = useRef<HTMLDivElement | null>(null);
   const { dictionary } = use(LanguageContext);
 
   const [fillColor1, setFillColor1] = useState<string>(defaultFillColor1);
   const [fillColor2, setFillColor2] = useState<string>("#FFFFFF");
 
-  const applyDefaultColors = (svg: string): string => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(svg, "image/svg+xml");
-    const elements = doc.querySelectorAll("path, rect");
-
-    elements.forEach((element) => {
-      const currentFill = element.getAttribute("fill");
-      if (currentFill === "#BC9284") {
-        element.setAttribute("fill", fillColor1);
-      }
-    });
-
-    return new XMLSerializer().serializeToString(doc);
-  };
-
-  const fetchSvgContent = async (url: string) => {
-    try {
-      const response = await fetch(url);
-      if (response.ok) {
-        const svgText = await response.text();
-        return applyDefaultColors(svgText);
-      } else {
-        console.error(`Failed to fetch SVG: ${response.statusText}`);
-      }
-    } catch (error) {
-      console.error("Error fetching SVG:", error);
-    }
-    return null;
-  };
+  const svgContent = useSvgContent(imageUrl, fillColor1);
 
   useEffect(() => {
-    if (imageUrl) {
-      fetchSvgContent(imageUrl).then(setSvgContent);
-    }
-  }, [imageUrl]);
-
-  const updateSvgFillColors = () => {
     if (svgContainerRef.current) {
       const elements = svgContainerRef.current.querySelectorAll("path, rect");
       elements.forEach((element) => {
@@ -70,11 +36,7 @@ export default function KurvConverter({
         }
       });
     }
-  };
-
-  useEffect(() => {
-    updateSvgFillColors();
-  }, [fillColor1, fillColor2]);
+  }, [fillColor1, fillColor2, defaultFillColor1]);
 
   if (!imageUrl) {
     return null;

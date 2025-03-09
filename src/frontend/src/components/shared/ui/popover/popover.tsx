@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Heading from "../heading/heading";
+import Image from "next/image";
 import "./popover.scss";
 
 type PopoverProps = {
@@ -74,8 +75,10 @@ const Popover = ({ title, content, children }: PopoverProps) => {
         ref={buttonRef}
       >
         {children}
-        <img
+        <Image
           className="popover-icon"
+          width={15}
+          height={15}
           src="/images/icons/popover_questionmark.svg"
           alt="Question mark icon"
         />

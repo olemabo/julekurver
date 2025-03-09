@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import "./displayHjertekurvSvgWithColors.scss";
 
@@ -42,28 +42,38 @@ export default function DisplayHjertekurvSvgWithColors({
     return null;
   };
 
-  const updateSvgFillColors = (svg: string): string => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(svg, "image/svg+xml");
-    const elements = doc.querySelectorAll("path, rect");
+  const updateSvgFillColors = useCallback(
+    (svg: string): string => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(svg, "image/svg+xml");
+      const elements = doc.querySelectorAll("path, rect");
 
-    elements.forEach((element) => {
-      const currentFill = element.getAttribute("fill");
-      if (currentFill === "#BC9284" || currentFill === "#bc9284") {
-        element.setAttribute("fill", fillColor1);
-      } else if (currentFill === "white" || currentFill === "#FFFFFF") {
-        element.setAttribute("fill", fillColor2);
-      }
-      const currentStroke = element.getAttribute("stroke");
-      if (currentStroke === "#BC9284" || currentStroke === "#bc9284") {
-        element.setAttribute("stroke", fillColor1);
-      } else if (currentStroke === "white" || currentStroke === "#FFFFFF") {
-        element.setAttribute("stroke", fillColor2);
-      }
-    });
+      elements.forEach((element) => {
+        const currentFill = element.getAttribute("fill");
+        if (currentFill?.toLowerCase() === "#bc9284") {
+          element.setAttribute("fill", fillColor1);
+        } else if (
+          currentFill?.toLowerCase() === "#ffffff" ||
+          currentFill === "white"
+        ) {
+          element.setAttribute("fill", fillColor2);
+        }
 
-    return new XMLSerializer().serializeToString(doc);
-  };
+        const currentStroke = element.getAttribute("stroke");
+        if (currentStroke?.toLowerCase() === "#bc9284") {
+          element.setAttribute("stroke", fillColor1);
+        } else if (
+          currentStroke?.toLowerCase() === "#ffffff" ||
+          currentStroke === "white"
+        ) {
+          element.setAttribute("stroke", fillColor2);
+        }
+      });
+
+      return new XMLSerializer().serializeToString(doc);
+    },
+    [fillColor1, fillColor2],
+  );
 
   useEffect(() => {
     if (imageUrl) {
@@ -74,7 +84,7 @@ export default function DisplayHjertekurvSvgWithColors({
         }
       });
     }
-  }, [imageUrl, fillColor1, fillColor2]);
+  }, [imageUrl, fillColor1, fillColor2, updateSvgFillColors]);
 
   if (!imageUrl) {
     return null;
