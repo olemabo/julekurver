@@ -6,6 +6,7 @@ import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Link from "next/link";
 import { useHowToMalTilMatpapirSection } from "./useTexts";
 import { Locale } from "@/providers";
+import { URLs } from "@/constants/urls";
 
 export default function HowToMalTilMatpapirSection({ lang }: Locale) {
   const { title, ingress, steps, step5LinkText } =
@@ -37,7 +38,7 @@ export default function HowToMalTilMatpapirSection({ lang }: Locale) {
           imageSize={{ width: 351, height: 200 }}
         >
           {steps[5].description}
-          <Link href={`/${lang}/hvordan-lage-kurver/#after-mal-on-paper`}>
+          <Link href={`/${lang}/${URLs.hvordanLageKurver}/#after-mal-on-paper`}>
             {step5LinkText}
           </Link>
           .

@@ -7,6 +7,7 @@ import {
   InstagramIcon,
   PinterestIcon,
 } from "@/components/shared/ui/icons/icons";
+import { INSTAGRAM_URL } from "@/constants/urls";
 
 export default function SocialMediaSection() {
   const { dictionary } = use(LanguageContext);
@@ -17,7 +18,7 @@ export default function SocialMediaSection() {
   ]);
 
   const pinterestUrl = "";
-  const instagramUrl = "https://www.instagram.com/hjertekurver/";
+  const instagramUrl = INSTAGRAM_URL;
 
   return (
     <div className="social-media-links">

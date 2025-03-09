@@ -12,6 +12,7 @@ import NavigateToH2 from "@/components/shared/ui/navigateToId/navigateToH2";
 import { HjertekurvMalSection } from "./hjertekurvMalSection";
 import { useHowToCreateHjertekurvIntro } from "./useTexts";
 import { Locale } from "@/providers";
+import { URLs } from "@/constants/urls";
 
 export const whatYouNeedHeadingId = "what-you-need-heading-id";
 export const hjertekurvMalHeadingId = "hjertekurv-mal-heading-id";
@@ -29,7 +30,7 @@ export default function HowToCreateHjertekurv({ lang }: Locale) {
     { linkText: breadcrumbs.frontpage, href: `/${lang}` },
     {
       linkText: breadcrumbs.howToCreateHjertekurvPage,
-      href: "/hvordan-lage-kurver",
+      href: `/${URLs.hvordanLageKurver}`,
     },
   ];
 

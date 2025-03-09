@@ -3,6 +3,7 @@
 import HowToMalToPaper from "@/components/features/howToCreateHjertekurv/HowToMalToPaper";
 import { LangParams } from "@/providers";
 import { getDictionary, getValuesByKeys } from "../../dictionaries";
+import { BASE_URL, URLs } from "@/constants/urls";
 
 export async function generateMetadata({ params }: { params: LangParams }) {
   const { lang } = await params;
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: { params: LangParams }) {
     description: description,
     openGraph: {
       title: title,
-      url: `https://hjertekurver.no/${lang}/hvordan-lage-kurver/mal-til-papir`,
+      url: `${BASE_URL}/${lang}/${URLs.hvordanLageKurver}/${URLs.malTilPapir}`,
     },
     twitter: {
       title: title,

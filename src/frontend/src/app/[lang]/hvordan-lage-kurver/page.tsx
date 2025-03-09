@@ -3,6 +3,7 @@
 import HowToCreateHjertekurv from "@/components/features/howToCreateHjertekurv/howToCreateHjertekurv";
 import { LangParams } from "@/providers";
 import { getDictionary, getValuesByKeys } from "../dictionaries";
+import { BASE_URL, URLs } from "@/constants/urls";
 
 export async function generateMetadata({ params }: { params: LangParams }) {
   const { lang } = await params;
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: { params: LangParams }) {
     description: description,
     openGraph: {
       title: title,
-      url: `https://hjertekurver.no/${lang}/hvordan-lage-kurver`,
+      url: `${BASE_URL}/${lang}/${URLs.hvordanLageKurver}`,
     },
     twitter: {
       title: title,

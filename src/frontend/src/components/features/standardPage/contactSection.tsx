@@ -52,7 +52,6 @@ export default function ContactSection() {
             display: "flex",
             flexDirection: "column",
             gap: "24px",
-            marginTop: "36px",
           }}
         >
           <TextArea

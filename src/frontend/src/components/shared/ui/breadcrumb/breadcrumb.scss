@@ -9,6 +9,7 @@
 
   @media screen and (max-width: 496px) {
     margin: 16px 0 36px 0;
+    gap: 8px;
   }
 
   .breadcrumb {
@@ -21,5 +22,9 @@
 
   .breadcrumb-divider {
     margin-left: 6px;
+
+    @media screen and (max-width: 496px) {
+      margin-left: 3px;
+    }
   }
 }

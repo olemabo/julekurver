@@ -9,6 +9,7 @@ import DifficultyLevel, {
 import DisplayHjertekurvSvgWithColors from "@/components/shared/images/displayHjertekurvSvgWithColors";
 import "./hjertekurvCollectionCard.scss";
 import { Locale } from "@/providers";
+import { URLs } from "@/constants/urls";
 
 export type HjertekurvCardSize = "sm" | "default";
 
@@ -47,7 +48,11 @@ export default function HjertekurvCollectionCard({
   const imgSize = imageSize.toString() + "px";
 
   return (
-    <Link href={`/${lang}/hjertekurver/${url}`} key={name} className={size}>
+    <Link
+      href={`/${lang}/${URLs.hjertekurver}/${url}`}
+      key={name}
+      className={size}
+    >
       <div className="section">
         <Heading style={{ color: fillColor1 }} headingLevel="h2">
           {name}

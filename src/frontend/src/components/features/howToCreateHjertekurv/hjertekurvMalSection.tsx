@@ -9,6 +9,7 @@ import FlettetilleggPopover from "@/components/shared/content/popover/Flettetill
 import { useHjertekurvMalSection } from "./useTexts";
 import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
 import { Locale } from "@/providers";
+import { URLs } from "@/constants/urls";
 
 export function HjertekurvMalSection({
   headingId,
@@ -34,14 +35,16 @@ export function HjertekurvMalSection({
           text={ingress1.text}
           placeholder="{link}"
           component={
-            <Link href={`/${lang}/hjertekurver`}>{ingress1.linkText}</Link>
+            <Link href={`/${lang}/${URLs.hjertekurver}`}>
+              {ingress1.linkText}
+            </Link>
           }
         />
         <ReplacePlaceholder
           text={ingress2.text}
           placeholder="{link}"
           component={
-            <Link href={`/${lang}/hjertekurver/standard-kurv-3x3`}>
+            <Link href={`/${lang}/${URLs.hjertekurver}/standard-kurv-3x3`}>
               {ingress2.linkText}
             </Link>
           }

@@ -10,6 +10,7 @@ import AboutHjertekurvSection from "./aboutHjertekurvSection";
 import "./hjertekurv.scss";
 import { Locale } from "@/providers";
 import { useBreadcrumbTexts } from "./useTexts";
+import { URLs } from "@/constants/urls";
 
 export type HjertekurvPageProps = {
   hjertekurv: Hjertekurv;
@@ -35,8 +36,8 @@ export default function HjertekurvPage({
 
   const breadCrumbLinks = [
     { linkText: breadcrumbHome, href: `/${lang}` },
-    { linkText: breadcrumbHeartBaskets, href: `/${lang}/hjertekurver` },
-    { linkText: name, href: `/${lang}/hjertekurver/${url}` },
+    { linkText: breadcrumbHeartBaskets, href: `/${lang}/${URLs.hjertekurver}` },
+    { linkText: name, href: `/${lang}/${URLs.hjertekurver}/${url}` },
   ];
 
   return (

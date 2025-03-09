@@ -5,13 +5,14 @@ import { Category } from "@/components/features/hjertekurvCollectionPage/useCate
 import HjertekurvPage from "@/components/features/hjertekurvPage/hjertekurvPage";
 import { createApiMediaUrl, createBackendUrl } from "@/utils/backendApiUrl";
 import { HjertekurvParams } from "../page";
+import { BASE_URL } from "@/constants/urls";
 
 export async function generateMetadata({
   params,
 }: {
   params: HjertekurvParams;
 }) {
-  const { hjertekurv } = await params;
+  const { hjertekurv, lang } = await params;
   const apiBaseUrl = createBackendUrl();
 
   const pageContent = await fetchWith404Check<Hjertekurv>(
@@ -28,7 +29,7 @@ export async function generateMetadata({
     description: pageContent?.about,
     openGraph: {
       title: pageContent?.name,
-      url: `https://hjertekurver.no/no/${pageContent?.url}`,
+      url: `${BASE_URL}/${lang}/${pageContent?.url}`,
       image: createApiMediaUrl(pageContent?.imageHjertekurvUrl),
     },
     twitter: {

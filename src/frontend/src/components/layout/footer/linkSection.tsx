@@ -5,6 +5,8 @@ import Link from "@/components/shared/ui/link/link";
 import { use } from "react";
 import { LanguageContext } from "@/providers";
 import { getValuesByKeys } from "@/app/[lang]/dictionaries";
+import { scrollToMain } from "@/utils/utils";
+import { URLs } from "@/constants/urls";
 
 export default function LinkSection() {
   const { lang, dictionary } = use(LanguageContext);
@@ -47,9 +49,14 @@ export default function LinkSection() {
         <Heading headingLevel="h2" withMargins={false}>
           {hjertekurverHeading}
         </Heading>
-        <Link href={`/${lang}/hjertekurver`} linkTitle={seeKurverLinkText} />
         <Link
-          href={`/${lang}/hvordan-lage-kurver`}
+          onClick={scrollToMain}
+          href={`/${lang}/${URLs.hjertekurver}`}
+          linkTitle={seeKurverLinkText}
+        />
+        <Link
+          onClick={scrollToMain}
+          href={`/${lang}/${URLs.hvordanLageKurver}`}
           linkTitle={createKurverLinkText}
         />
       </div>
@@ -57,8 +64,16 @@ export default function LinkSection() {
         <Heading headingLevel="h2" withMargins={false}>
           {aboutSiteHeading}
         </Heading>
-        <Link href={`/${lang}/om-siden`} linkTitle={aboutSiteLinkText} />
-        <Link href={`/${lang}/kontakt-oss`} linkTitle={contactUsLinkText} />
+        <Link
+          href={`/${lang}/${URLs.aboutSite}`}
+          onClick={scrollToMain}
+          linkTitle={aboutSiteLinkText}
+        />
+        <Link
+          href={`/${lang}/${URLs.contactUs}`}
+          onClick={scrollToMain}
+          linkTitle={contactUsLinkText}
+        />
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import { Locale } from "@/providers";
 import { useHvordanLageKurverTexts } from "./useTexts";
 import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
+import { URLs } from "@/constants/urls";
 
 export default function HvordanLageKurver({ lang }: Locale) {
   const { title, intro, steps } = useHvordanLageKurverTexts();
@@ -21,7 +22,7 @@ export default function HvordanLageKurver({ lang }: Locale) {
           component={
             <Link
               linkTitle={intro.linkText}
-              href={`/${lang}/hvordan-lage-kurver`}
+              href={`/${lang}/${URLs.hvordanLageKurver}`}
             />
           }
         />

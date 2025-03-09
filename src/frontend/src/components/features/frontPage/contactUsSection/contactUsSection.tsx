@@ -15,6 +15,7 @@ import Link from "next/link";
 import { useContactUsSection } from "../useTexts";
 import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
 import { Locale } from "@/providers";
+import { URLs } from "@/constants/urls";
 
 export default function ContactUsSection({ lang }: Locale) {
   const {
@@ -63,7 +64,10 @@ export default function ContactUsSection({ lang }: Locale) {
             text={introParagraph}
             placeholder="{link}"
             component={
-              <Link style={{ color: "inherit" }} href={`/${lang}/kontakt-oss`}>
+              <Link
+                style={{ color: "inherit" }}
+                href={`/${lang}/${URLs.contactUs}`}
+              >
                 {introLinkText}
               </Link>
             }

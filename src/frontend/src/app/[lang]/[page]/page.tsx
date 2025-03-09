@@ -4,6 +4,7 @@ import { fetchWith404Check } from "@/api/fetchWrapper";
 import StandardPage, {
   PageContent,
 } from "@/components/features/standardPage/standardPage";
+import { BASE_URL } from "@/constants/urls";
 import { LangParams } from "@/providers";
 import { createBackendUrl } from "@/utils/backendApiUrl";
 
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: { params: PageParams }) {
     description: pageContent?.content,
     openGraph: {
       title: pageContent?.title,
-      url: `https://hjertekurver.no/${lang}/${page}`,
+      url: `${BASE_URL}/${lang}/${page}`,
     },
     twitter: {
       title: pageContent?.title,

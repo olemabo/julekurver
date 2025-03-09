@@ -11,6 +11,7 @@ import "./kurvMal.scss";
 import { useKurvMalTexts } from "../useTexts";
 import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
 import Image from "next/image";
+import { URLs } from "@/constants/urls";
 
 type KurvMalProps = {
   mal1Url?: string;
@@ -51,7 +52,9 @@ export default function KurvMal({
             text={description.methods}
             placeholder="{link}"
             component={
-              <Link href={`/${lang}/hvordan-lage-kurver/mal-til-papir`}>
+              <Link
+                href={`/${lang}/${URLs.hvordanLageKurver}/${URLs.malTilPapir}`}
+              >
                 {description.linkText}
               </Link>
             }
