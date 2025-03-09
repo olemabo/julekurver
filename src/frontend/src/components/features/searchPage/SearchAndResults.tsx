@@ -1,7 +1,7 @@
 "use client";
 
 import { createBackendUrl } from "@/utils/backendApiUrl";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Search from "@/components/shared/ui/search/search";
 import { useRouter } from "next/navigation";
 import { SearchResultItem } from "./SearchResultItem";
@@ -37,13 +37,12 @@ export default function SearchAndResult() {
     noResultsText,
     noResultsMessage,
   } = useSearchPageResultTexts();
+  const apiBaseUrl = createBackendUrl();
+  const router = useRouter();
 
   const [searchResults, setSearchResults] = useState<SearchHits[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [query, setQuery] = useState("");
-  const apiBaseUrl = createBackendUrl();
-  const router = useRouter();
-
   const [pageSize, setPageSize] = useState(defaultPaginationOptions[0].value);
   const [paginationNumber, setPaginationNumber] = useState(1);
 
@@ -56,27 +55,30 @@ export default function SearchAndResult() {
     setPaginationNumber(1);
   };
 
-  const fetchSearchResults = (searchQuery: string) => {
-    setLoading(true);
+  const fetchSearchResults = useCallback(
+    (searchQuery: string) => {
+      setLoading(true);
 
-    fetch(`${apiBaseUrl}/api/webpage-search-api/?query=${searchQuery}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((hits) => {
-        setSearchResults(hits ?? []);
-        router.push(`?query=${searchQuery}`);
-      })
-      .catch((error) => {
-        console.error("Error fetching search results:", error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
+      fetch(`${apiBaseUrl}/api/webpage-search-api/?query=${searchQuery}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((hits) => {
+          setSearchResults(hits ?? []);
+          router.push(`?query=${searchQuery}`);
+        })
+        .catch((error) => {
+          console.error("Error fetching search results:", error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    },
+    [apiBaseUrl, router],
+  );
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -85,7 +87,7 @@ export default function SearchAndResult() {
       setQuery(initialQuery);
       fetchSearchResults(initialQuery);
     }
-  }, []);
+  }, [fetchSearchResults]);
 
   const handleSearch = (currentQuery: string) => {
     if (currentQuery && currentQuery !== query) {

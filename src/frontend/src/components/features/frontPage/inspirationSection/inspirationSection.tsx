@@ -7,6 +7,7 @@ import { createBackendUrl } from "@/utils/backendApiUrl";
 import "./inspirationSection.scss";
 import { Suspense } from "react";
 import { InspirationTitle } from "../useTexts";
+import { INSTAGRAM_URL } from "@/constants/urls";
 
 interface InstagramImage {
   mediaUrl: string;
@@ -53,7 +54,7 @@ async function InstagramImages() {
           icon={<InstagramIcon />}
           linkTitle="Instagram"
           target="_blank"
-          href="https://www.instagram.com/hjertekurver/"
+          href={INSTAGRAM_URL}
         />
       </div>
     </>

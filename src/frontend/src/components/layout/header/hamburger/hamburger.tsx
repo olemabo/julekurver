@@ -30,7 +30,6 @@ export default function Hamburger({ onClick, isOpen }: HamburgerProps) {
       onClick={toggleHamburger}
       id={hamburgerButtonId}
       aria-label="Toggle menu"
-      aria-expanded={isHamburgerOpen ? "true" : "false"}
     >
       <ul>
         <li className="hamburger" />

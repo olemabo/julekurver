@@ -7,6 +7,7 @@ import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import HowToMalTilMatpapirSection from "./howMalTilMatpapir";
 import { useHowToMalToPaper } from "./useTexts";
 import { Locale } from "@/providers";
+import { URLs } from "@/constants/urls";
 
 export default function HowToMalToPaper({ lang }: Locale) {
   const { title, ingress, breadcrumb } = useHowToMalToPaper();
@@ -15,11 +16,11 @@ export default function HowToMalToPaper({ lang }: Locale) {
     { linkText: breadcrumb.frontpage, href: "/" },
     {
       linkText: breadcrumb.howToCreateHjertekurvPage,
-      href: `/${lang}/hvordan-lage-kurver`,
+      href: `/${lang}/${URLs.hvordanLageKurver}`,
     },
     {
       linkText: breadcrumb.howToMalToPaper,
-      href: `/${lang}/hvordan-lage-kurver/mal-til-papir`,
+      href: `/${lang}/${URLs.hvordanLageKurver}/${URLs.malTilPapir}`,
     },
   ];
 

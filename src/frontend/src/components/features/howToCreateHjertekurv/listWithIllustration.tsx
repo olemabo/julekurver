@@ -1,5 +1,6 @@
 import HowToSection, { POSITION_TOP } from "@/components/shared/howTo/howTo";
 import LazyImage from "@/components/shared/lazyImage/LazyImage";
+import Image from "next/image";
 import "./listWithIllustration.scss";
 
 export type ListhWithIllustraionProps = {
@@ -41,7 +42,7 @@ export default function ListWithIllustraion({
           className="illustration-image"
         />
       ) : (
-        <img
+        <Image
           alt={altText}
           className="illustration-image"
           height={imageHeight}

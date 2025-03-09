@@ -2,6 +2,7 @@ import Link from "next/link";
 import { use } from "react";
 import { LanguageContext } from "@/providers";
 import { getValuesByKeys } from "@/app/[lang]/dictionaries";
+import { URLs } from "@/constants/urls";
 
 type LinkListSectionProps = {
   onClick: () => void;
@@ -26,17 +27,17 @@ export default function LinkListSection({ onClick }: LinkListSectionProps) {
   return (
     <ul>
       <li>
-        <Link onClick={onClick} href={`/${lang}/hjertekurver`}>
+        <Link onClick={onClick} href={`/${lang}/${URLs.hjertekurver}`}>
           {hjertekurverLinkText}
         </Link>
       </li>
       <li>
-        <Link onClick={onClick} href={`/${lang}/hvordan-lage-kurver`}>
+        <Link onClick={onClick} href={`/${lang}/${URLs.hvordanLageKurver}`}>
           {hjertekurverHeading}
         </Link>
       </li>
       <li>
-        <Link onClick={onClick} href={`/${lang}/om-siden`}>
+        <Link onClick={onClick} href={`/${lang}/${URLs.aboutSite}`}>
           {abouteSiteLinkText}
         </Link>
       </li>

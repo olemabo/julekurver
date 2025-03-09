@@ -8,6 +8,7 @@ import Button from "@/components/shared/ui/button/button";
 import "./aboutKurverSection.scss";
 import { useAboutKurverSection } from "../useTexts";
 import { Locale } from "@/providers";
+import { URLs } from "@/constants/urls";
 
 export default function AboutKurverSection({ lang }: Locale) {
   const paragraphMaxWidth = 480;
@@ -55,7 +56,7 @@ export default function AboutKurverSection({ lang }: Locale) {
         <Button
           theme={lightTheme}
           label={learnMoreAboutUsButtonLabel}
-          href={`/${lang}/om-siden`}
+          href={`/${lang}/${URLs.aboutSite}`}
         />
       </div>
     </div>

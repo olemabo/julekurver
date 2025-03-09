@@ -12,6 +12,7 @@ import {
   alegreyaSansMedium,
 } from "./fonts";
 import "../globals.css";
+import { BASE_URL } from "@/constants/urls";
 
 export async function generateMetadata({
   params,
@@ -33,7 +34,7 @@ export async function generateMetadata({
     description: description,
     openGraph: {
       title: title,
-      url: `https://hjertekurver.no/`,
+      url: BASE_URL,
     },
     twitter: {
       title: title,
@@ -50,7 +51,6 @@ export default async function RootLayout({
   params: LangParams;
 }>) {
   const { lang } = await params;
-
   const dictionary = await getDictionary(lang);
 
   return (
@@ -64,7 +64,7 @@ export default async function RootLayout({
       <body>
         <LanguageProvider lang={lang} dictionary={dictionary}>
           <Header />
-          <main>{children}</main>
+          <main id="main">{children}</main>
           <Footer />
         </LanguageProvider>
       </body>

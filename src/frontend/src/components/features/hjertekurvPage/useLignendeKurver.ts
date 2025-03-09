@@ -42,7 +42,7 @@ const useLignendeHjertekurver = (hjertekurvName: string, lang: string) => {
     };
 
     fetchHjertekurver();
-  }, [hjertekurvName]);
+  }, [hjertekurvName, lang]);
 
   return { data, error, loading };
 };

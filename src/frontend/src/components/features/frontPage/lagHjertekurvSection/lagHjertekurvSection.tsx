@@ -7,6 +7,7 @@ import "./lagHjertekurvSection.scss";
 import ContentHeader from "../contentHeader/contentHeader";
 import { useLagHjertekurvSection } from "../useTexts";
 import { Locale } from "@/providers";
+import { URLs } from "@/constants/urls";
 
 export default function LagHjertekurvSection({ lang }: Locale) {
   const { title, step1, step2, step3, buttonLabel } = useLagHjertekurvSection();
@@ -51,7 +52,7 @@ export default function LagHjertekurvSection({ lang }: Locale) {
         <Button
           theme={lightTheme}
           label={buttonLabel}
-          href={`/${lang}/hvordan-lage-kurver`}
+          href={`/${lang}/${URLs.hvordanLageKurver}`}
         />
       </div>
     </>

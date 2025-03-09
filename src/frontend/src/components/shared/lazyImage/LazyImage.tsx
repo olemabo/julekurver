@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import "./lazyImage.scss";
 
 type LazyImageProps = {
@@ -32,13 +33,15 @@ export default function LazyImage({
       { threshold: 0.4 },
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
+    const currentRef = imgRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (imgRef.current) {
-        observer.unobserve(imgRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -52,13 +55,15 @@ export default function LazyImage({
       ref={imgRef}
       className={`lazy-image-container ${isVisible ? "visible" : ""} `}
     >
-      <img
-        height={imageHeight}
-        width={imageWidth}
-        className={className || ""}
-        src={isVisible ? src : undefined}
-        alt={alt}
-      />
+      {isVisible && (
+        <Image
+          height={imageHeight}
+          width={imageWidth}
+          className={className || ""}
+          src={src}
+          alt={alt}
+        />
+      )}
     </div>
   );
 }

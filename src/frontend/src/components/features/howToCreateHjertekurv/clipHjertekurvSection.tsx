@@ -8,6 +8,7 @@ import Link from "next/link";
 import SymmetriskMotivPopover from "@/components/shared/content/popover/SymmetriskMotivPopover";
 import { useClipHjertekurvSection } from "./useTexts";
 import { Locale } from "@/providers";
+import { URLs } from "@/constants/urls";
 
 export default function ClipHjertekurvSection({
   headingId,
@@ -58,7 +59,9 @@ export default function ClipHjertekurvSection({
           <ul className="custom-ul">
             <li>{step3ListSteps[0]}</li>
             <li>
-              <Link href={`/${lang}/hvordan-lage-kurver/mal-til-papir`}>
+              <Link
+                href={`/${lang}/${URLs.hvordanLageKurver}/${URLs.malTilPapir}`}
+              >
                 {step3ListSteps[1]}
               </Link>
             </li>
