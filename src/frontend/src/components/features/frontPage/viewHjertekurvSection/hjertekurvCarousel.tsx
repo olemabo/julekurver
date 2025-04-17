@@ -63,7 +63,7 @@ export default function HjertekurvCarousel({
     if (useFirst) {
       return (
         <Link
-          href={`no/${URLs.hvordanLageKurver}/${kurver[currentImageIndex].url}`}
+          href={`no/${URLs.hjertekurver}/${kurver[currentImageIndex].url}`}
           className={`image-container ${fadeState}`}
           aria-label={`Lenke til hjertekurven ${kurver[currentImageIndex].name}`}
           style={{
