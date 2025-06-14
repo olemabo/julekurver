@@ -54,9 +54,6 @@ export default async function RootLayout({
       lang={lang}
       className={`${alegreya.variable} ${alegreyaSansLight.variable} ${alegreyaHeader.variable} ${alegreyaSansMedium.variable}`}
     >
-      <head>
-        <script src="https://unpkg.com/react-scan/dist/auto.global.js" async />
-      </head>
       <body>
         <LanguageProvider lang={lang} dictionary={dictionary}>
           <Header />
