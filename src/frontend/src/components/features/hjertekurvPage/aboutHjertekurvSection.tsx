@@ -19,7 +19,8 @@ export type AboutHjertekurvSectionProps = {
 } & Locale;
 
 export default async function AboutHjertekurvSection({
-  hjertekurv, lang
+  hjertekurv,
+  lang,
 }: AboutHjertekurvSectionProps) {
   const {
     name,
@@ -31,8 +32,10 @@ export default async function AboutHjertekurvSection({
   } = hjertekurv;
 
   const dictionary = await getDictionary(lang);
-  const difficultyFlettingText = dictionary.pages.hjertekurvPage.difficultyFletting;
-  const difficultyKlippingText = dictionary.pages.hjertekurvPage.difficultyKlipping;
+  const difficultyFlettingText =
+    dictionary.pages.hjertekurvPage.difficultyFletting;
+  const difficultyKlippingText =
+    dictionary.pages.hjertekurvPage.difficultyKlipping;
   const addedText = dictionary.pages.hjertekurvPage.added;
 
   const imageUrl = createApiMediaUrl(imageHjertekurvUrl);

@@ -40,7 +40,7 @@ export default function LinkSection() {
     "aboutSiteSection",
     "aboutSiteLinkText",
   ]);
-  
+
   const contactUsLinkText = getValuesByKeys(dictionary, [
     "footer",
     "aboutSiteSection",

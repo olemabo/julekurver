@@ -7,15 +7,15 @@ const defaultLocale = LANGUAGES.NORWEGIAN;
 function getLocale(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const pathnameLocale = locales.find(
-    locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
   if (pathnameLocale) return pathnameLocale;
 
   // Check Accept-Language header
-  const acceptLanguage = request.headers.get('Accept-Language');
+  const acceptLanguage = request.headers.get("Accept-Language");
   if (acceptLanguage) {
-    const preferredLocale = locales.find(locale => 
-      acceptLanguage.includes(locale)
+    const preferredLocale = locales.find((locale) =>
+      acceptLanguage.includes(locale),
     );
     if (preferredLocale) return preferredLocale;
   }

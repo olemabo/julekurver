@@ -24,11 +24,14 @@ async function HjertekurvCollectionPage({
     headingMain: ["pages", "hjertekurverKartotekPage", "heading"],
     paragraphIntro: ["pages", "hjertekurverKartotekPage", "paragraph", "intro"],
     paragraphOutro: ["pages", "hjertekurverKartotekPage", "paragraph", "outro"],
-  })
+  });
 
   const linkItems = [
     { linkText: translations.breadcrumbHome, href: `/${lang}` },
-    { linkText: translations.breadcrumbHeartBaskets, href: `${lang}/hjertekurver` },
+    {
+      linkText: translations.breadcrumbHeartBaskets,
+      href: `${lang}/hjertekurver`,
+    },
   ];
 
   if (hjertekurver?.length === 0) {
@@ -38,7 +41,9 @@ async function HjertekurvCollectionPage({
   return (
     <PageWrapper>
       <Breadcrumb linkItems={linkItems} />
-      <Heading headingLevel={HeadingLevel.H1}>{translations.headingMain}</Heading>
+      <Heading headingLevel={HeadingLevel.H1}>
+        {translations.headingMain}
+      </Heading>
       <Paragraph maxWidth={450}>
         {translations.paragraphIntro}
         <DifficultyPopover />

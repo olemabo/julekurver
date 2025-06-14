@@ -13,7 +13,12 @@ import { HjertekurvMalSection } from "./hjertekurvMalSection";
 import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
 import { getDictionary } from "@/localization/dictionaries";
-import { clipHjertekurvHeadingId, fletteHjertekurvHeadingId, hjertekurvMalHeadingId, whatYouNeedHeadingId } from "./constants";
+import {
+  clipHjertekurvHeadingId,
+  fletteHjertekurvHeadingId,
+  hjertekurvMalHeadingId,
+  whatYouNeedHeadingId,
+} from "./constants";
 
 export default async function HowToCreateHjertekurv({ lang }: Locale) {
   const dictionary = await getDictionary(lang);

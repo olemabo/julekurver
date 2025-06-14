@@ -4,13 +4,11 @@ import { Hjertekurv } from "@/types/hjertekurv";
 
 export async function getHjertekurverData(
   name: string,
-  lang: string
+  lang: string,
 ): Promise<Hjertekurv[]> {
-    const url = createBackendUrl('api/hjertekurver-page-api/', {
-        hjertekurvName: name,
-        lang: lang
-    })
-  return fetchWith404Check<Hjertekurv[]>(url,
-    { revalidate: 3600 }
-  );
+  const url = createBackendUrl("api/hjertekurver-page-api/", {
+    hjertekurvName: name,
+    lang: lang,
+  });
+  return fetchWith404Check<Hjertekurv[]>(url, { revalidate: 3600 });
 }

@@ -1,410 +1,406 @@
 {
-    "footer": {
-        "hjertekurverSection": {
-            "title": "Pleated Heart",
-            "seeKurverLinkText": "See Pleated Hearts",
-            "createKurverLinkText": "Create baskets"
-        },
-        "aboutSiteSection": {
-            "title": "About the site",
-            "aboutSiteLinkText": "About the site",
-            "contactUsLinkText": "Contact us"
-        },
-        "followUsHeading": "Follow us"
+  "footer": {
+    "hjertekurverSection": {
+      "title": "Pleated Heart",
+      "seeKurverLinkText": "See Pleated Hearts",
+      "createKurverLinkText": "Create baskets"
     },
-    "header": {
-        "hjertekurverLinkText": "See Hearts",
-        "createKurverLinkText": "Create Hearts",
-        "abouteSiteLinkText": "About the site",
-        "logoText": "Pleated Hearts"
+    "aboutSiteSection": {
+      "title": "About the site",
+      "aboutSiteLinkText": "About the site",
+      "contactUsLinkText": "Contact us"
     },
-    "layout": {
-        "seo": {
-            "title": "hjertekurver.no - Website with a Collection of Heart Baskets/Christmas Baskets, Templates, Inspiration, and Guides",
-            "description": "Explore a vast collection of heart baskets/Christmas baskets with templates, images, and detailed guides. Learn how to make traditional Christmas baskets and get inspired for creative weaving."
-        }
-    },
-    "breadcrumb": {
-        "frontpage": "Frontpage",
-        "hjertekurver": "Hearts",
-        "searchPage": "Search page",
-        "howToCreateHjertekurvPage": "How to make hearts",
-        "howToMalToPaper": "Template to paper"
-    },
-    "popover": {
-        "flettetillegg": {
-            "content": "The weaving addition is the small extra length you cut the strips to, to account for the fact that the weaving will take up some of the strips. All templates that have been created are made based on a square. This means you will get exactly the same width and height for the weaving area. If you cut it this way, you will soon encounter a problem toward the end of the weaving, as the weaving itself will also require some extra paper when the strips go up and down. This weaving addition must be added manually when you cut. For a basket with few strips, you can add a small amount, 1-4 mm, but for a basket with many strips, you should add more.",
-            "altText": "Illustration of weaving addition",
-            "title": "Weaving addition"
-        },
-        "symmetriskMotiv": {
-            "title": "Symmetrical pattern",
-            "intro": "Symmetrical pattern means that you cut out two identical templates that should be woven together, as seen in",
-            "link1Text": "9-field basket",
-            "link1Href": "/en/pleated-hearts/standard-basket-3x3",
-            "mid": " used in this example. An example of a basket without a symmetrical pattern is",
-            "link2Text": "polar bear basket",
-            "link2Href": "/en/pleated-hearts/polar-bear",
-            "outro": ", where you need to cut out two different templates to get the correct design."
-        }
-    },
-    "pages": {
-        "hjertekurvPage": {
-            "difficultyFletting": "Weaving difficulty",
-            "difficultyKlipping": "Cutting difficulty",
-            "added": "Added",
-            "changeColorLeft": "Change color of the left heart",
-            "changeColorRight": "Change color of the right heart",
-            "kurvMal": {
-                "downloadMalButton": "Download Template",
-                "malTitle": "Basket Template",
-                "description": {
-                    "intro": "The template is the foundation for the heart basket and ensures that the strips fit together correctly, which is essential for achieving a smooth result, especially with more advanced baskets. A typical template size is approximately 8 x 12 cm, but you can adjust the size as needed.",
-                    "methods": "There are several methods to transfer the template to the basket. You can follow our {link} for the best results using parchment paper.",
-                    "linkText": "step-by-step guide"
-                },
-                "twoMalsDescription": "This basket does not have {popover} and therefore comes with two templates. Each template has a small mark in the corner, indicating how the parts should be placed in the starting position. The two marks should align on top of each other before you start weaving to ensure the pattern is correct."
-            },
-            "hvordanLageKurver": {
-                "title": "How to Make the Basket",
-                "intro": {
-                "text": "It doesn't take much to get started with making a basket. Here is a short list of steps on how you can make your own basket. If you haven't woven much before or need a refresher, you can follow a more detailed recipe on {link} our page.",
-                "linkText": "Basket Making Page"
-                },
-                "steps": [
-                {
-                    "number": 1,
-                    "description": "Download and print the template above. A common template size is about 8 x 12 cm, but you can adjust the size as needed."
-                },
-                {
-                    "number": 2,
-                    "description": "Choose two different colors of paper (glossy paper is recommended). Draw the template onto the paper and fold the paper in half. The bottom of the template should be along the closed side of the paper. Cut out the basket."
-                },
-                {
-                    "number": 3,
-                    "description": "Weave the hearts by alternating the strips inside and outside of each other."
-                },
-                {
-                    "number": 4,
-                    "description": "Cut out a handle and glue it inside the hearts."
-                }
-                ]
-            },
-            "lignendeKurver": {
-                "title": "Similar baskets"
-            }
-        },
-        "frontpage": {
-            "aboutKurverSection": {
-                "title": "Passion for Heart Baskets",
-                "paragraph1": "This website was created to gather and share knowledge about heart baskets, a tradition that combines craftsmanship and creativity. Handmade heart baskets can be both decorative and functional, representing a personal way to create and share something special.",
-                "paragraph2": "At hjertekurver.no, you’ll find inspiration, detailed guides, and a comprehensive gallery of various baskets. Our goal is to make it easy for everyone, regardless of experience, to learn and explore this form of paper crafting while offering the largest collection of heart baskets.",
-                "learnMoreAboutUsButtonLabel": "Learn more about us",
-                "imageAltText": "Logo av flettet hjertekurv"
-            },
-            "viewHjertekurvSection": {
-                "title": "View Our Baskets",
-                "paragraph1": "Get inspired by our extensive collection of heart baskets! We have gathered a wide range of designs - from classic heart baskets to creative and modern patterns.",
-                "paragraph2": "Each basket includes:",
-                "listItems": [
-                    "A photo of the finished result",
-                    "Templates and instructions to create your own",
-                    "Information about the design"
-                ],
-                "buttonLabel": "See all baskets"
-            },
-            "lagHjertekurvSection": {
-                "title": "Make a Heart Basket",
-                "step1": "Find paper in your favorite colors. Choose classic Christmas colors like red and white, or try something new with patterns and glitter.",
-                "step2": "Download a template or draw your own. Cut carefully to get smooth edges and a symmetrical design.",
-                "step3": "Start weaving by threading the strips into each other. Work slowly to achieve an even and tight pattern.",
-                "buttonLabel": "Learn to make a basket"
-            },
-            "contactUsSection": {
-                "title": "Contact Us",
-                "introParagraph": "Your interest means a lot to us, and we greatly value feedback. Do you have questions, suggestions, or want to share your own heart basket creations? We’d love to hear from you! Visit our {link}-page to get in touch.",
-                "introLinkText": "contact us",
-                "feedbackPrompt": "If you’d like to send quick, anonymous feedback, you can do so in the box below. Enter what you’d like to share, and click 'Submit Feedback' - we review all contributions as soon as possible.",
-                "thankYouMessage": "Thank you for your feedback!",
-                "textareaLabel": "Leave feedback",
-                "textareaPlaceholder": "Enter feedback...",
-                "errorMessage": "You must enter content to send feedback",
-                "buttonLabel": "Submit Feedback",
-                "imageAltText": "logo of a woven heart basket"
-            },
-            "inspirationSection": {
-                "title": "Get Inspired"
-            }
-        },
-        "contactSection": {
-            "heading": "Send direct feedback",
-            "paragraph": "If you wish to send a quick, anonymous feedback, you can do so below. Enter feedback in the box below and click 'Send feedback', and we will review it as soon as possible.",
-            "thankYouMessage": "Thank you for your feedback!",
-            "textareaLabel": "Leave feedback",
-            "textareaPlaceholder": "Enter feedback...",
-            "errorMessage": "You must provide content to submit feedback",
-            "buttonLabel": "Submit feedback"
-        },
-        "searchPage": {
-            "heading": "Search",
-            "paragraph": "Here you can search through all content on pleatedhearts.com. If you want to search for pleated hearts, we recommend doing so through our dedicated search page for hearts.",
-            "searchPlaceholder": "Search",
-            "searchResultsText": "{hits} results for '{query}'",
-            "noResultsText": "0 results for {query}.",
-            "noResultsMessage": "Change the search terms to see more results.",
-            "linkText": "pleated hearts"
-        },
-        "hjertekurverKartotekPage": {
-            "seo": {
-                "title": "Explore the Heart Basket Collection | Templates, Images, and Inspiration",
-                "description": "Browse our complete collection of heart baskets/Christmas baskets with templates and images. Use search and filtering to find the perfect basket for your next project."
-            },
-            "heading": "Search among hearts",
-            "paragraph": {
-                "intro": "Browse our complete collection of pleated hearts with templates and images. Use search and filters to find the perfect basket for your next project. You can filter by",
-                "outro": "to find a basket that suits your skills."
-            },
-            "difficultyPopover": {
-                "title": "Difficulty Level",
-                "description": "The difficulty level of a pleated heart is determined by two factors:",
-                "weaving": "Weaving:",
-                "weavingDetails": "Evaluates how challenging the weaving process itself is, indicated by a heart icon:",
-                "weavingDetails2": "This can include the number of strips, the thickness of the strips, and variation in the weaving pattern, all of which can make the process more complex.",
-                "cutting": "Cutting:",
-                "cuttingDetails": "Indicates how challenging it is to cut out the basket before weaving starts, and is marked with a scissor icon.",
-                "cuttingDetails2": "Some baskets have detailed patterns that require precision and accuracy during cutting.",
-                "difficulty": "difficulty level"
-            },
-            "search": {
-                "placeholder": "Search for hearts",
-                "resultsCount": "Number of results: ",
-                "noResults": "No results found for search/filter"
-            },
-            "filters": {
-                "filterButtonLabel": "Filter by",
-                "alphabetic": {
-                    "label": "Alphabetical",
-                    "description": "Sort pleated hearts in alphabetical order."
-                },
-                "recentlyCreated": {
-                    "label": "Recently Added",
-                    "description": "Show the newest pleated hearts added."
-                },
-                "lowestDifficultyFletting": {
-                    "label": "Weaving - Easy",
-                    "description": "Filter by baskets with the lowest difficulty level for weaving."
-                },
-                "highestDifficultyFletting": {
-                    "label": "Weaving - Difficult",
-                    "description": "Filter by baskets with the highest difficulty level for weaving."
-                },
-                "lowestDifficultyKlipping": {
-                    "label": "Cutting - Easy",
-                    "description": "Filter by baskets with the lowest difficulty level for cutting."
-                },
-                "highestDifficultyKlipping": {
-                    "label": "Cutting - Difficult",
-                    "description": "Filter by baskets with the highest difficulty level for cutting."
-                },
-                "popularity": {
-                    "label": "Popularity",
-                    "description": "How popular the basket is (number of times the basket's page has been visited)"
-                }
-            }
-        },
-        "howToCreateHjertekurvPage": {
-            "seo": {
-                "title": "Learn to Make Heart Baskets | Step-by-Step Guide and Templates",
-                "description": "Weave your own heart baskets with our simple step-by-step guide. Download free templates, view images, and find tips for creating beautiful Christmas baskets."
-            },
-            "title": "How to Make Heart Baskets",
-            "ingress": "Making heart baskets requires a few simple materials and follows a relatively straightforward process. You'll need paper in your desired colors, a template to ensure the correct shape, and scissors for cutting. Then, the pieces are woven together to create the finished basket. Follow the steps below for an overview of how to make a heart basket.",
-            "WhatYouNeedSection": {
-                "title": "What You Need",
-                "ingress": "To get started on making heart baskets, you'll only need a few simple materials, which you probably already have at home. Here's what you need:",
-                "whatYouNeedList": [
-                    "Glossy paper (or other desired paper)",
-                    "Scissors",
-                    "Glue stick (for attaching the handle)",
-                    "Wax paper/cardboard/carbon paper"
-                ]
-            },
-            "HjertekurvMalSection": {
-                "title": "The Template is Important",
-                "ingress1": "Before you start weaving, you need to choose a template. On our website, you’ll find a large selection {link}, including a simple ",
-                "ingress1LinkText": "templates",
-                "ingress2": "{link} that we recommend for beginners or as a quick refresher.",
-                "ingress2LinkText": "9-stripe basket",
-                "ingress3": "This is also used in the weaving example {link} below.",
-                "ingress3LinkText": "example",
-                "paragraph2": "The template is essential for creating a successful heart basket. It ensures the basket has the right shape and that the strips fit together precisely during weaving. Without an accurate template, it can be challenging to achieve a symmetrical and even result, especially for baskets with complex designs.",
-                "paragraph3": "The size of the template depends on its use. Smaller baskets are great as decorations or small gifts, while larger baskets can hold more and be used as decorative elements. For standard baskets, you can start with a square of <b>8x8 cm</b> and adjust as needed.",
-                "paragraph3_2": "Remember to add a {flettetilleggPopover} to avoid the basket being too tight during weaving."
-            },
-            "ClipHjertekurvSection": {
-                "title": "Cut Out the Basket",
-                "ingress": "Choose two different colors of paper for your basket. Cut out two rectangles approximately 10 x 26 cm in each color. If you want to add a handle, you can adjust the size by making one of the rectangles slightly wider, for example, 12 x 26 cm.",
-                "steps": [
-                    {
-                        "number": 1,
-                        "altText": "Two folded papers with marked fold line",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/clipKurv/to_papir_med_markert_brettekant.svg",
-                        "description": "Choose two different colors of paper for your basket. Cut out two rectangles approximately 10 x 26 cm in each color. If you want to add a handle, you can adjust the size by making one of the rectangles slightly wider, for example, 12 x 26 cm."
-                    },
-                    {
-                        "number": 2,
-                        "altText": "Two folded papers with marked fold line",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/clipKurv/to_brettet_papir.svg",
-                        "description": "Fold each rectangle in half along the short side, as indicated with a dashed line on the template in step 1. Make sure the colored side faces outward when you fold."
-                    },
-                    {
-                        "number": 3,
-                        "altText": "Two folded papers with marked fold line",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/clipKurv/to_papir_med_opptegnet_mal.svg",
-                        "description": "Remember to draw the basket handle. It can be as tall as the basket itself. Also, make sure the bottom of the template is along the folded side of the paper."
-                    },
-                    {
-                        "number": 4,
-                        "altText": "Two folded papers with marked fold line",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/clipKurv/to_papir_med_saks_som_klipper.svg",
-                        "description": "Cut out both pieces along the drawn lines. To save time and ensure both basket pieces are exactly the same, you can place the papers inside each other and cut them simultaneously. This is only possible if the basket has..."
-                    },
-                    {
-                        "number": 5,
-                        "altText": "Two folded papers with marked fold line",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/clipKurv/to_oppklippede_ferdige_kurver_med_hank.svg",
-                        "description": "When finished, you should have two basket pieces in different colors, both with a closed bottom, and a handle in the desired color. Now you're ready for weaving!"
-                    }
-                ],
-                "step3ListIntro": "Trace the pattern from your chosen template onto your basket. This can be done in several ways:",
-                "step3ListSteps": [
-                    "Carbon paper",
-                    "Wax paper",
-                    "Paper and pencil"
-                ]
-            },
-            "fletteHjertekurvSection": {
-                "title": "Weave the Basket",
-                "ingress": "This section shows you how to weave the basket after cutting out and preparing the pieces. There are various ways to assemble a heart basket, but here we present a simple and effective method you can follow.",
-                "step1": {
-                    "popoverContent": "A strip is one of the cut-out parts of a heart basket used to weave the basket together. In this example, each piece (red and white) has three strips each (marked A, B, and C for the white basket and 1, 2, and 3 for the red basket).",
-                    "popoverText": "strips",
-                    "popoverTitle": "Strip"
-                },
-                "steps": [
-                    {
-                        "number": 1,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/1.svg",
-                        "description": "Take out the two cut-out parts of the basket. To make the instructions clear, we have labeled {popover} on the white basket with the letters A, B, and C, and on the red basket with the numbers 1, 2, and 3."
-                    },
-                    {
-                        "number": 1,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/1_b.svg",
-                        "description": "Place the red basket on top of the white one so that the semicircle of the white basket is closest to you. This provides a good starting position for weaving."
-                    },
-                    {
-                        "number": 2,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/2.svg",
-                        "description": "Place the white C-strip on top of the red basket. Ensure that the white C-strip covers the entire red 1-strip. If the C-strip does not span the entire red strip, the basket may become too tight, leaving insufficient space to complete the weaving. To avoid this, you can add extra length to the strips by cutting them slightly longer."
-                    },
-                    {
-                        "number": 3,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/3.svg",
-                        "description": "Start with the white C-strip. Open the red strip 3 and pull the white C-strip through it."
-                    },
-                    {
-                        "number": 4,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/4.svg",
-                        "description": "Continue by opening the white C-strip and pulling the red 2-strip through it."
-                    },
-                    {
-                        "number": 5,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/5.svg",
-                        "description": "The final step for the white C-strip is to pull it through the red strip 1."
-                    },
-                    {
-                        "number": 6,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/6.svg",
-                        "description": "Now move on to the white B-strip. Place it on top of the red strips in a starting position, as you did with the white C-strip earlier. In the next steps, we will repeat the process from steps 3-5, but in reverse order."
-                    },
-                    {
-                        "number": 7,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/7.svg",
-                        "description": "Start with the white B-strip. Open the white C-strip and pull the red strip 3 through it."
-                    },
-                    {
-                        "number": 8,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/8.svg",
-                        "description": "Continue by pulling the white B-strip through the red strip 2, and finally, pull the red strip 1 through the white B-strip. When you finish with the white B-strip, you should have two colors according to the pattern shown in the image."
-                    },
-                    {
-                        "number": 9,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/9.svg",
-                        "description": "Complete the weaving with the white A-strip. Before you begin, it may be helpful to tighten the basket slightly by pulling the white B- and C-strips as far toward the red semicircle as possible. This will give you more space when weaving in the white A-strip. If it is difficult to weave the C-strip due to tight space, it might indicate that the basket was cut slightly incorrectly or that {popover} is too small."
-                    },
-                    {
-                        "number": 10,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/10.svg",
-                        "description": "Apply a small amount of glue to the bottom of the handle (on the open side) and place the handle inside the heart basket."
-                    },
-                    {
-                        "number": 11,
-                        "altText": "Two folded papers with a crease",
-                        "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/11.svg",
-                        "description": "Let the glue dry completely and carefully open the basket from the inside to ensure that the handles are not stuck together. Also, be careful not to let glue seep outside the handle, as this could glue the basket shut and prevent it from opening. Congratulations, you have made a heart basket!"
-                    }
-                ]
-            }
-        },
-        "howToMalToPaper": {
-            "title": "How to Transfer the Template to Paper",
-            "ingress": "To create an accurate heart basket, it’s important to correctly transfer the template to the paper you’ll be using. There are several methods to do this, and here we focus on a simple and effective technique using wax paper. This method makes it easy to transfer the template precisely, so you can start cutting and weaving without any issues.",
-            "seo": {
-                "title": "Learn to Make Heart Baskets | How to Transfer the Template to Paper",
-                "description": "Learn how to transfer your heart basket/Christmas basket template to paper so you can cut it out."
-            },
-            "howToMalTilMatpapirSection": {
-                "title": "Transfer the Template with Wax Paper",
-                "ingress": "The wax paper method is a simple way to transfer the template to your paper without needing special equipment. By using wax paper as an intermediary, you can easily transfer the design with precision, ensuring you have an accurate template for cutting. Here are the steps to follow using this method.",
-                "steps": [
-                    {
-                        "altText": "Two folded papers with creases",
-                        "description": "Print the template in the desired size on paper. Ensure the template matches the size you want for the basket, whether large or small."
-                    },
-                    {
-                        "altText": "Two folded papers with creases",
-                        "description": "Prepare wax paper that is appropriately sized for the template. The wax paper should be large enough to cover the template, so you can transfer the design accurately. Trim the wax paper to the desired size if necessary."
-                    },
-                    {
-                        "altText": "Two folded papers with creases",
-                        "description": "Place the wax paper on top of the printed template. Make sure it lies flat and without creases, so the transfer is as precise as possible. It's important that the wax paper does not shift during the process."
-                    },
-                    {
-                        "altText": "Two folded papers with creases",
-                        "description": "Now you should have the template on the wax paper. To transfer the design, make sure the lines you drew on the wax paper face down onto the glossy paper (in the next step)."
-                    },
-                    {
-                        "altText": "Two folded papers with creases",
-                        "description": "Place the wax paper with the design on top of the desired glossy paper. Use a pencil to trace over the design, allowing the graphite on the underside to transfer to the glossy paper. This ensures an accurate copy of the template that you can use to cut out the basket."
-                    },
-                    {
-                        "altText": "Two folded papers with creases",
-                        "description": "Once you’ve traced the entire design, carefully remove the wax paper. You now have an exact transfer of the template onto the glossy paper, ready to cut out and use to create the basket. For the rest of the instructions, click "
-                    }
-                ],
-                "step5LinkText": "here"
-            }
-        }
+    "followUsHeading": "Follow us"
+  },
+  "header": {
+    "hjertekurverLinkText": "See Hearts",
+    "createKurverLinkText": "Create Hearts",
+    "abouteSiteLinkText": "About the site",
+    "logoText": "Pleated Hearts"
+  },
+  "layout": {
+    "seo": {
+      "title": "hjertekurver.no - Website with a Collection of Heart Baskets/Christmas Baskets, Templates, Inspiration, and Guides",
+      "description": "Explore a vast collection of heart baskets/Christmas baskets with templates, images, and detailed guides. Learn how to make traditional Christmas baskets and get inspired for creative weaving."
     }
+  },
+  "breadcrumb": {
+    "frontpage": "Frontpage",
+    "hjertekurver": "Hearts",
+    "searchPage": "Search page",
+    "howToCreateHjertekurvPage": "How to make hearts",
+    "howToMalToPaper": "Template to paper"
+  },
+  "popover": {
+    "flettetillegg": {
+      "content": "The weaving addition is the small extra length you cut the strips to, to account for the fact that the weaving will take up some of the strips. All templates that have been created are made based on a square. This means you will get exactly the same width and height for the weaving area. If you cut it this way, you will soon encounter a problem toward the end of the weaving, as the weaving itself will also require some extra paper when the strips go up and down. This weaving addition must be added manually when you cut. For a basket with few strips, you can add a small amount, 1-4 mm, but for a basket with many strips, you should add more.",
+      "altText": "Illustration of weaving addition",
+      "title": "Weaving addition"
+    },
+    "symmetriskMotiv": {
+      "title": "Symmetrical pattern",
+      "intro": "Symmetrical pattern means that you cut out two identical templates that should be woven together, as seen in",
+      "link1Text": "9-field basket",
+      "link1Href": "/en/pleated-hearts/standard-basket-3x3",
+      "mid": " used in this example. An example of a basket without a symmetrical pattern is",
+      "link2Text": "polar bear basket",
+      "link2Href": "/en/pleated-hearts/polar-bear",
+      "outro": ", where you need to cut out two different templates to get the correct design."
+    }
+  },
+  "pages": {
+    "hjertekurvPage": {
+      "difficultyFletting": "Weaving difficulty",
+      "difficultyKlipping": "Cutting difficulty",
+      "added": "Added",
+      "changeColorLeft": "Change color of the left heart",
+      "changeColorRight": "Change color of the right heart",
+      "kurvMal": {
+        "downloadMalButton": "Download Template",
+        "malTitle": "Basket Template",
+        "description": {
+          "intro": "The template is the foundation for the heart basket and ensures that the strips fit together correctly, which is essential for achieving a smooth result, especially with more advanced baskets. A typical template size is approximately 8 x 12 cm, but you can adjust the size as needed.",
+          "methods": "There are several methods to transfer the template to the basket. You can follow our {link} for the best results using parchment paper.",
+          "linkText": "step-by-step guide"
+        },
+        "twoMalsDescription": "This basket does not have {popover} and therefore comes with two templates. Each template has a small mark in the corner, indicating how the parts should be placed in the starting position. The two marks should align on top of each other before you start weaving to ensure the pattern is correct."
+      },
+      "hvordanLageKurver": {
+        "title": "How to Make the Basket",
+        "intro": {
+          "text": "It doesn't take much to get started with making a basket. Here is a short list of steps on how you can make your own basket. If you haven't woven much before or need a refresher, you can follow a more detailed recipe on {link} our page.",
+          "linkText": "Basket Making Page"
+        },
+        "steps": [
+          {
+            "number": 1,
+            "description": "Download and print the template above. A common template size is about 8 x 12 cm, but you can adjust the size as needed."
+          },
+          {
+            "number": 2,
+            "description": "Choose two different colors of paper (glossy paper is recommended). Draw the template onto the paper and fold the paper in half. The bottom of the template should be along the closed side of the paper. Cut out the basket."
+          },
+          {
+            "number": 3,
+            "description": "Weave the hearts by alternating the strips inside and outside of each other."
+          },
+          {
+            "number": 4,
+            "description": "Cut out a handle and glue it inside the hearts."
+          }
+        ]
+      },
+      "lignendeKurver": {
+        "title": "Similar baskets"
+      }
+    },
+    "frontpage": {
+      "aboutKurverSection": {
+        "title": "Passion for Heart Baskets",
+        "paragraph1": "This website was created to gather and share knowledge about heart baskets, a tradition that combines craftsmanship and creativity. Handmade heart baskets can be both decorative and functional, representing a personal way to create and share something special.",
+        "paragraph2": "At hjertekurver.no, you’ll find inspiration, detailed guides, and a comprehensive gallery of various baskets. Our goal is to make it easy for everyone, regardless of experience, to learn and explore this form of paper crafting while offering the largest collection of heart baskets.",
+        "learnMoreAboutUsButtonLabel": "Learn more about us",
+        "imageAltText": "Logo av flettet hjertekurv"
+      },
+      "viewHjertekurvSection": {
+        "title": "View Our Baskets",
+        "paragraph1": "Get inspired by our extensive collection of heart baskets! We have gathered a wide range of designs - from classic heart baskets to creative and modern patterns.",
+        "paragraph2": "Each basket includes:",
+        "listItems": [
+          "A photo of the finished result",
+          "Templates and instructions to create your own",
+          "Information about the design"
+        ],
+        "buttonLabel": "See all baskets"
+      },
+      "lagHjertekurvSection": {
+        "title": "Make a Heart Basket",
+        "step1": "Find paper in your favorite colors. Choose classic Christmas colors like red and white, or try something new with patterns and glitter.",
+        "step2": "Download a template or draw your own. Cut carefully to get smooth edges and a symmetrical design.",
+        "step3": "Start weaving by threading the strips into each other. Work slowly to achieve an even and tight pattern.",
+        "buttonLabel": "Learn to make a basket"
+      },
+      "contactUsSection": {
+        "title": "Contact Us",
+        "introParagraph": "Your interest means a lot to us, and we greatly value feedback. Do you have questions, suggestions, or want to share your own heart basket creations? We’d love to hear from you! Visit our {link}-page to get in touch.",
+        "introLinkText": "contact us",
+        "feedbackPrompt": "If you’d like to send quick, anonymous feedback, you can do so in the box below. Enter what you’d like to share, and click 'Submit Feedback' - we review all contributions as soon as possible.",
+        "thankYouMessage": "Thank you for your feedback!",
+        "textareaLabel": "Leave feedback",
+        "textareaPlaceholder": "Enter feedback...",
+        "errorMessage": "You must enter content to send feedback",
+        "buttonLabel": "Submit Feedback",
+        "imageAltText": "logo of a woven heart basket"
+      },
+      "inspirationSection": {
+        "title": "Get Inspired"
+      }
+    },
+    "contactSection": {
+      "heading": "Send direct feedback",
+      "paragraph": "If you wish to send a quick, anonymous feedback, you can do so below. Enter feedback in the box below and click 'Send feedback', and we will review it as soon as possible.",
+      "thankYouMessage": "Thank you for your feedback!",
+      "textareaLabel": "Leave feedback",
+      "textareaPlaceholder": "Enter feedback...",
+      "errorMessage": "You must provide content to submit feedback",
+      "buttonLabel": "Submit feedback"
+    },
+    "searchPage": {
+      "heading": "Search",
+      "paragraph": "Here you can search through all content on pleatedhearts.com. If you want to search for pleated hearts, we recommend doing so through our dedicated search page for hearts.",
+      "searchPlaceholder": "Search",
+      "searchResultsText": "{hits} results for '{query}'",
+      "noResultsText": "0 results for {query}.",
+      "noResultsMessage": "Change the search terms to see more results.",
+      "linkText": "pleated hearts"
+    },
+    "hjertekurverKartotekPage": {
+      "seo": {
+        "title": "Explore the Heart Basket Collection | Templates, Images, and Inspiration",
+        "description": "Browse our complete collection of heart baskets/Christmas baskets with templates and images. Use search and filtering to find the perfect basket for your next project."
+      },
+      "heading": "Search among hearts",
+      "paragraph": {
+        "intro": "Browse our complete collection of pleated hearts with templates and images. Use search and filters to find the perfect basket for your next project. You can filter by",
+        "outro": "to find a basket that suits your skills."
+      },
+      "difficultyPopover": {
+        "title": "Difficulty Level",
+        "description": "The difficulty level of a pleated heart is determined by two factors:",
+        "weaving": "Weaving:",
+        "weavingDetails": "Evaluates how challenging the weaving process itself is, indicated by a heart icon:",
+        "weavingDetails2": "This can include the number of strips, the thickness of the strips, and variation in the weaving pattern, all of which can make the process more complex.",
+        "cutting": "Cutting:",
+        "cuttingDetails": "Indicates how challenging it is to cut out the basket before weaving starts, and is marked with a scissor icon.",
+        "cuttingDetails2": "Some baskets have detailed patterns that require precision and accuracy during cutting.",
+        "difficulty": "difficulty level"
+      },
+      "search": {
+        "placeholder": "Search for hearts",
+        "resultsCount": "Number of results: ",
+        "noResults": "No results found for search/filter"
+      },
+      "filters": {
+        "filterButtonLabel": "Filter by",
+        "alphabetic": {
+          "label": "Alphabetical",
+          "description": "Sort pleated hearts in alphabetical order."
+        },
+        "recentlyCreated": {
+          "label": "Recently Added",
+          "description": "Show the newest pleated hearts added."
+        },
+        "lowestDifficultyFletting": {
+          "label": "Weaving - Easy",
+          "description": "Filter by baskets with the lowest difficulty level for weaving."
+        },
+        "highestDifficultyFletting": {
+          "label": "Weaving - Difficult",
+          "description": "Filter by baskets with the highest difficulty level for weaving."
+        },
+        "lowestDifficultyKlipping": {
+          "label": "Cutting - Easy",
+          "description": "Filter by baskets with the lowest difficulty level for cutting."
+        },
+        "highestDifficultyKlipping": {
+          "label": "Cutting - Difficult",
+          "description": "Filter by baskets with the highest difficulty level for cutting."
+        },
+        "popularity": {
+          "label": "Popularity",
+          "description": "How popular the basket is (number of times the basket's page has been visited)"
+        }
+      }
+    },
+    "howToCreateHjertekurvPage": {
+      "seo": {
+        "title": "Learn to Make Heart Baskets | Step-by-Step Guide and Templates",
+        "description": "Weave your own heart baskets with our simple step-by-step guide. Download free templates, view images, and find tips for creating beautiful Christmas baskets."
+      },
+      "title": "How to Make Heart Baskets",
+      "ingress": "Making heart baskets requires a few simple materials and follows a relatively straightforward process. You'll need paper in your desired colors, a template to ensure the correct shape, and scissors for cutting. Then, the pieces are woven together to create the finished basket. Follow the steps below for an overview of how to make a heart basket.",
+      "WhatYouNeedSection": {
+        "title": "What You Need",
+        "ingress": "To get started on making heart baskets, you'll only need a few simple materials, which you probably already have at home. Here's what you need:",
+        "whatYouNeedList": [
+          "Glossy paper (or other desired paper)",
+          "Scissors",
+          "Glue stick (for attaching the handle)",
+          "Wax paper/cardboard/carbon paper"
+        ]
+      },
+      "HjertekurvMalSection": {
+        "title": "The Template is Important",
+        "ingress1": "Before you start weaving, you need to choose a template. On our website, you’ll find a large selection {link}, including a simple ",
+        "ingress1LinkText": "templates",
+        "ingress2": "{link} that we recommend for beginners or as a quick refresher.",
+        "ingress2LinkText": "9-stripe basket",
+        "ingress3": "This is also used in the weaving example {link} below.",
+        "ingress3LinkText": "example",
+        "paragraph2": "The template is essential for creating a successful heart basket. It ensures the basket has the right shape and that the strips fit together precisely during weaving. Without an accurate template, it can be challenging to achieve a symmetrical and even result, especially for baskets with complex designs.",
+        "paragraph3": "The size of the template depends on its use. Smaller baskets are great as decorations or small gifts, while larger baskets can hold more and be used as decorative elements. For standard baskets, you can start with a square of <b>8x8 cm</b> and adjust as needed.",
+        "paragraph3_2": "Remember to add a {flettetilleggPopover} to avoid the basket being too tight during weaving."
+      },
+      "ClipHjertekurvSection": {
+        "title": "Cut Out the Basket",
+        "ingress": "Choose two different colors of paper for your basket. Cut out two rectangles approximately 10 x 26 cm in each color. If you want to add a handle, you can adjust the size by making one of the rectangles slightly wider, for example, 12 x 26 cm.",
+        "steps": [
+          {
+            "number": 1,
+            "altText": "Two folded papers with marked fold line",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/clipKurv/to_papir_med_markert_brettekant.svg",
+            "description": "Choose two different colors of paper for your basket. Cut out two rectangles approximately 10 x 26 cm in each color. If you want to add a handle, you can adjust the size by making one of the rectangles slightly wider, for example, 12 x 26 cm."
+          },
+          {
+            "number": 2,
+            "altText": "Two folded papers with marked fold line",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/clipKurv/to_brettet_papir.svg",
+            "description": "Fold each rectangle in half along the short side, as indicated with a dashed line on the template in step 1. Make sure the colored side faces outward when you fold."
+          },
+          {
+            "number": 3,
+            "altText": "Two folded papers with marked fold line",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/clipKurv/to_papir_med_opptegnet_mal.svg",
+            "description": "Remember to draw the basket handle. It can be as tall as the basket itself. Also, make sure the bottom of the template is along the folded side of the paper."
+          },
+          {
+            "number": 4,
+            "altText": "Two folded papers with marked fold line",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/clipKurv/to_papir_med_saks_som_klipper.svg",
+            "description": "Cut out both pieces along the drawn lines. To save time and ensure both basket pieces are exactly the same, you can place the papers inside each other and cut them simultaneously. This is only possible if the basket has..."
+          },
+          {
+            "number": 5,
+            "altText": "Two folded papers with marked fold line",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/clipKurv/to_oppklippede_ferdige_kurver_med_hank.svg",
+            "description": "When finished, you should have two basket pieces in different colors, both with a closed bottom, and a handle in the desired color. Now you're ready for weaving!"
+          }
+        ],
+        "step3ListIntro": "Trace the pattern from your chosen template onto your basket. This can be done in several ways:",
+        "step3ListSteps": ["Carbon paper", "Wax paper", "Paper and pencil"]
+      },
+      "fletteHjertekurvSection": {
+        "title": "Weave the Basket",
+        "ingress": "This section shows you how to weave the basket after cutting out and preparing the pieces. There are various ways to assemble a heart basket, but here we present a simple and effective method you can follow.",
+        "step1": {
+          "popoverContent": "A strip is one of the cut-out parts of a heart basket used to weave the basket together. In this example, each piece (red and white) has three strips each (marked A, B, and C for the white basket and 1, 2, and 3 for the red basket).",
+          "popoverText": "strips",
+          "popoverTitle": "Strip"
+        },
+        "steps": [
+          {
+            "number": 1,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/1.svg",
+            "description": "Take out the two cut-out parts of the basket. To make the instructions clear, we have labeled {popover} on the white basket with the letters A, B, and C, and on the red basket with the numbers 1, 2, and 3."
+          },
+          {
+            "number": 1,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/1_b.svg",
+            "description": "Place the red basket on top of the white one so that the semicircle of the white basket is closest to you. This provides a good starting position for weaving."
+          },
+          {
+            "number": 2,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/2.svg",
+            "description": "Place the white C-strip on top of the red basket. Ensure that the white C-strip covers the entire red 1-strip. If the C-strip does not span the entire red strip, the basket may become too tight, leaving insufficient space to complete the weaving. To avoid this, you can add extra length to the strips by cutting them slightly longer."
+          },
+          {
+            "number": 3,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/3.svg",
+            "description": "Start with the white C-strip. Open the red strip 3 and pull the white C-strip through it."
+          },
+          {
+            "number": 4,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/4.svg",
+            "description": "Continue by opening the white C-strip and pulling the red 2-strip through it."
+          },
+          {
+            "number": 5,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/5.svg",
+            "description": "The final step for the white C-strip is to pull it through the red strip 1."
+          },
+          {
+            "number": 6,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/6.svg",
+            "description": "Now move on to the white B-strip. Place it on top of the red strips in a starting position, as you did with the white C-strip earlier. In the next steps, we will repeat the process from steps 3-5, but in reverse order."
+          },
+          {
+            "number": 7,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/7.svg",
+            "description": "Start with the white B-strip. Open the white C-strip and pull the red strip 3 through it."
+          },
+          {
+            "number": 8,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/8.svg",
+            "description": "Continue by pulling the white B-strip through the red strip 2, and finally, pull the red strip 1 through the white B-strip. When you finish with the white B-strip, you should have two colors according to the pattern shown in the image."
+          },
+          {
+            "number": 9,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/9.svg",
+            "description": "Complete the weaving with the white A-strip. Before you begin, it may be helpful to tighten the basket slightly by pulling the white B- and C-strips as far toward the red semicircle as possible. This will give you more space when weaving in the white A-strip. If it is difficult to weave the C-strip due to tight space, it might indicate that the basket was cut slightly incorrectly or that {popover} is too small."
+          },
+          {
+            "number": 10,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/10.svg",
+            "description": "Apply a small amount of glue to the bottom of the handle (on the open side) and place the handle inside the heart basket."
+          },
+          {
+            "number": 11,
+            "altText": "Two folded papers with a crease",
+            "illustrationSrc": "/images/pages/createHjertekurvPage/createKurv/11.svg",
+            "description": "Let the glue dry completely and carefully open the basket from the inside to ensure that the handles are not stuck together. Also, be careful not to let glue seep outside the handle, as this could glue the basket shut and prevent it from opening. Congratulations, you have made a heart basket!"
+          }
+        ]
+      }
+    },
+    "howToMalToPaper": {
+      "title": "How to Transfer the Template to Paper",
+      "ingress": "To create an accurate heart basket, it’s important to correctly transfer the template to the paper you’ll be using. There are several methods to do this, and here we focus on a simple and effective technique using wax paper. This method makes it easy to transfer the template precisely, so you can start cutting and weaving without any issues.",
+      "seo": {
+        "title": "Learn to Make Heart Baskets | How to Transfer the Template to Paper",
+        "description": "Learn how to transfer your heart basket/Christmas basket template to paper so you can cut it out."
+      },
+      "howToMalTilMatpapirSection": {
+        "title": "Transfer the Template with Wax Paper",
+        "ingress": "The wax paper method is a simple way to transfer the template to your paper without needing special equipment. By using wax paper as an intermediary, you can easily transfer the design with precision, ensuring you have an accurate template for cutting. Here are the steps to follow using this method.",
+        "steps": [
+          {
+            "altText": "Two folded papers with creases",
+            "description": "Print the template in the desired size on paper. Ensure the template matches the size you want for the basket, whether large or small."
+          },
+          {
+            "altText": "Two folded papers with creases",
+            "description": "Prepare wax paper that is appropriately sized for the template. The wax paper should be large enough to cover the template, so you can transfer the design accurately. Trim the wax paper to the desired size if necessary."
+          },
+          {
+            "altText": "Two folded papers with creases",
+            "description": "Place the wax paper on top of the printed template. Make sure it lies flat and without creases, so the transfer is as precise as possible. It's important that the wax paper does not shift during the process."
+          },
+          {
+            "altText": "Two folded papers with creases",
+            "description": "Now you should have the template on the wax paper. To transfer the design, make sure the lines you drew on the wax paper face down onto the glossy paper (in the next step)."
+          },
+          {
+            "altText": "Two folded papers with creases",
+            "description": "Place the wax paper with the design on top of the desired glossy paper. Use a pencil to trace over the design, allowing the graphite on the underside to transfer to the glossy paper. This ensures an accurate copy of the template that you can use to cut out the basket."
+          },
+          {
+            "altText": "Two folded papers with creases",
+            "description": "Once you’ve traced the entire design, carefully remove the wax paper. You now have an exact transfer of the template onto the glossy paper, ready to cut out and use to create the basket. For the rest of the instructions, click "
+          }
+        ],
+        "step5LinkText": "here"
+      }
+    }
+  }
 }

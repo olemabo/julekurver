@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
-import { getDictionary, getValuesByKeys } from "../../localization/dictionaries";
+import { getDictionary } from "../../localization/dictionaries";
 import LanguageProvider, { LangParams } from "@/providers";
 import {
   alegreya,

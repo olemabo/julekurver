@@ -10,7 +10,8 @@ export async function generateMetadata({ params }: { params: LangParams }) {
 
   const dictionary = await getDictionary(lang);
   const title = dictionary.pages.howToCreateHjertekurvPage.seo.title;
-  const description = dictionary.pages.howToCreateHjertekurvPage.seo.description;
+  const description =
+    dictionary.pages.howToCreateHjertekurvPage.seo.description;
 
   return {
     title: title,

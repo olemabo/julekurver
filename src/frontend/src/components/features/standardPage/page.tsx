@@ -13,8 +13,11 @@ export type StandardPageProps = {
   pageContent: PageContent | null;
 } & Locale;
 
-export default async function StandardPage({ pageContent, lang }: StandardPageProps) {
-  const dictionary = await getDictionary(lang)
+export default async function StandardPage({
+  pageContent,
+  lang,
+}: StandardPageProps) {
+  const dictionary = await getDictionary(lang);
 
   if (!pageContent || !pageContent?.content) {
     return null;

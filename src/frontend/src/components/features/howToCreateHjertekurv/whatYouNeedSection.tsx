@@ -2,8 +2,8 @@
 
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Heading from "@/components/shared/ui/heading/heading";
-import { HeadingIdProps } from "./howToCreateHjertekurv";
 import { useWhatYouNeedSection } from "./useTexts";
+import { HeadingIdProps } from "./constants";
 
 export default function WhatYouNeedSection({ headingId }: HeadingIdProps) {
   const { title, ingress, whatYouNeedList } = useWhatYouNeedSection();

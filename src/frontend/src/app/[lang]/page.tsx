@@ -7,6 +7,6 @@ export type FrontpageParams = LangParams;
 
 export default async function Home({ params }: { params: FrontpageParams }) {
   const { lang } = await params;
-  
+
   return <FrontPage lang={lang} />;
 }
