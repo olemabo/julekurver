@@ -1,6 +1,5 @@
 "use client";
 
-import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
 import { useRef, useState } from "react";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import HjertekurvCollectionCard from "./collectionCard/hjertekurvCollectionCard";
@@ -13,6 +12,7 @@ import { filterAndSortHjertekurver, HjertekurvFilterType } from "./sort";
 import CategoryFilterToggle from "./categories/categories";
 import { useSearchAndFilterTexts } from "../useTexts";
 import { Locale } from "@/providers";
+import { Hjertekurv } from "@/types/hjertekurv";
 
 export const defaultPaginationOptions = [
   { label: "12", value: 12 },

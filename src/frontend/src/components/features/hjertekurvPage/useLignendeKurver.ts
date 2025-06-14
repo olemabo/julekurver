@@ -1,6 +1,6 @@
-import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
-import { createBackendUrl } from "@/utils/backendApiUrl";
+import { Hjertekurv } from "@/types/hjertekurv";
 import { useState, useEffect } from "react";
+import { getRelatedHjertekurvData } from "./api";
 
 const useLignendeHjertekurver = (hjertekurvName: string, lang: string) => {
   const [data, setData] = useState<Hjertekurv[] | null>(null);
@@ -8,19 +8,10 @@ const useLignendeHjertekurver = (hjertekurvName: string, lang: string) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    const apiBaseUrl = createBackendUrl();
-
     const fetchHjertekurver = async () => {
       setLoading(true);
       try {
-        const response = await fetch(
-          `${apiBaseUrl}/api/related-hjertekurver-api/?hjertekurvName=${hjertekurvName}&lang=${lang}`,
-          {
-            next: {
-              revalidate: 3600,
-            },
-          },
-        );
+        const response = await getRelatedHjertekurvData(hjertekurvName, lang);
 
         const pageContent: Hjertekurv[] = await response.json();
 
@@ -28,12 +19,7 @@ const useLignendeHjertekurver = (hjertekurvName: string, lang: string) => {
           setError(pageContent.toString());
         }
 
-        const parsedContent =
-          typeof pageContent === "string"
-            ? JSON.parse(pageContent)
-            : pageContent;
-
-        setData(parsedContent);
+        setData(pageContent);
       } catch {
         setError("Failed to fetch data");
       } finally {

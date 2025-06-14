@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "@/components/shared/ui/link/link";
 import { InstagramIcon } from "@/components/shared/ui/icons/icons";
-import { createBackendUrl } from "@/utils/backendApiUrl";
+import { createBackendUrl } from "@/lib/api/backendApiUrl";
 import "./inspirationSection.scss";
 import { Suspense } from "react";
 import { InspirationTitle } from "../useTexts";

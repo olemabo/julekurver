@@ -2,25 +2,15 @@
 
 import HowToMalToPaper from "@/components/features/howToCreateHjertekurv/HowToMalToPaper";
 import { LangParams } from "@/providers";
-import { getDictionary, getValuesByKeys } from "../../dictionaries";
+import { getDictionary } from "../../../../localization/dictionaries";
 import { BASE_URL, URLs } from "@/constants/urls";
 
 export async function generateMetadata({ params }: { params: LangParams }) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
-  const title = getValuesByKeys(dictionary, [
-    "pages",
-    "howToMalToPaper",
-    "seo",
-    "title",
-  ]);
-  const description = getValuesByKeys(dictionary, [
-    "pages",
-    "howToMalToPaper",
-    "seo",
-    "description",
-  ]);
+  const title = dictionary.pages.howToMalToPaper.seo.title;
+  const description = dictionary.pages.howToMalToPaper.seo.description;
 
   return {
     title: title,

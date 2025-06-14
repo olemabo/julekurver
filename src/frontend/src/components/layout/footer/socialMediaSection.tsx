@@ -2,7 +2,7 @@ import Heading from "@/components/shared/ui/heading/heading";
 import Link from "@/components/shared/ui/link/link";
 import { use } from "react";
 import { LanguageContext } from "@/providers";
-import { getValuesByKeys } from "@/app/[lang]/dictionaries";
+import { getValuesByKeys } from "@/localization/dictionaries";
 import {
   InstagramIcon,
   PinterestIcon,

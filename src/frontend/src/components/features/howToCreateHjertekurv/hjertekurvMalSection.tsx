@@ -1,15 +1,14 @@
+"use client";
+
 import Heading from "@/components/shared/ui/heading/heading";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
-import {
-  fletteHjertekurvHeadingId,
-  HeadingIdProps,
-} from "./howToCreateHjertekurv";
 import Link from "next/link";
 import FlettetilleggPopover from "@/components/shared/content/popover/FlettetilleggPopover";
 import { useHjertekurvMalSection } from "./useTexts";
 import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
 import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
+import { fletteHjertekurvHeadingId, HeadingIdProps } from "./constants";
 
 export function HjertekurvMalSection({
   headingId,

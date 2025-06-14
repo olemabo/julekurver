@@ -1,25 +1,6 @@
-import { getValuesByKeys } from "@/app/[lang]/dictionaries";
+import { getValuesByKeys } from "@/localization/dictionaries";
 import { LanguageContext } from "@/providers";
 import { use, useContext } from "react";
-
-export function useBreadcrumbTexts() {
-  const { dictionary } = useContext(LanguageContext);
-
-  const breadcrumbHome = getValuesByKeys(dictionary, [
-    "breadcrumb",
-    "frontpage",
-  ]);
-
-  const breadcrumbHeartBaskets = getValuesByKeys(dictionary, [
-    "breadcrumb",
-    "hjertekurver",
-  ]);
-
-  return {
-    breadcrumbHome,
-    breadcrumbHeartBaskets,
-  };
-}
 
 export function useKurvMalTexts() {
   const { dictionary } = use(LanguageContext);

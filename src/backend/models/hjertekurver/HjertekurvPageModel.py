@@ -38,7 +38,7 @@ class HjertekurvPageModel:
             'url': self.url,
             'difficultyFletting': self.difficultyFletting,
             'difficultyKlipping': self.difficultyKlipping,
-            'createdAt': self.createdAt,
+            'createdAt': self.createdAt.isoformat() if self.createdAt else None,
             'categories': self.categories,
             'popularity': self.popularity
         }

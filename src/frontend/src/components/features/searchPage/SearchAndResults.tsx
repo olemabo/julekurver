@@ -1,6 +1,6 @@
 "use client";
 
-import { createBackendUrl } from "@/utils/backendApiUrl";
+import { createBackendUrl } from "@/lib/api/backendApiUrl";
 import { useCallback, useEffect, useState } from "react";
 import Search from "@/components/shared/ui/search/search";
 import { useRouter } from "next/navigation";

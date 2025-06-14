@@ -1,4 +1,4 @@
-import { getValuesByKeys } from "@/app/[lang]/dictionaries";
+import { getValuesByKeys } from "@/localization/dictionaries";
 import { LanguageContext } from "@/providers";
 import { use } from "react";
 

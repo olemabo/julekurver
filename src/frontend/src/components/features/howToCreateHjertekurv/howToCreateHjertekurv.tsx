@@ -1,4 +1,4 @@
-"use client";
+"use server";
 
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
@@ -10,21 +10,21 @@ import FletteHjertekurvSection from "./fletteHjertekurvSection";
 import WhatYouNeedSection from "./whatYouNeedSection";
 import NavigateToH2 from "@/components/shared/ui/navigateToId/navigateToH2";
 import { HjertekurvMalSection } from "./hjertekurvMalSection";
-import { useHowToCreateHjertekurvIntro } from "./useTexts";
 import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
+import { getDictionary } from "@/localization/dictionaries";
+import {
+  clipHjertekurvHeadingId,
+  fletteHjertekurvHeadingId,
+  hjertekurvMalHeadingId,
+  whatYouNeedHeadingId,
+} from "./constants";
 
-export const whatYouNeedHeadingId = "what-you-need-heading-id";
-export const hjertekurvMalHeadingId = "hjertekurv-mal-heading-id";
-export const clipHjertekurvHeadingId = "clip-hjertekurv-heading-id";
-export const fletteHjertekurvHeadingId = "flette-hjertekurv-heading-id";
-
-export type HeadingIdProps = {
-  headingId: string;
-};
-
-export default function HowToCreateHjertekurv({ lang }: Locale) {
-  const { title, ingress, breadcrumbs } = useHowToCreateHjertekurvIntro();
+export default async function HowToCreateHjertekurv({ lang }: Locale) {
+  const dictionary = await getDictionary(lang);
+  const title = dictionary.pages.howToCreateHjertekurvPage.title;
+  const ingress = dictionary.pages.howToCreateHjertekurvPage.ingress;
+  const breadcrumbs = dictionary.breadcrumb;
 
   const breadCrumbs = [
     { linkText: breadcrumbs.frontpage, href: `/${lang}` },

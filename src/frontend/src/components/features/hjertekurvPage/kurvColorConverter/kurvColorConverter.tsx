@@ -4,7 +4,7 @@ import { use, useEffect, useRef, useState } from "react";
 
 import "./kurvColorConverter.scss";
 import { LanguageContext } from "@/providers";
-import { getValuesByKeys } from "@/app/[lang]/dictionaries";
+import { getValuesByKeys } from "@/localization/dictionaries";
 import useSvgContent from "./useSvgContent";
 
 type KurvConverterProps = {

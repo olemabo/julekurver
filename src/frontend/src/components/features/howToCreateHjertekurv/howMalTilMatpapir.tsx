@@ -1,3 +1,5 @@
+"use client";
+
 import ListWithIllustraion, {
   OrderedListWithIllustrationWrapper,
 } from "./listWithIllustration";

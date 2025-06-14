@@ -1,14 +1,16 @@
+"use client";
+
 import ListWithIllustraion, {
   OrderedListWithIllustrationWrapper,
 } from "./listWithIllustration";
 import Heading from "@/components/shared/ui/heading/heading";
-import { HeadingIdProps } from "./howToCreateHjertekurv";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Link from "next/link";
 import SymmetriskMotivPopover from "@/components/shared/content/popover/SymmetriskMotivPopover";
 import { useClipHjertekurvSection } from "./useTexts";
 import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
+import { HeadingIdProps } from "./constants";
 
 export default function ClipHjertekurvSection({
   headingId,

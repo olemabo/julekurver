@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
-import { createApiMediaUrl } from "@/utils/backendApiUrl";
+import { createApiMediaUrl } from "@/lib/api/backendApiUrl";
 import DisplayHjertekurvSvgWithColors from "@/components/shared/images/displayHjertekurvSvgWithColors";
 import "./hjertekurvCarousel.scss";
 import Link from "next/link";
 import { URLs } from "@/constants/urls";
+import { Hjertekurv } from "@/types/hjertekurv";
 
 type HjertekurvProps = {
   kurver: Hjertekurv[];

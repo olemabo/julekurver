@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { use } from "react";
 import { LanguageContext } from "@/providers";
-import { getValuesByKeys } from "@/app/[lang]/dictionaries";
+import { getValuesByKeys } from "@/localization/dictionaries";
 import { URLs } from "@/constants/urls";
 
 type LinkListSectionProps = {

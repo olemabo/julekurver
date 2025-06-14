@@ -1,6 +1,5 @@
-"use client";
+"use server";
 
-import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
 import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
 import LignendeKurver from "./lignendeKurver";
 import HvordanLageKurver from "./hvordanLageKurver";
@@ -9,14 +8,15 @@ import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import AboutHjertekurvSection from "./aboutHjertekurvSection";
 import "./hjertekurv.scss";
 import { Locale } from "@/providers";
-import { useBreadcrumbTexts } from "./useTexts";
 import { URLs } from "@/constants/urls";
+import { Hjertekurv } from "@/types/hjertekurv";
+import { getDictionary } from "@/localization/dictionaries";
 
 export type HjertekurvPageProps = {
   hjertekurv: Hjertekurv;
 } & Locale;
 
-export default function HjertekurvPage({
+export default async function HjertekurvPage({
   hjertekurv,
   lang,
 }: HjertekurvPageProps) {
@@ -28,7 +28,9 @@ export default function HjertekurvPage({
     downloadMal,
   } = hjertekurv;
 
-  const { breadcrumbHome, breadcrumbHeartBaskets } = useBreadcrumbTexts();
+  const dictionary = await getDictionary(lang);
+  const breadcrumbHome = dictionary.breadcrumb.frontpage;
+  const breadcrumbHeartBaskets = dictionary.breadcrumb.hjertekurver;
 
   if (!hjertekurv) {
     return null;
@@ -43,7 +45,7 @@ export default function HjertekurvPage({
   return (
     <PageWrapper className="hjertekurv-page">
       <Breadcrumb linkItems={breadCrumbLinks} />
-      <AboutHjertekurvSection hjertekurv={hjertekurv} />
+      <AboutHjertekurvSection hjertekurv={hjertekurv} lang={lang} />
       <KurvMal
         mal1Url={imageHjertekurvMalUrl}
         mal2Url={imageHjertekurvMal2Url}

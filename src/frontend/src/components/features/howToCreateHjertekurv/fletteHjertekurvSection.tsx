@@ -1,13 +1,15 @@
+"use client";
+
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import ListWithIllustraion, {
   OrderedListWithIllustrationWrapper,
 } from "./listWithIllustration";
 import Heading from "@/components/shared/ui/heading/heading";
-import { HeadingIdProps } from "./howToCreateHjertekurv";
 import Popover from "@/components/shared/ui/popover/popover";
 import FlettetilleggPopover from "@/components/shared/content/popover/FlettetilleggPopover";
 import { useFletteHjertekurvSection } from "./useTexts";
 import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
+import { HeadingIdProps } from "./constants";
 
 export default function FletteHjertekurvSection({ headingId }: HeadingIdProps) {
   const { title, ingress, steps, step1Popover } = useFletteHjertekurvSection();

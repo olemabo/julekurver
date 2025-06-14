@@ -4,7 +4,22 @@ import LANGUAGES from "./constants/languages";
 const locales = [LANGUAGES.NORWEGIAN, LANGUAGES.ENGLISH];
 const defaultLocale = LANGUAGES.NORWEGIAN;
 
-function getLocale() {
+function getLocale(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+  const pathnameLocale = locales.find(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+  );
+  if (pathnameLocale) return pathnameLocale;
+
+  // Check Accept-Language header
+  const acceptLanguage = request.headers.get("Accept-Language");
+  if (acceptLanguage) {
+    const preferredLocale = locales.find((locale) =>
+      acceptLanguage.includes(locale),
+    );
+    if (preferredLocale) return preferredLocale;
+  }
+
   return defaultLocale;
 }
 
@@ -21,11 +36,9 @@ export default function localeMiddleware(request: NextRequest) {
 
   if (pathnameHasLocale) return;
 
-  const locale = getLocale();
+  const locale = getLocale(request);
   request.nextUrl.pathname = `/${locale}${pathname}`;
   return NextResponse.redirect(request.nextUrl);
-
-  return NextResponse.next();
 }
 
 export const localeConfig = {

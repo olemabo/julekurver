@@ -1,11 +1,10 @@
 "use server";
 
-import { fetchWith404Check } from "@/api/fetchWrapper";
-import { Category } from "@/components/features/hjertekurvCollectionPage/useCategories";
 import HjertekurvPage from "@/components/features/hjertekurvPage/hjertekurvPage";
-import { createApiMediaUrl, createBackendUrl } from "@/utils/backendApiUrl";
+import { createApiMediaUrl } from "@/lib/api/backendApiUrl";
 import { HjertekurvParams } from "../page";
 import { BASE_URL } from "@/constants/urls";
+import { getHjertekurvData } from "@/components/features/hjertekurvPage/api";
 
 export async function generateMetadata({
   params,
@@ -13,62 +12,31 @@ export async function generateMetadata({
   params: HjertekurvParams;
 }) {
   const { hjertekurv, lang } = await params;
-  const apiBaseUrl = createBackendUrl();
 
-  const pageContent = await fetchWith404Check<Hjertekurv>(
-    `${apiBaseUrl}/api/hjertekurv-page-api/?hjertekurvName=${hjertekurv}`,
-    {
-      next: {
-        revalidate: 3600,
-      },
-    },
-  );
+  const content = await getHjertekurvData(hjertekurv, lang);
+  const image = createApiMediaUrl(content?.imageHjertekurvUrl);
 
   return {
-    title: pageContent?.name + " hjertekurv/julekurv med mal",
-    description: pageContent?.about,
+    title: content?.name + " hjertekurv/julekurv med mal",
+    description: content?.about,
     openGraph: {
-      title: pageContent?.name,
-      url: `${BASE_URL}/${lang}/${pageContent?.url}`,
-      image: createApiMediaUrl(pageContent?.imageHjertekurvUrl),
+      title: content?.name,
+      url: `${BASE_URL}/${lang}/${content?.url}`,
+      image: image,
     },
     twitter: {
       card: "summary_large_image",
-      title: pageContent?.name,
-      description: pageContent?.about,
-      image: createApiMediaUrl(pageContent?.imageHjertekurvUrl),
+      title: content?.name,
+      description: content?.about,
+      image: image,
     },
   };
 }
 
-export type Hjertekurv = {
-  name: string;
-  about: string;
-  imageHjertekurvUrl: string;
-  url: string;
-  imageHjertekurvMalUrl?: string;
-  imageHjertekurvMal2Url?: string;
-  difficultyKlipping: number;
-  difficultyFletting: number;
-  downloadMal?: string;
-  categories?: Category[];
-  createdAt: Date;
-  popularity: number;
-};
-
 export default async function Page({ params }: { params: HjertekurvParams }) {
   const { hjertekurv, lang } = await params;
 
-  const apiBaseUrl = createBackendUrl();
+  const content = await getHjertekurvData(hjertekurv, lang);
 
-  const pageContent = await fetchWith404Check<Hjertekurv>(
-    `${apiBaseUrl}/api/hjertekurv-page-api/?hjertekurvName=${hjertekurv}&lang=${lang}`,
-    {
-      next: {
-        revalidate: 3600,
-      },
-    },
-  );
-
-  return <HjertekurvPage lang={lang} hjertekurv={pageContent} />;
+  return <HjertekurvPage lang={lang} hjertekurv={content} />;
 }

@@ -1,39 +1,6 @@
-import { getValuesByKeys } from "@/app/[lang]/dictionaries";
+import { getValuesByKeys } from "@/localization/dictionaries";
 import { LanguageContext } from "@/providers";
 import { use } from "react";
-
-export function useHowToCreateHjertekurvIntro() {
-  const { dictionary } = use(LanguageContext);
-
-  const title = getValuesByKeys(dictionary, [
-    "pages",
-    "howToCreateHjertekurvPage",
-    "title",
-  ]);
-  const ingress = getValuesByKeys(dictionary, [
-    "pages",
-    "howToCreateHjertekurvPage",
-    "ingress",
-  ]);
-
-  const breadcrumbFrontPage = getValuesByKeys(dictionary, [
-    "breadcrumb",
-    "frontpage",
-  ]);
-  const breadcrumbHowToCreateHjertekurvPage = getValuesByKeys(dictionary, [
-    "breadcrumb",
-    "howToCreateHjertekurvPage",
-  ]);
-
-  return {
-    title,
-    ingress,
-    breadcrumbs: {
-      frontpage: breadcrumbFrontPage,
-      howToCreateHjertekurvPage: breadcrumbHowToCreateHjertekurvPage,
-    },
-  };
-}
 
 export function useWhatYouNeedSection() {
   const { dictionary } = use(LanguageContext);
@@ -262,44 +229,6 @@ export function useFletteHjertekurvSection() {
       content: step1PopoverContent,
       text: step1PopoverText,
       title: step1popoverTitle,
-    },
-  };
-}
-
-export function useHowToMalToPaper() {
-  const { dictionary } = use(LanguageContext);
-
-  const title = getValuesByKeys(dictionary, [
-    "pages",
-    "howToMalToPaper",
-    "title",
-  ]);
-  const ingress = getValuesByKeys(dictionary, [
-    "pages",
-    "howToMalToPaper",
-    "ingress",
-  ]);
-
-  const breadcrumbFrontPage = getValuesByKeys(dictionary, [
-    "breadcrumb",
-    "frontpage",
-  ]);
-  const breadcrumbHowToCreateHjertekurvPage = getValuesByKeys(dictionary, [
-    "breadcrumb",
-    "howToCreateHjertekurvPage",
-  ]);
-  const breadcrumbHowToMalToPaper = getValuesByKeys(dictionary, [
-    "breadcrumb",
-    "howToMalToPaper",
-  ]);
-
-  return {
-    title,
-    ingress,
-    breadcrumb: {
-      frontpage: breadcrumbFrontPage,
-      howToCreateHjertekurvPage: breadcrumbHowToCreateHjertekurvPage,
-      howToMalToPaper: breadcrumbHowToMalToPaper,
     },
   };
 }

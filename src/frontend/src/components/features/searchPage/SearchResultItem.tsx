@@ -1,10 +1,10 @@
-import { createApiMediaUrl } from "@/utils/backendApiUrl";
-import { PageType, SearchHits } from "./searchPage";
+import { createApiMediaUrl } from "@/lib/api/backendApiUrl";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Heading from "@/components/shared/ui/heading/heading";
 import Link from "next/link";
 import Image from "next/image";
 import "./searchResultItem.scss";
+import { PageType, SearchHits } from "./types";
 
 type SearchResultItemProps = {
   hit: SearchHits;

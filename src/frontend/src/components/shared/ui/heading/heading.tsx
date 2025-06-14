@@ -2,7 +2,13 @@ import { darkTheme, DisplayTheme } from "@/constants/displayTheme";
 import React from "react";
 import "./heading.scss";
 
-type HeadingLevel = "h1" | "h2" | "h3";
+export const HeadingLevel = {
+  H1: "h1",
+  H2: "h2",
+  H3: "h3",
+} as const;
+
+export type HeadingLevel = (typeof HeadingLevel)[keyof typeof HeadingLevel];
 
 type HeadingProps = React.HTMLAttributes<HTMLDivElement> & {
   headingLevel: HeadingLevel;

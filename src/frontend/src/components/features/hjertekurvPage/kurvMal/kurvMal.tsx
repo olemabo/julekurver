@@ -1,6 +1,6 @@
 "use client";
 
-import { createApiMediaUrl } from "@/utils/backendApiUrl";
+import { createApiMediaUrl } from "@/lib/api/backendApiUrl";
 import Heading from "@/components/shared/ui/heading/heading";
 import Button from "@/components/shared/ui/button/button";
 import { useState } from "react";

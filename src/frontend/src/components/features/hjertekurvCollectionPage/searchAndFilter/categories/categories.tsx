@@ -1,7 +1,7 @@
-import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
-import { Category } from "../../useCategories";
+import { Hjertekurv } from "@/types/hjertekurv";
 
 import "./categories.scss";
+import { Category } from "@/types/category";
 
 type CategoryFilterToggleProps = {
   hjertekurver: Hjertekurv[];

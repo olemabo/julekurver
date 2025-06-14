@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
-import { getDictionary, getValuesByKeys } from "./dictionaries";
+import { getDictionary } from "../../localization/dictionaries";
 import LanguageProvider, { LangParams } from "@/providers";
 import {
   alegreya,
@@ -22,12 +22,8 @@ export async function generateMetadata({
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
-  const title = getValuesByKeys(dictionary, ["layout", "seo", "title"]);
-  const description = getValuesByKeys(dictionary, [
-    "layout",
-    "seo",
-    "description",
-  ]);
+  const title = dictionary.layout.seo.title;
+  const description = dictionary.layout.seo.description;
 
   return {
     title: title,

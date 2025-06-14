@@ -2,25 +2,16 @@
 
 import HowToCreateHjertekurv from "@/components/features/howToCreateHjertekurv/howToCreateHjertekurv";
 import { LangParams } from "@/providers";
-import { getDictionary, getValuesByKeys } from "../dictionaries";
+import { getDictionary } from "@localization/dictionaries";
 import { BASE_URL, URLs } from "@/constants/urls";
 
 export async function generateMetadata({ params }: { params: LangParams }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
 
-  const title = getValuesByKeys(dictionary, [
-    "pages",
-    "howToCreateHjertekurvPage",
-    "seo",
-    "title",
-  ]);
-  const description = getValuesByKeys(dictionary, [
-    "pages",
-    "howToCreateHjertekurvPage",
-    "seo",
-    "description",
-  ]);
+  const dictionary = await getDictionary(lang);
+  const title = dictionary.pages.howToCreateHjertekurvPage.seo.title;
+  const description =
+    dictionary.pages.howToCreateHjertekurvPage.seo.description;
 
   return {
     title: title,

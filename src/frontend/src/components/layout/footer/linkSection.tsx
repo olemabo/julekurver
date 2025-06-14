@@ -1,11 +1,11 @@
 "use client";
 
-import Heading from "@/components/shared/ui/heading/heading";
+import Heading, { HeadingLevel } from "@/components/shared/ui/heading/heading";
 import Link from "@/components/shared/ui/link/link";
 import { use } from "react";
 import { LanguageContext } from "@/providers";
-import { getValuesByKeys } from "@/app/[lang]/dictionaries";
-import { scrollToMain } from "@/utils/utils";
+import { getValuesByKeys } from "@/localization/dictionaries";
+import { scrollToMain } from "@/lib/utils";
 import { URLs } from "@/constants/urls";
 
 export default function LinkSection() {
@@ -16,11 +16,13 @@ export default function LinkSection() {
     "hjertekurverSection",
     "title",
   ]);
+
   const seeKurverLinkText = getValuesByKeys(dictionary, [
     "footer",
     "hjertekurverSection",
     "seeKurverLinkText",
   ]);
+
   const createKurverLinkText = getValuesByKeys(dictionary, [
     "footer",
     "hjertekurverSection",
@@ -32,11 +34,13 @@ export default function LinkSection() {
     "aboutSiteSection",
     "title",
   ]);
+
   const aboutSiteLinkText = getValuesByKeys(dictionary, [
     "footer",
     "aboutSiteSection",
     "aboutSiteLinkText",
   ]);
+
   const contactUsLinkText = getValuesByKeys(dictionary, [
     "footer",
     "aboutSiteSection",
@@ -46,7 +50,7 @@ export default function LinkSection() {
   return (
     <div className="footer-link-section">
       <div className="webpage-links">
-        <Heading headingLevel="h2" withMargins={false}>
+        <Heading headingLevel={HeadingLevel.H2} withMargins={false}>
           {hjertekurverHeading}
         </Heading>
         <Link
@@ -61,7 +65,7 @@ export default function LinkSection() {
         />
       </div>
       <div className="webpage-links">
-        <Heading headingLevel="h2" withMargins={false}>
+        <Heading headingLevel={HeadingLevel.H2} withMargins={false}>
           {aboutSiteHeading}
         </Heading>
         <Link

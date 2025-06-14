@@ -1,8 +1,8 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-import { Dictionary } from "@/app/[lang]/dictionaries";
 import { LanguageCode } from "@/constants/languages";
+import { Dictionary } from "@/localization/type";
 
 export type Locale = { lang: LanguageCode };
 export type LangParams = Promise<Locale>;

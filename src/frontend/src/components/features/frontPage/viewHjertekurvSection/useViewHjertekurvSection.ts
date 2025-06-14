@@ -1,5 +1,5 @@
-import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
-import { createBackendUrl } from "@/utils/backendApiUrl";
+import { createBackendUrl } from "@/lib/api/backendApiUrl";
+import { Hjertekurv } from "@/types/hjertekurv";
 import { useState, useEffect } from "react";
 
 const useHjertekurver = (hjertekurvName: string) => {
