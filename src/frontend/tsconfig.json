@@ -22,9 +22,9 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"],
+      "@types/*": ["./src/types/*"],
+      "@localization/*": ["./src/localization/*"]
     },
     "target": "ES2017"
   },

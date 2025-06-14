@@ -1,3 +1,5 @@
+"use client";
+
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Heading from "@/components/shared/ui/heading/heading";
 import { HeadingIdProps } from "./howToCreateHjertekurv";

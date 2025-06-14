@@ -1,4 +1,4 @@
-"use client";
+"use server";
 
 import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
 import Heading from "@/components/shared/ui/heading/heading";
@@ -6,36 +6,17 @@ import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import Link from "next/link";
 import SearchAndResult from "./SearchAndResults";
-import { useSearchPageContentTexts } from "./useTexts";
 import "./SearchPage.scss";
+import { getDictionary } from "@/localization/dictionaries";
+import { Locale } from "@/providers";
 
-export enum PageType {
-  StandardPage = "standardPage",
-  Hjertekurv = "hjertekurvPage",
-}
-
-export interface SearchHits {
-  url: string;
-  title: string;
-  description: string;
-  type: PageType;
-  imageUrl?: string;
-}
-
-export const defaultPaginationOptions = [
-  { label: "10", value: 10 },
-  { label: "25", value: 25 },
-  { label: "100", value: 100 },
-];
-
-export default function SearchPage() {
-  const {
-    heading,
-    paragraph,
-    linkText,
-    searchPageBreadcrumb,
-    frontpageBreadcrumb,
-  } = useSearchPageContentTexts();
+export default async function SearchPage({ lang }: Locale) {
+  const dictionary = await getDictionary(lang);
+  const heading = dictionary.pages.searchPage.heading;
+  const paragraph = dictionary.pages.searchPage.paragraph;
+  const linkText = dictionary.pages.searchPage.linkText;
+  const searchPageBreadcrumb = dictionary.breadcrumb.searchPage;
+  const frontpageBreadcrumb = dictionary.breadcrumb.frontpage;
 
   return (
     <PageWrapper>

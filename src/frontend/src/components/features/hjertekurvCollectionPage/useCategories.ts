@@ -1,10 +1,6 @@
-import { createBackendUrl } from "@/utils/backendApiUrl";
+import { createBackendUrl } from "@/lib/api/backendApiUrl";
+import { Category } from "@/types/category";
 import { useState, useEffect } from "react";
-
-export interface Category {
-  id: number;
-  name: string;
-}
 
 const useCategories = () => {
   const [data, setData] = useState<Category[] | null>(null);

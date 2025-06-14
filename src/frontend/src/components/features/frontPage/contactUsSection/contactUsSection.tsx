@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { createBackendUrl } from "@/utils/backendApiUrl";
+import { createBackendUrl } from "@/lib/api/backendApiUrl";
 // import Image from "next/image";
 import Button from "@/components/shared/ui/button/button";
 import Heading from "@/components/shared/ui/heading/heading";

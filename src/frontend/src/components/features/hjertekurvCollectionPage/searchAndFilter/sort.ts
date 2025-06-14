@@ -1,4 +1,4 @@
-import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
+import { Hjertekurv } from "@/types/hjertekurv";
 
 export enum HjertekurvFilterType {
   Popularity = "popularity",

@@ -1,6 +1,5 @@
-import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
 import Link from "next/link";
-import { createApiMediaUrl } from "@/utils/backendApiUrl";
+import { createApiMediaUrl } from "@/lib/api/backendApiUrl";
 import Heading from "@/components/shared/ui/heading/heading";
 import DifficultyLevel, {
   ICON_TYPE_HEART,
@@ -10,6 +9,7 @@ import DisplayHjertekurvSvgWithColors from "@/components/shared/images/displayHj
 import "./hjertekurvCollectionCard.scss";
 import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
+import { Hjertekurv } from "@/types/hjertekurv";
 
 export type HjertekurvCardSize = "sm" | "default";
 

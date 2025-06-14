@@ -1,16 +1,20 @@
 "use server";
 
 import { HjertekurvCollectionPage } from "@/components/features/hjertekurvCollectionPage/hjertekurvCollectionPage";
-import { Hjertekurv } from "./[hjertekurv]/page";
-import { createBackendUrl } from "@/utils/backendApiUrl";
-import { Metadata } from "next";
 import { LangParams } from "@/providers";
+import { getHjertekurverData } from "@/components/features/hjertekurvCollectionPage/api";
+import { getDictionary } from "@localization/dictionaries";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: LangParams }) {
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+
+  const title = dictionary.pages.hjertekurverKartotekPage.seo.title;
+  const description = dictionary.pages.hjertekurverKartotekPage.seo.description;
+
   return {
-    title: "Utforsk hjertekurvsamlingen | Maler, bilder og inspirasjon",
-    description:
-      "Se vår komplette samling av hjertekurver/julekurver med maler og bilder. Bruk søk og filtrering for å finne den perfekte kurven for ditt neste prosjekt.",
+    title: title,
+    description: description,
   };
 }
 
@@ -19,25 +23,7 @@ export type HjertekurvParams = Promise<{ hjertekurv: string }> & LangParams;
 export default async function Page({ params }: { params: HjertekurvParams }) {
   const { hjertekurv, lang } = await params;
 
-  const apiBaseUrl = createBackendUrl();
+  const content = await getHjertekurverData(hjertekurv, lang);
 
-  const data = await fetch(
-    `${apiBaseUrl}/api/hjertekurver-page-api/?hjertekurvName=${hjertekurv}&lang=${lang}`,
-    {
-      next: {
-        revalidate: 3600,
-      },
-    },
-  );
-
-  const pageContent: Hjertekurv[] = await data.json();
-
-  const parsedContent =
-    typeof pageContent === "string" ? JSON.parse(pageContent) : pageContent;
-
-  if (parsedContent?.length < 1) {
-    return null;
-  }
-
-  return <HjertekurvCollectionPage hjertekurver={parsedContent} lang={lang} />;
+  return <HjertekurvCollectionPage hjertekurver={content} lang={lang} />;
 }

@@ -1,7 +1,10 @@
-"use client";
+"use server";
 
-import SearchPage from "@/components/features/searchPage/searchPage";
+import SearchPage from "@/components/features/searchPage/SearchPage";
+import { LangParams } from "@/providers";
 
-export default function Page() {
-  return <SearchPage />;
+export default async function Page({ params }: { params: LangParams }) {
+    const { lang } = await params;
+
+  return <SearchPage lang={lang} />;
 }

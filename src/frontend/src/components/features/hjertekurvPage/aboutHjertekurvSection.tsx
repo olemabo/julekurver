@@ -1,21 +1,25 @@
+"use server";
+
 import Heading from "@/components/shared/ui/heading/heading";
-import { Hjertekurv } from "@/app/[lang]/hjertekurver/[hjertekurv]/page";
 import KurvConverter from "./kurvColorConverter/kurvColorConverter";
-import { createApiMediaUrl } from "@/utils/backendApiUrl";
+import { createApiMediaUrl } from "@/lib/api/backendApiUrl";
 import Bold from "@/components/shared/ui/bold/bold";
 import DifficultyLevel, {
   ICON_TYPE_HEART,
   ICON_TYPE_SCISSOR,
 } from "@/components/shared/difficultyLevel/difficultyLevel";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
-import { formatDate, useHjertekurverPageTexts } from "./utils";
+import { formatDate } from "./utils";
+import { Hjertekurv } from "@/types/hjertekurv";
+import { getDictionary } from "@/localization/dictionaries";
+import { Locale } from "@/providers";
 
 export type AboutHjertekurvSectionProps = {
   hjertekurv: Hjertekurv;
-};
+} & Locale;
 
-export default function AboutHjertekurvSection({
-  hjertekurv,
+export default async function AboutHjertekurvSection({
+  hjertekurv, lang
 }: AboutHjertekurvSectionProps) {
   const {
     name,
@@ -26,8 +30,10 @@ export default function AboutHjertekurvSection({
     imageHjertekurvUrl,
   } = hjertekurv;
 
-  const { difficultyFlettingText, difficultyKlippingText, addedText } =
-    useHjertekurverPageTexts();
+  const dictionary = await getDictionary(lang);
+  const difficultyFlettingText = dictionary.pages.hjertekurvPage.difficultyFletting;
+  const difficultyKlippingText = dictionary.pages.hjertekurvPage.difficultyKlipping;
+  const addedText = dictionary.pages.hjertekurvPage.added;
 
   const imageUrl = createApiMediaUrl(imageHjertekurvUrl);
 

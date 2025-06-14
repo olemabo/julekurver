@@ -4,7 +4,7 @@ import Button from "@/components/shared/ui/button/button";
 import Heading from "@/components/shared/ui/heading/heading";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import TextArea from "@/components/shared/ui/textarea/textarea";
-import { createBackendUrl } from "@/utils/backendApiUrl";
+import { createBackendUrl } from "@/lib/api/backendApiUrl";
 import axios from "axios";
 import { useState } from "react";
 import { useContactSectionTexts } from "./useTexts";
