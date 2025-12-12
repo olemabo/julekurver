@@ -13,11 +13,11 @@ export const getStandardPage = cache(
   async (
     page: string,
     lang: string,
-    revalidate: number = 30 // default 30 sek
+    revalidate: number = 30, // default 30 sek
   ): Promise<PageContent | null> => {
     return fetchWith404Check<PageContent>(
       createBackendUrl("/api/standard-page-api/", { pageUrl: page, lang }),
-      { next: { revalidate } }
+      { next: { revalidate } },
     );
-  }
+  },
 );
