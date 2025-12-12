@@ -1,5 +1,3 @@
-"use server";
-
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
 import Heading, { HeadingLevel } from "@/components/shared/ui/heading/heading";

@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
     images: {
       // Configure remote image patterns for Next.js Image component
       remotePatterns: [
@@ -45,24 +50,6 @@ const nextConfig = {
           ],
         },
       ];
-    },
-    webpack(config) {
-      // Add rule to handle SVG files as React components
-      config.module.rules.push({
-        test: /\.svg$/,
-        use: [
-          {
-            loader: '@svgr/webpack',
-            options: {
-              // You can add custom options here for SVGR
-              // For example, you can use `icon: true` to convert SVGs to icons
-              icon: true,
-            },
-          },
-        ],
-      });
-  
-      return config;
     },
     // Enable React strict mode for highlighting potential problems
     reactStrictMode: true,

@@ -23,7 +23,7 @@ function getLocale(request: NextRequest) {
   return defaultLocale;
 }
 
-export default function localeMiddleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (/\.(png|jpg|jpeg|gif|svg|html|ico|css|js|json|ttf|txt)$/.test(pathname)) {

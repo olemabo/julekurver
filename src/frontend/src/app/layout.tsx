@@ -1,5 +1,3 @@
-"use server";
-
 import "./globals.css";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

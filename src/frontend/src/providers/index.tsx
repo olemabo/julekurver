@@ -5,7 +5,7 @@ import { LanguageCode } from "@/constants/languages";
 import { Dictionary } from "@/localization/type";
 
 export type Locale = { lang: LanguageCode };
-export type LangParams = Promise<Locale>;
+export type LangParams = Locale;
 
 export type LanguageContextType = {
   dictionary: Dictionary | undefined;

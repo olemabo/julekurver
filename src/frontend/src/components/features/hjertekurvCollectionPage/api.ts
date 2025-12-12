@@ -10,5 +10,5 @@ export async function getHjertekurverData(
     hjertekurvName: name,
     lang: lang,
   });
-  return fetchWith404Check<Hjertekurv[]>(url, { revalidate: 3600 });
+  return fetchWith404Check<Hjertekurv[]>(url);
 }

@@ -6,12 +6,8 @@ import { HjertekurvParams } from "../page";
 import { BASE_URL } from "@/constants/urls";
 import { getHjertekurvData } from "@/components/features/hjertekurvPage/api";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: HjertekurvParams;
-}) {
-  const { hjertekurv, lang } = await params;
+export async function generateMetadata(props: PageProps<"/[lang]/hjertekurver/[hjertekurv]">) {
+  const { hjertekurv, lang } = await props.params;
 
   const content = await getHjertekurvData(hjertekurv, lang);
   const image = createApiMediaUrl(content?.imageHjertekurvUrl);
@@ -33,8 +29,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: { params: HjertekurvParams }) {
-  const { hjertekurv, lang } = await params;
+export default async function Page(props: PageProps<"/[lang]/hjertekurver/[hjertekurv]">) {
+  const { hjertekurv, lang } = await props.params as HjertekurvParams; 
 
   const content = await getHjertekurvData(hjertekurv, lang);
 
