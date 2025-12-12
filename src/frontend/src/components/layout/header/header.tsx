@@ -30,7 +30,7 @@ export default function Header() {
     setActiveMenu(MenuType.ClosedMenu);
     setIsMobileMenuOpen(false);
   };
-  
+
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       const target = event.target as Element;
