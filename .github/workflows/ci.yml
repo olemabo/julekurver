@@ -14,48 +14,48 @@ jobs:
         python-version: [3.12]
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r src/backend/requirements.txt
-        
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r src/backend/requirements.txt
+
   frontend_job:
     name: Test Frontend
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install Dependencies
-      run: |
-        cd src/frontend
-        npm i
+      - name: Install Dependencies
+        run: |
+          cd src/frontend
+          npm i
 
-    - name: Run Build
-      run: |
-        cd src/frontend
-        npm run build
+      - name: Run Build
+        run: |
+          cd src/frontend
+          npm run build
 
-    - name: Run ESLint
-      run: |
-        cd src/frontend
-        npm run lint
+      - name: Run ESLint
+        run: |
+          cd src/frontend
+          npm run lint
 
-    - name: Run Prettier Check
-      run: |
-        cd src/frontend
-        npm run format:check
+      - name: Run Prettier Check
+        run: |
+          cd src/frontend
+          npm run format:check
