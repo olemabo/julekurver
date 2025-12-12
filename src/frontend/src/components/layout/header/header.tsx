@@ -26,6 +26,11 @@ export default function Header() {
 
   const searchFieldRef = useRef<HTMLInputElement>(null);
 
+  const closeAllMenus = () => {
+    setActiveMenu(MenuType.ClosedMenu);
+    setIsMobileMenuOpen(false);
+  };
+  
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       const target = event.target as Element;
@@ -66,11 +71,6 @@ export default function Header() {
   const toggleMobileDropdown = () => {
     setIsMobileMenuOpen((prevState) => !prevState);
     setActiveMenu(MenuType.ClosedMenu);
-  };
-
-  const closeAllMenus = () => {
-    setActiveMenu(MenuType.ClosedMenu);
-    setIsMobileMenuOpen(false);
   };
 
   const toggleSearchLanguageMenu = (value: LanguageSearchType) => {
