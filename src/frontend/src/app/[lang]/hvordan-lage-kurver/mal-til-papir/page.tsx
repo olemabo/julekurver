@@ -5,8 +5,10 @@ import type { LangParams, Locale } from "@/providers";
 import { getDictionary } from "../../../../localization/dictionaries";
 import { BASE_URL, URLs } from "@/constants/urls";
 
-export async function generateMetadata(props: PageProps<"/[lang]/hvordan-lage-kurver/mal-til-papir">) {
-  const { lang } = await props.params as Locale;
+export async function generateMetadata(
+  props: PageProps<"/[lang]/hvordan-lage-kurver/mal-til-papir">,
+) {
+  const { lang } = (await props.params) as Locale;
   const dictionary = await getDictionary(lang);
 
   const title = dictionary.pages.howToMalToPaper.seo.title;
@@ -26,8 +28,10 @@ export async function generateMetadata(props: PageProps<"/[lang]/hvordan-lage-ku
   };
 }
 
-export default async function Page(props: PageProps<"/[lang]/hvordan-lage-kurver/mal-til-papir">) {
-  const { lang } = await props.params as Locale;
+export default async function Page(
+  props: PageProps<"/[lang]/hvordan-lage-kurver/mal-til-papir">,
+) {
+  const { lang } = (await props.params) as Locale;
 
   return <HowToMalToPaper lang={lang} />;
 }

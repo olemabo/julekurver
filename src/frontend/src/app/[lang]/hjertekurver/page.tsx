@@ -5,8 +5,10 @@ import type { LangParams, Locale } from "@/providers";
 import { getHjertekurverData } from "@/components/features/hjertekurvCollectionPage/api";
 import { getDictionary } from "@localization/dictionaries";
 
-export async function generateMetadata(props: PageProps<"/[lang]/hjertekurver">) {
-  const { lang } = await props.params as Locale;
+export async function generateMetadata(
+  props: PageProps<"/[lang]/hjertekurver">,
+) {
+  const { lang } = (await props.params) as Locale;
   const dictionary = await getDictionary(lang);
 
   const title = dictionary.pages.hjertekurverKartotekPage.seo.title;
@@ -21,7 +23,7 @@ export async function generateMetadata(props: PageProps<"/[lang]/hjertekurver">)
 export type HjertekurvParams = { hjertekurv: string } & LangParams;
 
 export default async function Page(props: PageProps<"/[lang]/hjertekurver">) {
-  const { lang } = await props.params as HjertekurvParams;
+  const { lang } = (await props.params) as HjertekurvParams;
 
   const content = await getHjertekurverData("hjertekurv", lang);
 

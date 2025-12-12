@@ -41,7 +41,7 @@ import { createBackendUrl } from "@/lib/api/backendApiUrl";
 export const revalidate = 30; // ISR hver time
 
 export default async function Page(props: PageProps<"/[lang]/[page]">) {
-  const { lang } = await props.params as Locale;
+  const { lang } = (await props.params) as Locale;
   const { page } = await props.params;
 
   // const content = await getStandardPage(page, lang);
