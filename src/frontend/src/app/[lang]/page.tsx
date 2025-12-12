@@ -4,7 +4,7 @@ import { Locale } from "@/providers";
 export const revalidate = 46000;
 
 export default async function Home(props: PageProps<"/[lang]">) {
-  const { lang } = (await props.params) as Locale;
+  // const { lang } = (await props.params) as Locale;
 
-  return <FrontPage lang={lang} />;
+  return <div>Heii</div>;
 }

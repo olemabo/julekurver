@@ -56,5 +56,5 @@ export default async function Page(props: PageProps<"/[lang]/[page]">) {
   });
 
   const a = await response.json();
-  return <StandardPage lang={lang} pageContent={a} />;
+  return <div>Hello</div>;
 }
