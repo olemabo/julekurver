@@ -14,21 +14,21 @@
     "verify": "npm i && next lint && tsc --noEmit && prettier src/ --write"
   },
   "dependencies": {
-    "@svgr/webpack": "^8.1.0",
-    "axios": "^1.13.2",
-    "next": "16.0.8",
-    "next-i18next": "^15.4.3",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
-    "sass": "^1.95.1"
+    "@svgr/webpack": "8.1.0",
+    "axios": "1.13.2",
+    "next": "16.0.10",
+    "next-i18next": "15.4.3",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "sass": "1.96.0"
   },
   "devDependencies": {
-    "@types/node": "^24.10.2",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "eslint": "^9.39.1",
-    "eslint-config-next": "16.0.8",
-    "prettier": "^3.7.4",
-    "typescript": "^5.9.3"
+    "@types/node": "18.19.130",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.0.10",
+    "prettier": "3.7.4",
+    "typescript": "5.9.3"
   }
 }
