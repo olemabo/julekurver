@@ -3,7 +3,7 @@
 import { HjertekurvCollectionPage } from "@/components/features/hjertekurvCollectionPage/hjertekurvCollectionPage";
 import type { LangParams, Locale } from "@/providers";
 import { getHjertekurverData } from "@/components/features/hjertekurvCollectionPage/api";
-import { getDictionary } from "@localization/dictionaries";
+import { getDictionary } from "@/localization/dictionaries";
 
 export async function generateMetadata(
   props: PageProps<"/[lang]/hjertekurver">,

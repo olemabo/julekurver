@@ -40,21 +40,28 @@ import { createBackendUrl } from "@/lib/api/backendApiUrl";
 
 export const revalidate = 30;
 
+// export async function generateStaticParams() {
+//   const pages = ["om-siden"];
+
+//   const paths = pages.map((page) => ({
+//     params: { page: String(page) }
+//   }));
+
+//   return { paths };
+// }
+
+export async function generateStaticParams() {
+  return [
+    { lang: "no", page: "om-siden" },
+    { lang: "en", page: "about" },
+  ];
+}
+
 export default async function Page(props: PageProps<"/[lang]/[page]">) {
   const { lang } = (await props.params) as Locale;
   const { page } = await props.params;
 
-  const url = createBackendUrl("/api/standard-page-api/", {
-    pageUrl: page,
-    lang,
-  });
-  const response = await fetch(url, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    next: { revalidate: 30 },
-  });
+  const content = await getStandardPage(page, lang);
 
-  const a = await response.json();
-  return <div>Hello</div>;
+  return <StandardPage lang={lang} pageContent={content} />;
 }

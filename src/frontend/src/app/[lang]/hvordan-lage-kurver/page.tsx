@@ -2,7 +2,7 @@
 
 import HowToCreateHjertekurv from "@/components/features/howToCreateHjertekurv/howToCreateHjertekurv";
 import { LangParams, Locale } from "@/providers";
-import { getDictionary } from "@localization/dictionaries";
+import { getDictionary } from "@/localization/dictionaries";
 import { BASE_URL, URLs } from "@/constants/urls";
 
 export async function generateMetadata(
