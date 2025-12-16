@@ -9,6 +9,5 @@ export async function generateStaticParams() {
 
 export default async function Home(props: PageProps<"/[lang]">) {
   const lang = (await props.params).lang as Locale;
-
   return <FrontPage lang={lang} />;
 }
