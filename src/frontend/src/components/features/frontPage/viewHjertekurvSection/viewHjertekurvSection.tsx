@@ -8,16 +8,16 @@ import HjertekurvCarousel from "./hjertekurvCarousel";
 import ContentHeader from "../contentHeader/contentHeader";
 import { darkTheme } from "@/constants/displayTheme";
 import { useViewHjertekurvSection } from "../useTexts";
-import { Locale } from "@/providers";
 import "./viewHjertekurvSection.scss";
+import { LocaleProps } from "@/config/i18n";
 
-export default function ViewHjertekurvSection({ lang }: Locale) {
+export default function ViewHjertekurvSection({ lang }: LocaleProps) {
   const { data, error, loading } = useHjertekurver("");
   const { title, paragraph1, paragraph2, listItems, buttonLabel } =
     useViewHjertekurvSection();
 
   if (loading) {
-    return <HjertekurvLoader />;
+    return null;
   }
 
   if (error) {

@@ -1,14 +1,24 @@
-"use server";
-
 import { BASE_URL } from "@/constants/urls";
-import { LangParams } from "@/providers";
 import { getStandardPage } from "@/components/features/standardPage/api";
 import StandardPage from "@/components/features/standardPage/page";
+import { Locale } from "@/config/i18n";
 
-type PageParams = Promise<{ page: string }> & LangParams;
+export const revalidate = 86400;
 
-export async function generateMetadata({ params }: { params: PageParams }) {
-  const { page, lang } = await params;
+export async function generateStaticParams() {
+  // TODO: Hent disse fra api
+  return [
+    { lang: "no", page: "om-siden" },
+    { lang: "no", page: "kontakt-oss" },
+    { lang: "en", page: "om-siden" },
+    { lang: "en", page: "kontakt-oss" },
+  ];
+}
+
+export async function generateMetadata(props: PageProps<"/[lang]/[page]">) {
+  const lang = (await props.params).lang as Locale;
+  const { page } = await props.params;
+
   const pageContent = await getStandardPage(page, lang);
 
   if (!pageContent) {
@@ -41,8 +51,9 @@ export async function generateMetadata({ params }: { params: PageParams }) {
   };
 }
 
-export default async function Page({ params }: { params: PageParams }) {
-  const { page, lang } = await params;
+export default async function Page(props: PageProps<"/[lang]/[page]">) {
+  const lang = (await props.params).lang as Locale;
+  const { page } = await props.params;
 
   const content = await getStandardPage(page, lang);
 

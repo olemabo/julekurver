@@ -7,9 +7,9 @@ import DifficultyLevel, {
 } from "@/components/shared/difficultyLevel/difficultyLevel";
 import DisplayHjertekurvSvgWithColors from "@/components/shared/images/displayHjertekurvSvgWithColors";
 import "./hjertekurvCollectionCard.scss";
-import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
 import { Hjertekurv } from "@/types/hjertekurv";
+import { LocaleProps } from "@/config/i18n";
 
 export type HjertekurvCardSize = "sm" | "default";
 
@@ -17,7 +17,7 @@ type HjertekurvCollectionCardProps = {
   hjertekurv: Hjertekurv;
   size?: HjertekurvCardSize;
   showDifficultyLevels?: boolean;
-} & Locale;
+} & LocaleProps;
 
 export default function HjertekurvCollectionCard({
   hjertekurv,

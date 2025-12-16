@@ -14,10 +14,10 @@ import LazyImage from "@/components/shared/lazyImage/LazyImage";
 import Link from "next/link";
 import { useContactUsSection } from "../useTexts";
 import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
-import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
+import { LocaleProps } from "@/config/i18n";
 
-export default function ContactUsSection({ lang }: Locale) {
+export default function ContactUsSection({ lang }: LocaleProps) {
   const {
     title,
     introParagraph,

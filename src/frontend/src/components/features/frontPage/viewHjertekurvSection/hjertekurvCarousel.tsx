@@ -19,9 +19,6 @@ export default function HjertekurvCarousel({
   displayTime,
   useFirst,
 }: HjertekurvProps) {
-  // Disable react-hooks/rules-of-hooks for the following code block
-  /* eslint-disable react-hooks/rules-of-hooks */
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fadeState, setFadeState] = useState<"fade-in" | "fade-out">("fade-in");
 
@@ -39,8 +36,6 @@ export default function HjertekurvCarousel({
 
     return () => clearInterval(interval);
   }, [kurver, displayTime]);
-
-  /* eslint-enable react-hooks/rules-of-hooks */
 
   const images = kurver.map((x) => createApiMediaUrl(x.imageHjertekurvUrl));
 

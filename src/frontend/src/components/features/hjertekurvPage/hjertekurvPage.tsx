@@ -7,14 +7,14 @@ import KurvMal from "./kurvMal/kurvMal";
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import AboutHjertekurvSection from "./aboutHjertekurvSection";
 import "./hjertekurv.scss";
-import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
 import { Hjertekurv } from "@/types/hjertekurv";
 import { getDictionary } from "@/localization/dictionaries";
+import { LocaleProps } from "@/config/i18n";
 
 export type HjertekurvPageProps = {
   hjertekurv: Hjertekurv;
-} & Locale;
+} & LocaleProps;
 
 export default async function HjertekurvPage({
   hjertekurv,

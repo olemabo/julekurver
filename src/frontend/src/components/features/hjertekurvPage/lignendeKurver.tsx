@@ -4,12 +4,12 @@ import useLignendeHjertekurver from "./useLignendeKurver";
 import HjertekurvCollectionCard from "../hjertekurvCollectionPage/searchAndFilter/collectionCard/hjertekurvCollectionCard";
 import Heading from "@/components/shared/ui/heading/heading";
 import HjertekurvLoader from "@/components/shared/loaders/hjertekurvLoader";
-import { Locale } from "@/providers";
 import { useLignendeKurverTexts } from "./useTexts";
+import { LocaleProps } from "@/config/i18n";
 
 type LignendeKurverProps = {
   url: string;
-} & Locale;
+} & LocaleProps;
 
 export default function LignendeKurver({ url, lang }: LignendeKurverProps) {
   const { data, error, loading } = useLignendeHjertekurver(url, lang);

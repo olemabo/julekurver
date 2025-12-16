@@ -1,25 +1,25 @@
 import { cache } from "react";
-import LANGUAGES, { type LanguageCode } from "@/constants/languages";
 import { Dictionary } from "./type";
+import { LANGUAGES, Locale } from "@/config/i18n";
 
 const dictionaries = {
-  [LANGUAGES.ENGLISH]: () =>
+  [LANGUAGES.EN]: () =>
     import("./locales/en/common.json").then(
       (module) => module.default as Dictionary,
     ),
-  [LANGUAGES.NORWEGIAN]: () =>
+  [LANGUAGES.NO]: () =>
     import("./locales/no/common.json").then(
       (module) => module.default as Dictionary,
     ),
 };
 
 export const getDictionary = cache(
-  async (locale: LanguageCode): Promise<Dictionary> => {
+  async (locale: Locale): Promise<Dictionary> => {
     if (!dictionaries[locale]) {
       console.warn(
         `Locale ${locale} is not supported. Falling back to default locale.`,
       );
-      locale = LANGUAGES.NORWEGIAN;
+      locale = LANGUAGES.NO;
     }
     return dictionaries[locale]();
   },
@@ -27,7 +27,7 @@ export const getDictionary = cache(
 
 export const getTranslation = cache(
   async (
-    locale: LanguageCode,
+    locale: Locale,
     keys: string[],
     defaultValue = "",
   ): Promise<string> => {
@@ -38,7 +38,7 @@ export const getTranslation = cache(
 
 export const getTranslations = cache(
   async (
-    locale: LanguageCode,
+    locale: Locale,
     translationMap: Record<string, string[]>,
   ): Promise<Record<string, string>> => {
     const dictionary = await getDictionary(locale);

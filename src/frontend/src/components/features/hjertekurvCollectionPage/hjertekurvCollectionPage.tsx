@@ -6,13 +6,13 @@ import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import SearchAndFilterSection from "./searchAndFilter/searchAndFilterSection";
 import DifficultyPopover from "./difficulltyPopover";
-import { Locale } from "@/providers";
 import { Hjertekurv } from "@/types/hjertekurv";
 import { getTranslations } from "@/localization/dictionaries";
+import { LocaleProps } from "@/config/i18n";
 
 export type HjertekurvCollectionPageProps = {
   hjertekurver: Hjertekurv[];
-} & Locale;
+} & LocaleProps;
 
 async function HjertekurvCollectionPage({
   hjertekurver,

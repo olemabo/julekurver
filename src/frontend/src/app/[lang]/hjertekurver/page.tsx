@@ -1,12 +1,18 @@
-"use server";
-
 import { HjertekurvCollectionPage } from "@/components/features/hjertekurvCollectionPage/hjertekurvCollectionPage";
-import { LangParams } from "@/providers";
 import { getHjertekurverData } from "@/components/features/hjertekurvCollectionPage/api";
-import { getDictionary } from "@localization/dictionaries";
+import { getDictionary } from "@/localization/dictionaries";
+import { LOCALES, type Locale } from "@/config/i18n";
 
-export async function generateMetadata({ params }: { params: LangParams }) {
-  const { lang } = await params;
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  return LOCALES.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata(
+  props: PageProps<"/[lang]/hjertekurver">,
+) {
+  const lang = (await props.params).lang as Locale;
   const dictionary = await getDictionary(lang);
 
   const title = dictionary.pages.hjertekurverKartotekPage.seo.title;
@@ -18,12 +24,10 @@ export async function generateMetadata({ params }: { params: LangParams }) {
   };
 }
 
-export type HjertekurvParams = Promise<{ hjertekurv: string }> & LangParams;
+export default async function Page(props: PageProps<"/[lang]/hjertekurver">) {
+  const lang = (await props.params).lang as Locale;
 
-export default async function Page({ params }: { params: HjertekurvParams }) {
-  const { hjertekurv, lang } = await params;
-
-  const content = await getHjertekurverData(hjertekurv, lang);
+  const content = await getHjertekurverData(lang);
 
   return <HjertekurvCollectionPage hjertekurver={content} lang={lang} />;
 }

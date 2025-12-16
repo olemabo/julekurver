@@ -1,25 +1,21 @@
-"use server";
-
 import type { Metadata } from "next";
 import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
 import { getDictionary } from "../../localization/dictionaries";
-import LanguageProvider, { LangParams } from "@/providers";
+import LanguageProvider from "@/providers";
 import {
   alegreya,
   alegreyaHeader,
   alegreyaSansLight,
   alegreyaSansMedium,
 } from "./fonts";
-import "../globals.css";
 import { BASE_URL } from "@/constants/urls";
+import { Locale } from "@/config/i18n";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: LangParams;
-}): Promise<Metadata> {
-  const { lang } = await params;
+export async function generateMetadata(
+  props: PageProps<"/[lang]">,
+): Promise<Metadata> {
+  const lang = (await props.params).lang as Locale;
   const dictionary = await getDictionary(lang);
 
   const title = dictionary.layout.seo.title;
@@ -39,14 +35,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: LangParams;
-}>) {
-  const { lang } = await params;
+export default async function RootLayout(props: LayoutProps<"/[lang]">) {
+  const lang = (await props.params).lang as Locale;
   const dictionary = await getDictionary(lang);
 
   return (
@@ -57,7 +47,7 @@ export default async function RootLayout({
       <body>
         <LanguageProvider lang={lang} dictionary={dictionary}>
           <Header />
-          <main id="main">{children}</main>
+          <main id="main">{props.children}</main>
           <Footer />
         </LanguageProvider>
       </body>

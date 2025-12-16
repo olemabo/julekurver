@@ -1,12 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import LANGUAGES from "./constants/languages";
-
-const locales = [LANGUAGES.NORWEGIAN, LANGUAGES.ENGLISH];
-const defaultLocale = LANGUAGES.NORWEGIAN;
+import { DEFAULT_LOCALE, LOCALES } from "@config/i18n";
 
 function getLocale(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  const pathnameLocale = locales.find(
+  const pathnameLocale = LOCALES.find(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
   if (pathnameLocale) return pathnameLocale;
@@ -14,23 +11,23 @@ function getLocale(request: NextRequest) {
   // Check Accept-Language header
   const acceptLanguage = request.headers.get("Accept-Language");
   if (acceptLanguage) {
-    const preferredLocale = locales.find((locale) =>
+    const preferredLocale = LOCALES.find((locale) =>
       acceptLanguage.includes(locale),
     );
     if (preferredLocale) return preferredLocale;
   }
 
-  return defaultLocale;
+  return DEFAULT_LOCALE;
 }
 
-export default function localeMiddleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (/\.(png|jpg|jpeg|gif|svg|html|ico|css|js|json|ttf|txt)$/.test(pathname)) {
     return NextResponse.next();
   }
 
-  const pathnameHasLocale = locales.some(
+  const pathnameHasLocale = LOCALES.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 

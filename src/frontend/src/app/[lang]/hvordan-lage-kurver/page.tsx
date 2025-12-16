@@ -1,12 +1,18 @@
-"use server";
-
 import HowToCreateHjertekurv from "@/components/features/howToCreateHjertekurv/howToCreateHjertekurv";
-import { LangParams } from "@/providers";
-import { getDictionary } from "@localization/dictionaries";
+import { getDictionary } from "@/localization/dictionaries";
 import { BASE_URL, URLs } from "@/constants/urls";
+import { Locale, LOCALES } from "@/config/i18n";
 
-export async function generateMetadata({ params }: { params: LangParams }) {
-  const { lang } = await params;
+export const revalidate = 2592000;
+
+export async function generateStaticParams() {
+  return LOCALES.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata(
+  props: PageProps<"/[lang]/hvordan-lage-kurver">,
+) {
+  const lang = (await props.params).lang as Locale;
 
   const dictionary = await getDictionary(lang);
   const title = dictionary.pages.howToCreateHjertekurvPage.seo.title;
@@ -27,8 +33,10 @@ export async function generateMetadata({ params }: { params: LangParams }) {
   };
 }
 
-export default async function Page({ params }: { params: LangParams }) {
-  const { lang } = await params;
+export default async function Page(
+  props: PageProps<"/[lang]/hvordan-lage-kurver">,
+) {
+  const lang = (await props.params).lang as Locale;
 
   return <HowToCreateHjertekurv lang={lang} />;
 }

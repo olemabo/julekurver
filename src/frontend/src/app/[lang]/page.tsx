@@ -1,12 +1,13 @@
-"use server";
-
 import FrontPage from "@/components/features/frontPage/frontPage";
-import { LangParams } from "@/providers";
+import { Locale, LOCALES } from "@/config/i18n";
 
-export type FrontpageParams = LangParams;
+export const revalidate = 46000;
 
-export default async function Home({ params }: { params: FrontpageParams }) {
-  const { lang } = await params;
+export async function generateStaticParams() {
+  return LOCALES.map((lang) => ({ lang }));
+}
 
+export default async function Home(props: PageProps<"/[lang]">) {
+  const lang = (await props.params).lang as Locale;
   return <FrontPage lang={lang} />;
 }

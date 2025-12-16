@@ -1,9 +1,5 @@
-"use server";
-
 import "./globals.css";
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  return <>{children}</>;
-};
-
-export default RootLayout;
+export default function RootLayout(props: LayoutProps<"/">) {
+  return <>{props.children}</>;
+}

@@ -8,14 +8,14 @@ import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Link from "next/link";
 import SymmetriskMotivPopover from "@/components/shared/content/popover/SymmetriskMotivPopover";
 import { useClipHjertekurvSection } from "./useTexts";
-import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
 import { HeadingIdProps } from "./constants";
+import { LocaleProps } from "@/config/i18n";
 
 export default function ClipHjertekurvSection({
   headingId,
   lang,
-}: HeadingIdProps & Locale) {
+}: HeadingIdProps & LocaleProps) {
   const { title, ingress, steps, step3ListIntro, step3ListSteps } =
     useClipHjertekurvSection();
 

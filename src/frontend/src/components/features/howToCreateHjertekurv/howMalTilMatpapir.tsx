@@ -7,10 +7,10 @@ import Heading from "@/components/shared/ui/heading/heading";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import Link from "next/link";
 import { useHowToMalTilMatpapirSection } from "./useTexts";
-import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
+import { LocaleProps } from "@/config/i18n";
 
-export default function HowToMalTilMatpapirSection({ lang }: Locale) {
+export default function HowToMalTilMatpapirSection({ lang }: LocaleProps) {
   const { title, ingress, steps, step5LinkText } =
     useHowToMalTilMatpapirSection();
 

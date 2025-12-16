@@ -4,12 +4,12 @@ import HowToSection from "@/components/shared/howTo/howTo";
 import Heading from "@/components/shared/ui/heading/heading";
 import Link from "@/components/shared/ui/link/link";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
-import { Locale } from "@/providers";
 import { useHvordanLageKurverTexts } from "./useTexts";
 import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
 import { URLs } from "@/constants/urls";
+import { LocaleProps } from "@/config/i18n";
 
-export default function HvordanLageKurver({ lang }: Locale) {
+export default function HvordanLageKurver({ lang }: LocaleProps) {
   const { title, intro, steps } = useHvordanLageKurverTexts();
 
   return (

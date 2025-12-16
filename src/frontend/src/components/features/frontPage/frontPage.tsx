@@ -1,5 +1,3 @@
-"use server";
-
 import FullWidthWrapper, {
   bgColorThemeGreen,
   bgColorThemeRed,
@@ -9,9 +7,9 @@ import AboutKurverSection from "./aboutKurverSection/aboutKurverSection";
 import ViewHjertekurvSection from "./viewHjertekurvSection/viewHjertekurvSection";
 import InspirationSection from "./inspirationSection/inspirationSection";
 import ContactUsSection from "./contactUsSection/contactUsSection";
-import { Locale } from "@/providers";
+import { LocaleProps } from "@/config/i18n";
 
-export default async function FrontPage({ lang }: Locale) {
+export default async function FrontPage({ lang }: LocaleProps) {
   return (
     <div className="default-page-container frontpage">
       <FullWidthWrapper color={bgColorThemeRed}>
