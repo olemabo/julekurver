@@ -11,8 +11,8 @@ import FilterButton from "./filterButton/filterButton";
 import { filterAndSortHjertekurver, HjertekurvFilterType } from "./sort";
 import CategoryFilterToggle from "./categories/categories";
 import { useSearchAndFilterTexts } from "../useTexts";
-import { Locale } from "@/providers";
 import { Hjertekurv } from "@/types/hjertekurv";
+import { LocaleProps } from "@/config/i18n";
 
 export const defaultPaginationOptions = [
   { label: "12", value: 12 },
@@ -22,7 +22,7 @@ export const defaultPaginationOptions = [
 
 export type SearchAndFilterSectionProps = {
   hjertekurver: Hjertekurv[];
-} & Locale;
+} & LocaleProps;
 
 export function SearchAndFilterSection({
   hjertekurver,

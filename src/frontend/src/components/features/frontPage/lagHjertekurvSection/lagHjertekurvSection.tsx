@@ -6,10 +6,10 @@ import { lightTheme } from "@/constants/displayTheme";
 import "./lagHjertekurvSection.scss";
 import ContentHeader from "../contentHeader/contentHeader";
 import { useLagHjertekurvSection } from "../useTexts";
-import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
+import { LocaleProps } from "@/config/i18n";
 
-export default function LagHjertekurvSection({ lang }: Locale) {
+export default function LagHjertekurvSection({ lang }: LocaleProps) {
   const { title, step1, step2, step3, buttonLabel } = useLagHjertekurvSection();
 
   const julekurvSteps = [

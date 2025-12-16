@@ -1,10 +1,28 @@
-"use server";
-
 import HjertekurvPage from "@/components/features/hjertekurvPage/hjertekurvPage";
 import { createApiMediaUrl } from "@/lib/api/backendApiUrl";
-import { HjertekurvParams } from "../page";
 import { BASE_URL } from "@/constants/urls";
 import { getHjertekurvData } from "@/components/features/hjertekurvPage/api";
+import { LocaleProps, LOCALES } from "@/config/i18n";
+import { getHjertekurverData } from "@/components/features/hjertekurvCollectionPage/api";
+
+export const revalidate = 46000;
+
+export async function generateStaticParams() {
+  const params: { lang: string; hjertekurv: string }[] = [];
+
+  for (const lang of LOCALES) {
+    const content = await getHjertekurverData(lang);
+
+    content.forEach((item) => {
+      params.push({
+        lang,
+        hjertekurv: item.url,
+      });
+    });
+  }
+
+  return params;
+}
 
 export async function generateMetadata(
   props: PageProps<"/[lang]/hjertekurver/[hjertekurv]">,
@@ -30,6 +48,8 @@ export async function generateMetadata(
     },
   };
 }
+
+export type HjertekurvParams = { hjertekurv: string } & LocaleProps;
 
 export default async function Page(
   props: PageProps<"/[lang]/hjertekurver/[hjertekurv]">,

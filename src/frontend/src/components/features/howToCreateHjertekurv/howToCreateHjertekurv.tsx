@@ -10,7 +10,6 @@ import FletteHjertekurvSection from "./fletteHjertekurvSection";
 import WhatYouNeedSection from "./whatYouNeedSection";
 import NavigateToH2 from "@/components/shared/ui/navigateToId/navigateToH2";
 import { HjertekurvMalSection } from "./hjertekurvMalSection";
-import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
 import { getDictionary } from "@/localization/dictionaries";
 import {
@@ -19,8 +18,9 @@ import {
   hjertekurvMalHeadingId,
   whatYouNeedHeadingId,
 } from "./constants";
+import { LocaleProps } from "@/config/i18n";
 
-export default async function HowToCreateHjertekurv({ lang }: Locale) {
+export default async function HowToCreateHjertekurv({ lang }: LocaleProps) {
   const dictionary = await getDictionary(lang);
   const title = dictionary.pages.howToCreateHjertekurvPage.title;
   const ingress = dictionary.pages.howToCreateHjertekurvPage.ingress;

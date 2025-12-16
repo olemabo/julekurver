@@ -5,11 +5,11 @@ import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
 import Heading, { HeadingLevel } from "@/components/shared/ui/heading/heading";
 import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import HowToMalTilMatpapirSection from "./howMalTilMatpapir";
-import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
 import { getDictionary } from "@/localization/dictionaries";
+import { LocaleProps } from "@/config/i18n";
 
-export default async function HowToMalToPaper({ lang }: Locale) {
+export default async function HowToMalToPaper({ lang }: LocaleProps) {
   const dictionary = await getDictionary(lang);
   const title = dictionary.pages.howToMalToPaper.title;
   const ingress = dictionary.pages.howToMalToPaper.ingress;

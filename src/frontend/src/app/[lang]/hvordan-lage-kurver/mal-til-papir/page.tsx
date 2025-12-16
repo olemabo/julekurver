@@ -1,14 +1,18 @@
-"use server";
-
 import HowToMalToPaper from "@/components/features/howToCreateHjertekurv/HowToMalToPaper";
-import type { LangParams, Locale } from "@/providers";
 import { getDictionary } from "../../../../localization/dictionaries";
 import { BASE_URL, URLs } from "@/constants/urls";
+import { Locale, LOCALES } from "@/config/i18n";
+
+export const revalidate = 2592000;
+
+export async function generateStaticParams() {
+  return LOCALES.map((lang) => ({ lang }));
+}
 
 export async function generateMetadata(
   props: PageProps<"/[lang]/hvordan-lage-kurver/mal-til-papir">,
 ) {
-  const { lang } = (await props.params) as Locale;
+  const lang = (await props.params).lang as Locale;
   const dictionary = await getDictionary(lang);
 
   const title = dictionary.pages.howToMalToPaper.seo.title;
@@ -31,7 +35,7 @@ export async function generateMetadata(
 export default async function Page(
   props: PageProps<"/[lang]/hvordan-lage-kurver/mal-til-papir">,
 ) {
-  const { lang } = (await props.params) as Locale;
+  const lang = (await props.params).lang as Locale;
 
   return <HowToMalToPaper lang={lang} />;
 }

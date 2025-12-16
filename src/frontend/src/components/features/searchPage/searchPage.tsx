@@ -8,9 +8,9 @@ import Link from "next/link";
 import SearchAndResult from "./SearchAndResults";
 import "./SearchPage.scss";
 import { getDictionary } from "@/localization/dictionaries";
-import { Locale } from "@/providers";
+import { LocaleProps } from "@/config/i18n";
 
-export default async function SearchPage({ lang }: Locale) {
+export default async function SearchPage({ lang }: LocaleProps) {
   const dictionary = await getDictionary(lang);
   const heading = dictionary.pages.searchPage.heading;
   const paragraph = dictionary.pages.searchPage.paragraph;

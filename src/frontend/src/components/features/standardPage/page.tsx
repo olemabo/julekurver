@@ -2,14 +2,14 @@ import PageWrapper from "@/components/shared/pageWrapper/pageWrapper";
 import Breadcrumb from "@/components/shared/ui/breadcrumb/breadcrumb";
 import Heading, { HeadingLevel } from "@/components/shared/ui/heading/heading";
 import ContactSection from "./contactSection";
-import { Locale } from "@/providers";
 import { getDictionary } from "@/localization/dictionaries";
 import STANDARD_PAGE_TYPES from "@/constants/standardPageTypes";
 import { PageContent } from "./type";
+import { LocaleProps } from "@/config/i18n";
 
 export type StandardPageProps = {
   pageContent: PageContent | null;
-} & Locale;
+} & LocaleProps;
 
 export default async function StandardPage({
   pageContent,

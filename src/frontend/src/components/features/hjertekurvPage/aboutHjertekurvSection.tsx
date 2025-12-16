@@ -12,11 +12,11 @@ import Paragraph from "@/components/shared/ui/paragraph/paragraph";
 import { formatDate } from "./utils";
 import { Hjertekurv } from "@/types/hjertekurv";
 import { getDictionary } from "@/localization/dictionaries";
-import { Locale } from "@/providers";
+import { LocaleProps } from "@/config/i18n";
 
 export type AboutHjertekurvSectionProps = {
   hjertekurv: Hjertekurv;
-} & Locale;
+} & LocaleProps;
 
 export default async function AboutHjertekurvSection({
   hjertekurv,

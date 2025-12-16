@@ -6,14 +6,14 @@ import Link from "next/link";
 import FlettetilleggPopover from "@/components/shared/content/popover/FlettetilleggPopover";
 import { useHjertekurvMalSection } from "./useTexts";
 import { ReplacePlaceholder } from "@/components/shared/content/replacePlaceholder";
-import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
 import { fletteHjertekurvHeadingId, HeadingIdProps } from "./constants";
+import { LocaleProps } from "@/config/i18n";
 
 export function HjertekurvMalSection({
   headingId,
   lang,
-}: HeadingIdProps & Locale) {
+}: HeadingIdProps & LocaleProps) {
   const {
     title,
     ingress1,

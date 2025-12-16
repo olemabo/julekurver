@@ -1,11 +1,8 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-import { LanguageCode } from "@/constants/languages";
 import { Dictionary } from "@/localization/type";
-
-export type Locale = { lang: LanguageCode };
-export type LangParams = Locale;
+import { Locale } from "@/config/i18n";
 
 export type LanguageContextType = {
   dictionary: Dictionary | undefined;
@@ -22,7 +19,7 @@ export default function LanguageProvider({
   lang,
   dictionary,
 }: {
-  lang: LanguageCode;
+  lang: Locale;
   dictionary: Dictionary;
   children: React.ReactNode;
 }) {

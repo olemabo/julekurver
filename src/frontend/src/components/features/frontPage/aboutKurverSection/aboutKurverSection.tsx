@@ -7,10 +7,10 @@ import Heading from "@/components/shared/ui/heading/heading";
 import Button from "@/components/shared/ui/button/button";
 import "./aboutKurverSection.scss";
 import { useAboutKurverSection } from "../useTexts";
-import { Locale } from "@/providers";
 import { URLs } from "@/constants/urls";
+import { LocaleProps } from "@/config/i18n";
 
-export default function AboutKurverSection({ lang }: Locale) {
+export default function AboutKurverSection({ lang }: LocaleProps) {
   const paragraphMaxWidth = 480;
   const paragraphStyle = {
     fontFamily: "var(--font-alegreya-sans-light)",
