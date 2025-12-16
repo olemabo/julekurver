@@ -15,7 +15,9 @@ export const createBackendUrl = (
   path: string = "",
   queryParams: Record<string, string> = {},
 ): string => {
-  const apiBaseUrl = process.env.NEXT_PUBLIC_BACKEND_API_BASE_URL || "https://hjertekurver-api-olebo.pythonanywhere.com/";
+  const apiBaseUrl =
+    process.env.NEXT_PUBLIC_BACKEND_API_BASE_URL ||
+    "https://hjertekurver-api-olebo.pythonanywhere.com/";
   if (!apiBaseUrl) {
     throw new Error("Backend API base URL is not defined.");
   }
