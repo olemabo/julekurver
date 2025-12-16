@@ -17,7 +17,7 @@ export default function ViewHjertekurvSection({ lang }: LocaleProps) {
     useViewHjertekurvSection();
 
   if (loading) {
-    return <HjertekurvLoader />;
+    return null;
   }
 
   if (error) {
