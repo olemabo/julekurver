@@ -1,6 +1,6 @@
-import { darkTheme, DisplayTheme } from "@/constants/displayTheme";
-import React from "react";
-import "./heading.scss";
+import { darkTheme, DisplayTheme } from "@/constants/display-theme";
+import { HTMLAttributes, ReactNode } from "react";
+import styles from "./heading.module.css";
 
 export const HeadingLevel = {
   H1: "h1",
@@ -10,27 +10,34 @@ export const HeadingLevel = {
 
 export type HeadingLevel = (typeof HeadingLevel)[keyof typeof HeadingLevel];
 
-type HeadingProps = React.HTMLAttributes<HTMLDivElement> & {
-  headingLevel: HeadingLevel;
+type HeadingProps = HTMLAttributes<HTMLDivElement> & {
+  children: ReactNode;
+  level: HeadingLevel;
   withMargins?: boolean;
-  children: React.ReactNode;
   theme?: DisplayTheme;
 };
 
 export default function Heading({
-  headingLevel,
+  level,
   withMargins = true,
   theme = darkTheme,
   children,
   ...rest
 }: HeadingProps) {
-  const Tag = headingLevel;
+  const Tag = level;
   const hideMargins = !withMargins;
 
   return (
     <Tag
       {...rest}
-      className={`heading ${hideMargins ? "hide-margins" : ""} ${theme}`}
+      className={[
+        styles.heading,
+        styles[theme],
+        hideMargins ? styles.hideMargins : undefined,
+        rest.className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       {children}
     </Tag>

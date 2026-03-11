@@ -1,0 +1,35 @@
+.contactContainer {
+  display: flex;
+  padding: 48px;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 48px;
+}
+
+.contactContainer h2 {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.contactForm {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 36px;
+}
+
+@media (max-width: 879px) {
+  .contactContainer {
+    flex-direction: column;
+    padding: 24px 0;
+  }
+  .contactContainer img {
+    display: none;
+  }
+  .contactContainer div {
+    width: 100%;
+  }
+  .contactContainer h2 {
+    margin-top: 12px;
+  }
+}

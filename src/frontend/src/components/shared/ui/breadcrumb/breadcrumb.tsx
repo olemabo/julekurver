@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import "./breadcrumb.scss";
+import styles from "./breadcrumb.module.css";
 import Image from "next/image";
 
 type LinkProp = {
@@ -15,19 +13,19 @@ type BreadcrumbProps = {
 
 export default function Breadcrumb({ linkItems }: BreadcrumbProps) {
   return (
-    <div className="breadcrumb-container">
+    <div className={styles.breadcrumbContainer}>
       {linkItems?.length > 0 &&
         linkItems.map((link, index) => (
           <div key={index}>
             {index !== linkItems.length - 1 ? (
               <>
-                <Link href={link.href} className="breadcrumb">
+                <Link href={link.href} className={styles.breadcrumb}>
                   {link.linkText}
                 </Link>{" "}
                 <Image
                   src="/images/icons/breadcrumb_divider.svg"
                   alt="breadcrumb divider"
-                  className="breadcrumb-divider"
+                  className={styles.breadcrumbDivider}
                   width={12}
                   height={12}
                 />

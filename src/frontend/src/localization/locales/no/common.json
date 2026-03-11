@@ -99,7 +99,8 @@
         "title": "Lidenskap for hjertekurver",
         "paragraph1": "Denne nettsiden er opprettet for å samle og dele kunnskap om hjertekurver, en tradisjon som kombinerer håndverk og kreativitet. Håndlagde hjertekurver kan være både dekorative og funksjonelle, og de representerer en personlig måte å skape og dele noe spesielt på.",
         "paragraph2": " På hjertekurver.no finner du inspirasjon, detaljerte veiledninger og et omfattende galleri av ulike kurver. Målet vårt er å gjøre det enkelt for alle, uansett erfaring, å lære og utforske denne formen for papirhåndverk, samt tilby den største samlingen av hjertekurver.",
-        "learnMoreAboutUsButtonLabel": "Les mer om oss"
+        "learnMoreAboutUsButtonLabel": "Les mer om oss",
+        "imageAltText": "Logo av flettet hjertekurv"
       },
       "viewHjertekurvSection": {
         "title": "Se våre kurver",

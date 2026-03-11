@@ -1,7 +1,7 @@
-import { BASE_URL } from "@/constants/urls";
-import { getStandardPage } from "@/components/features/standardPage/api";
-import StandardPage from "@/components/features/standardPage/page";
+import StandardPage from "@/components/features/standard-page/page";
 import { Locale } from "@/config/i18n";
+import { getStandardPage } from "@/lib/api/services/get-standard-page";
+import { buildAppRoute } from "@/utils/routes";
 
 export const revalidate = 86400;
 
@@ -15,9 +15,11 @@ export async function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata(props: PageProps<"/[lang]/[page]">) {
-  const lang = (await props.params).lang as Locale;
-  const { page } = await props.params;
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]/[page]">) {
+  const lang = (await params).lang as Locale;
+  const { page } = await params;
 
   const pageContent = await getStandardPage(page, lang);
 
@@ -38,7 +40,7 @@ export async function generateMetadata(props: PageProps<"/[lang]/[page]">) {
       description: pageContent.content
         ?.replace(/<[^>]*>/g, "")
         .substring(0, 160),
-      url: `${BASE_URL}/${lang}/${page}`,
+      url: buildAppRoute({ route: "/[lang]/[page]", params: { lang, page } }),
       type: "website",
     },
     twitter: {
@@ -51,9 +53,9 @@ export async function generateMetadata(props: PageProps<"/[lang]/[page]">) {
   };
 }
 
-export default async function Page(props: PageProps<"/[lang]/[page]">) {
-  const lang = (await props.params).lang as Locale;
-  const { page } = await props.params;
+export default async function Page({ params }: PageProps<"/[lang]/[page]">) {
+  const lang = (await params).lang as Locale;
+  const { page } = await params;
 
   const content = await getStandardPage(page, lang);
 

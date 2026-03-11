@@ -1,0 +1,41 @@
+.searchResultItem {
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.link {
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding: 24px;
+  align-items: flex-start;
+  border-radius: 24px;
+  border: 1px solid #9a8c82;
+  transition: background-color 0.5s ease;
+}
+
+.link:hover {
+  background-color: #efe5de;
+}
+
+.link:focus {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+.descriptionImageContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.descriptionContainer {
+  max-width: none;
+  margin: 0;
+}
+
+.image {
+  margin-top: -12px;
+}

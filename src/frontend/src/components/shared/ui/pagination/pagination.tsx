@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import "./pagination.scss";
+import styles from "./pagination.module.css";
 
 export type PaginationOption = {
   label: string;
@@ -64,10 +64,10 @@ export default function Pagination({
   const showString = `${minPage}-${maxPage} av ${total.toString()}`;
 
   return (
-    <div className="pagination-container">
-      <div className="option-container">
+    <div className={styles.paginationContainer}>
+      <div className={styles.optionContainer}>
         <select
-          className="custom-select"
+          className={styles.customSelect}
           id="pagination-options"
           onChange={handlePageSizeChange}
           value={pageSize}
@@ -80,13 +80,14 @@ export default function Pagination({
         </select>
         <label htmlFor="pagination-options">{showString}</label>
       </div>
-      <div className="pagination-buttons-container">
+      <div className={styles.paginationButtonsContainer}>
         <button
+          className={styles.pageButton}
           disabled={page === 1}
           onClick={() => handlePageChange(page - 1)}
         >
           <Image
-            className="left"
+            className={styles.left}
             src="/images/icons/pagination/arrow_left.svg"
             alt="Arrow down icon"
             width={32}
@@ -94,11 +95,11 @@ export default function Pagination({
           />
         </button>
 
-        <div className="page-buttons">
+        <div className={styles.pageButtons}>
           {Array.from({ length: numberOfBoxes }, (_, i) => (
             <button
               key={i + 1}
-              className={`page-button ${page === i + 1 ? "active" : ""}`}
+              className={`${styles.pageButton} ${page === i + 1 ? styles.active : ""}`}
               onClick={() => handlePageChange(i + 1)}
             >
               {i + 1}
@@ -106,11 +107,12 @@ export default function Pagination({
           ))}
         </div>
         <button
+          className={styles.pageButton}
           disabled={page === numberOfBoxes}
           onClick={() => handlePageChange(page + 1)}
         >
           <Image
-            className="right"
+            className={styles.right}
             src="/images/icons/pagination/arrow_right.svg"
             alt="Arrow down icon"
             width={32}

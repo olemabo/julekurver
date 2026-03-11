@@ -1,0 +1,30 @@
+.breadcrumbContainer {
+  margin: 24px 0 48px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 496px) {
+  .breadcrumbContainer {
+    margin: 16px 0 36px 0;
+    gap: 8px;
+  }
+  .breadcrumb {
+    font-size: 16px;
+  }
+  .breadcrumbDivider {
+    margin-left: 3px;
+  }
+}
+
+.breadcrumb {
+  color: var(--jds-link-text-color-dark);
+}
+
+.breadcrumbDivider {
+  margin-left: 6px;
+}

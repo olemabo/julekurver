@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useState } from "react";
-import "./search.scss";
+import styles from "./search.module.css";
 import Button from "../button/button";
 
 type SearchProps = {
@@ -49,9 +49,9 @@ const Search = forwardRef<HTMLInputElement, SearchProps>(
     };
 
     return (
-      <div className="search-container">
+      <div className={styles.searchContainer}>
         {label && <label>{label}</label>}
-        <div className="input-container">
+        <div className={styles.inputContainer}>
           <svg
             width="24"
             height="24"
@@ -79,9 +79,6 @@ const Search = forwardRef<HTMLInputElement, SearchProps>(
             type="search"
           />
           {onClick && (
-            // <button onClick={handleSearchClick} disabled={isLoading}>
-            //   {isLoading ? <div className="spinner"></div> : "Søk"}
-            // </button>
             <Button
               label="Søk"
               onClick={handleSearchClick}

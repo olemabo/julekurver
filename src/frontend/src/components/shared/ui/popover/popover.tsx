@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Heading from "../heading/heading";
 import Image from "next/image";
-import "./popover.scss";
+import styles from "./popover.module.css";
 
 type PopoverProps = {
   content: React.ReactNode;
@@ -68,15 +68,15 @@ const Popover = ({ title, content, children }: PopoverProps) => {
   }, [isVisible]);
 
   return (
-    <span className="popover-container">
+    <span>
       <button
-        className="popover-button"
+        className={styles.popoverButton}
         onClick={togglePopover}
         ref={buttonRef}
       >
         {children}
         <Image
-          className="popover-icon"
+          className={styles.popoverIcon}
           width={15}
           height={15}
           src="/images/icons/popover_questionmark.svg"
@@ -84,8 +84,8 @@ const Popover = ({ title, content, children }: PopoverProps) => {
         />
       </button>
       {isVisible && (
-        <div className="popover-content" ref={popoverRef}>
-          {title && <Heading headingLevel="h2">{title}</Heading>}
+        <div className={styles.popoverContent} ref={popoverRef}>
+          {title && <Heading level="h2">{title}</Heading>}
           {content}
         </div>
       )}

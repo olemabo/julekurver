@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { hamburgerButtonId } from "../types";
-import "./hamburger.scss";
+import styles from "./hamburger.module.css";
 
 type HamburgerProps = {
   onClick: (isOpen: boolean) => void;
@@ -26,15 +26,15 @@ export default function Hamburger({ onClick, isOpen }: HamburgerProps) {
 
   return (
     <li
-      className={`hamburger-container ${isHamburgerOpen ? "active" : ""}`}
+      className={`${styles.hamburgerContainer} ${isHamburgerOpen ? styles.active : ""}`}
       onClick={toggleHamburger}
       id={hamburgerButtonId}
       aria-label="Toggle menu"
     >
       <ul>
-        <li className="hamburger" />
-        <li className="hamburger" />
-        <li className="hamburger" />
+        <li className={styles.hamburger} />
+        <li className={styles.hamburger} />
+        <li className={styles.hamburger} />
       </ul>
     </li>
   );

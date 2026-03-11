@@ -1,0 +1,98 @@
+.hjertekurvKartotekSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 36px;
+  margin-bottom: 48px;
+}
+
+.hjertekurvKartotekSectionSmall {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.sectionSmall {
+  margin: 24px 24px;
+}
+
+.link {
+  text-decoration: none;
+  border-bottom: 0;
+  text-align: center;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--tds-search-hit-border-color);
+  background-color: var(--tds-search-hit-bg);
+  border-radius: var(--tds-search-hit-border-radius);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 16px 0;
+  gap: 16px;
+}
+
+.sectionTitle {
+  color: var(--tds-search-filter-main-color);
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.changeSvgColorContainer,
+.sectionTitle {
+  transition: transform 0.5s ease;
+}
+
+.hoverWrapper {
+  position: relative;
+  top: 10px;
+}
+
+.link:hover {
+  background-color: var(--tds-search-hit-bg-color-hover);
+}
+
+.link:hover .sectionTitle {
+  transition: transform 0.3s ease;
+  transform: scale(0);
+}
+
+.link:hover .hoverWrapper .changeSvgColorContainer {
+  transition: transform 0.5s ease;
+  transform: scale(1.2) translateY(-8%);
+}
+
+.link:hover .hoverWrapperSmall .changeSvgColorContainer {
+  transform: scale(1.3) translateY(-11%);
+}
+
+.link:hover .sm .changeSvgColorContainer {
+  transform: scale(1.4) translateY(-11%);
+}
+
+.link:focus {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+.hitsAndFilerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 496px) {
+  .hitsAndFilerContainer {
+    margin-top: 24px;
+  }
+}
+
+.difficultyLevelsContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}

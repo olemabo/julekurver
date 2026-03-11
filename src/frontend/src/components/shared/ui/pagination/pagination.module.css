@@ -1,0 +1,95 @@
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.optionContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  background-color: transparent;
+  color: var(--tds-pagination-text);
+}
+
+.optionContainer label {
+  font-size: 18px;
+}
+
+.customSelect {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  height: var(--tds-pagination-height);
+  padding: 8px 36px 8px 12px;
+  border: 1px solid var(--tds-pagination-text);
+  background-image: url("/images/icons/pagination/arrow_down.svg");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  font-weight: 500;
+  color: var(--tds-pagination-text);
+}
+
+.customSelect:hover {
+  cursor: pointer;
+}
+
+.paginationButtonsContainer {
+  display: flex;
+  column-gap: 12px;
+}
+
+.pageButtons {
+  display: flex;
+  column-gap: 12px;
+}
+
+.pageButton {
+  width: var(--tds-pagination-width);
+  height: var(--tds-pagination-height);
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid var(--tds-pagination-text);
+  color: var(--tds-pagination-text);
+  font-size: 18px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.pageButton:hover {
+  background-color: var(--tds-pagination-bg-color-hover);
+}
+
+.pageButton.active {
+  background-color: var(--tds-pagination-bg-color-selected);
+  color: var(--tds-pagination-color-selected);
+}
+
+.pageButton.active:hover {
+  background-color: var(--tds-pagination-bg-color-selected-hover);
+}
+
+.left {
+  margin-right: 4px;
+  margin-top: 4px;
+}
+
+.right {
+  margin-left: 2px;
+  margin-top: 4px;
+}
+
+@media screen and (max-width: 496px) {
+  .paginationContainer {
+    gap: 8px;
+  }
+  .optionContainer label {
+    font-size: 16px;
+  }
+}

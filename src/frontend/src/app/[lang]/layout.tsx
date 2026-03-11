@@ -1,21 +1,20 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/header/header";
 import Footer from "@/components/layout/footer/footer";
-import { getDictionary } from "../../localization/dictionaries";
-import LanguageProvider from "@/providers";
 import {
   alegreya,
   alegreyaHeader,
   alegreyaSansLight,
   alegreyaSansMedium,
 } from "./fonts";
-import { BASE_URL } from "@/constants/urls";
 import { Locale } from "@/config/i18n";
+import { buildAppRoute } from "@/utils/routes";
+import { getDictionary } from "@/localization/get-dictionary";
 
-export async function generateMetadata(
-  props: PageProps<"/[lang]">,
-): Promise<Metadata> {
-  const lang = (await props.params).lang as Locale;
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]">): Promise<Metadata> {
+  const lang = (await params).lang as Locale;
   const dictionary = await getDictionary(lang);
 
   const title = dictionary.layout.seo.title;
@@ -26,7 +25,7 @@ export async function generateMetadata(
     description: description,
     openGraph: {
       title: title,
-      url: BASE_URL,
+      url: buildAppRoute({ route: "https://hjertekurver.no" }),
     },
     twitter: {
       title: title,
@@ -35,8 +34,11 @@ export async function generateMetadata(
   };
 }
 
-export default async function RootLayout(props: LayoutProps<"/[lang]">) {
-  const lang = (await props.params).lang as Locale;
+export default async function RootLayout({
+  params,
+  children,
+}: LayoutProps<"/[lang]">) {
+  const lang = (await params).lang as Locale;
   const dictionary = await getDictionary(lang);
 
   return (
@@ -45,11 +47,9 @@ export default async function RootLayout(props: LayoutProps<"/[lang]">) {
       className={`${alegreya.variable} ${alegreyaSansLight.variable} ${alegreyaHeader.variable} ${alegreyaSansMedium.variable}`}
     >
       <body>
-        <LanguageProvider lang={lang} dictionary={dictionary}>
-          <Header />
-          <main id="main">{props.children}</main>
-          <Footer />
-        </LanguageProvider>
+        <Header dictionary={dictionary.header} lang={lang} />
+        <main id="main">{children}</main>
+        <Footer lang={lang} />
       </body>
     </html>
   );

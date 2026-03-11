@@ -1,7 +1,7 @@
-import { HjertekurvCollectionPage } from "@/components/features/hjertekurvCollectionPage/hjertekurvCollectionPage";
-import { getHjertekurverData } from "@/components/features/hjertekurvCollectionPage/api";
-import { getDictionary } from "@/localization/dictionaries";
 import { LOCALES, type Locale } from "@/config/i18n";
+import HjertekurvCollectionPage from "@/components/features/hjertekurv-collection-page/hjertekurv-collection-page";
+import { getHjertekurver } from "@/lib/api/services/get-hjertekurver";
+import { getDictionary } from "@/localization/get-dictionary";
 
 export const revalidate = 3600;
 
@@ -9,10 +9,10 @@ export async function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }
 
-export async function generateMetadata(
-  props: PageProps<"/[lang]/hjertekurver">,
-) {
-  const lang = (await props.params).lang as Locale;
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]/hjertekurver">) {
+  const lang = (await params).lang as Locale;
   const dictionary = await getDictionary(lang);
 
   const title = dictionary.pages.hjertekurverKartotekPage.seo.title;
@@ -24,10 +24,12 @@ export async function generateMetadata(
   };
 }
 
-export default async function Page(props: PageProps<"/[lang]/hjertekurver">) {
-  const lang = (await props.params).lang as Locale;
+export default async function Page({
+  params,
+}: PageProps<"/[lang]/hjertekurver">) {
+  const lang = (await params).lang as Locale;
 
-  const content = await getHjertekurverData(lang);
+  const content = await getHjertekurver("", lang);
 
   return <HjertekurvCollectionPage hjertekurver={content} lang={lang} />;
 }

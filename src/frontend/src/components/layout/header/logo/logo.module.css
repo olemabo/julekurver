@@ -1,0 +1,27 @@
+.logo {
+  font-family: var(--font-alegreya-header);
+  border-bottom: none;
+  text-decoration: none;
+  font-size: 36px;
+  color: inherit;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+
+  &:focus-visible {
+    outline: 2px solid var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .logo {
+    font-size: 26px;
+
+    img {
+      display: none;
+    }
+  }
+}
