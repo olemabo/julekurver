@@ -139,7 +139,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   font-family: var(--font-alegreya), sans-serif;
-  
+
   display: flex;
   flex-direction: column;
 }
@@ -226,7 +226,6 @@ li {
 label {
   font-family: var(--font-alegreya-sans-light), sans-serif;
 }
-
 
 @media screen and (max-width: 780px) {
   .page-container {
