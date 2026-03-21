@@ -1,0 +1,50 @@
+.filterButtons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.input {
+  clip-path: rect(0 0 0 0);
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  margin: 0;
+}
+
+.filterButton {
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 18px;
+  border: 1px solid var(--tds-color-filter-button-border);
+  border-radius: 60px;
+  padding: 10px 36px;
+  cursor: pointer;
+  display: block;
+  color: var(--tds-color-filter-button-border);
+
+  &:focus-visible {
+    outline: 2px solid var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  @media screen and (max-width: 496px) {
+    padding: 8px 30px;
+    font-size: 16px;
+  }
+
+  &.active {
+    background-color: var(--tds-color-filter-button-bg);
+    color: var(--tds-color-neutrals-white);
+
+    &:hover {
+      background-color: var(--tds-color-filter-button-bg);
+      color: var(--tds-color-neutrals-white);
+    }
+  }
+
+  &:hover {
+    background-color: var(--tds-color-filter-button-hover-bg);
+  }
+}

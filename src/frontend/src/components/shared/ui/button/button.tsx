@@ -1,7 +1,7 @@
 "use client";
 
-import { DisplayTheme } from "@/constants/displayTheme";
-import "./button.scss";
+import { DisplayTheme } from "@/constants/display-theme";
+import styles from "./button.module.css";
 
 type ButtonProps = {
   label: string;
@@ -38,7 +38,9 @@ export default function Button({
         target={target}
         href={href}
         style={style}
-        className={`button link ${theme} ${className || ""}`}
+        className={[styles.button, styles.link, styles[theme], className]
+          .filter(Boolean)
+          .join(" ")}
         onClick={handleOnClick}
         {...rest}
       >
@@ -49,7 +51,9 @@ export default function Button({
 
   return (
     <button
-      className={`button ${theme} ${className || ""}`}
+      className={[styles.button, styles[theme], className]
+        .filter(Boolean)
+        .join(" ")}
       onClick={handleOnClick}
       type="button"
       style={style}

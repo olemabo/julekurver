@@ -1,0 +1,61 @@
+.kurvMalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+  margin-bottom: 48px;
+}
+
+.heartContainer2 {
+  width: fit-content;
+  transition: transform 1.3s ease;
+}
+
+.imageLeft,
+.imageRight {
+  transition: transform 1.3s ease;
+  transform-origin: 100% 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 550px) {
+  .imageLeft,
+  .imageRight {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .imageLeft,
+  .imageRight {
+    width: 120px;
+  }
+}
+
+.heartContainer2:hover,
+.heartContainer2.hovered {
+  transform: rotate(-45deg) translate(-30%, -10%);
+}
+
+.heartContainer2:hover .imageLeft,
+.heartContainer2.hovered .imageLeft {
+  transform: rotate(90deg) scaleX(-1) translate(100%, 0%);
+}
+
+.imageLeft {
+  transform: rotate(0deg);
+}
+
+.imageRight {
+  transform: rotate(0deg) translate(40%, 0);
+}
+
+.heartContainer2:hover .imageRight,
+.heartContainer2.hovered .imageRight {
+  transform: rotate(0deg) translate(0, 0);
+}
+
+.heartContainer2:hover .imageRight.twoMals,
+.heartContainer2.hovered .imageRight.twoMals {
+  transform: rotate(0deg) scaleX(-1) scaleY(1) translate(100%, 0%);
+}

@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Hamburger from "./hamburger/hamburger";
-import LinkListSection from "./linkListSection";
-import Logo from "./Logo";
-import LocaleSwitcher from "./dropdown/localSwitcher";
+import LinkListSection from "./link-list-section";
+import LocaleSwitcher from "./dropdown/local-switcher";
 import MenuType, {
   hamburgerButtonId,
   languageButtonId,
@@ -14,11 +13,19 @@ import MenuType, {
   searchButtonId,
   searchDropdownMenuId,
 } from "./types";
-import SearchBox from "./dropdown/searchBox";
-import DropdownWrapper from "./dropdown/dropdownWrapper";
-import "./header.scss";
+import SearchBox from "./dropdown/search-box";
+import DropdownWrapper from "./dropdown/dropdown-wrapper";
+import Logo from "./logo/logo";
+import styles from "./header.module.css";
+import { LocaleProps } from "@/config/i18n";
+import { getDictionary } from "@/localization/get-dictionary";
+import SearchButton from "./search-button/search-button";
 
-export default function Header() {
+type HeaderProps = {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>["header"];
+} & LocaleProps;
+
+export default function Header({ dictionary, lang }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<LanguageSearchType>(
     MenuType.ClosedMenu,
@@ -93,36 +100,29 @@ export default function Header() {
 
   return (
     <div>
-      <header className="header-container">
-        <nav className="container nav-container">
-          <Logo onClick={closeAllMenus} />
-          <div className="link-items-container">
+      <header className={styles.headerContainer}>
+        <nav className={`container ${styles.navContainer}`}>
+          <Logo onClick={closeAllMenus} logoText={dictionary.logoText} />
+          <div className={styles.linkItemsContainer}>
             <div
               id={openMobileDropdownMenuId}
-              className={`link-container ${isMobileMenuOpen ? "open-mobile-format" : ""}`}
+              className={`${styles.linkContainer} ${isMobileMenuOpen ? styles.openMobileFormat : ""}`}
             >
-              <LinkListSection onClick={closeAllMenus} />
+              <LinkListSection
+                onClick={closeAllMenus}
+                dictionary={dictionary}
+                lang={lang}
+              />
             </div>
-            <ul className="icons">
+            <ul className={styles.icons}>
               <li>
-                <button
-                  onClick={() => toggleSearchLanguageMenu(MenuType.Search)}
-                  className={`search-button ${activeMenu === MenuType.Search ? "active" : ""}`}
-                  id={searchButtonId}
-                  aria-label="Klikk for å gjøre søk på nettsiden"
-                  title="Søkeknapp"
-                >
-                  <div className="search-icon active"></div>
-                </button>
-                {/* <button
-                  onClick={() => toggleSearchLanguageMenu(MenuType.Language)}
-                  className={`language-button ${activeMenu === MenuType.Language ? "active" : ""}`}
-                  id={languageButtonId}
-                  aria-label="Klikk for å gjøre søk på nettsiden"
-                  title="Søkeknapp"
-                >
-                  <div className="language-icon"></div>
-                </button> */}
+                <SearchButton
+                  handleOnClick={() =>
+                    toggleSearchLanguageMenu(MenuType.Search)
+                  }
+                  isActive={activeMenu === MenuType.Search}
+                />
+                {/* <LanguageButton ... />*/}
               </li>
               <Hamburger
                 isOpen={isMobileMenuOpen}
@@ -132,7 +132,6 @@ export default function Header() {
           </div>
         </nav>
       </header>
-
       <DropdownWrapper isActive={isActiveSearch} id={searchDropdownMenuId}>
         <SearchBox
           searchFieldRef={searchFieldRef}

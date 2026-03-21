@@ -1,0 +1,11 @@
+.richTextWrapper {
+  max-width: var(--paragraph-max-width);
+
+  p {
+    font-size: 18px;
+    font-family: var(--font-alegreya-sans-light), sans-serif;
+    margin-bottom: 16px;
+    font-weight: 300;
+    line-height: 32px;
+  }
+}

@@ -1,5 +1,5 @@
 import { ChangeEvent, TextareaHTMLAttributes, useState } from "react";
-import "./textarea.scss";
+import styles from "./textarea.module.css";
 
 type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   value: string;
@@ -21,7 +21,6 @@ const TextArea = ({
 }: TextAreaProps) => {
   const [internalValue, setInternalValue] = useState(value || "");
 
-  // Handle change event
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = event.target.value;
     setInternalValue(newValue);
@@ -31,7 +30,10 @@ const TextArea = ({
   };
 
   return (
-    <div style={{ maxWidth: maxWidth || 600 }} className="textarea-container">
+    <div
+      style={{ maxWidth: maxWidth || 600 }}
+      className={styles.textareaContainer}
+    >
       <label style={{ visibility: "hidden" }} htmlFor="custom-textarea">
         {label}
       </label>
@@ -39,12 +41,14 @@ const TextArea = ({
         id="custom-textarea"
         rows={rows}
         cols={cols}
-        className={`custom-textarea ${rest.className || ""}`}
+        className={`${styles.customTextarea} ${rest.className || ""}`}
         value={value !== undefined ? value : internalValue}
         onChange={(e) => handleChange(e)}
         {...rest}
       />
-      {errorMessage && <span className="error-message">{errorMessage}</span>}
+      {errorMessage && (
+        <span className={styles.errorMessage}>{errorMessage}</span>
+      )}
     </div>
   );
 };

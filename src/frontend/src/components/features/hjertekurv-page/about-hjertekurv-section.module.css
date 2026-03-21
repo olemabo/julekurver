@@ -1,0 +1,23 @@
+.hjertekurvPageContainer {
+  display: flex;
+  column-gap: 48px;
+}
+
+.kurvConverterDesktop {
+  flex: 0 0 auto;
+  margin-left: 24px;
+}
+
+.kurvConverterMobile {
+  display: none;
+}
+
+@media (max-width: 840px) {
+  .kurvConverterDesktop {
+    display: none;
+  }
+  .kurvConverterMobile {
+    display: block;
+    margin: 12px 0 36px 0;
+  }
+}

@@ -1,0 +1,32 @@
+.jdsLink {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--jds-link-text-color);
+  transition:
+    0.3s,
+    text-decoration-color 0.3s,
+    outline-offset 0.3s,
+    color 2s;
+}
+
+.iconContainer {
+  margin-right: 5px;
+  height: 20px;
+  width: 20px;
+}
+
+.jdsLink span {
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+.jdsLink:hover {
+  text-decoration-color: transparent;
+}
+
+.jdsLink:focus,
+.jdsLink:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+}

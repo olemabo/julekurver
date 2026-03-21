@@ -1,0 +1,65 @@
+import HowToSection, { POSITION_TOP } from "@/components/shared/how-to/how-to";
+import LazyImage from "@/components/shared/lazy-image/lazy-image";
+import Image from "next/image";
+import styles from "./list-with-illustration.module.css";
+
+export type ListhWithIllustraionProps = {
+  number: number;
+  illustrationSrc: string;
+  altText: string;
+  children: React.ReactNode;
+  useLazyImage?: boolean;
+  imageSize?: { height: number; width: number };
+  asParagraph?: boolean;
+};
+
+export default function ListWithIllustraion({
+  number,
+  illustrationSrc,
+  altText,
+  children,
+  useLazyImage = false,
+  imageSize = { height: 125, width: 260 },
+  asParagraph = true,
+}: ListhWithIllustraionProps) {
+  const { width: imageWidth, height: imageHeight } = imageSize;
+
+  return (
+    <li className={styles.listIllustrationContainer}>
+      <HowToSection
+        asParagraph={asParagraph}
+        isDarkRed
+        number={number}
+        position={POSITION_TOP}
+      >
+        {children}
+      </HowToSection>
+      {useLazyImage ? (
+        <LazyImage
+          src={illustrationSrc}
+          alt="Image 1"
+          imageSize={imageSize}
+          className={styles.illustrationImage}
+        />
+      ) : (
+        <Image
+          alt={altText}
+          className={styles.illustrationImage}
+          height={imageHeight}
+          width={imageWidth}
+          src={illustrationSrc}
+        />
+      )}
+    </li>
+  );
+}
+
+export type OrderedListWithIllustrationWrapperProps = {
+  children: React.ReactNode;
+};
+
+export function OrderedListWithIllustrationWrapper({
+  children,
+}: OrderedListWithIllustrationWrapperProps) {
+  return <ol style={{ margin: "48px 0" }}>{children}</ol>;
+}

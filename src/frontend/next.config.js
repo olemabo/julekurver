@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   images: {
     // Configure remote image patterns for Next.js Image component
     remotePatterns: [
@@ -45,12 +46,7 @@ const nextConfig = {
         ],
       },
     ];
-  },
-  // Enable React strict mode for highlighting potential problems
-  reactStrictMode: true,
-  sassOptions: {
-    silenceDeprecations: ["legacy-js-api"],
-  }
+  },  
 };
   
 export default nextConfig;

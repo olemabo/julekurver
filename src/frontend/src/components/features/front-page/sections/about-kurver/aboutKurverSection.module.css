@@ -1,0 +1,50 @@
+.aboutKurverContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 200px;
+}
+
+.textContainer {
+  padding: 40px 0;
+}
+
+.textContainer h2 {
+  font-size: 40px;
+  margin-bottom: 36px;
+  line-height: 50px;
+}
+
+@media screen and (max-width: 780px) {
+  .textContainer h2 {
+    font-size: 30px;
+    line-height: 44px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+}
+
+.textContainer a {
+  margin-top: 24px;
+}
+
+@media (max-width: 1220px) {
+  .aboutKurverContainer {
+    column-gap: 80px;
+  }
+}
+
+@media (max-width: 869px) {
+  .aboutKurverContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: 24px;
+    margin-bottom: 24px;
+  }
+  .aboutKurverContainer img {
+    width: 100%;
+  }
+  .textContainer {
+    padding: 24px 0;
+  }
+}

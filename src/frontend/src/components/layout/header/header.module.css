@@ -1,0 +1,101 @@
+.headerContainer {
+  padding: 10px 0;
+  background-color: var(--background-color);
+  z-index: 100;
+  position: relative;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linkItemsContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 60px;
+}
+
+.linkContainer ul {
+  display: flex;
+  gap: 36px;
+}
+
+.linkContainer li {
+  margin: 0;
+}
+
+.linkContainer a {
+  color: var(--jds-link-text-color-dark);
+  font-size: 20px;
+  text-decoration-color: transparent;
+  text-decoration-thickness: from-font;
+}
+.linkContainer a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+}
+.linkContainer a:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+@media screen and (max-width: 840px) {
+  .linkContainer {
+    opacity: 0;
+    transform: translateY(-20px);
+    background-color: transparent;
+    pointer-events: none;
+    transition:
+      opacity 3s ease-in-out,
+      background-color 2s ease,
+      transform 3s ease-in-out;
+  }
+  .linkContainer.openMobileFormat {
+    border-top: 1px solid var(--tds-color-neutrals-gray);
+    border-bottom: 1px solid var(--tds-color-neutrals-gray);
+    background-color: var(--background-color);
+    transform: translateY(0);
+    pointer-events: auto;
+    transition:
+      opacity 3s ease-in-out,
+      transform 3s ease-in-out;
+    display: flex;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 80px;
+    opacity: 1;
+  }
+  .linkContainer.openMobileFormat ul {
+    flex-direction: column;
+  }
+  .linkContainer.openMobileFormat a {
+    font-size: 24px;
+  }
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+  color: rgb(55 35 22 / 75%) !important;
+}
+.icons li {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 479px) {
+  .headerContainer {
+    padding: 8px 0;
+  }
+}
+@media screen and (max-width: 840px) {
+  .linkContainer {
+    display: none;
+  }
+}

@@ -1,0 +1,56 @@
+.howToContainer {
+  display: flex;
+  column-gap: 24px;
+  margin-bottom: 36px;
+}
+
+@media screen and (max-width: 650px) {
+  .howToContainer {
+    margin-bottom: 16px;
+  }
+}
+
+.howToContainer p {
+  margin-top: 0;
+}
+
+.numberWithColorContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+}
+
+.numberWithColorContainer span {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  color: var(--tds-color-light-theme);
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--font-alegreya);
+  line-height: 32px;
+}
+
+.numberWithColorContainer.dark span {
+  color: var(--tds-color-neutrals-white);
+}
+
+.numberWithColorContainer.light span {
+  font-weight: 400;
+  transform: translateY(-40%);
+  top: 5px !important;
+}
+
+.top {
+  align-items: flex-start;
+}
+
+.top .numberWithColorContainer span {
+  top: 3px;
+  transform: translateY(0);
+}

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "lib": [
       "dom",
       "dom.iterable",
@@ -22,18 +21,14 @@
         "name": "next"
       }
     ],
+    "baseUrl": "src/",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@types/*": [
-        "src/types/*"
-      ],
-      "@localization/*": [
-        "src/localization/*"
-      ],
-      "@providers/*": ["src/providers/*"],
-      "@config/*": ["src/config/*"],
+      "@/*": ["*"],
+      "@types/*": ["types/*"],
+      "@localization/*": ["localization/*"],
+      "@providers/*": ["providers/*"],
+      "@config/*": ["config/*"],
+      "@utils/*": ["utils/*"],
     },
     "target": "ES2017"
   },

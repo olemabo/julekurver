@@ -1,0 +1,16 @@
+.heading {
+  font-family: var(--font-alegreya-header), sans-serif;
+  font-weight: 400;
+}
+
+.light {
+  color: var(--tds-color-light-theme);
+}
+
+.dark {
+  color: var(--tds-color-dark-theme);
+}
+
+.hideMargins {
+  margin: 0;
+}

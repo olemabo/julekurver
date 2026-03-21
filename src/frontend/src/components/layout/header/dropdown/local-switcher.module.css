@@ -1,0 +1,15 @@
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 32px 0;
+  border-bottom: 1px solid var(--tds-color-neutrals-gray);
+
+  button {
+    height: 46px;
+    min-height: auto;
+    margin: 0;
+    margin-left: 12px;
+  }
+}
