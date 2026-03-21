@@ -32,4 +32,7 @@
   .contactContainer h2 {
     margin-top: 12px;
   }
+  .image {
+    display: none;
+  }
 }

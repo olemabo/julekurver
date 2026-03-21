@@ -45,12 +45,13 @@ export default async function ContactUsSection({ lang }: LocaleProps) {
           <ContactSchema dictionary={dictionary} />
         </div>
       </div>
-      <LazyImage
-        src="/images/pages/frontpage/frontpage_hjertekurv_letter-cropped.svg"
-        alt={imageAltText}
-        imageSize={{ height: 350, width: 350 }}
-        className="illustration-image"
-      />
+      <div className={styles.image}>
+        <LazyImage
+          src="/images/pages/frontpage/frontpage_hjertekurv_letter-cropped.svg"
+          alt={imageAltText}
+          imageSize={{ height: 350, width: 350 }}
+        />
+      </div>
     </div>
   );
 }
