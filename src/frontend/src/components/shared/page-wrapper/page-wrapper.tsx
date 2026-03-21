@@ -1,3 +1,5 @@
+import styles from "./page-wrapper.module.css";
+
 type PageWrapperProps = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
   isStandardPage?: boolean;
@@ -19,7 +21,7 @@ export default function PageWrapper({
           marginBottom: withBottomMargin ? "64px" : undefined,
           ...style,
         }}
-        className={`${className ?? ""} ${isStandardPage ? "standard-page" : ""}`}
+        className={`${className ?? ""} ${isStandardPage ? styles.standardPage : ""}`}
         {...rest}
       >
         {children}
