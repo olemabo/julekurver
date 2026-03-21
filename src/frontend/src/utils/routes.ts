@@ -1,4 +1,7 @@
-import type { AppRoutes } from "../../.next/dev/types/routes";
+// import type { AppRoutes } from "../../.next/dev/types/routes";
+
+type AppRoutes = "/" | "/[lang]" | "/[lang]/[page]" | "/[lang]/hjertekurver" | "/[lang]/hjertekurver/[hjertekurv]" | "/[lang]/hvordan-lage-kurver" | "/[lang]/hvordan-lage-kurver/mal-til-papir" | "/[lang]/search"
+
 
 export type ExtraRoutes =
   | "https://hjertekurver.no"
