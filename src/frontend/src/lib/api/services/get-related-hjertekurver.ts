@@ -1,6 +1,6 @@
 import { djangoFetch } from "@/lib/api/django-fetch";
+import { Hjertekurv } from "@/types/hjertekurv";
 import { cache } from "react";
-import { Hjertekurv } from "./get-hjertekurver";
 
 /**
  * Henter relaterte hjertekurver fra backend
