@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "lint:fix": "eslint . --fix",
-    "verify": "npm i && next lint && tsc --noEmit && prettier src/ --write"
+    "verify": "npm i && next lint && tsc --noEmit && npm lint:fix"
   },
   "dependencies": {
     "next": "16.2.1",
@@ -24,7 +24,6 @@
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.1",
     "eslint-config-prettier": "^10.1.8",
-    "prettier": "3.8.1",
     "typescript": "5.9.3"
   }
 }
